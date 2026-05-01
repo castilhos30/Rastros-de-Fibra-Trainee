@@ -92,7 +92,8 @@ img{
 
 .imagempostidividual{
   border-radius: 10px;
-  height: 800px;
+
+  max-height: 80%;
 }
 .descricaopostindividual{
     font-size: 24px;
@@ -153,13 +154,16 @@ img{
 }
 
 .botaoenviar{
-  background-color: #05AC4B;
+  background-color: #059742;
   border-radius: 10px;
   color: white;
   border: none;
   padding: 1px 50px;
   font-weight: bold;
   cursor: pointer; 
+}
+.botaoenviar:hover{
+  background-color: #05AC4B;
 }
 
 .enviarcomentario{
@@ -360,6 +364,7 @@ img{
   .comentariocompleto{
     padding: 2px 15px;
   }
+
 
 
 }
