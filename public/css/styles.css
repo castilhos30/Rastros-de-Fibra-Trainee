@@ -30,8 +30,7 @@ body{
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 5% 12% 0% 12%;
-
+  padding: 5% 12% 0% 9%;
 }
 
 .baixopostindividual{
@@ -55,7 +54,12 @@ img{
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-right: 15% ;
+  margin-right: 10%;
+}
+
+.botaosetaindividual i{
+  color: #F5F5F5;
+  font-size: 30px;
 }
 
 .autorpostindividual{
@@ -211,7 +215,9 @@ img{
   font-weight: 200;
 }
 
-
+.botaosetaindividual{
+  margin-right: 8%;
+}
 
 
 
@@ -287,8 +293,12 @@ img{
   .comentariocompleto{
     padding: 2px 15px;
   }
-
-
+  .botaosetaindividual i{
+    font-size: 15px;
+  }
+    .cimapostindividual{
+  padding: 5% 12% 0% 5%;
+  }
 }
 
 
@@ -363,8 +373,13 @@ img{
   .comentariocompleto{
     padding: 2px 15px;
   }
+  .botaosetaindividual i{
+    font-size: 20px;
+  }
 
-
+  .cimapostindividual{
+  padding: 5% 12% 0% 7%;
+  }
 
 }
 
