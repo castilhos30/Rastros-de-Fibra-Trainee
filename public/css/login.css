@@ -1,0 +1,101 @@
+body{
+    background-color: #0D0F11;
+    margin-top: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #f5f5f5;
+    font-family: "Archivo Black";
+}
+.login{
+    padding: 10px;
+    gap: 10px;
+    height: 70vh ;
+    width: 100vh;
+    background-color: rgba(255, 255, 255, 0.829);
+    
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background: linear-gradient(180deg, #0C1A27, #0D0F11);
+    
+}
+.login-login{
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+.visual{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+}
+#fundo-academia{
+    width: 100%;
+    height: 100%;
+}
+.logo-login{
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 10px;
+}
+.login-caixa-texto{
+    gap: 30px;
+    padding: 10px;
+    justify-content: left;
+    align-items: center;
+}
+.login-introducao{
+    align-items: center;
+    justify-content: left;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+}
+.login-inputs{
+    gap: 60px;
+    justify-content: left;
+    align-items: center;
+}
+.login-aviso{
+    align-items: center;
+    justify-content: center;
+}
+.login-botao{
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    padding-top: 60px;
+}
+.login-titulo{
+    justify-content: left;
+    font-size: 24px;
+    color: #f5f5f5;
+}
+.login-descricao{
+    color: #c0c0c0;
+}
+a{
+    color: #05AC4B;
+}
+h3{
+    margin: 0px;
+}
+input{
+    background-color: rgba(127, 255, 212, 0);
+    border: none;
+}
+#div-email{
+    border-bottom: 1px;
+    border-color: #c0c0c0;
+    border-style: solid;
+}
