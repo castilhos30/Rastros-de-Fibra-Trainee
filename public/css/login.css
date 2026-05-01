@@ -19,7 +19,6 @@ body{
     justify-content: left;
     align-items: center;
     background: linear-gradient(180deg, #0C1A27, #0D0F11);
-    
 }
 .login-login{
     box-sizing: border-box;
@@ -132,7 +131,7 @@ i{
     color: #c0c0c0;
     font-size: 16px;
 }
-#home{
+.home,#homecel{
     font-family: 'Oswald';
     display: flex;
     align-items: center;
@@ -144,4 +143,36 @@ i{
     position: absolute;
     margin: 10px;
     font-size: 16px;
+}
+#homecel{
+    display: none !important;
+    z-index: 0;
+    position: relative;
+}
+/* Responsividade para celular */
+@media screen and (max-width:430px) {
+    body{
+        margin: auto;
+        
+    }
+    .login{
+        flex-direction: column;
+        height: 100vh;
+        padding-bottom: 0;
+        padding-top: 0;
+        background: linear-gradient(180deg, #0C1A27, #0D0F11);
+    }
+    .visual{
+        display: none !important;
+    }
+    .login-login{
+        width: 100%;
+    }
+    #homecel{
+        width: 100%;
+        font-size: 20px;
+        display: flex !important;
+        justify-content: right;
+    }
+
 }
