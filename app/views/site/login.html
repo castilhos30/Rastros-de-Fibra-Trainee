@@ -11,6 +11,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="login">
@@ -31,26 +39,22 @@
                 </div>
                 <div class="login-inputs">
                     <form action="action_page.php" method="post">
-                    <div class="login-email">
-                        <label for = "email">Informe seu email</label><br>
-                        <div id="div-email"><i class="bi bi-envelope"></i><input type="text" placeholder= "Email" name="uname" required></div>
-
-                    </div>
-                    <div class="login-senha">
-
-                    </div>
-                </form>
-                </div>
-                <div class="login-aviso">
-
-                </div>
-                <div class="login-botao">
-
-                </div>
+                        <div class="login-email">
+                            <label for = "email">Informe seu email</label><br>
+                            <div id="div-email"><i class="bi bi-envelope"></i><input type="text" placeholder= "Email" name="email" required></div>
+                        </div>
+                        <div class="login-senha">
+                            <label for = "senha">Informe sua senha</label><br>
+                            <div id="div-senha"><i class="bi bi-lock"></i><input type="password" placeholder= "Senha" name="email" required> <i class="bi bi-eye-slash"></i></div>
+                        </div>
+                        <div class="login-botao">
+                            <button id="login" type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>            
             </div>
         </div>
-        <div class="visual"><img id="fundo-academia" src="../../../public/assets/fundo-academia.jpg"></div>
+        <div class="visual"> <button id="home"><i class="bi bi-arrow-left"></i>Home</button><img id="fundo-academia" src="../../../public/assets/fundo-academia.jpg"></div>
     </div>
-     
 </body>
 </html>
