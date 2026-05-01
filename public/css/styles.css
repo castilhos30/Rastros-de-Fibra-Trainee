@@ -20,7 +20,6 @@ body{
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(to bottom, rgb(59, 59, 64, 0.2), rgb(66, 70, 74, 0.2));
-  padding: 5% 12% 5% 12%;
   border-radius: 10px;
   font-family: "Montserrat", sans-serif;
   
@@ -31,6 +30,16 @@ body{
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 5% 12% 0% 12%;
+
+}
+
+.baixopostindividual{
+  padding: 2% 12% 5% 12%;
+}
+
+img{
+  width: 100%;
 }
 
 .botaoeautorindividual{
@@ -46,7 +55,7 @@ body{
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
+  margin-right: 15% ;
 }
 
 .autorpostindividual{
