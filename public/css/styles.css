@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+  background-color: #0C1014;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  gap:20px;
+  font-family: "Archivo Black", sans-serif;
+}
+
+.cimafooter{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+  
+}
+
+.imagemlogofooter{
+   width: 150px;
+}
+
+.redessociaisfooter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:0px;
+}
+
+.iconeredessociaisfooter{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+}
+
+
+.textoredessociais{
+  font-size: 22px;
+}
+
+.imagemratofooter{
+  width: 250px;
+}
+
+.iconesredessociaisfooter i{
+  font-size: 22px;
+}
+
+.linhafooter{
+  width: 95%;
+  min-height: 0.2px;
+  background-color: rgba(224, 224, 224, 0.26);
+}
+
+.baixofooter{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 92%;
+}
+
+.mvvfooter{
+  width: 25%;
+  text-align: center;
+}
+
+.mvvfooter h1{
+  font-size: 24px;
+}
+
+.mvvfooter p{
+  font-family: "Montserrat", sans-serif;
+  font-size:14px;
+}
+
+/* rresponsividade para celular */
+
+@media((min-width: 0px ) and (max-width: 425px)){
+
+  .cimafooter{
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .imagemratofooter{
+      width: 200px;
+      order: 1;
+  }
+
+  .textoredessociais{
+    font-size: 20px;
+  }
+   .imagemlogofooter{
+    width: 100px;
+  }
+  .redessociaisfooter{
+    gap:0px;
+  }
+  .iconesredessociaisfooter i{
+    font-size: 20px;
+  }
+
+  .iconesredessociaisfooter{
+    gap:1px;
+  }
+  .baixofooter{
+    flex-direction: column;
+  }
+  .mvvfooter{
+    width: 70%;
+  }
+  
+
+
+}
+
+/* rresponsividade para tablet */
+
+@media((min-width: 426px) and (max-width: 768px)){
+  .imagemratofooter{
+      width: 150px;
+  }
+
+  .textoredessociais{
+    font-size: 15;
+  }
+
+  .imagemlogofooter{
+    width: 100px;
+  }
+
+  .iconesredessociaisfooter i{
+    font-size: 15px;
+  }
+  
+  .mvvfooter{
+    width: 30%;
+  }
+
+  .mvvfooter h1{
+    font-size: 20px;
+  } 
+
+  .mvvfooter p{
+    font-size:10px;
+  }
+  .cimafooter{
+    justify-content: space-evenly;
+  }
+
+}
