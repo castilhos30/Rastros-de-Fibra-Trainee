@@ -17,21 +17,27 @@ body{
 }
 
 main{
-    max-width: 900px;
+    max-width: screen;
     margin: 40px, 0;
-    padding: 0 20px;
+    padding: 0 10px;
     font-size: 1.5rem;
 }
 
 #hero{
-    padding: 80px; /*navebar*/
+    padding: 10px; /*navebar*/
     margin-bottom: 40px;
     line-height: 1;
-    padding-left: 10%;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
 
 #maintitulo{
     font-family: 'Archivo Black';
+    font-size: 70px;
     color: var(--color-white);
 }
     
@@ -52,6 +58,20 @@ main{
     color: var(--color-white);
 }
 
-#lermais.hover{
+#lermais:hover{
     background-color: var(--color-navy);
 }
+
+img{
+    width: 50%;
+    height: 70%;
+}
+
+/*.linhalanding{
+    background-color: #05AC4B;
+    width: 150px;
+    height: 80px;
+    display: flex;
+
+}
+*/
