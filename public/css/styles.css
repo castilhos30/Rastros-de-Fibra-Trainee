@@ -1,0 +1,57 @@
+:root{
+    --color-green: #05AC4B;
+    --color-ink-black: #0C1A27;
+    --color-white: #f5f5f5;
+    --color-prussian: #0A243D;
+    --color-navy: #073968;
+
+    --color-background:var(--color-ink-black);
+}
+
+body{
+    font-family: Arial, sans-serif, 'Montserrat', 'Archivo Black';
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    color: var(--color-white);
+}
+
+main{
+    max-width: 900px;
+    margin: 40px, 0;
+    padding: 0 20px;
+    font-size: 1.5rem;
+}
+
+#hero{
+    padding: 80px; /*navebar*/
+    margin-bottom: 40px;
+    line-height: 1;
+    padding-left: 10%;
+}
+
+#maintitulo{
+    font-family: 'Archivo Black';
+    color: var(--color-white);
+}
+    
+#maindesc{
+    font-family: 'Montserrat';
+    font-style: italic;
+    color:var(--color-green);
+}
+
+#lermais{
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    background-color: var(--color-green);
+    color: var(--color-white);
+}
+
+#lermais.hover{
+    background-color: var(--color-navy);
+}
