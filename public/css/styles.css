@@ -10,23 +10,24 @@
 
 body{
     font-family: Arial, sans-serif, 'Montserrat', 'Archivo Black';
-    margin: 0;
     padding: 0;
+    margin: auto;
+    width: 100%;
     background-color: var(--color-background);
     color: var(--color-white);
+    overflow-x: hidden;
 }
 
 main{
-    max-width: screen;
-    margin: 0;
+    width: 100%;
     padding: 0;
-    font-size: 1.5rem;
+    margin: auto;
 }
 
 .hero{
     margin-bottom: 40px;
     line-height: 1;
-    padding-left: 5%;
+    padding-left: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -34,31 +35,40 @@ main{
 }
 
 .textoslanding{
-    padding-right: 35%;
-
+    padding-left: 11%;
+    width: 100%;
+    margin-top: -160px;
 }
 
 .maintitulo{
     font-family: 'Archivo Black';
-    font-size: 70px;
+    font-size: 80px;
     color: var(--color-white);
 }
     
 .maindesc{
+    width: 400px;
+    font-size: 32px;
     font-family: 'Montserrat';
     font-style: italic;
     color:var(--color-green);
 }
 
+.botaolermais{
+    padding-top: 30px;
+}
+
 .lermais{
-    font-size: 18px;
+    font-size: 25px;
+    font-weight: bold;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     font-family: 'Montserrat';
     background-color: var(--color-green);
     color: var(--color-white);
+    transition-duration: 0.3s;
 }
 
 .lermais:hover{
@@ -66,29 +76,56 @@ main{
 }
 
 img{
-    width: 95%;
+    width: 100%;
     height: auto;
     display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
 }
 
 .linhalanding{
     position: absolute;
-    right: -27.843px;
-    bottom: -137.5px;
+    right: 200px;
+    bottom: -50px;
+    z-index: 1;
+}
+
+.linhalanding2{
+    position: absolute;
+    right: 60.529px;
+    bottom: -210px;
     z-index: 1;
 }
 
 .lado-direito-landing{
     display: flex;
     width: 100%;
+    padding-right: 7%;
 }
 
-/*.elipselanding{
+.teste{
+    height: 1000px;
+    background-color: var(--color-ink-black);
+}
+
+.elipselanding{
+    filter: blur(60px);
     width: 386px;
-    height: 918px;
+    height: 1070px;
     position: absolute;
     right: -286px;
     bottom: -70px;
     border-radius: 918px;
-    background: linear-gradient(180deg, rgba(209, 218, 227, 0.39) 0.01%, rgba(101, 132, 160, 0.50) 15.87%, var(--color-navy));
-}*/
+    background: linear-gradient(180deg, rgba(4, 36, 68, 0.39) 0.01%, rgba(5, 34, 59, 0.5) 15.87%, var(--color-navy));
+}
+
+.elipselanding2{
+    filter: blur(60px);
+    width: 386px;
+    height: 1070px;
+    position: absolute;
+    left: -286px;
+    bottom: -70px;
+    border-radius: 918px;
+    background: linear-gradient(180deg, rgba(4, 36, 68, 0.39) 0.01%, rgba(5, 34, 59, 0.5) 15.87%, var(--color-navy));
+}
