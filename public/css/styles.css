@@ -37,9 +37,6 @@ body{
   padding: 2% 12% 5% 12%;
 }
 
-img{
-  width: 100%;
-}
 
 .botaoeautorindividual{
   display: flex;
@@ -94,14 +91,21 @@ img{
   width: 100%;
 }
 
+
 .imagempostidividual{
-  border-radius: 10px;
+  border-radius: 1px;
   max-height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 650px;
 }
 .descricaopostindividual{
     font-size: 24px;
     text-align: justify;
     font-weight: 300;
+    hyphens: auto;
 }
 
 .datapostindividual{
@@ -206,13 +210,13 @@ img{
 }
 
 .nomeusuariocomentario{
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .textocomentario{
-  font-size: 14px;
-  font-weight: 200;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .botaosetaindividual{
@@ -229,7 +233,10 @@ img{
 
 @media((min-width: 0px) and (max-width: 425px)){
   .imagempostidividual{
-    height: auto;
+    height: 250px;
+  }
+  img{
+  width: 100%;
   }
   .data-texto{
     font-size: 14px;
