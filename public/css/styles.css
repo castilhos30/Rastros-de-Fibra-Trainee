@@ -18,13 +18,12 @@ body{
 
 main{
     max-width: screen;
-    margin: 40px, 0;
-    padding: 0 10px;
+    margin: 0;
+    padding: 0;
     font-size: 1.5rem;
 }
 
-#hero{
-    padding: 10px; /*navebar*/
+.hero{
     margin-bottom: 40px;
     line-height: 1;
     padding-left: 5%;
@@ -34,20 +33,24 @@ main{
     align-items: center;
 }
 
+.textoslanding{
+    padding-right: 35%;
 
-#maintitulo{
+}
+
+.maintitulo{
     font-family: 'Archivo Black';
     font-size: 70px;
     color: var(--color-white);
 }
     
-#maindesc{
+.maindesc{
     font-family: 'Montserrat';
     font-style: italic;
     color:var(--color-green);
 }
 
-#lermais{
+.lermais{
     font-size: 18px;
     padding: 10px 20px;
     border: none;
@@ -58,20 +61,34 @@ main{
     color: var(--color-white);
 }
 
-#lermais:hover{
+.lermais:hover{
     background-color: var(--color-navy);
 }
 
 img{
-    width: 50%;
-    height: 70%;
-}
-
-/*.linhalanding{
-    background-color: #05AC4B;
-    width: 150px;
-    height: 80px;
+    width: 95%;
+    height: auto;
     display: flex;
-
 }
-*/
+
+.linhalanding{
+    position: absolute;
+    right: -27.843px;
+    bottom: -137.5px;
+    z-index: 1;
+}
+
+.lado-direito-landing{
+    display: flex;
+    width: 100%;
+}
+
+/*.elipselanding{
+    width: 386px;
+    height: 918px;
+    position: absolute;
+    right: -286px;
+    bottom: -70px;
+    border-radius: 918px;
+    background: linear-gradient(180deg, rgba(209, 218, 227, 0.39) 0.01%, rgba(101, 132, 160, 0.50) 15.87%, var(--color-navy));
+}*/
