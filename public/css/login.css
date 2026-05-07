@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 body{
     color: #f5f5f5;
     margin: 0px;
@@ -7,9 +10,9 @@ body{
     justify-content: center;
     align-items: center;
     font-family: "Archivo Black";
+
 }
 .login{
-    box-sizing: border-box;
     padding: 10px;
     gap: 10px;
     width: 90% ;
@@ -23,25 +26,18 @@ body{
     background: linear-gradient(180deg, #0C1A27, #0D0F11);
 }
 .login-login{
-    box-sizing: border-box;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 2%;
+    padding-bottom: 10%;
     padding-left: 10px;
     padding-right: 10px;
     width: 50%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: self-start;
     height: 100%;
     flex-direction: column;
 }
-.visual{
-    width: 50%;
-    display: flex;
-    justify-content: right;
-    align-items: top;
-    height: 100%; 
-}
+
 .login-logo,.login-caixa-texto{
     width: 100%;
     justify-content: center;
@@ -51,6 +47,20 @@ body{
     border-radius: 8px;
     width: 100%;
     height: 100%;
+}
+.visual{
+    width: 50%;
+    height: 100%; 
+    position: relative;
+}
+.visual::after{
+    content: '';
+    background-color: #00ff6a; 
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+    mix-blend-mode: multiply;
+    pointer-events: none;
 }
 .logo-login{
     display: flex;
@@ -96,6 +106,7 @@ body{
 }
 a{
     color: #05AC4B;
+    font-weight: bold;
 }
 h3{
     margin: 0px;
@@ -110,7 +121,6 @@ input{
     color: #c0c0c0;
 }
 #div-email, #div-senha{
-    padding: 1%;
     width: 100%;
     border-bottom: 1px;
     border-bottom-color: #c0c0c0;
@@ -133,23 +143,19 @@ i{
     color: #c0c0c0;
     font-size: 16px;
 }
-.home,#homecel{
+.bi-eye-slash{
+    font-size: 24px;
+}
+.home{
+    float: left;
     font-family: 'Oswald';
     display: flex;
     align-items: center;
-    background-color: #0C1A27;
+    background-color: #0c1a2700;
     color:#c0c0c0;
     border: none;
     border-radius: 4px;
-    z-index: 2;
-    position: absolute;
-    margin: 10px;
-    font-size: 16px;
-}
-#homecel{
-    display: none !important;
-    z-index: 0;
-    position: relative;
+    font-size: 28px;
 }
 /* Responsividade para celular */
 @media screen and (max-width:431px) {
@@ -157,6 +163,7 @@ i{
         margin: auto;
     }
     .login{
+        border-radius: 0px;
         flex-direction: column;
         height: 100vh;
         padding-bottom: 0;
@@ -170,13 +177,15 @@ i{
     .login-login{
         width: 100%;
     }
-    #homecel{
+    .home{
         width: 100%;
-        font-size: 20px;
         display: flex !important;
-        justify-content: right;
+        justify-content: left;
     }
     .login-botao,#login{
         width: 100%;
+    }
+    .login-botao{
+        padding: 5%;
     }
 }
