@@ -1,29 +1,51 @@
-.archivo-black-regular {
-  font-family: "Archivo Black", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
 body{
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   margin: 0px;
   font-family: 'Archivo';
-  width: 100%;
   color: #F5F5F5;
-}
-.conteudo{
   width: 100%;
   background: linear-gradient(rgba(12, 26, 39, 0.75), rgba(12, 26, 39, 0.75)),url("../assets/Posts-fundo.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-.posts-pesquisa,form{
-  position: relative;
+.conteudo{
+  display: inherit;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+form{
   width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.posts-barra-pesquisa{
+  display: flex;
+  width: 50%;
+  background-color: #F5F5F5;
+  border-radius: 50px;
+  justify-content: left;
+  align-items: center;
+  padding: 10px;
 }
 .posts-placeholder{
-  position: absolute;
+  display: flex;
+  align-items: center;
+  color: #0C1A27;
+  font-weight: lighter;
+  font-size: 24px;
 }
 input{
+  box-sizing: border-box;
+  width: 100%;
   border: 0px;
-  background-color: #F5F5F5;
-  border-radius: 4px;
+  background-color: #0c1a2700;
+  outline: 0;
+  flex: 1;
+  min-width: 0;
 }
