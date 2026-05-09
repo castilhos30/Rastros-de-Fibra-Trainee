@@ -1,7 +1,7 @@
 body{
   padding: 10px;
   display: flex;
-  box-sizing: border-box;
+  box-sizing: border-box; /* evita problemas de transbordar */
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +9,7 @@ body{
   font-family: 'Archivo';
   color: #F5F5F5;
   width: 100%;
-  background: linear-gradient(rgba(12, 26, 39, 0.75), rgba(12, 26, 39, 0.75)),url("../assets/Posts-fundo.jpg");
+  background: linear-gradient(rgba(12, 26, 39, 0.75), rgba(12, 26, 39, 0.75)),url("../assets/Posts-fundo.jpg"); /* o gradiente antes faz o overlay funcionar */
   background-repeat: no-repeat;
   background-size: cover;
   gap: 20px;
@@ -18,7 +18,7 @@ body{
 .conteudo{
   padding: 10px;
   display: flex;
-  justify-content: space-evenly ;
+  justify-content: space-evenly;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 90px;
@@ -37,6 +37,7 @@ form{
   gap: 10px;
 }
 .posts-barra-pesquisa{
+  box-sizing: border-box;
   display: flex;
   width: 50%;
   background-color: #F5F5F5;
@@ -124,11 +125,16 @@ input{
   color: #F5F5F5;
   border-radius: 50%;
   display: flex;
-  width: clamp(60px, 17%, 90px);
-  aspect-ratio: 1/1;
+  width: clamp(60px, 17%, 90px); /*minimo, calculo, max*/
+  aspect-ratio: 1/1; /*Proporção!!!*/
   padding: 0;
   border: none;
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
+}
+@media screen and (max-width: 431px){
+  .posts-barra-pesquisa{
+    width: clamp(350px, 80%, 391px);
+  }
 }
