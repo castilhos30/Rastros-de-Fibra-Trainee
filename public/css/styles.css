@@ -1,5 +1,48 @@
+:root {
+    --azul-escuro: #1A1D29;
+    --azul-mais-claro: #2A2D3A;
+    --azul-mais-cinza: #232630;
+}
+
 body {
-    background-color: #1A1D29;
+    background-color: var(--azul-escuro);
     color: white;
     font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
+
+h1 {
+    font-size: 20px;
+}
+
+.tabelaposts {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.tabelaposts table{
+    border-collapse: collapse;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 40px;
+}
+
+.tabelaposts thead{
+    background-color: var(--azul-mais-cinza); 
+}
+
+.tabelaposts tbody{
+    background-color: var(--azul-mais-claro);
+}
+
+.tabelaposts ul {
+    list-style-type: none;
+}
+
