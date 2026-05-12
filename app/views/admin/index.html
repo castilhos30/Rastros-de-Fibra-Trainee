@@ -10,35 +10,37 @@
     <link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
-    <section>
-        <h1>Lista de Posts</h1>
-    </section>
-    <section>
-        <h1>**NAVBAR**</h1>
-    </section>
-    <div class="tabelaposts">
-    <table>
-        <thead>
-            <tr>
-                <th>Post ID</th>
-                <th>Data</th>
-                <th>Título</th>
-                <th>Autor</th>
-                <th>Interações</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody id="tabelapostsbody">
-        </tbody>
-    </table>
+    <div class="lista-posts-base">
+        <div>
+            <h1>Lista de Posts</h1>
+        </div>
+        <div class="navbar">
+            <input type="text" placeholder="Pesquisar...">
+             <button class="botao-atual">Criar Publicação</button>
+        </div>
+        <table class="tabelaposts">
+            <thead>
+                <tr>
+                    <th class="th-left">Post ID</th>
+                    <th>Data</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Interações</th>
+                    <th class="th-right">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelapostsbody">
+            </tbody>
+        </table>
+        
+        <div>
+            <button class="sem-mais-paginas">Anterior</button>
+            <button class="botao-atual">1</button>
+            <button>2</button>
+            <button>Próximo</button>
+        </div>
+
     </div>
-    
-    <footer>
-        <button>Anterior</button>
-        <button>1</button>
-        <button>2</button>
-        <button>Próximo</button>
-    </footer>
     <script src="/public/js/index.js"></script>
 </body>
 </html>
