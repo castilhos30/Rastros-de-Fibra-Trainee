@@ -6,7 +6,7 @@ function resetarTabela() {
     let novoTexto = "";
     for (let i = 1; i <= 5; i++) {
         novoTexto += "<tr>";
-        novoTexto += "<td>" + i + "</td>";
+        novoTexto += "<td " + (i == 5 ? "class=td-left" : "") + ">" + i + "</td>";
         novoTexto += "<td>xx/xx/xxxx</td>";
         novoTexto += "<td>aaaaaaaaaaaa</td>";
         novoTexto += "<td>Guilherme Gonçalves Perissé</td>";
@@ -14,22 +14,22 @@ function resetarTabela() {
             <td>
                 <ul>
                 <li>
-                    <img src="/public/assets/like.svg" alt="">
+                    <img src="/public/assets/like.svg" alt=""> 0
                 </li>
                 <li>
-                    <img src="/public/assets/dislike.svg" alt="">
+                    <img src="/public/assets/dislike.svg" alt=""> 0
                 </li>
                 <li>
-                    <img src="/public/assets/comment.svg" alt="">
+                    <img src="/public/assets/comment.svg" alt=""> 0
                 </li>
                 <li>
-                    <img src="/public/assets/share.svg" alt="">
+                    <img src="/public/assets/share.svg" alt=""> 0
                 </li>
                 </ul>
             </td>
         `;
         novoTexto += `
-            <td>
+            <td ` + (i == 5 ? "class=td-right" : "") + `>
                 <ul>
                 <li>
                     <img src="/public/assets/eye.svg" alt="">
