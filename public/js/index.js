@@ -32,13 +32,19 @@ function resetarTabela() {
             <td ` + (i == 5 ? "class=td-right" : "") + `>
                 <ul>
                 <li>
+                <button>
                     <img src="/public/assets/eye.svg" alt="">
+                </button>
                 </li>
                 <li>
+                <button>
                     <img src="/public/assets/pencil.svg" alt="">
+                </button>
                 </li>
                 <li>
+                <button>
                     <img src="/public/assets/trash.svg" alt="">
+                </button>
                 </li>
                 </ul>
             </td>

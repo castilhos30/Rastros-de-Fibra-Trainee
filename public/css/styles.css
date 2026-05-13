@@ -70,13 +70,16 @@ body {
 }
 
 .lista-posts-base button {
-    background-color: var(--azul-escuro);
-    color: white;
+    background-color: var(--azul-mais-claro);
     border: 0px;
     white-space: nowrap;
 }
 
 .navbar button {
+    background-color: var(--azul-escuro);
+    color: white;
+    border: 0px;
+    white-space: nowrap;
     padding: 8px 24px 8px 24px;
 }
 
@@ -116,5 +119,9 @@ body {
 }
 
 .final-botoes button{
+    background-color: var(--azul-escuro);
+    color: white;
+    border: 0px;
+    white-space: nowrap;
     padding: 7px 14px 7px 14px;
 }
