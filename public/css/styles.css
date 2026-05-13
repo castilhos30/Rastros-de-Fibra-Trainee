@@ -83,10 +83,17 @@ body {
     padding: 8px 24px 8px 24px;
 }
 
+.container-tabela {
+    margin: auto;
+    width: 100%;
+    overflow-x: auto;
+}
+
 .tabelaposts {
     border-collapse: collapse;
     /*height: 689px;*/
     width: 100%;
+    table-layout: fixed;
 }
 
 .tabelaposts thead{
