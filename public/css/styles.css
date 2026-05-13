@@ -31,7 +31,7 @@ main{
 
 .sidebar{
    background-color: var(--color-background);
-   min-height: 87vh;
+   min-height: 96vh;
    min-width: 15vw;
    display: flex;
    flex-direction: column;
@@ -180,46 +180,4 @@ font-family: 'Montserrat';
    transition: all 0.3s;
    margin: 2rem;
    font-size: 20px;
-}
-#button-logout:hover{
-   display: flex;
-   gap: 16px;
-   padding: 16px 20px;
-   border-radius: 12px;
-   background: var(--color-green);
-   box-shadow: 0px 4px 4px 0px #0b072b85;
-}
-
-
-.closed-sidebar .item-description{
-   width: 0;
-   overflow: hidden;
-   opacity: 0;
-   visibility: hidden;
-}
-
-
-.closed-sidebar #perfil-sidebar img{
-   display: none;
-}
-
-
-.closed-sidebar #perfil-sidebar{
-   justify-content: center;
-}
-
-
-.closed-sidebar .item-sidebar a{
-   display: flex;
-   justify-content: center;
-}
-
-
-.closed-sidebar #button-logout .item-description{
-   display: none;
-}
-
-
-.closed-sidebar .toggle-sidebar{
-   transform: rotate(180deg);
 }
