@@ -157,6 +157,21 @@ i{
     border-radius: 4px;
     font-size: 28px;
 }
+.home:hover{
+    transition: 0.3s;
+    background-color: #1D3E5E;
+    cursor: pointer;
+}
+.login-hover:hover{
+    transition: 0.3s;
+    color: #B4E4C8;
+    cursor: pointer;
+}
+#login:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #B4E4C8;
+}
 /* Responsividade para celular */
 @media screen and (max-width:431px) {
     body{
