@@ -193,7 +193,7 @@ i{
         width: 100%;
     }
     .home{
-        width: 100%;
+        width: 25%;
         display: flex !important;
         justify-content: left;
     }
