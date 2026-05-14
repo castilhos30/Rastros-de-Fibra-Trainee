@@ -36,6 +36,11 @@ form{
   height: clamp(60px, 17%, 90px);
   gap: 10px;
 }
+.botao-transicao:hover{
+  transform: scale(1.01);
+  transition: 0.3s ease-in-out;
+  background-color: #B4E4C8;
+}
 .posts-barra-pesquisa{
   box-sizing: border-box;
   display: flex;
@@ -92,6 +97,13 @@ input{
   width: 100%;
   height: 50%;
   border-radius: 5%;
+}
+.cursor-pointer:hover{
+  cursor: pointer;
+}
+.card:hover{
+  scale: 1.01;
+  transition: 0.3s ease-in-out;
 }
 .posts-interacoes,.posts-textos{
   gap: 10px;
