@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .lista-posts-base {
@@ -29,6 +30,8 @@ body {
     padding-left: 50px;
 
     gap: 24px;
+
+    width: 90%;
 }
 
 .lista-posts-base h1 {
@@ -92,7 +95,8 @@ body {
     border-collapse: collapse;
     /*height: 689px;*/
     width: 100%;
-    table-layout: fixed;
+    overflow-x: auto;
+    table-layout: auto;
 }
 
 .tabelaposts thead {

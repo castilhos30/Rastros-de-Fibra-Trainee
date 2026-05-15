@@ -9,7 +9,7 @@ function resetarTabela() {
         novoTexto += "<td " + (i == 5 ? "class=td-left" : "") + ">" + i + "</td>";
         novoTexto += "<td>xx/xx/xxxx</td>";
         novoTexto += "<td>aaaaaaaaaaaa</td>";
-        novoTexto += "<td>Guilherme Gonçalves Perissé</td>";
+        novoTexto += "<td>Heitor Tetzner Pereira</td>";
         novoTexto += `
             <td>
                 <ul>
