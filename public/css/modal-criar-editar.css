@@ -1,6 +1,8 @@
 :root {
     --azul-back-escuro: #1A1D29;
     --cinza-back-azulado: #2A2D3A;
+    --cinza-claro: #99A1AF;
+    --verde-claro: #10B981;
 }
 
 body {
@@ -23,7 +25,12 @@ body {
 
     gap: 24px;
     padding: 17px;
-    width: 33%;
+    min-width: 33%;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: bold;
 }
 
 form {
@@ -36,6 +43,17 @@ form {
 
     gap: 24px;
     width: 100%;
+
+    color: var(--cinza-claro);
+    font-size: 14px;
+}
+
+.formcampos input {
+    background-color: var(--azul-back-escuro);
+    border: 0px;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 12px 10px 12px;
 }
 
 .formbotoes {
@@ -43,4 +61,23 @@ form {
     justify-content: center;
     gap: 24px;
     padding: 24px 24px 0px 24px;
+}
+
+.formbotoes input,
+button {
+    border-style: solid;
+    padding: 8px 32px 8px 32px;
+    border-radius: 8px;
+}
+
+.formbotoes input {
+    background-color: var(--verde-claro);
+    border-color: white;
+    color: white;
+}
+
+.formbotoes button {
+    background-color: var(--cinza-back-azulado);
+    border-color: var(--verde-claro);
+    color: var(--verde-claro);
 }
