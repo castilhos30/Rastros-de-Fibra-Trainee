@@ -23,10 +23,9 @@ body {
     flex-direction: column;
     align-items: center;
 
-    width: 1422px;
 
     padding-top: 30px;
-    padding-right : 50px;
+    padding-right: 50px;
     padding-left: 50px;
 
     gap: 24px;
@@ -60,7 +59,7 @@ body {
     padding: 10px;
 }
 
-.searchbar input{
+.searchbar input {
     color: var(--cinza-nav);
     background-color: var(--azul-mais-claro);
     border: 0px;
@@ -96,18 +95,19 @@ body {
     table-layout: fixed;
 }
 
-.tabelaposts thead{
-    background-color: var(--azul-mais-cinza); 
+.tabelaposts thead {
+    background-color: var(--azul-mais-cinza);
     height: 49px;
     width: 100%;
 }
 
-.tabelaposts tbody{
+.tabelaposts tbody {
     width: 100%;
     background-color: var(--azul-mais-claro);
 }
 
-.tabelaposts td, .tabelaposts th {
+.tabelaposts td,
+.tabelaposts th {
     text-align: center;
 }
 
@@ -125,7 +125,7 @@ body {
     border-radius: 10px;
 }
 
-.final-botoes button{
+.final-botoes button {
     background-color: var(--azul-escuro);
     color: white;
     border: 0px;
