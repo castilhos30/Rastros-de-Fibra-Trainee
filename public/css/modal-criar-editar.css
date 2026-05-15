@@ -1,0 +1,46 @@
+:root {
+    --azul-back-escuro: #1A1D29;
+    --cinza-back-azulado: #2A2D3A;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--azul-back-escuro);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.painel {
+    background-color: var(--cinza-back-azulado);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+
+    gap: 24px;
+    padding: 17px;
+    width: 33%;
+}
+
+form {
+    width: 100%;
+}
+
+.formcampos {
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+    width: 100%;
+}
+
+.formbotoes {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 24px 24px 0px 24px;
+}
