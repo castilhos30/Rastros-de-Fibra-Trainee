@@ -1,75 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../../../public/css/styles.css">
-   <script src="https://kit.fontawesome.com/e523d6de13.js" crossorigin="anonymous"></script>"
-   <title>Sidebar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <script src="https://kit.fontawesome.com/654def639f.js" crossorigin="anonymous"></script>
+    <title>Treinamento Sidebar</title>
 </head>
-<style>
-   @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-   @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-</style>
 <body>
-   <aside class="sidebar" id="sidebar">
-       <div class="top-sidebar">
-           <div id="perfil-sidebar">
-               <img src="../../../public/assets/perfil.png" alt="foto de perfil do usuário">
-              
-               <div class="texto-sidebar">
-                   <p id="welcome-sidebar">Bem Vindo(a),</p>
-                   <p id="nome-user-sidebar">Usuário</p>
-               </div>
-               <i class="fa-solid fa-chevron-left toggle-sidebar"></i>
-           </div>
-           <div class="linhadivider">
-               <img src="../../../public/assets/linhadivider.png"
-           </div>
-           <nav class="content-sidebar">
-               <ul>
-                   <li class="item-sidebar">
-                       <a href="#">
+    
+    <aside class="sidebar" id="sidebar">
+        <div class="top-sidebar">
+            <div id="perfil-sidebar">
+                <img src="/public/assets/perfil.png" alt="Foto de perfil do usuário">
+
+                <div id="texto-sidebar">
+                    <h1 id="welcome-sidebar">Bem vindo(a),</h1>
+                    <h2 id="welcome-user-sidebar">Usuário</h2>
+                </div>
+
+                <i class="fa-solid fa-chevron-left toggle-sidebar"></i>
+            </div>
+            <nav class="content-sidebar">
+
+                <div id="imagem-sidebar">
+                    <img src="/public/assets/linhadivider.png" alt="Imagem de divisão da sidebar">
+                </div>
+                <ul>
+                    <li class="item-sidebar">
+                        <a href="#">
                             <i class="fa-solid fa-house"></i>
-                           <span class="item-description">Página Inicial</span>
-                       </a>
-                   </li>
-                   <li class="item-sidebar active">
-                       <a href="#">
-                           <i class="fa-solid fa-chart-column"></i>
-                           <span class="item-description">Dashboard</span>
-                       </a>
-                   </li>
-                   <li class="item-sidebar">
-                       <a href="#">
-                           <i class="fa-solid fa-pen-to-square"></i>
-                           <span class="item-description">Postagens</span>
-                       </a>
-                   </li>
-                   <li class="item-sidebar">
-                       <a href="#">
-                           <i class="fa-solid fa-user-pen"></i>
-                           <span class="item-description">Usuários</span>
-                       </a>
-                   </li>
-               </ul>
-           </nav>
-       </div>
-       <div class="bottom-sidebar">
-           <div class="linhadivider2">
-               <img src="../../../public/assets/linhadivider.png"
-           </div>
-           <div class="logout-sidebar">
-               <button type="button" id="button-logout">
-                   <img src="../../../public/assets/logout.png" alt="ícone logout">
-                   <span class="item-description">Logout</span>
-               </button>
-           </div>
-       </div>
-   </aside>
-   <main>
-       Dashboard
-   </main>
+                            <span class="item-description">Página Inicial</span>
+                        </a>
+                    </li>
+                    <li class="item-sidebar active">
+                        <a href="#">
+                            <i class="fa-solid fa-chart-column"></i>
+                            <span class="item-description">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="item-sidebar">
+                        <a href="#">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <span class="item-description">Publicações</span>
+                        </a>
+                    </li>
+                    <li class="item-sidebar">
+                        <a href="#">
+                            <i class="fa-solid fa-user-pen"></i>
+                            <span class="item-description">Usuários</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="logout-sidebar">
+            <button type="button" id="button-logout">
+                <i class="fa-solid fa-right-from-bracket" id="icon-logout"></i>
+                <span class="item-description">Logout</span>
+            </button>
+        </div>
+    </aside>
+    <main>
+        Dashboard
+    </main>
 </body>
-   <script src="../../../public/js/index.js"></script>
+    <script src="/public/js/index.js"></script>
 </html>
