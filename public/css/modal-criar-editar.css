@@ -8,6 +8,7 @@
 body {
     width: 100vw;
     height: 100vh;
+    margin: 0;
     background-color: var(--azul-back-escuro);
     color: white;
     display: flex;
@@ -59,7 +60,7 @@ form {
 .formbotoes {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: 48px;
     padding: 24px 24px 0px 24px;
 }
 
@@ -67,7 +68,8 @@ form {
 button {
     border-style: solid;
     padding: 8px 32px 8px 32px;
-    border-radius: 8px;
+    border-radius: 4px;
+    min-width: 25%;
 }
 
 .formbotoes input {
