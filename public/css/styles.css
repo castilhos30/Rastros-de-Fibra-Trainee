@@ -136,7 +136,7 @@ td{
 .botaoanterior{
   background: none;
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -183,6 +183,35 @@ td{
     color: white;
 }
 
+/* responsividade celular*/
 
+@media((min-width: 0px) and (max-width: 450px)){
 
+  .titulolistauser{
+    font-size: 20px;
+  }
 
+  .criarusuario{
+    font-size: 12px;
+}
+
+  .pesquisarusuario{
+    font-size: 10px;
+    flex: 1;
+  }
+
+  .barradepesquisa  {
+    flex: 1;
+  }
+
+  .barradepesquisa i {
+    font-size: 10px;
+    
+  }
+
+  .botaocriaruser{
+    height: auto;
+    width: max-content;
+  }
+
+}
