@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    
+    <div class="filtro" id="filtro"></div>
+
     <div class="titulolistauser"> Lista de Usuários </div>
     <div class="segundadiv">
         <div class="barradepesquisa">
@@ -35,10 +38,16 @@
                     <td>Guilherme Perissé</td>
                     <td>perisse@email.com</td>
                     <td> 
-                        <div class="iconestabela">
-                            <i class="fa-regular fa-eye"></i>
-                            <i class="fa-regular fa-pen-to-square"></i>
-                            <i class="fa-regular fa-trash-can"></i>
+                        <div class="iconestabela">                            
+                            <button type="button" class="btn-acao btn-visualizar" onclick="abrirModal('modalvisualizar')" data-id="1">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn-acao btn-editar" data-id="1">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>                           
+                            <button type="button" class="btn-acao btn-excluir" data-id="1">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
                         </div>    
                     </td>
                 </tr>
@@ -48,9 +57,15 @@
                     <td>perisse@email.com</td>
                     <td> 
                         <div class="iconestabela">
-                            <i class="fa-regular fa-eye"></i>
-                            <i class="fa-regular fa-pen-to-square"></i>
-                            <i class="fa-regular fa-trash-can"></i>
+                            <button type="button" class="btn-acao btn-visualizar" onclick="abrirModal('modalvisualizar')" data-id="2">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn-acao btn-editar" data-id="2">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>                           
+                            <button type="button" class="btn-acao btn-excluir" data-id="2">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
                         </div>    
                     </td>
                 </tr>
@@ -60,9 +75,15 @@
                     <td>perisse@email.com</td>
                     <td> 
                         <div class="iconestabela">
-                            <i class="fa-regular fa-eye"></i>
-                            <i class="fa-regular fa-pen-to-square"></i>
-                            <i class="fa-regular fa-trash-can"></i>
+                            <button type="button" class="btn-acao btn-visualizar" onclick="abrirModal('modalvisualizar')" data-id="3">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn-acao btn-editar" data-id="3">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>                           
+                            <button type="button" class="btn-acao btn-excluir" data-id="3">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
                         </div>    
                     </td>
                 </tr>
@@ -72,9 +93,15 @@
                     <td>perisse@email.com</td>
                     <td> 
                         <div class="iconestabela">
-                            <i class="fa-regular fa-eye"></i>
-                            <i class="fa-regular fa-pen-to-square"></i>
-                            <i class="fa-regular fa-trash-can"></i>
+                            <button type="button" class="btn-acao btn-visualizar" onclick="abrirModal('modalvisualizar')" data-id="4">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn-acao btn-editar" data-id="4">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>                           
+                            <button type="button" class="btn-acao btn-excluir" data-id="4">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
                         </div>    
                     </td>
                 </tr>
@@ -85,9 +112,15 @@
                     
                     <td> 
                         <div class="iconestabela">
-                            <i class="fa-regular fa-eye"></i>
-                            <i class="fa-regular fa-pen-to-square"></i>
-                            <i class="fa-regular fa-trash-can"></i>
+                            <button type="button" class="btn-acao btn-visualizar" onclick="abrirModal('modalvisualizar')" data-id="5">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn-acao btn-editar" data-id="5">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>                           
+                            <button type="button" class="btn-acao btn-excluir" data-id="5">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
                         </div>
                         
                     </td>
@@ -111,5 +144,37 @@
 
 
 
+    <!-- Modal Visualizar -->
+    <div class="painelcontainer" id="modalvisualizar">
+        <h1>Informações do Usuário</h1>
+        <form>
+            <div class="visualizarusuario">
+                <div class="campovisualizar">
+                    <label for="usuario-id">ID:</label>
+                    <input type="text" id="usuario-id" value="1" readonly>
+                </div>
+                <div class="campovisualizar">
+                    <label for="usuario-nome">Nome:</label>
+                    <input type="text" id="usuario-nome" value="Guilherme Perissé" readonly>
+                </div>
+
+                <div class="campovisualizar">
+                    <label for="usuario-email">Email:</label>
+                    <input type="email" id="usuario-email" value="perisse@email.com" readonly>
+                </div>
+
+                <div class="campovisualizar">
+                    <label for="usuario-senha">Senha:</label>
+                    <input type="password" id="usuario-senha" value="12345678" readonly>
+                </div>
+            </div>
+            <div class="botaofecharvisualizar">
+                <button class="fecharmodalvisualizar" onclick="fecharModal('modalcontainer')">Fechar</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="../../../public/js/index.js"></script>
 </body>
 </html>

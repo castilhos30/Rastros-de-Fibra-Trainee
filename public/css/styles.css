@@ -123,6 +123,16 @@ td{
   color: #d9d9d9c9;
 }
 
+.btn-acao {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 17px; 
+    color: #d9d9d9c9; 
+    transition: color 0.2s ease;
+}
+
 .paginacao{
   display: flex;
   align-items: center;
@@ -215,3 +225,96 @@ td{
   }
 
 }
+
+.filtro{
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.5;
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  
+}
+
+/* Modal Visualizar */
+
+.painelcontainer{
+  background-color: #2A2D3A;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  gap: 24px;
+  padding: 17px;
+  min-width: 33%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  
+}
+
+h1{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Archivo Black", sans-serif;
+}
+
+form {
+    width: 100%;
+}
+
+.visualizarusuario {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  color: #99A1AF;;
+  font-size: 14px;
+}
+
+.campovisualizar{
+  display: flex;
+  flex-direction: column;  
+  gap: 10px;
+}
+
+.campovisualizar input {
+    background-color: #1A1D29;;
+    border: 0px;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 12px 10px 12px;
+    height: 30px;
+    font-size: 16px;
+}
+
+.botaofecharvisualizar{
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fecharmodalvisualizar{
+    border-style: solid;
+    border-color: #10B981;
+    background-color: #2A2D3A;
+    color: #10B981;
+    border-radius: 8px;
+    height: 36px;
+    width: 108px;
+    cursor: pointer;
+    
+}
+
+
+.fecharmodalvisualizar:hover{
+    background-color: #10B981;
+    color: white;
+}
+
+
