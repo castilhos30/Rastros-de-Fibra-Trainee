@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuarios</title>
     <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/public/css/modal-criar-editar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    
+
     <div class="filtro" id="filtro"></div>
 
     <div class="titulolistauser"> Lista de Usuários </div>
     <div class="segundadiv">
         <div class="barradepesquisa">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" class="pesquisarusuario" placeholder="Pesquisar..."></input>                         
-        </div>    
-        <button class="botaocriaruser">
-            <h3 class="criarusuario"> Criar Usuário </h3>   
+            <input type="text" class="pesquisarusuario" placeholder="Pesquisar..."></input>
+        </div>
+        <button class="botaocriaruser" onclick="abrirModal('modalcriar')">
+            <h3 class="criarusuario"> Criar Usuário </h3>
         </button>
     </div>
     <div class="containertebela">
@@ -29,108 +34,16 @@
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Ações</th>
-                    
+
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Guilherme Perissé</td>
-                    <td>perisse@email.com</td>
-                    <td> 
-                        <div class="iconestabela">                            
-                            <button type="button" class="btn-acao btn-visualizar" onclick="abrirModal('modalvisualizar')" data-id="1">
-                                <i class="fa-regular fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn-acao btn-editar" data-id="1">
-                                <i class="fa-regular fa-pen-to-square"></i>
-                            </button>                           
-                            <button type="button" class="btn-acao btn-excluir" data-id="1">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                        </div>    
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Guilherme Perissé</td>
-                    <td>perisse@email.com</td>
-                    <td> 
-                        <div class="iconestabela">
-                            <button type="button" class="btn-acao btn-visualizar" onclick="abrirModal('modalvisualizar')" data-id="2">
-                                <i class="fa-regular fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn-acao btn-editar" data-id="2">
-                                <i class="fa-regular fa-pen-to-square"></i>
-                            </button>                           
-                            <button type="button" class="btn-acao btn-excluir" data-id="2">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                        </div>    
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Guilherme Perissé</td>
-                    <td>perisse@email.com</td>
-                    <td> 
-                        <div class="iconestabela">
-                            <button type="button" class="btn-acao btn-visualizar" onclick="abrirModal('modalvisualizar')" data-id="3">
-                                <i class="fa-regular fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn-acao btn-editar" data-id="3">
-                                <i class="fa-regular fa-pen-to-square"></i>
-                            </button>                           
-                            <button type="button" class="btn-acao btn-excluir" data-id="3">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                        </div>    
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Guilherme Perissé</td>
-                    <td>perisse@email.com</td>
-                    <td> 
-                        <div class="iconestabela">
-                            <button type="button" class="btn-acao btn-visualizar" onclick="abrirModal('modalvisualizar')" data-id="4">
-                                <i class="fa-regular fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn-acao btn-editar" data-id="4">
-                                <i class="fa-regular fa-pen-to-square"></i>
-                            </button>                           
-                            <button type="button" class="btn-acao btn-excluir" data-id="4">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                        </div>    
-                    </td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Guilherme Perissé</td>
-                    <td>perisse@email.com</td>
-                    
-                    <td> 
-                        <div class="iconestabela">
-                            <button type="button" class="btn-acao btn-visualizar" onclick="abrirModal('modalvisualizar')" data-id="5">
-                                <i class="fa-regular fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn-acao btn-editar" data-id="5">
-                                <i class="fa-regular fa-pen-to-square"></i>
-                            </button>                           
-                            <button type="button" class="btn-acao btn-excluir" data-id="5">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                        </div>
-                        
-                    </td>
-                </tr>
+            <tbody id="tabelaBody">
             </tbody>
         </table>
     </div>
     <div class="paginacao">
         <button class="botaoanterior">
-        <i class="fa-solid fa-chevron-left"></i> Anterior
+            <i class="fa-solid fa-chevron-left"></i> Anterior
         </button>
         <div class="numeracaodaspag">
             <button class="numeropagina ativo">1</button>
@@ -140,6 +53,52 @@
         <button class="botaoproximo">
             Próximo <i class="fa-solid fa-chevron-right"></i>
         </button>
+    </div>
+
+
+
+    <!-- Modal Criar -->>
+    <div class="modal-criar-editar">
+        <div class="painel" id="modalcriar">
+            <h1>Criação de Usuário</h1>
+            <form>
+                <div class="formcampos">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="name" id="name">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="senha">
+                </div>
+                <div class="formbotoes">
+                    <input type="submit" value="Criar">
+                    <button onclick="fecharModal('modalcriar')">Fechar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Modal Editar -->>
+    <div class="modal-criar-editar">
+        <div class="painel" id="modaleditar">
+            <h1>Edição de Usuário</h1>
+            <form>
+                <div class="formcampos">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="name" id="name">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="senha">
+                </div>
+                <div class="formbotoes">
+                    <input type="submit" value="Editar">
+                    <button onclick="fecharModal('modaleditar')">Fechar</button>
+                </div>
+            </form>
+        </div>
     </div>
 
 
@@ -177,4 +136,5 @@
 
     <script src="../../../public/js/index.js"></script>
 </body>
+
 </html>

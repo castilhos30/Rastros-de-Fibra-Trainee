@@ -5,18 +5,7 @@
     --verde-claro: #10B981;
 }
 
-body {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    background-color: var(--azul-back-escuro);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.painel {
+.modal-criar-editar .painel {
     background-color: var(--cinza-back-azulado);
     font-family: 'Inter', sans-serif;
     display: flex;
@@ -27,18 +16,25 @@ body {
     gap: 24px;
     padding: 17px;
     min-width: 33%;
+    display: none;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
 }
 
-h1 {
+.modal-criar-editar h1 {
     font-size: 20px;
     font-weight: bold;
 }
 
-form {
+.modal-criar-editar form {
     width: 100%;
 }
 
-.formcampos {
+.modal-criar-editar .formcampos {
     display: flex;
     flex-direction: column;
 
@@ -49,7 +45,7 @@ form {
     font-size: 14px;
 }
 
-.formcampos input {
+.modal-criar-editar .formcampos input {
     background-color: var(--azul-back-escuro);
     border: 0px;
     border-radius: 8px;
@@ -57,28 +53,28 @@ form {
     padding: 10px 12px 10px 12px;
 }
 
-.formbotoes {
+.modal-criar-editar .formbotoes {
     display: flex;
     justify-content: center;
     gap: 48px;
     padding: 24px 24px 0px 24px;
 }
 
-.formbotoes input,
-button {
+.modal-criar-editar .formbotoes input,
+.modal-criar-editar .formbotoes button {
     border-style: solid;
     padding: 8px 32px 8px 32px;
     border-radius: 4px;
     min-width: 25%;
 }
 
-.formbotoes input {
+.modal-criar-editar .formbotoes input {
     background-color: var(--verde-claro);
     border-color: white;
     color: white;
 }
 
-.formbotoes button {
+.modal-criar-editar .formbotoes button {
     background-color: var(--cinza-back-azulado);
     border-color: var(--verde-claro);
     color: var(--verde-claro);
