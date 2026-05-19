@@ -32,7 +32,7 @@ function resetaTabela() {
                                 onclick="abrirModal('modaleditar')" data-id="${i}">
                                 <i class="fa-regular fa-pen-to-square"></i>
                             </button>
-                            <button type="button" class="btn-acao btn-excluir" data-id="${i}">
+                            <button type="button" class="btn-acao btn-excluir" onclick="abrirModal('modalexcluir')" data-id="${i}">
                                 <i class="fa-regular fa-trash-can"></i>
                             </button>
                         </div>
