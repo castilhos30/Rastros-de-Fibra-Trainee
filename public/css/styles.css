@@ -11,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    max-width: 100%;
 }
 
 .lista-posts-base {
@@ -135,4 +135,31 @@ body {
     border: 0px;
     white-space: nowrap;
     padding: 7px 14px 7px 14px;
+}
+
+
+
+.filtro {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+
+}
+
+.base-modal {
+    background-color: var(--verde-botao);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    min-width: 33%;
+    min-height: 33%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
