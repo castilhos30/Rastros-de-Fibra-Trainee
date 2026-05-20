@@ -12,6 +12,10 @@ body{
     width: 100%;
     font-family: 'Montserrat', sans-serif;
 }
+form{
+    height: 100%;
+    width: 100%;
+}
 .lista-posts-id, .lista-posts-autor, .lista-posts-data{
     display: flex;
     flex-direction: row;
@@ -37,7 +41,6 @@ body{
     justify-content: space-around;
     padding: 30px;
     flex-direction: column;
-    gap: auto;
 }   
 .lista-posts-botoes{
     width: 100%;
@@ -59,7 +62,7 @@ body{
 }
 .voltar{
     background-color: transparent;
-    border: 5px, solid, #05AC4B;
+    border: 5px solid #05AC4B;
 }
 .lista-posts-imagem{
     width: clamp(50px, 100%, 400px);
@@ -108,4 +111,40 @@ h5{
 }
 .hidden{
     display: none ;
+}
+.lista-posts-botao:hover{
+    background-color: #B4E4C8;
+}
+.voltar:hover{
+        background-color: transparent;
+        border: 5px solid #B4E4C8;
+}
+@media screen and (max-width: 431px) {
+    form{
+        height: 100%;
+    }
+    body{
+        height: 100%;
+    }
+    .lista-posts-modal{
+        height: 90vh;
+        justify-content: center;
+        padding: 0px;
+        flex-direction: column;
+        aspect-ratio: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .lista-posts-conteudo{
+        gap: 10%;
+        height: 100%;
+    }
+    .lista-posts-botoes{
+        justify-content: center;
+        gap: 10%;
+    }
+    .lista-posts-conteudo, .lista-posts-identificacao{
+        padding: 15px;
+        font-size: 20px;
+    }
 }
