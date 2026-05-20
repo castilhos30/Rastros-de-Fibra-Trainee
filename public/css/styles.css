@@ -1,8 +1,10 @@
 :root {
     --azul-escuro: #1A1D29;
     --azul-mais-claro: #2A2D3A;
+    --azul-hover: #7c8bcd;
     --azul-mais-cinza: #232630;
     --verde-botao: #10B981;
+    --verde-hover: #00ffaa;
     --cinza-nav: #99A1AF;
 }
 
@@ -57,8 +59,6 @@ body {
 }
 
 .searchbar img {
-    width: 18px;
-    height: 14px;
     padding: 10px;
 }
 
@@ -77,12 +77,20 @@ body {
     white-space: nowrap;
 }
 
+.lista-posts-base button:hover {
+    background-color: var(--azul-hover);
+}
+
 .navbar button {
     background-color: var(--azul-escuro);
     color: white;
     border: 0px;
     white-space: nowrap;
     padding: 8px 24px 8px 24px;
+}
+
+.navbar button:hover {
+    background-color: var(--verde-hover);
 }
 
 .container-tabela {
@@ -129,12 +137,17 @@ body {
     border-radius: 10px;
 }
 
+.lista-posts-base .botao-atual:hover {
+    background-color: var(--verde-hover);
+}
+
 .final-botoes button {
     background-color: var(--azul-escuro);
     color: white;
     border: 0px;
     white-space: nowrap;
     padding: 7px 14px 7px 14px;
+    border-radius: 10px;
 }
 
 
