@@ -12,6 +12,9 @@ function fecharModal(idModal) {
     filtro.style.display = "none";
 }
 
+function funcao(){
+    console.log("funcionoiu");
+}
 
 // Apenas pra resetar a tabela, sem precisar de copiar e colar no html
 resetarTabela();
@@ -47,12 +50,12 @@ function resetarTabela() {
             <td ` + (i == 5 ? "class=td-right" : "") + `>
                 <ul>
                 <li>
-                <button>
+                <button type="button" class="btn btn-visualizar" data-id="1" onclick="abrirModal('modalVisualizar')">
                     <img src="/public/assets/eye.svg" alt="">
                 </button>
                 </li>
                 <li>
-                <button>
+                <button onclick="abrirModal('lista-posts-editar')">
                     <img src="/public/assets/pencil.svg" alt="">
                 </button>
                 </li>
