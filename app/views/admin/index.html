@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Posts</title>
     <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/public/css/modal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://googleapis.com" rel="stylesheet">
@@ -19,7 +20,7 @@
         </div>
         <div class="navbar">
             <div class="searchbar">
-                <img src="/public/assets/lupa.svg" alt="">
+                <img src="/public/assets/lupa.svg" alt="lupa de pesquisa">
                 <input type="text" placeholder="Pesquisar...">
             </div>
             <button class="botao-atual">Criar Publicação</button>
@@ -54,6 +55,30 @@
         </div>
 
     </div>
+
+    <!--Modal Visualização-->
+    <form>
+    <div class="lista-posts-modal lista-posts-visualizar">
+        <div class="lista-posts-identificacao">
+            <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
+        </div>
+        <div class="lista-posts-conteudo">
+            <div class="lista-posts-titulo">
+                <h5>Título</h5>
+                <input type="text" class="input titulo" placeholder="Título" name="titulo">
+            </div>
+            <div class="lista-posts-descricao">
+                <h5>Descrição</h5>
+                <input type="text" class="input descricao" placeholder="Descrição" name="descricao">
+            </div>
+            <div class="lista-posts-botoes">
+            <button class="lista-posts-botao criar-post" >Criar post</button>
+            <button class="lista-posts-botao voltar" >Voltar</button>
+            </div>
+        </div>
+    </div>
+    </form>
+
     <script src="/public/js/index.js"></script>
 </body>
 
