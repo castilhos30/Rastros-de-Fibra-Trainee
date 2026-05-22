@@ -12,10 +12,6 @@ function fecharModal(idModal) {
     filtro.style.display = "none";
 }
 
-function funcao(){
-    console.log("funcionoiu");
-}
-
 // Apenas pra resetar a tabela, sem precisar de copiar e colar no html
 resetarTabela();
 function resetarTabela() {
