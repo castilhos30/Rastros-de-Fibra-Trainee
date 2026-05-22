@@ -197,6 +197,10 @@ body{
     margin: 20px;
 }
 
-
+@media (max-width: 768px){
+    .conteudo-dashboard{
+        flex-direction: column;
+    }
+}
 
 
