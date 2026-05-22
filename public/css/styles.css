@@ -150,7 +150,9 @@ body {
     border-radius: 10px;
 }
 
-
+.btn:hover{
+    cursor: pointer;
+}
 
 .filtro {
     width: 100vw;

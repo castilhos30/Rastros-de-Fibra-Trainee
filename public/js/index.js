@@ -55,12 +55,12 @@ function resetarTabela() {
                 </button>
                 </li>
                 <li>
-                <button onclick="abrirModal('lista-posts-editar')">
+                <button type="button" class="btn btn-editar" data-id="1" onclick="abrirModal('modalEditar')">
                     <img src="/public/assets/pencil.svg" alt="">
                 </button>
                 </li>
                 <li>
-                <button>
+                <button type="button" class="btn btn-visualizar" data-id="1">
                     <img src="/public/assets/trash.svg" alt="">
                 </button>
                 </li>
