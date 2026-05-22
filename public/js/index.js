@@ -56,7 +56,7 @@ function resetarTabela() {
                 </button>
                 </li>
                 <li>
-                <button type="button" class="btn btn-visualizar" data-id="1">
+                <button type="button" class="btn btn-excluir" data-id="1" onclick="abrirModal('modalExcluir')">
                     <img src="/public/assets/trash.svg" alt="">
                 </button>
                 </li>
