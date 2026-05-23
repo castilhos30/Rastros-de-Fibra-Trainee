@@ -85,15 +85,15 @@ img{
 
 .linhalanding{
     position: absolute;
-    right: 200px;
-    bottom: -50px;
+    right: 0px;
+    bottom: -150px;
     z-index: 1;
 }
 
 .linhalanding2{
     position: absolute;
-    right: 60.529px;
-    bottom: -210px;
+    right: -20px;
+    bottom: -240px;
     z-index: 1;
 }
 
@@ -128,4 +128,14 @@ img{
     bottom: -70px;
     border-radius: 918px;
     background: linear-gradient(180deg, rgba(4, 36, 68, 0.39) 0.01%, rgba(5, 34, 59, 0.5) 15.87%, var(--color-navy));
+}
+
+@media (max-width: 768px){
+    .elipselanding{
+        right: -20%;
+        bottom: 200%;
+        position: relative;
+        z-index: -1;
+    }
+
 }
