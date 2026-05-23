@@ -128,10 +128,6 @@ body {
     padding: 0;
 }
 
-.lista-posts-base .sem-mais-paginas {
-    color: black;
-}
-
 .lista-posts-base .botao-atual {
     background-color: var(--verde-botao);
     border-radius: 10px;

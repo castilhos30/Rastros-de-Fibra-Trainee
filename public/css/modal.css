@@ -36,6 +36,7 @@ form{
 }
 .scroll{
     overflow-y: auto;
+    width: 100%;
 }
 h3{
     flex-shrink: 0;
@@ -156,8 +157,9 @@ h5{
     gap: 10%;
 }
 .lista-posts-visualizar{
-    padding: 5%;
-    justify-content: center;
+    padding: 3%;
+    gap: 2%;
+    align-items: center;
 }   
 @media screen and (max-width: 431px) {
     .lista-posts-modal{
