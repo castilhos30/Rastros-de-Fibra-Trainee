@@ -12,6 +12,7 @@ form{
     display: flex;
     flex-direction: row;
 }
+
 .invisivel{
     background-color: transparent;
     border-style: none;
@@ -39,6 +40,7 @@ form{
 h3{
     flex-shrink: 0;
     font-weight: bold;
+    justify-self: center;
 }
 .lista-posts-conteudo, .lista-posts-identificacao{
     font-size: 40px;
@@ -70,12 +72,12 @@ h3{
     border-radius: 6px;
     width: clamp(90px,30%,240px);
     height: clamp(45px,5%,50px);
-    background-clip: padding-box;
     padding: 1%;
 }
-.voltar{
+.voltar, .excluir{
     background-color: transparent;
     color: #05AC4B;
+    height: 100%;
     box-shadow: inset 0 0 0 3px #05AC4B;
 }
 .lista-posts-imagem{
@@ -132,7 +134,7 @@ h5{
 .lista-posts-botao:hover{
     background-color: #B4E4C8;
 }
-.voltar:hover{
+.voltar:hover, .excluir:hover{
         background-color: transparent;
         box-shadow: inset 0 0 0 3px #B4E4C8;
 }
@@ -141,7 +143,7 @@ h5{
     height: 40vh;
     align-items: center;
     justify-content: center;
-    gap: 10%;
+    gap: 2vh;
     width: clamp(200px, 30%, 400px);
 }
 #modalExcluir img{
@@ -153,18 +155,13 @@ h5{
     scale: 0.8;
     gap: 10%;
 }
+.lista-posts-visualizar{
+    padding: 5%;
+    justify-content: center;
+}   
 @media screen and (max-width: 431px) {
-    form{
-        height: 100%;
-    }
-    body{
-        height: 100%;
-    }
     .lista-posts-modal{
-        height: 90vh;
-        justify-content: center;
-        padding: 0px;
-        flex-direction: column;
+        width: 80vw;
         aspect-ratio: auto;
         overflow-y: auto;
         overflow-x: hidden;
@@ -176,5 +173,10 @@ h5{
     .lista-posts-conteudo, .lista-posts-identificacao{
         padding: 15px;
         font-size: 20px;
+    }
+    #modalExcluir{
+        width: 80vw;
+        height: auto;
+        padding: 2vh;
     }
 }
