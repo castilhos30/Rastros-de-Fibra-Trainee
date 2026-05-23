@@ -31,7 +31,7 @@
                     <tr>
                         <th class="th-left">Post ID</th>
                         <th>Data</th>
-                        <th>Título:</th>
+                        <th>Título</th>
                         <th>Autor</th>
                         <th>Interações</th>
                         <th class="th-right">Ações</th>
@@ -58,22 +58,48 @@
 
     <!--Modal Visualização-->
     <form>
-    <div class="lista-posts-modal lista-posts-visualizar" id="modalVisualizar">
-        <h3>Informações do Post</h3>
-        <div class="scroll">
-            <div class="lista-posts-identificacao">
-                <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
-                <div class="lista-posts-informacoes">
-                    <div class="lista-posts-id">
-                        <h5>ID:</h5><input type="text" class="input" name="id" disabled>
-                    </div>
-                    <div class="lista-posts-autor">
-                        <h5>Autor:</h5><input type="text" class="input" name="autor" disabled>
-                    </div>
-                    <div class="lista-posts-data">
-                        <h5>Criação:</h5><input type="text" class="input" name="data" disabled>
+        <div class="lista-posts-modal lista-posts-visualizar" id="modalVisualizar">
+            <h3>Informações do Post</h3>
+            <div class="scroll">
+                <div class="lista-posts-identificacao">
+                    <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
+                    <div class="lista-posts-informacoes">
+                        <div class="lista-posts-id">
+                            <h5>ID:</h5><input type="text" class="input" name="id" disabled>
+                        </div>
+                        <div class="lista-posts-autor">
+                            <h5>Autor:</h5><input type="text" class="input" name="autor" disabled>
+                        </div>
+                        <div class="lista-posts-data">
+                            <h5>Criação:</h5><input type="text" class="input" name="data" disabled>
+                        </div>
                     </div>
                 </div>
+                <div class="lista-posts-conteudo">
+                    <div class="lista-posts-titulo">
+                        <h5>Título:</h5>
+                        <input type="text" class="input titulo" placeholder="Título" name="titulo">
+                    </div>
+                    <div class="lista-posts-descricao">
+                        <h5>Descrição:</h5>
+                        <input type="text" class="input descricao" placeholder="Descrição" name="descricao">
+                    </div>
+                </div>
+            </div>
+            <div class="lista-posts-botoes">
+                <button class="lista-posts-botao abrir-post">Abrir post</button>
+                <button class="lista-posts-botao voltar">Voltar</button>
+            </div>
+        </div>
+        </div>
+    </form>
+
+    <!--Modal Criação-->
+    <form>
+        <div class="lista-posts-modal lista-posts-visualizar" id="modalCriar">
+            <h3>Criação de Post</h3>
+            <div class="lista-posts-identificacao">
+                <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
             </div>
             <div class="lista-posts-conteudo">
                 <div class="lista-posts-titulo">
@@ -84,63 +110,37 @@
                     <h5>Descrição:</h5>
                     <input type="text" class="input descricao" placeholder="Descrição" name="descricao">
                 </div>
-        </div>
-        </div>
-            <div class="lista-posts-botoes">
-            <button class="lista-posts-botao abrir-post" >Abrir post</button>
-            <button class="lista-posts-botao voltar" >Voltar</button>
+                <div class="lista-posts-botoes">
+                    <button class="lista-posts-botao criar-post">Criar post</button>
+                    <button class="lista-posts-botao voltar">Voltar</button>
+                </div>
             </div>
         </div>
-    </div>
-    </form>
-
-    <!--Modal Criação-->
-    <form>
-    <div class="lista-posts-modal lista-posts-visualizar" id="modalCriar">
-        <h3>Criação de Post</h3>
-        <div class="lista-posts-identificacao">
-            <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
-        </div>
-        <div class="lista-posts-conteudo">
-            <div class="lista-posts-titulo">
-                <h5>Título:</h5>
-                <input type="text" class="input titulo" placeholder="Título" name="titulo">
-            </div>
-            <div class="lista-posts-descricao">
-                <h5>Descrição:</h5>
-                <input type="text" class="input descricao" placeholder="Descrição" name="descricao">
-            </div>
-            <div class="lista-posts-botoes">
-            <button class="lista-posts-botao criar-post" >Criar post</button>
-            <button class="lista-posts-botao voltar" >Voltar</button>
-            </div>
-        </div>
-    </div>
     </form>
 
     <!--Modal Edição-->
     <form>
-    <div class="lista-posts-modal lista-posts-visualizar" id="modalEditar">
-        <h3>Edição de Post</h3>
-        <div class="lista-posts-identificacao">
-            <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
+        <div class="lista-posts-modal lista-posts-visualizar" id="modalEditar">
+            <h3>Edição de Post</h3>
+            <div class="lista-posts-identificacao">
+                <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
             </div>
-        <div class="lista-posts-conteudo">
-            <div class="lista-posts-titulo">
-                <h5>Título:</h5>
-                <input type="text" class="input titulo" placeholder="Título" name="titulo">
-            </div>
-            <div class="lista-posts-descricao">
-                <h5>Descrição:</h5>
-                <input type="text" class="input descricao" placeholder="Descrição" name="descricao">
-            </div>
-            <div class="lista-posts-botoes">
-            <button class="lista-posts-botao salvar" >Salvar</button>
-            <button class="lista-posts-botao voltar" >Voltar</button>
+            <div class="lista-posts-conteudo">
+                <div class="lista-posts-titulo">
+                    <h5>Título:</h5>
+                    <input type="text" class="input titulo" placeholder="Título" name="titulo">
+                </div>
+                <div class="lista-posts-descricao">
+                    <h5>Descrição:</h5>
+                    <input type="text" class="input descricao" placeholder="Descrição" name="descricao">
+                </div>
+                <div class="lista-posts-botoes">
+                    <button class="lista-posts-botao salvar">Salvar</button>
+                    <button class="lista-posts-botao voltar">Voltar</button>
+                </div>
             </div>
         </div>
-    </div>
-    </form> 
+    </form>
 
     <form>
         <div class="lista-posts-modal lista-posts-visualizar" id="modalExcluir">
@@ -149,7 +149,7 @@
             <h5>Tem certeza que deseja excluir este post?</h5>
             <div class="lista-posts-botoes">
                 <button class="lista-posts-botao excluir">Excluir</button>
-                <button class="lista-posts-botao voltar" onclick="fecharModal('modalexcluir')" >Cancelar</button>
+                <button class="lista-posts-botao voltar" onclick="fecharModal('modalexcluir')">Cancelar</button>
             </div>
         </div>
     </form>
