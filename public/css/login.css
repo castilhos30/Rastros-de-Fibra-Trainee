@@ -30,6 +30,7 @@ body{
     padding-bottom: 10%;
     padding-left: 10px;
     padding-right: 10px;
+    gap: 5vh;
     width: 50%;
     display: flex;
     justify-content: left;
@@ -55,11 +56,11 @@ body{
 }
 .visual::after{
     content: '';
-    background-color: #00ff6a; 
+    /*background-color: #00ff6a; 
     position: absolute;
     inset: 0;
     opacity: 0.4;
-    mix-blend-mode: multiply;
+    mix-blend-mode: multiply;*/
     pointer-events: none;
 }
 .logo-login{
@@ -148,6 +149,7 @@ i{
 }
 .home{
     float: left;
+    gap: 1vh;
     font-family: 'Oswald';
     display: flex;
     align-items: center;
@@ -191,6 +193,7 @@ i{
     }
     .login-login{
         width: 100%;
+        gap: 10vh;
     }
     .home{
         width: 25%;
