@@ -31,7 +31,7 @@ main{
     background-repeat: no-repeat;
     background-position: top;
 
-    padding: 2% 10%;
+    padding: 10% 10% 30% 10%;
     margin: 0;
 
     display: flex;
@@ -78,6 +78,14 @@ main{
 .lermais:hover{
     background-color: var(--color-navy);
 }
+
+.carrossel-landing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
 
 @media (max-width: 768px){
 
@@ -136,6 +144,5 @@ main{
     .lermais{
         font-size: 1rem;
     }
-
 
 }
