@@ -65,13 +65,13 @@
                     <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
                     <div class="lista-posts-informacoes">
                         <div class="lista-posts-id">
-                            <h5>ID:</h5><input type="text" class="input" name="id" placeholder="ID" disabled>
+                            <h5>ID:</h5><input type="text" class="input" name="id" placeholder="ID" readonly>
                         </div>
                         <div class="lista-posts-autor">
-                            <h5>Autor:</h5><input type="text" class="input" name="autor" placeholder="Autor" disabled>
+                            <h5>Autor:</h5><input type="text" class="input" name="autor" placeholder="Autor" readonly>
                         </div>
                         <div class="lista-posts-data">
-                            <h5>Criação:</h5><input type="text" class="input" name="data" placeholder="Data de criação" disabled>
+                            <h5>Criação:</h5><input type="text" class="input" name="data" placeholder="Data de criação" readonly>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                 </div>
             </div>
                 <div class="lista-posts-botoes">
-                <button class="lista-posts-botao criar-post">Criar post</button>
+                <button type="submit" class="lista-posts-botao criar-post">Criar post</button>
                 <button class="lista-posts-botao voltar">Voltar</button>
                 </div>
             </div>
@@ -137,7 +137,7 @@
                 </div>
             </div>
                 <div class="lista-posts-botoes">
-                    <button class="lista-posts-botao salvar">Salvar</button>
+                    <button type="submit" class="lista-posts-botao salvar">Salvar</button>
                     <button class="lista-posts-botao voltar">Voltar</button>
                 </div>
         </div>
@@ -149,7 +149,7 @@
             <img src="../../../public/assets/ratoeira.png" alt="Rato pegando um queijo de uma ratoeira">
             <h5>Tem certeza que deseja excluir este post?</h5>
             <div class="lista-posts-botoes">
-                <button class="lista-posts-botao excluir">Excluir</button>
+                <button type="submit" class="lista-posts-botao excluir">Excluir</button>
                 <button class="lista-posts-botao voltar" onclick="fecharModal('modalexcluir')">Cancelar</button>
             </div>
         </div>
