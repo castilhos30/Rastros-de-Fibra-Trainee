@@ -10,45 +10,49 @@
 
 body{
     font-family: Arial, sans-serif, 'Montserrat', 'Archivo Black';
-    padding: 0;
-    margin: auto;
-    width: 100%;
     background-color: var(--color-background);
-    color: var(--color-white);
-    overflow-x: hidden;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
 }
 
 main{
-    width: 100%;
     padding: 0;
-    margin: auto;
+    margin: 0;
 }
 
 .hero{
-    margin-bottom: 40px;
-    line-height: 1;
-    padding-left: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    background: url(../../public/assets/fundo-pc.png);
+    
+    background-size: 101%;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    padding: 2% 10%;
+    margin: 0;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: center;   
 }
 
 .textoslanding{
-    padding-left: 11%;
     width: 100%;
-    margin-top: -160px;
 }
 
 .maintitulo{
     font-family: 'Archivo Black';
-    font-size: 80px;
+    font-size: 70px;
     color: var(--color-white);
 }
     
 .maindesc{
     width: 100%;
-    font-size: 32px;
+    font-size: 25px;
     font-family: 'Montserrat';
     font-style: italic;
     color:var(--color-green);
@@ -75,106 +79,63 @@ main{
     background-color: var(--color-navy);
 }
 
-img{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: flex-end;
-    flex-shrink: 0;
-}
-
-.linhalanding{
-    position: absolute;
-    right: 0px;
-    bottom: -150px;
-    z-index: 1;
-}
-
-.linhalanding2{
-    position: absolute;
-    right: -20px;
-    bottom: -240px;
-    z-index: 1;
-}
-
-.lado-direito-landing{
-    display: flex;
-    width: 100%;
-    padding-right: 7%;
-}
-
-.elipselanding{
-    filter: blur(60px);
-    width: 386px;
-    height: 1070px;
-    position: absolute;
-    right: -286px;
-    bottom: -70px;
-    border-radius: 918px;
-    background: linear-gradient(180deg, rgba(4, 36, 68, 0.39) 0.01%, rgba(5, 34, 59, 0.5) 15.87%, var(--color-navy));
-}
-
-.elipselanding2{
-    filter: blur(60px);
-    width: 386px;
-    height: 1070px;
-    position: absolute;
-    left: -286px;
-    bottom: -70px;
-    border-radius: 918px;
-    background: linear-gradient(180deg, rgba(4, 36, 68, 0.39) 0.01%, rgba(5, 34, 59, 0.5) 15.87%, var(--color-navy));
-}
-
 @media (max-width: 768px){
-    .elipselanding{
-        z-index: 100;
-        right: -100%;
-    }
-    
-    .elipselanding2{
-        z-index: 100;
-        left: -100%;
-    }
 
-    .textoslanding{
-        margin-top: 10%;
-        margin-left: 10%;
-    }
-    
-    .maintitulo{
-        font-size: 60px;
-    }
+    *{
+        overflow-x: hidden;
 
-    .maindesc{
-        font-size: 25px;
-    }
-    
-    .lermais{
-        font-size: 22px;
+        box-sizing: content-box;
+
+        margin: 0;
+        padding: 0;
     }
 
     .hero{
-        flex-direction: column;
+        background: url(../../public/assets/fundo-mobile.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
         width: 100%;
-        position: relative;
-        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: baseline;
+        align-items: center;
+    }
+    
+    main{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
     }
 
-    img{
-        margin-top: 0%;
-        z-index: -1;
+    .textoslanding{
+        text-align: center;
+        justify-self: start;
+        padding-bottom: 155%;
+        
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
     }
 
-    .linhalanding{
-        left: 20%;
-        bottom: -30%;
+    .textoslanding > *{
+        overflow: hidden;
+    }
+    
+    .maintitulo{
+        font-size: 2.6rem;
     }
 
-    .linhalanding2{
-        left: 36%;
-        bottom: -40%;
+    .maindesc{
+        font-size: 1.2rem;
     }
-
+    
+    .lermais{
+        font-size: 1rem;
+    }
 
 
 }
