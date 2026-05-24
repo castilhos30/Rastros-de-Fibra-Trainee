@@ -60,6 +60,12 @@ body{
     width: 7%;
 }
 
+.espaco-conteudo-dashboard{
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+}
+
 .espaço-graficos{
     background-color: var(--color-ink-black);
     display: column;
@@ -198,8 +204,96 @@ body{
 }
 
 @media (max-width: 768px){
+
+    #dash-texts{
+        font-size: 90%;
+    }
+
     .conteudo-dashboard{
+        flex-direction: row;
+    }
+
+    .textomain-dashboard{
+        height: fit-content;
+    }
+
+    .espaco-conteudo-dashboard{
         flex-direction: column;
+    }
+    
+    .espaço-graficos{
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .espaco-graf-usuarios{
+        width: 90%;
+        margin: 5%;
+        margin-bottom: -5%;
+    }
+
+    .i-dash{
+        margin: 10%;
+        font-size: 20px;
+    }
+
+    .espaço-analise{
+        width: fit-content; 
+    }
+
+    .mini-sidecontrol{
+        width: 82%;
+        height: 40%;
+        gap: 5%;
+    }
+
+    .side-title-dash{
+        margin: 10%;
+        margin-bottom: 5%;
+        margin-left: 0;
+    }
+
+    .hello-user-dash{
+        font-size: 15px;
+    }
+
+    .espaco-numeros-dash{
+        width: fit-content;
+        margin: 5%;
+        margin-top: 10%;
+        gap: 5%;
+    }
+
+    .espaco-user-dash{
+        width: fit-content;
+        height: 40%;
+    }
+
+    .i-uspost-dash{
+        margin: 5%;
+        font-size: 20px;
+    }
+
+    .botao-home-dash, .botao-sair-dash{
+        font-size: 90%;
+    }
+
+    .espaco-postagens-dash{
+        width: fit-content;
+        height: 40%;
+    }
+
+    #title-dashboard{
+        font-size: 150%;
+    }
+
+    .trending-posts-dash{
+        margin-bottom: 10%;
+    }
+    
+    .trending-dash-text{
+        font-size: 90%;
+        margin: 6%;
     }
 }
 
