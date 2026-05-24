@@ -54,12 +54,10 @@ header {
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
-  'wght' 100,
+  'wght' 200,
   'GRAD' 0,
   'opsz' 48;
   font-size: 48px;
-  transform: scale(2); 
-  display: none !important;
 }
 a{
     text-decoration: none;
@@ -70,6 +68,13 @@ a{
     text-decoration-thickness: 2px;
     text-decoration-color:  #05AC4B;
     transition: 0.3s;
+}
+#navbar-fechar, #navbar-abrir{
+    display: none;
+    transform: scale(2); 
+}
+#navbar-fechar{
+    font-size: 35px;
 }
 @media screen and (max-width:992px) {
     #navbar-menu{
@@ -85,7 +90,7 @@ a{
         width: 124px;
         height: 45px;
     }
-    .material-symbols-outlined{
-        display: flex !important;
+    #navbar-abrir{
+        display: flex ;
     }
 }
