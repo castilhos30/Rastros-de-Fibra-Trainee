@@ -64,13 +64,14 @@
 .modal-criar-editar .formbotoes button {
     border-style: solid;
     padding: 8px 32px 8px 32px;
-    border-radius: 4px;
-    min-width: 25%;
+    border-radius: 8px;
+    min-width: 20%;
+    cursor: pointer;
 }
 
 .modal-criar-editar .formbotoes input {
     background-color: var(--verde-claro);
-    border-color: white;
+    border-color: var(--verde-claro);
     color: white;
 }
 
