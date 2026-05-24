@@ -47,7 +47,7 @@ main{
 }
     
 .maindesc{
-    width: 400px;
+    width: 100%;
     font-size: 32px;
     font-family: 'Montserrat';
     font-style: italic;
@@ -55,7 +55,7 @@ main{
 }
 
 .botaolermais{
-    padding-top: 30px;
+    padding-top: 3%;
 }
 
 .lermais{
@@ -103,11 +103,6 @@ img{
     padding-right: 7%;
 }
 
-.teste{
-    height: 1000px;
-    background-color: var(--color-ink-black);
-}
-
 .elipselanding{
     filter: blur(60px);
     width: 386px;
@@ -132,10 +127,54 @@ img{
 
 @media (max-width: 768px){
     .elipselanding{
-        right: -20%;
-        bottom: 200%;
+        z-index: 100;
+        right: -100%;
+    }
+    
+    .elipselanding2{
+        z-index: 100;
+        left: -100%;
+    }
+
+    .textoslanding{
+        margin-top: 10%;
+        margin-left: 10%;
+    }
+    
+    .maintitulo{
+        font-size: 60px;
+    }
+
+    .maindesc{
+        font-size: 25px;
+    }
+    
+    .lermais{
+        font-size: 22px;
+    }
+
+    .hero{
+        flex-direction: column;
+        width: 100%;
         position: relative;
+        box-sizing: border-box;
+    }
+
+    img{
+        margin-top: 0%;
         z-index: -1;
     }
+
+    .linhalanding{
+        left: 20%;
+        bottom: -30%;
+    }
+
+    .linhalanding2{
+        left: 36%;
+        bottom: -40%;
+    }
+
+
 
 }
