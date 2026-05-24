@@ -87,6 +87,7 @@ body {
     border: 0px;
     white-space: nowrap;
     padding: 8px 24px 8px 24px;
+    cursor: pointer;
 }
 
 .navbar button:hover {
@@ -144,6 +145,7 @@ body {
     white-space: nowrap;
     padding: 7px 14px 7px 14px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .btn:hover{
