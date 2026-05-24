@@ -146,3 +146,17 @@ main{
     }
 
 }
+
+@media (max-width: 1024px){
+    .maintitulo{
+        font-size: 3rem;
+    }
+
+    .maindesc{
+        font-size: 1.5rem;
+    }
+    
+    .lermais{
+        font-size: 1.2rem;
+    }
+}
