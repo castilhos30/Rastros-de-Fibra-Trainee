@@ -8,6 +8,14 @@
     --color-background:var(--color-ink-black);
 }
 
+   *{
+
+        box-sizing: border-box;
+
+        margin: 0;
+        padding: 0;
+    }
+
 body{
     font-family: Arial, sans-serif, 'Montserrat', 'Archivo Black';
     background-color: var(--color-background);
@@ -207,18 +215,18 @@ main{
     background-repeat: no-repeat;
     background-position: center;
 
-    padding: 10% 10% 0% 10%;
-    margin: 0;
-
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;   
+    justify-content: end;
+
+    padding: 80px 40px;
 }
 
 .textos-sobrenos-landing{
-    padding-left: 60%;
-    padding-bottom: 30%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .sobrenos{
@@ -252,15 +260,6 @@ main{
 }
 
 @media (max-width: 768px){
-
-    *{
-        overflow-x: hidden;
-
-        box-sizing: content-box;
-
-        margin: 0;
-        padding: 0;
-    }
 
     .hero{
         background: url(../../public/assets/fundo-mobile.png);
@@ -368,14 +367,16 @@ main{
     }
 
     .sobre-nos-landing{
-        background-size: 101%;
         background: url(../../public/assets/fundo-mobile-sobrenos.png);
         background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        justify-content: start;
     }
 
     .textos-sobrenos-landing{
-        padding-left: 0;
-        padding-bottom: 140%;
+        width: 60%;
     }
 
     .sobrenos{
@@ -388,6 +389,7 @@ main{
         font-size: 15px;
         font-family: 'Montserrat';
         font-style: italic;
+
         color:var(--color-green);
     }
 
