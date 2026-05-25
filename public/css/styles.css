@@ -79,13 +79,177 @@ main{
     background-color: var(--color-navy);
 }
 
+.titulo-post-recentes{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    font-family: 'Archivo Black';
+    font-size: 24px;
+    padding: 20px;
+}
+
+/*CARROSSEL*/
+
 .carrossel-landing{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    padding-bottom: 100px;
 }
 
+.slider{
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slides{
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 25%;
+    position: relative;
+    transition: 2s;
+}
+
+.slide img{
+    width: 800px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.manual-navigation{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid var(--color-white);
+    padding: 6px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 20px;
+}
+
+.manual-btn:hover{
+    background-color: var(--color-white);
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+#radio4:checked ~ .first{
+    margin-left: -75%;
+}
+
+.navigation-auto div{
+    border: 2px solid #05AC4B;
+    padding: 6px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigation-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 20px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: var(--color-white);
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: var(--color-white);
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: var(--color-white);
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background-color: var(--color-white);
+}
+
+
+.sobre-nos-landing{
+    min-height: 100vh;
+    background: url(../../public/assets/fundo-pc-sobrenos.png);
+
+    background-size: 101%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    padding: 10% 10% 0% 10%;
+    margin: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;   
+}
+
+.textos-sobrenos-landing{
+    padding-left: 60%;
+    padding-bottom: 30%;
+}
+
+.sobrenos{
+    font-family: 'Archivo Black';
+    font-size: 70px;
+    color: var(--color-white);
+}
+
+.sobrenos-texto{    
+    width: 100%;
+    font-size: 25px;
+    font-family: 'Montserrat';
+    font-style: italic;
+    color:var(--color-green);
+}
+
+
+
+@media (max-width: 1024px){
+    .maintitulo{
+        font-size: 3rem;
+    }
+
+    .maindesc{
+        font-size: 1.5rem;
+    }
+    
+    .lermais{
+        font-size: 1.2rem;
+    }
+}
 
 @media (max-width: 768px){
 
@@ -144,19 +308,88 @@ main{
     .lermais{
         font-size: 1rem;
     }
-
-}
-
-@media (max-width: 1024px){
-    .maintitulo{
-        font-size: 3rem;
+    
+    .titulo-post-recentes{
+        overflow: hidden;
     }
 
-    .maindesc{
-        font-size: 1.5rem;
+    .slider{
+        width: 400px;
+        height: 200px;
+    }
+
+    .slides{
+        height: 200px;
+        display: flex;
+    }
+
+    .slide img{
+        width: 400px;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .manual-navigation{
+        position: absolute;
+        width: 400px;
+        margin-top: -20px;
+    }
+
+    .navigation-auto div{
+        border: 1px solid #05AC4B;
+        padding: 3px;
+        border-radius: 6px;
+    }
+
+    .navigation-auto{
+        position: absolute;
+        width: 400px;
+        margin-top: 180px;
+    }
+
+    .manual-btn{
+        border: 1px solid var(--color-white);
+        padding: 3px;
+        border-radius: 6px;
+    }
+
+    .manual-btn:not(:last-child){
+        margin-right: 10px;
+    }
+
+    .titulo-post-recentes{
+        font-size: 16px;
+        overflow-y: hidden;
     }
     
-    .lermais{
-        font-size: 1.2rem;
+    .navigation-auto div:not(:last-child){
+        margin-right: 10px;
     }
+
+    .sobre-nos-landing{
+        background-size: 101%;
+        background: url(../../public/assets/fundo-mobile-sobrenos.png);
+        background-repeat: no-repeat;
+    }
+
+    .textos-sobrenos-landing{
+        padding-left: 0;
+        padding-bottom: 140%;
+    }
+
+    .sobrenos{
+        font-family: 'Archivo Black';
+        font-size: 35px;
+        color: var(--color-white);
+    }
+
+    .sobrenos-texto{    
+        font-size: 15px;
+        font-family: 'Montserrat';
+        font-style: italic;
+        color:var(--color-green);
+    }
+
 }
+
