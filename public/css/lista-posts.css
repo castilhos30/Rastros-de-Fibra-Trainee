@@ -50,6 +50,7 @@ body {
 }
 
 .searchbar {
+    padding: 8px;
     background-color: var(--azul-mais-claro);
     display: flex;
     flex-direction: row;
@@ -98,11 +99,11 @@ body {
     margin: auto;
     width: 100%;
     overflow-x: auto;
+    border-radius: 8px;
 }
 
 .tabelaposts {
     border-collapse: collapse;
-    /*height: 689px;*/
     width: 100%;
     overflow-x: auto;
     table-layout: auto;
@@ -124,9 +125,23 @@ body {
     text-align: center;
 }
 
+.tabelaposts th {
+    padding: 10px;
+}
+
+.tabelaposts td {
+    padding: 40px 10px;
+}
+
 .tabelaposts ul {
+    display: flex;
     list-style-type: none;
     padding: 0;
+    gap: 20px;
+}
+
+.tabelaposts button {
+    border-radius: 8px;
 }
 
 .lista-posts-base .botao-atual {
@@ -148,7 +163,7 @@ body {
     cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
     cursor: pointer;
 }
 

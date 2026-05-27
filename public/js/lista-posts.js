@@ -28,16 +28,20 @@ function resetarTabela() {
             <td>
                 <ul>
                 <li>
-                    <img src="/public/assets/like.svg" alt=""> 0
+                    <i class="fa-regular fa-thumbs-up"></i>
+                    0
                 </li>
                 <li>
-                    <img src="/public/assets/dislike.svg" alt=""> 0
+                    <i class="fa-regular fa-thumbs-down"></i>
+                    0
                 </li>
                 <li>
-                    <img src="/public/assets/comment.svg" alt=""> 0
+                    <i class="fa-regular fa-comment"></i>
+                    0
                 </li>
                 <li>
-                    <img src="/public/assets/share.svg" alt=""> 0
+                    <i class="fa-regular fa-share-from-square"></i>
+                    0
                 </li>
                 </ul>
             </td>
@@ -46,18 +50,18 @@ function resetarTabela() {
             <td ` + (i == 5 ? "class=td-right" : "") + `>
                 <ul>
                 <li>
-                <button type="button" class="btn btn-visualizar" data-id="1" onclick="abrirModal('modalVisualizar')">
-                    <img src="/public/assets/eye.svg" alt="">
+                    <button type="button" class="btn btn-visualizar" data-id="1" onclick="abrirModal('modalVisualizar')">
+                    <i class="fa-regular fa-eye" style="color:white;"></i>
                 </button>
                 </li>
                 <li>
-                <button type="button" class="btn btn-editar" data-id="1" onclick="abrirModal('modalEditar')">
-                    <img src="/public/assets/pencil.svg" alt="">
+                    <button type="button" class="btn btn-editar" data-id="1" onclick="abrirModal('modalEditar')">
+                    <i class="fa-regular fa-pen-to-square" style="color:white;"></i>
                 </button>
                 </li>
                 <li>
-                <button type="button" class="btn btn-excluir" data-id="1" onclick="abrirModal('modalExcluir')">
-                    <img src="/public/assets/trash.svg" alt="">
+                    <button type="button" class="btn btn-excluir" data-id="1" onclick="abrirModal('modalExcluir')">
+                    <i class="fa-regular fa-trash-can" style="color:white;"></i>
                 </button>
                 </li>
                 </ul>

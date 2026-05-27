@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="/public/css/modal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://googleapis.com" rel="stylesheet">
 </head>
 
@@ -20,7 +23,7 @@
         </div>
         <div class="navbar">
             <div class="searchbar">
-                <img src="/public/assets/lupa.svg" alt="lupa de pesquisa">
+                <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" placeholder="Pesquisar...">
             </div>
             <button class="botao-atual" onclick="abrirModal('modalCriar')">Criar Publicação</button>
@@ -71,7 +74,8 @@
                             <h5>Autor:</h5><input type="text" class="input" name="autor" placeholder="Autor" readonly>
                         </div>
                         <div class="lista-posts-data">
-                            <h5>Criação:</h5><input type="text" class="input" name="data" placeholder="Data de criação" readonly>
+                            <h5>Criação:</h5><input type="text" class="input" name="data" placeholder="Data de criação"
+                                readonly>
                         </div>
                     </div>
                 </div>
@@ -111,11 +115,11 @@
                     <input type="text" class="input descricao" placeholder="Descrição" name="descricao">
                 </div>
             </div>
-                <div class="lista-posts-botoes">
+            <div class="lista-posts-botoes">
                 <button type="submit" class="lista-posts-botao criar-post">Criar post</button>
                 <button class="lista-posts-botao voltar">Fechar</button>
-                </div>
             </div>
+        </div>
         </div>
     </form>
 
@@ -136,10 +140,10 @@
                     <input type="text" class="input descricao" placeholder="Descrição" name="descricao">
                 </div>
             </div>
-                <div class="lista-posts-botoes">
-                    <button type="submit" class="lista-posts-botao salvar">Salvar</button>
-                    <button class="lista-posts-botao voltar">Voltar</button>
-                </div>
+            <div class="lista-posts-botoes">
+                <button type="submit" class="lista-posts-botao salvar">Salvar</button>
+                <button class="lista-posts-botao voltar">Voltar</button>
+            </div>
         </div>
     </form>
 
@@ -155,6 +159,6 @@
         </div>
     </form>
     <script src="/public/js/lista-posts.js"></script>
-</body> 
+</body>
 
 </html>
