@@ -36,11 +36,11 @@ main{
     background: url(../../public/assets/fundo-pc.png);
     
     background-size: 101%;
-    background-repeat: no-repeat;
     background-position: top;
 
     padding: 10% 10% 30% 10%;
     margin: 0;
+    width: 100%;
 
     display: flex;
     flex-direction: row;
@@ -64,10 +64,11 @@ main{
     font-family: 'Montserrat';
     font-style: italic;
     color:var(--color-green);
+    padding-top: 25px;
 }
 
 .botaolermais{
-    padding-top: 3%;
+    padding-top: 30px;
 }
 
 .lermais{
@@ -111,6 +112,8 @@ main{
     width: 800px;
     height: 400px;
     overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
 }
 
 .slides{
@@ -227,6 +230,8 @@ main{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    height: auto;
+    max-height: 50vh;
 }
 
 .sobrenos{
@@ -246,6 +251,12 @@ main{
 
 
 @media (max-width: 1024px){
+
+    .hero{
+        min-height: 20vh;
+        padding-bottom: 25%;
+    }
+
     .maintitulo{
         font-size: 3rem;
     }
@@ -257,6 +268,32 @@ main{
     .lermais{
         font-size: 1.2rem;
     }
+
+    .sobre-nos-landing{
+
+        padding-bottom: 5%;
+    }
+
+    .slide img{
+        width: 100%;
+    }
+
+    .manual-navigation{
+        width: 100%;
+    }
+
+    .navigation-auto{
+        width: 100%;
+    }
+
+    .slider{
+        width: auto;
+    }
+
+    .sobre-nos-landing{
+        min-height: 10vh;
+    }
+
 }
 
 @media (max-width: 768px){
@@ -302,18 +339,27 @@ main{
 
     .maindesc{
         font-size: 1.2rem;
+        padding: 0;
     }
     
     .lermais{
         font-size: 1rem;
+    }
+
+    .botaolermais{
+        padding: 0;
     }
     
     .titulo-post-recentes{
         overflow: hidden;
     }
 
+    .carrossel-landing{
+        padding: 0;
+    }
+
     .slider{
-        width: 400px;
+        width: auto;
         height: 200px;
     }
 
@@ -323,7 +369,7 @@ main{
     }
 
     .slide img{
-        width: 400px;
+        width: 100%;
         height: 200px;
         object-fit: cover;
         object-position: center;
@@ -331,7 +377,7 @@ main{
 
     .manual-navigation{
         position: absolute;
-        width: 400px;
+        width: 100%;
         margin-top: -20px;
     }
 
@@ -343,7 +389,7 @@ main{
 
     .navigation-auto{
         position: absolute;
-        width: 400px;
+        width: 100%;
         margin-top: 180px;
     }
 
@@ -371,12 +417,12 @@ main{
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-
         justify-content: start;
+        min-height: 100vh;
     }
 
     .textos-sobrenos-landing{
-        width: 60%;
+        width: 80%;
     }
 
     .sobrenos{
