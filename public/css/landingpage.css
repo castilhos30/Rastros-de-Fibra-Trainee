@@ -1,0 +1,443 @@
+:root{
+    --color-green: #05AC4B;
+    --color-ink-black: #0C1A27;
+    --color-white: #f5f5f5;
+    --color-prussian: #0A243D;
+    --color-navy: #073968;
+
+    --color-background:var(--color-ink-black);
+}
+
+   *{
+
+        box-sizing: border-box;
+
+        margin: 0;
+        padding: 0;
+    }
+
+body{
+    font-family: Arial, sans-serif, 'Montserrat', 'Archivo Black';
+    background-color: var(--color-background);
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+
+main{
+    padding: 0;
+    margin: 0;
+}
+
+.hero{
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    background: url(../../public/assets/fundo-pc.png);
+    
+    background-size: 101%;
+    background-position: top;
+
+    padding: 10% 10% 30% 10%;
+    margin: 0;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;   
+}
+
+.textoslanding{
+    width: 100%;
+}
+
+.maintitulo{
+    font-family: 'Archivo Black';
+    font-size: 70px;
+    color: var(--color-white);
+}
+    
+.maindesc{
+    width: 100%;
+    font-size: 25px;
+    font-family: 'Montserrat';
+    font-style: italic;
+    color:var(--color-green);
+    padding-top: 25px;
+}
+
+.botaolermais{
+    padding-top: 30px;
+}
+
+.lermais{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    background-color: var(--color-green);
+    color: var(--color-white);
+    transition-duration: 0.3s;
+}
+
+.lermais:hover{
+    background-color: var(--color-navy);
+}
+
+.titulo-post-recentes{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    font-family: 'Archivo Black';
+    font-size: 24px;
+    padding: 20px;
+}
+
+/*CARROSSEL*/
+
+.carrossel-landing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+.slider{
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+.slides{
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 25%;
+    position: relative;
+    transition: 2s;
+}
+
+.slide img{
+    width: 800px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.manual-navigation{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid var(--color-white);
+    padding: 6px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 20px;
+}
+
+.manual-btn:hover{
+    background-color: var(--color-white);
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+#radio4:checked ~ .first{
+    margin-left: -75%;
+}
+
+.navigation-auto div{
+    border: 2px solid #05AC4B;
+    padding: 6px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigation-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 20px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: var(--color-white);
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: var(--color-white);
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: var(--color-white);
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background-color: var(--color-white);
+}
+
+
+.sobre-nos-landing{
+    min-height: 100vh;
+    background: url(../../public/assets/fundo-pc-sobrenos.png);
+
+    background-size: 101%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+
+    padding: 80px 40px;
+}
+
+.textos-sobrenos-landing{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+    max-height: 50vh;
+}
+
+.sobrenos{
+    font-family: 'Archivo Black';
+    font-size: 70px;
+    color: var(--color-white);
+}
+
+.sobrenos-texto{    
+    width: 100%;
+    font-size: 25px;
+    font-family: 'Montserrat';
+    font-style: italic;
+    color:var(--color-green);
+}
+
+
+
+@media (max-width: 1024px){
+
+    .hero{
+        min-height: 20vh;
+        padding-bottom: 25%;
+    }
+
+    .maintitulo{
+        font-size: 3rem;
+    }
+
+    .maindesc{
+        font-size: 1.5rem;
+    }
+    
+    .lermais{
+        font-size: 1.2rem;
+    }
+
+    .sobre-nos-landing{
+
+        padding-bottom: 5%;
+    }
+
+    .slide img{
+        width: 100%;
+    }
+
+    .manual-navigation{
+        width: 100%;
+    }
+
+    .navigation-auto{
+        width: 100%;
+    }
+
+    .slider{
+        width: auto;
+    }
+
+    .sobre-nos-landing{
+        min-height: 10vh;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    .hero{
+        background: url(../../public/assets/fundo-mobile.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: baseline;
+        align-items: center;
+    }
+    
+    main{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .textoslanding{
+        text-align: center;
+        justify-self: start;
+        padding-bottom: 155%;
+        
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .textoslanding > *{
+        overflow: hidden;
+    }
+    
+    .maintitulo{
+        font-size: 2.6rem;
+    }
+
+    .maindesc{
+        font-size: 1.2rem;
+        padding: 0;
+    }
+    
+    .lermais{
+        font-size: 1rem;
+    }
+
+    .botaolermais{
+        padding: 0;
+    }
+    
+    .titulo-post-recentes{
+        overflow: hidden;
+    }
+
+    .carrossel-landing{
+        padding: 0;
+    }
+
+    .slider{
+        width: auto;
+        height: 200px;
+    }
+
+    .slides{
+        height: 200px;
+        display: flex;
+    }
+
+    .slide img{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .manual-navigation{
+        position: absolute;
+        width: 100%;
+        margin-top: -20px;
+    }
+
+    .navigation-auto div{
+        border: 1px solid #05AC4B;
+        padding: 3px;
+        border-radius: 6px;
+    }
+
+    .navigation-auto{
+        position: absolute;
+        width: 100%;
+        margin-top: 180px;
+    }
+
+    .manual-btn{
+        border: 1px solid var(--color-white);
+        padding: 3px;
+        border-radius: 6px;
+    }
+
+    .manual-btn:not(:last-child){
+        margin-right: 10px;
+    }
+
+    .titulo-post-recentes{
+        font-size: 16px;
+        overflow-y: hidden;
+    }
+    
+    .navigation-auto div:not(:last-child){
+        margin-right: 10px;
+    }
+
+    .sobre-nos-landing{
+        background: url(../../public/assets/fundo-mobile-sobrenos.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        justify-content: start;
+        min-height: 100vh;
+    }
+
+    .textos-sobrenos-landing{
+        width: 80%;
+    }
+
+    .sobrenos{
+        font-family: 'Archivo Black';
+        font-size: 35px;
+        color: var(--color-white);
+    }
+
+    .sobrenos-texto{    
+        font-size: 15px;
+        font-family: 'Montserrat';
+        font-style: italic;
+
+        color:var(--color-green);
+    }
+
+}
+

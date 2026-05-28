@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --azul-back-escuro: #1A1D29;
+    --cinza-back-azulado: #2A2D3A;
+    --cinza-claro: #99A1AF;
+    --verde-claro: #10B981;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    justify-content: center;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0); 
+}
+form{
+    display: contents;
+}
+.lista-posts-id, .lista-posts-autor, .lista-posts-data{
+    display: flex;
+    flex-direction: row;
+}
+
+.invisivel{
+    background-color: transparent;
+    border-style: none;
+}
+.lista-posts-modal{
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    color: #f5f5f5;
+    height: auto;
+    width: clamp(100px, 35%, 1000px);
+    max-height: 85vh;
+    transform: translate(-50%, -50%);
+    font-family: 'Inter', sans-serif;
+    border-radius: 10px;
+    display: none;
+    background-color: #2A2D3A;
+    padding:2vh 3vh;
+    gap: 2vh;
+    align-items: center;
+    justify-content: center;
+}
+.scroll{
+    overflow-y: auto;
+    width: 100%;
+}
+h3{
+    flex-shrink: 0;
+    font-weight: bold;
+    justify-self: center;
+}
+.lista-posts-conteudo, .lista-posts-identificacao{
+    font-size: 40px;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 0px 15px;
+    flex-direction: column;
+    gap: 15px;
+}   
+.lista-posts-conteudo{
+    padding-top: 2vh;
+}
+.lista-posts-botoes{
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2%;
+} /* versão antiga!
+.lista-posts-botao{
+    font-weight: bold;
+    font-size: 20px;
+    color: #f5f5f5;
+    border: 3px solid #05AC4B;
+    background-color: #05AC4B;
+    border-style: none;
+    border-radius: 6px;
+    width: clamp(90px,30%,240px);
+    height: clamp(45px,5%,50px);
+    padding: 1%;
+} */
+.lista-posts-botao{
+    border-style: solid;
+    padding: 8px 32px 8px 32px;
+    border-radius: 4px;
+    min-width: 25%;
+    background-color: var(--verde-claro);
+    border-color: #10B981;
+    color: white;
+    cursor: pointer;
+}
+.voltar{
+    background-color: #2A2D3A;
+    color: #10B981;
+    border: 1px solid #10B981;
+    padding: 9px 29px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 120px;
+}
+.excluir{
+    background-color: #2A2D3A;;
+    color: #10B981;
+    border: 1px solid #10B981;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 120px;
+}
+.lista-posts-imagem{
+    max-width: 100%;
+    width: clamp(50px, 100%, 400px);
+    height: clamp(40px, 50%, 250px);
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    flex-shrink: 0;
+}
+.lista-posts-informacoes{
+    font-weight: bolder;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 0%;
+    gap: 15px;
+} 
+.input{
+    height: 5vh;
+    padding: 10px;
+    width: 100%;
+    background-color: #1A1D29;
+    border-style: none;
+    border-radius: 5px;
+    color: #f5f5f5;
+}
+.lista-posts-titulo, .lista-posts-descricao, .lista-posts-autor, .lista-posts-data, .lista-posts-id{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    gap: 15px;
+}
+h5{
+    font-size: 14px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: #99A1AF;
+    font-weight: 100;
+}
+.hidden{
+    display: none ;
+}
+
+.voltar:hover, .excluir:hover{
+        background-color: transparent;
+       
+}
+#modalExcluir{
+    padding: 40px 60px 40px 60px;
+    background-color: #2A2D3A;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+#modalExcluir img{
+    width: 120px;
+    height: 120px;
+    margin: 20px 0;
+}
+#modalExcluir .lista-posts-botoes{
+    display: flex;
+    padding-top: 15px;
+    gap: 20px;
+}  
+
+@media screen and (max-width: 431px) {
+    .lista-posts-modal{
+        width: 80vw;
+        aspect-ratio: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .lista-posts-botoes{
+        justify-content: center;
+        gap: 10%;
+    }
+    .lista-posts-conteudo, .lista-posts-identificacao{
+        padding: 15px;
+        font-size: 20px;
+    }
+    #modalExcluir{
+        width: 80vw;
+        height: auto;
+        padding: 2vh;
+    }
+}
