@@ -13,4 +13,20 @@ class ListaPostsController
 
         return view('admin/lista-posts', compact('posts'));
     }
+
+    public function store()
+    {
+        $parameters =  [
+            'titulo' => $_POST['titulo'],
+            'descricao' => $_POST['descricao'],
+            'criador' => 'Admin',
+            'foto' => 'imgnormal.jpg',
+            'data' => date('Y-m-d H:i:s'),
+            'id_usuario' => 4
+        ];
+
+        App::get('database')->insert('posts', $parameters);
+
+        header('Location: /lista-posts');
+    }
 }

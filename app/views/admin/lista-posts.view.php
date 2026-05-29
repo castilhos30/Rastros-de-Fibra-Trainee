@@ -100,7 +100,7 @@
     </form>
 
     <!--Modal Criação-->
-    <form>
+    <form method="POST" action="/lista-posts/create">
         <div class="lista-posts-modal lista-posts-visualizar" id="modalCriar">
             <h3>Criação de Post</h3>
             <div class="lista-posts-identificacao">
@@ -171,7 +171,7 @@
         }, $posts), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>;
 
         limparTabela();
-        
+
         posts.forEach((post) => novaLinhaTabela(post.id, post.data, post.titulo, post.criador));
     </script>
 </body>
