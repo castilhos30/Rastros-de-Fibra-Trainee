@@ -29,4 +29,13 @@ class ListaPostsController
 
         header('Location: /lista-posts');
     }
+
+    public function delete()
+    {
+        $id = $_POST['id'];
+
+        App::get('database')->delete('posts', $id);
+
+        header('Location: /lista-posts');
+    }
 }

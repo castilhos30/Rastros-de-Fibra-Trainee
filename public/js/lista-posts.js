@@ -2,14 +2,33 @@ const filtro = document.querySelector('#filtro');
 
 function abrirModal(idModal) {
     const modal = document.getElementById(idModal);
+
+    if (!modal || !filtro) {
+        return;
+    }
+
     modal.style.display = "flex";
     filtro.style.display = "flex";
 }
 
 function fecharModal(idModal) {
     const modal = document.getElementById(idModal);
+    if (!modal || !filtro) {
+        return;
+    }
+
     modal.style.display = "none";
     filtro.style.display = "none";
+}
+
+function mudarIdModalExcluir(id) {
+    const inputId = document.getElementById('modalExcluirId');
+
+    if (!inputId) {
+        return;
+    }
+
+    inputId.value = id;
 }
 
 limparTabela();
@@ -62,7 +81,7 @@ function novaLinhaTabela(id, data, titulo, autor) {
                 </button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-excluir" data-id="${id}" onclick="abrirModal('modalExcluir')">
+                    <button type="button" class="btn btn-excluir" data-id="${id}" onclick="abrirModal('modalExcluir'), mudarIdModalExcluir(${id})">
                     <i class="fa-regular fa-trash-can" style="color:white;"></i>
                 </button>
                 </li>
@@ -72,3 +91,13 @@ function novaLinhaTabela(id, data, titulo, autor) {
     novoTexto += "</tr>";
     tabelaPostsBody.innerHTML += novoTexto;
 }
+
+function renderizarPosts(posts) {
+    limparTabela();
+
+    posts.forEach((post) => novaLinhaTabela(post.id, post.data, post.titulo, post.criador));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderizarPosts(window.listaPostsData || []);
+});

@@ -26,7 +26,7 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" placeholder="Pesquisar...">
             </div>
-            <button class="botao-atual" onclick="abrirModal('modalCriar')">Criar Publicação</button>
+            <button type="button" class="botao-atual" onclick="abrirModal('modalCriar')">Criar Publicação</button>
         </div>
         <div class="container-tabela">
             <table class="tabelaposts">
@@ -92,8 +92,8 @@
                 </div>
             </div>
             <div class="lista-posts-botoes">
-                <button class="lista-posts-botao abrir-post">Abrir post</button>
-                <button class="lista-posts-botao voltar">Fechar</button>
+                <button type="button" class="lista-posts-botao abrir-post">Abrir post</button>
+                <button type="button" class="lista-posts-botao voltar" onclick="fecharModal('modalVisualizar')">Fechar</button>
             </div>
         </div>
         </div>
@@ -118,7 +118,7 @@
             </div>
             <div class="lista-posts-botoes">
                 <button type="submit" class="lista-posts-botao criar-post">Criar post</button>
-                <button class="lista-posts-botao voltar">Fechar</button>
+                <button type="button" class="lista-posts-botao voltar" onclick="fecharModal('modalCriar')">Fechar</button>
             </div>
         </div>
         </div>
@@ -143,25 +143,27 @@
             </div>
             <div class="lista-posts-botoes">
                 <button type="submit" class="lista-posts-botao salvar">Salvar</button>
-                <button class="lista-posts-botao voltar">Voltar</button>
+                <button type="button" class="lista-posts-botao voltar" onclick="fecharModal('modalEditar')">Voltar</button>
             </div>
         </div>
     </form>
 
-    <form>
+    <!--Modal Exclusão-->
+    <form method="POST" action="/lista-posts/delete">
         <div class="lista-posts-modal lista-posts-visualizar" id="modalExcluir">
             <h3>Excluir Post</h3>
             <img src="../../../public/assets/ratoeira.png" alt="Rato pegando um queijo de uma ratoeira">
             <h5>Tem certeza que deseja excluir este post?</h5>
             <div class="lista-posts-botoes">
                 <button type="submit" class="lista-posts-botao excluir">Excluir</button>
-                <button class="lista-posts-botao voltar" onclick="fecharModal('modalexcluir')">Cancelar</button>
+                <button type="button" class="lista-posts-botao voltar" onclick="fecharModal('modalExcluir')">Cancelar</button>
             </div>
         </div>
+        <input type="hidden" id="modalExcluirId" name="id" value="">
     </form>
     <script src="/public/js/lista-posts.js"></script>
     <script>
-        const posts = <?= json_encode(array_map(static function ($post) {
+            window.listaPostsData = <?= json_encode(array_map(static function ($post) {
             return [
                 'id' => $post->id,
                 'data' => $post->data,
@@ -169,10 +171,6 @@
                 'criador' => $post->criador,
             ];
         }, $posts), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>;
-
-        limparTabela();
-
-        posts.forEach((post) => novaLinhaTabela(post.id, post.data, post.titulo, post.criador));
     </script>
 </body>
 
