@@ -32,15 +32,16 @@
             <table class="tabelaposts">
                 <thead>
                     <tr>
-                        <th class="th-left">Post ID</th>
+                        <th>Post ID</th>
                         <th>Data</th>
                         <th>Título</th>
                         <th>Autor</th>
                         <th>Interações</th>
-                        <th class="th-right">Ações</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody id="tabelapostsbody">
+
                 </tbody>
             </table>
         </div>
@@ -159,6 +160,20 @@
         </div>
     </form>
     <script src="/public/js/lista-posts.js"></script>
+    <script>
+        const posts = <?= json_encode(array_map(static function ($post) {
+            return [
+                'id' => $post->id,
+                'data' => $post->data,
+                'titulo' => $post->titulo,
+                'criador' => $post->criador,
+            ];
+        }, $posts), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>;
+
+        limparTabela();
+        
+        posts.forEach((post) => novaLinhaTabela(post.id, post.data, post.titulo, post.criador));
+    </script>
 </body>
 
 </html>

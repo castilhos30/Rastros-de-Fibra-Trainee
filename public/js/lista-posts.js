@@ -12,19 +12,21 @@ function fecharModal(idModal) {
     filtro.style.display = "none";
 }
 
-// Apenas pra resetar a tabela, sem precisar de copiar e colar no html
-resetarTabela();
-function resetarTabela() {
+limparTabela();
+function limparTabela() {
     let tabelaPostsBody = document.getElementById("tabelapostsbody");
     tabelaPostsBody.innerHTML = "";
+}
+
+function novaLinhaTabela(id, data, titulo, autor) {
+    let tabelaPostsBody = document.getElementById("tabelapostsbody");
     let novoTexto = "";
-    for (let i = 1; i <= 5; i++) {
-        novoTexto += "<tr>";
-        novoTexto += "<td " + (i == 5 ? "class=td-left" : "") + ">" + i + "</td>";
-        novoTexto += "<td>xx/xx/xxxx</td>";
-        novoTexto += "<td>aaaaaaaaaaaa</td>";
-        novoTexto += "<td>Heitor Tetzner Pereira</td>";
-        novoTexto += `
+    novoTexto += "<tr>";
+    novoTexto += "<td>" + id + "</td>";
+    novoTexto += "<td>" + data + "</td>";
+    novoTexto += "<td>" + titulo + "</td>";
+    novoTexto += "<td>" + autor + "</td>";
+    novoTexto += `
             <td>
                 <ul>
                 <li>
@@ -46,28 +48,27 @@ function resetarTabela() {
                 </ul>
             </td>
         `;
-        novoTexto += `
-            <td ` + (i == 5 ? "class=td-right" : "") + `>
+    novoTexto += `
+            <td>
                 <ul>
                 <li>
-                    <button type="button" class="btn btn-visualizar" data-id="1" onclick="abrirModal('modalVisualizar')">
+                    <button type="button" class="btn btn-visualizar" data-id="${id}" onclick="abrirModal('modalVisualizar')">
                     <i class="fa-regular fa-eye" style="color:white;"></i>
                 </button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-editar" data-id="1" onclick="abrirModal('modalEditar')">
+                    <button type="button" class="btn btn-editar" data-id="${id}" onclick="abrirModal('modalEditar')">
                     <i class="fa-regular fa-pen-to-square" style="color:white;"></i>
                 </button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-excluir" data-id="1" onclick="abrirModal('modalExcluir')">
+                    <button type="button" class="btn btn-excluir" data-id="${id}" onclick="abrirModal('modalExcluir')">
                     <i class="fa-regular fa-trash-can" style="color:white;"></i>
                 </button>
                 </li>
                 </ul>
             </td>
         `;
-        novoTexto += "</tr>";
-    }
-    tabelaPostsBody.innerHTML = novoTexto;
+    novoTexto += "</tr>";
+    tabelaPostsBody.innerHTML += novoTexto;
 }

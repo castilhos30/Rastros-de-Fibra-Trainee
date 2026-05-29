@@ -5,10 +5,12 @@ namespace App\Controllers;
 use App\Core\App;
 use Exception;
 
-class ListaPostsController
+class ListaPostsController 
 {
     public function index()
     {
-        return view('site/index');
+        $posts = App::get('database')->selectAll('posts');
+
+        return view('admin/lista-posts', compact('posts'));
     }
 }

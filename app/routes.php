@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Controllers;
-use App\Controllers\Lista-postsController;
+use App\Controllers\ListaPostsController;
 use App\Core\Router;
 
-$router->get('', 'Lista-postsController@index');
+$router->get('', 'ExampleController@index');
+
+$router->get('lista-posts', 'ListaPostsController@index');
