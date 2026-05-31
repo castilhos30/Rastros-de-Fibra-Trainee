@@ -37,7 +37,7 @@ function limparTabela() {
     tabelaPostsBody.innerHTML = "";
 }
 
-function novaLinhaTabela(id, data, titulo, autor) {
+/*function novaLinhaTabela(id, data, titulo, autor) {
     let tabelaPostsBody = document.getElementById("tabelapostsbody");
     let novoTexto = "";
     novoTexto += "<tr>";
@@ -90,8 +90,8 @@ function novaLinhaTabela(id, data, titulo, autor) {
         `;
     novoTexto += "</tr>";
     tabelaPostsBody.innerHTML += novoTexto;
-}
-
+}*/
+/*
 function renderizarPosts(posts) {
     limparTabela();
 
@@ -100,4 +100,4 @@ function renderizarPosts(posts) {
 
 document.addEventListener('DOMContentLoaded', () => {
     renderizarPosts(window.listaPostsData || []);
-});
+});*/

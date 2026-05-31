@@ -41,7 +41,53 @@
                     </tr>
                 </thead>
                 <tbody id="tabelapostsbody">
-
+                    <?php foreach ($posts as $post): ?>
+                    <tr>
+                    <td> <?= $post->id ?></td>
+                    <td> <?= $post->data ?></td>
+                    <td> <?= $post->titulo ?></td>
+                    <td> <?= $post->criador ?></td>
+                    <ul>
+                    <td>
+                    <li>
+                        <i class="fa-regular fa-thumbs-up"></i>
+                        0
+                    </li>
+                    <li>
+                        <i class="fa-regular fa-thumbs-down"></i>
+                        0
+                    </li>
+                    <li>
+                        <i class="fa-regular fa-comment"></i>
+                        0
+                    </li>
+                    <li>
+                        <i class="fa-regular fa-share-from-square"></i>
+                        0
+                    </li>
+                    </ul>
+                </td>
+                            <td>
+                    <ul>
+                    <li>
+                        <button type="button" class="btn btn-visualizar" data-id="${id}" onclick="abrirModal('modalVisualizar')">
+                        <i class="fa-regular fa-eye" style="color:white;"></i>
+                    </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-editar" data-id="${id}" onclick="abrirModal('modalEditar')">
+                        <i class="fa-regular fa-pen-to-square" style="color:white;"></i>
+                    </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-excluir" data-id="${id}" onclick="abrirModal('modalExcluir');mudarIdModalExcluir('${id}')">
+                        <i class="fa-regular fa-trash-can" style="color:white;"></i>
+                    </button>
+                    </li>
+                    </ul>
+                </td>
+                </tr>
+                    <?php endforeach; ?> 
                 </tbody>
             </table>
         </div>
