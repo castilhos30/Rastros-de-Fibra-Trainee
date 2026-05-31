@@ -22,7 +22,7 @@ class ListaPostsController
             'criador' => 'Admin',
             'foto' => 'imgnormal.jpg',
             'data' => date('Y-m-d H:i:s'),
-            'id_usuario' => 4
+            'id_usuario' => 1
         ];
 
         App::get('database')->insert('posts', $parameters);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -47,46 +47,46 @@
                     <td> <?= $post->data ?></td>
                     <td> <?= $post->titulo ?></td>
                     <td> <?= $post->criador ?></td>
-                    <ul>
                     <td>
-                    <li>
-                        <i class="fa-regular fa-thumbs-up"></i>
-                        0
-                    </li>
-                    <li>
-                        <i class="fa-regular fa-thumbs-down"></i>
-                        0
-                    </li>
-                    <li>
-                        <i class="fa-regular fa-comment"></i>
-                        0
-                    </li>
-                    <li>
-                        <i class="fa-regular fa-share-from-square"></i>
-                        0
-                    </li>
-                    </ul>
-                </td>
-                            <td>
                     <ul>
-                    <li>
-                        <button type="button" class="btn btn-visualizar" data-id="${id}" onclick="abrirModal('modalVisualizar')">
-                        <i class="fa-regular fa-eye" style="color:white;"></i>
-                    </button>
-                    </li>
-                    <li>
-                        <button type="button" class="btn btn-editar" data-id="${id}" onclick="abrirModal('modalEditar')">
-                        <i class="fa-regular fa-pen-to-square" style="color:white;"></i>
-                    </button>
-                    </li>
-                    <li>
-                        <button type="button" class="btn btn-excluir" data-id="${id}" onclick="abrirModal('modalExcluir');mudarIdModalExcluir('${id}')">
-                        <i class="fa-regular fa-trash-can" style="color:white;"></i>
-                    </button>
-                    </li>
+                        <li>
+                            <i class="fa-regular fa-thumbs-up"></i>
+                            0
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-thumbs-down"></i>
+                            0
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-comment"></i>
+                            0
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-share-from-square"></i>
+                            0
+                        </li>
                     </ul>
-                </td>
-                </tr>
+                    </td>
+                    <td>
+                    <ul>
+                        <li>
+                            <button type="button" class="btn btn-visualizar" data-id="<?= $post->id ?>" onclick="abrirModal('modalVisualizar')">
+                            <i class="fa-regular fa-eye" style="color:white;"></i>
+                        </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-editar" data-id="<?= $post->id ?>" onclick="abrirModal('modalEditar')">
+                            <i class="fa-regular fa-pen-to-square" style="color:white;"></i>
+                        </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-excluir" data-id="<?= $post->id ?>" onclick="abrirModal('modalExcluir');mudarIdModalExcluir('<?= $post->id ?>')">
+                            <i class="fa-regular fa-trash-can" style="color:white;"></i>
+                        </button>
+                        </li>
+                    </ul>
+                    </td>
+                    </tr>
                     <?php endforeach; ?> 
                 </tbody>
             </table>
@@ -103,7 +103,6 @@
                 <img src="/public/assets/white-right-arrow.svg" alt="">
             </button>
         </div>
-
     </div>
 
     <!--Modal Visualização-->
@@ -115,25 +114,24 @@
                     <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
                     <div class="lista-posts-informacoes">
                         <div class="lista-posts-id">
-                            <h5>ID:</h5><input type="text" class="input" name="id" placeholder="ID" readonly>
+                            <h5>ID:</h5><input type="text" class="input" name="id" placeholder="id" readonly>
                         </div>
                         <div class="lista-posts-autor">
-                            <h5>Autor:</h5><input type="text" class="input" name="autor" placeholder="Autor" readonly>
+                            <h5>Autor:</h5><input type="text" class="input" name="autor" placeholder="criador" readonly>
                         </div>
                         <div class="lista-posts-data">
-                            <h5>Criação:</h5><input type="text" class="input" name="data" placeholder="Data de criação"
-                                readonly>
+                            <h5>Criação:</h5><input type="text" class="input" name="data" placeholder="data"readonly>
                         </div>
                     </div>
                 </div>
                 <div class="lista-posts-conteudo">
                     <div class="lista-posts-titulo">
                         <h5>Título:</h5>
-                        <input type="text" class="input titulo" placeholder="Título" name="titulo">
+                        <input type="text" class="input titulo" placeholder="titulo" name="titulo">
                     </div>
                     <div class="lista-posts-descricao">
                         <h5>Descrição:</h5>
-                        <input type="text" class="input descricao" placeholder="Descrição" name="descricao">
+                        <input type="text" class="input descricao" placeholder="descricao" name="descricao">
                     </div>
                 </div>
             </div>
@@ -141,7 +139,6 @@
                 <button type="button" class="lista-posts-botao abrir-post">Abrir post</button>
                 <button type="button" class="lista-posts-botao voltar" onclick="fecharModal('modalVisualizar')">Fechar</button>
             </div>
-        </div>
         </div>
     </form>
 
@@ -166,7 +163,6 @@
                 <button type="submit" class="lista-posts-botao criar-post">Criar post</button>
                 <button type="button" class="lista-posts-botao voltar" onclick="fecharModal('modalCriar')">Fechar</button>
             </div>
-        </div>
         </div>
     </form>
 

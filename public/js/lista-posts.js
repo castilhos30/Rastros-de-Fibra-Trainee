@@ -31,13 +31,13 @@ function mudarIdModalExcluir(id) {
     inputId.value = id;
 }
 
-limparTabela();
+/*limparTabela();
 function limparTabela() {
     let tabelaPostsBody = document.getElementById("tabelapostsbody");
     tabelaPostsBody.innerHTML = "";
 }
 
-/*function novaLinhaTabela(id, data, titulo, autor) {
+function novaLinhaTabela(id, data, titulo, autor) {
     let tabelaPostsBody = document.getElementById("tabelapostsbody");
     let novoTexto = "";
     novoTexto += "<tr>";
@@ -90,8 +90,7 @@ function limparTabela() {
         `;
     novoTexto += "</tr>";
     tabelaPostsBody.innerHTML += novoTexto;
-}*/
-/*
+}
 function renderizarPosts(posts) {
     limparTabela();
 
