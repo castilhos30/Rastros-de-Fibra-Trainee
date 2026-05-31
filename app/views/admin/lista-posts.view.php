@@ -70,12 +70,12 @@
                     <td>
                     <ul>
                         <li>
-                            <button type="button" class="btn btn-visualizar" data-id="<?= $post->id ?>" onclick="abrirModal('modalVisualizar')">
+                            <button type="button" class="btn btn-visualizar" data-id="<?= $post->id ?>" onclick="abrirModal('modalVisualizar<?= $post->id ?>')">
                             <i class="fa-regular fa-eye" style="color:white;"></i>
                         </button>
                         </li>
                         <li>
-                            <button type="button" class="btn btn-editar" data-id="<?= $post->id ?>" onclick="abrirModal('modalEditar')">
+                            <button type="button" class="btn btn-editar" data-id="<?= $post->id ?>" onclick="abrirModal('modalEditar<?= $post->id ?>')">
                             <i class="fa-regular fa-pen-to-square" style="color:white;"></i>
                         </button>
                         </li>
@@ -105,43 +105,6 @@
         </div>
     </div>
 
-    <!--Modal Visualização-->
-    <form>
-        <div class="lista-posts-modal lista-posts-visualizar" id="modalVisualizar">
-            <h3>Informações do Post</h3>
-            <div class="scroll">
-                <div class="lista-posts-identificacao">
-                    <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
-                    <div class="lista-posts-informacoes">
-                        <div class="lista-posts-id">
-                            <h5>ID:</h5><input type="text" class="input" name="id" placeholder="id" readonly>
-                        </div>
-                        <div class="lista-posts-autor">
-                            <h5>Autor:</h5><input type="text" class="input" name="autor" placeholder="criador" readonly>
-                        </div>
-                        <div class="lista-posts-data">
-                            <h5>Criação:</h5><input type="text" class="input" name="data" placeholder="data"readonly>
-                        </div>
-                    </div>
-                </div>
-                <div class="lista-posts-conteudo">
-                    <div class="lista-posts-titulo">
-                        <h5>Título:</h5>
-                        <input type="text" class="input titulo" placeholder="titulo" name="titulo">
-                    </div>
-                    <div class="lista-posts-descricao">
-                        <h5>Descrição:</h5>
-                        <input type="text" class="input descricao" placeholder="descricao" name="descricao">
-                    </div>
-                </div>
-            </div>
-            <div class="lista-posts-botoes">
-                <button type="button" class="lista-posts-botao abrir-post">Abrir post</button>
-                <button type="button" class="lista-posts-botao voltar" onclick="fecharModal('modalVisualizar')">Fechar</button>
-            </div>
-        </div>
-    </form>
-
     <!--Modal Criação-->
     <form method="POST" action="/lista-posts/create">
         <div class="lista-posts-modal lista-posts-visualizar" id="modalCriar">
@@ -166,26 +129,65 @@
         </div>
     </form>
 
-    <!--Modal Edição-->
+    <?php foreach ($posts as $post): ?>
+    <!--Modal Visualização-->
     <form>
-        <div class="lista-posts-modal lista-posts-visualizar" id="modalEditar">
+        <div class="lista-posts-modal lista-posts-visualizar" id="modalVisualizar<?= $post->id ?>">
+            <h3>Informações do Post</h3>
+            <div class="scroll">
+                <div class="lista-posts-identificacao">
+                    <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
+                    <div class="lista-posts-informacoes">
+                        <div class="lista-posts-id">
+                            <h5>ID:</h5><input type="text" class="input" name="id" placeholder="<?= $post->id; ?>" readonly>
+                        </div>
+                        <div class="lista-posts-autor">
+                            <h5>Autor:</h5><input type="text" class="input" name="autor" placeholder="<?= $post->criador; ?>" readonly>
+                        </div>
+                        <div class="lista-posts-data">
+                            <h5>Criação:</h5><input type="text" class="input" name="data" placeholder="<?= $post->data; ?>" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="lista-posts-conteudo">
+                    <div class="lista-posts-titulo">
+                        <h5>Título:</h5>
+                        <input type="text" class="input titulo" placeholder="<?= $post->titulo; ?>" name="titulo">
+                    </div>
+                    <div class="lista-posts-descricao">
+                        <h5>Descrição:</h5>
+                        <input type="text" class="input descricao" placeholder="<?= $post->descricao; ?>" name="descricao">
+                    </div>
+                </div>
+            </div>
+            <div class="lista-posts-botoes">
+                <button type="button" class="lista-posts-botao abrir-post">Abrir post</button>
+                <button type="button" class="lista-posts-botao voltar" onclick="fecharModal('modalVisualizar<?= $post->id ?>')">Fechar</button>
+            </div>
+        </div>
+    </form>
+
+    <!--Modal Edição-->
+    <form method="POST" action="/lista-posts/edit">
+        <div class="lista-posts-modal lista-posts-visualizar" id="modalEditar<?= $post->id ?>">
             <h3>Edição de Post</h3>
+            <input type="hidden" name="id" value="<?= $post->id ?>">
             <div class="lista-posts-identificacao">
                 <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
             </div>
             <div class="lista-posts-conteudo">
                 <div class="lista-posts-titulo">
                     <h5>Título:</h5>
-                    <input type="text" class="input titulo" placeholder="Título" name="titulo">
+                    <input type="text" class="input titulo" placeholder="<?= $post->titulo ?>" name="titulo">
                 </div>
                 <div class="lista-posts-descricao">
                     <h5>Descrição:</h5>
-                    <input type="text" class="input descricao" placeholder="Descrição" name="descricao">
+                    <input type="text" class="input descricao" placeholder="<?= $post->descricao ?>" name="descricao">
                 </div>
             </div>
             <div class="lista-posts-botoes">
                 <button type="submit" class="lista-posts-botao salvar">Salvar</button>
-                <button type="button" class="lista-posts-botao voltar" onclick="fecharModal('modalEditar')">Voltar</button>
+                <button type="button" class="lista-posts-botao voltar" onclick="fecharModal('modalEditar<?= $post->id ?>')">Voltar</button>
             </div>
         </div>
     </form>
@@ -203,6 +205,7 @@
         </div>
         <input type="hidden" id="modalExcluirId" name="id" value="">
     </form>
+    <?php endforeach; ?>
     <script src="/public/js/lista-posts.js"></script>
     <script>
             window.listaPostsData = <?= json_encode(array_map(static function ($post) {

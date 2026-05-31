@@ -64,4 +64,22 @@ class QueryBuilder
             die($e->getMessage());
        }
     }
+    
+    /*UPDATE `posts` SET `id`='[value-1]',`criador`='[value-2]',`titulo`='[value-3]',
+    `descricao`='[value-4]',`foto`='[value-5]',`data`='[value-6]',`id_usuario`='[value-7]' WHERE 1*/
+    public function update($table, $parameters, $id){
+        $sql=sprintf('UPDATE %s SET %s WHERE id = %s',
+        $table,
+        implode(', ', array_map(function($param) {
+            return $param . ' = :' . $param;
+        }, array_keys($parameters))),
+        $id);
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute($parameters);
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+       } catch (Exception $e) {
+            die($e->getMessage());
+       }
+    }
 }

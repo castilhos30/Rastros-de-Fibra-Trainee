@@ -38,4 +38,14 @@ class ListaPostsController
 
         header('Location: /lista-posts');
     }
+    public function edit(){
+        $parameters =  [
+            'titulo' => $_POST['titulo'],
+            'descricao' => $_POST['descricao'],
+            'foto' => 'imgnormal.jpg',
+        ];
+        $id= $_POST['id'];
+        App::get('database')->update('posts', $parameters, $id);
+        header('Location: /lista-posts');
+    }
 }
