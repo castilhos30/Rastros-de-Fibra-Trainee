@@ -12,6 +12,7 @@ function fecharModal(idModal) {
     filtro.style.display = "none";
 }
 
+/*
 resetaTabela();
 function resetaTabela() {
     const tabelaBody = document.getElementById("tabelaBody");
@@ -42,3 +43,4 @@ function resetaTabela() {
     }
     tabelaBody.innerHTML = novoTexto;
 }
+*/

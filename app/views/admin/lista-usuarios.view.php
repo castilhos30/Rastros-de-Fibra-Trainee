@@ -13,9 +13,6 @@
 </head>
 
 <body>
-
-    
-
     <div class="titulolistauser"> Lista de Usuários </div>
     <div class="segundadiv">
         <div class="barradepesquisa">
@@ -23,7 +20,8 @@
             <input type="text" class="pesquisarusuario" placeholder="Pesquisar..."></input>
         </div>
         <button class="botaocriaruser" onclick="abrirModal('modalcriar')">
-            <i class="fa-solid fa-plus icone-mais"></i> <h3 class="criarusuario"> Criar Usuário </h3>
+            <i class="fa-solid fa-plus icone-mais"></i>
+            <h3 class="criarusuario"> Criar Usuário </h3>
         </button>
     </div>
     <div class="containertebela">
@@ -38,6 +36,18 @@
                 </tr>
             </thead>
             <tbody id="tabelaBody">
+                <?php foreach($usuarios as $usuario): ?>
+                    <tr>
+                        <td><?= $usuario->id ?></td>
+                        <td><?= $usuario->nome ?></td>
+                        <td><?= $usuario->email ?></td>
+                        <td>
+                            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalvisualizar <?= $usuario->id ?>">Visualizar</button>
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modaleditar <?= $usuario->id ?>" >Editar</button>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalexcluir <?= $usuario->id ?>">Excluir</button>
+                        </td>
+                    </tr>
+                <?php endforeach?>
             </tbody>
         </table>
     </div>
@@ -140,7 +150,7 @@
         <h3>Tem certeza que deseja excluir este usuário?</h3>
         <div class="botoesmodaldelet">
             <button class="botaoexcluir">Excluir</button>
-            <button class="botaocancelar" onclick="fecharModal('modalexcluir')" >Cancelar</button>
+            <button class="botaocancelar" onclick="fecharModal('modalexcluir')">Cancelar</button>
         </div>
     </div>
 

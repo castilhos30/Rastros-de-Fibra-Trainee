@@ -7,9 +7,9 @@ use Exception;
 
 class UserController
 {
-
     public function index()
     {
-        return view('admin/lista-usuarios');
+        $usuarios = App::get('database')->selectAll('usuarios');
+        return view('admin/lista-usuarios', compact('usuarios'));
     }
 }
