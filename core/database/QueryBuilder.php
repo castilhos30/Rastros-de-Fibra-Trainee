@@ -28,4 +28,22 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
+    //INSERT INTO `usuarios`(`id`, `email`, `nome`, `senha`, `foto`, `data`, `admin`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')
+    public function insert($table, $parameters){
+        $sql = sprintf('INSERT INTO %s (%s) VALUES (:%s)',
+        $table,
+        implode(' , ', array_keys($parameters)),
+        implode(' , :', array_keys($parameters)),
+        );
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute($parameters);
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 }

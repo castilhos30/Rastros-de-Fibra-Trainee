@@ -12,4 +12,19 @@ class UserController
         $usuarios = App::get('database')->selectAll('usuarios');
         return view('admin/lista-usuarios', compact('usuarios'));
     }
+
+    public function store(){
+        $parameters = [
+            'nome' => $_POST['nome'],
+            'email' => $_POST['email'],
+            'senha' => $_POST['senha'],
+            'foto' => 'public/assets/perfil.png',
+            'data' => date('Y-m-d'),
+            'admin' => 0
+        ];
+
+        App::get('database')->insert('usuarios', $parameters);
+
+        header('Location: /lista-de-usuarios');
+    }
 }

@@ -42,9 +42,19 @@
                         <td><?= $usuario->nome ?></td>
                         <td><?= $usuario->email ?></td>
                         <td>
-                            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalvisualizar <?= $usuario->id ?>">Visualizar</button>
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modaleditar <?= $usuario->id ?>" >Editar</button>
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalexcluir <?= $usuario->id ?>">Excluir</button>
+                            <div class="iconestabela">
+                                <button type="button" class="btn-acao btn-visualizar" onclick="abrirModal('modalvisualizar')">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                                
+                                <button type="button" class="btn-acao btn-editar" onclick="abrirModal('modaleditar')">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                </button>
+                                
+                                <button type="button" class="btn-acao btn-excluir" onclick="abrirModal('modalexcluir')">
+                                    <i class="fa-regular fa-trash-can"></i>
+                                </button>
+                            </div>
                         </td>
                     </tr>
                 <?php endforeach?>
@@ -67,14 +77,16 @@
 
 
     <div class="filtro" id="filtro"></div>
+
+
     <!-- Modal Criar -->
     <div class="modal-criar-editar">
         <div class="painel" id="modalcriar">
             <h1>Criação de Usuário</h1>
-            <form>
+            <form method="POST" action="/lista-de-usuarios/criar">
                 <div class="formcampos">
                     <label for="nome">Nome:</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="nome" id="nome">
                     <label for="email">Email:</label>
                     <input type="email" name="email" id="email">
                     <label for="senha">Senha:</label>
@@ -89,70 +101,70 @@
     </div>
 
 
+    <?php foreach($usuarios as $usuario): ?>
 
-    <!-- Modal Editar -->
-    <div class="modal-criar-editar">
-        <div class="painel" id="modaleditar">
-            <h1>Edição de Usuário</h1>
+        <!-- Modal Editar -->
+        <div class="modal-criar-editar">
+            <div class="painel" id="modaleditar">
+                <h1>Edição de Usuário</h1>
+                <form>
+                    <div class="formcampos">
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="name" id="name">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email">
+                        <label for="senha">Senha:</label>
+                        <input type="password" name="senha" id="senha">
+                    </div>
+                    <div class="formbotoes">
+                        <input type="submit" value="Editar">
+                        <button onclick="fecharModal('modaleditar')">Fechar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal Visualizar -->
+        <div class="painelcontainer" id="modalvisualizar">
+            <h1>Informações do Usuário</h1>
             <form>
-                <div class="formcampos">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="name" id="name">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email">
-                    <label for="senha">Senha:</label>
-                    <input type="password" name="senha" id="senha">
+                <div class="visualizarusuario">
+                    <div class="campovisualizar">
+                        <label for="usuario-id">ID:</label>
+                        <input type="text" id="usuario-id" value="" readonly>
+                    </div>
+                    <div class="campovisualizar">
+                        <label for="usuario-nome">Nome:</label>
+                        <input type="text" id="usuario-nome" value='' readonly>
+                    </div>
+
+                    <div class="campovisualizar">
+                        <label for="usuario-email">Email:</label>
+                        <input type="email" id="usuario-email" value="" readonly>
+                    </div>
+
+                    <div class="campovisualizar">
+                        <label for="usuario-senha">Senha:</label>
+                        <input type="password" id="usuario-senha" value="" readonly>
+                    </div>
                 </div>
-                <div class="formbotoes">
-                    <input type="submit" value="Editar">
-                    <button onclick="fecharModal('modaleditar')">Fechar</button>
+                <div class="botaofecharvisualizar">
+                    <button class="fecharmodalvisualizar" onclick="fecharModal('modalvisualizar')">Fechar</button>
                 </div>
             </form>
         </div>
-    </div>
 
-
-
-    <!-- Modal Visualizar -->
-    <div class="painelcontainer" id="modalvisualizar">
-        <h1>Informações do Usuário</h1>
-        <form>
-            <div class="visualizarusuario">
-                <div class="campovisualizar">
-                    <label for="usuario-id">ID:</label>
-                    <input type="text" id="usuario-id" value="1" readonly>
-                </div>
-                <div class="campovisualizar">
-                    <label for="usuario-nome">Nome:</label>
-                    <input type="text" id="usuario-nome" value="Guilherme Perissé" readonly>
-                </div>
-
-                <div class="campovisualizar">
-                    <label for="usuario-email">Email:</label>
-                    <input type="email" id="usuario-email" value="perisse@email.com" readonly>
-                </div>
-
-                <div class="campovisualizar">
-                    <label for="usuario-senha">Senha:</label>
-                    <input type="password" id="usuario-senha" value="12345678" readonly>
-                </div>
+        <!-- Modal Excluir -->
+        <div class="caixadedeletar" id="modalexcluir">
+            <h1>Excluir Usuário</h1>
+            <img src="../../../public/assets/logo-excluir.png" alt="Logo">
+            <h3>Tem certeza que deseja excluir este usuário?</h3>
+            <div class="botoesmodaldelet">
+                <button class="botaoexcluir">Excluir</button>
+                <button class="botaocancelar" onclick="fecharModal('modalexcluir')">Cancelar</button>
             </div>
-            <div class="botaofecharvisualizar">
-                <button class="fecharmodalvisualizar" onclick="fecharModal('modalvisualizar')">Fechar</button>
-            </div>
-        </form>
-    </div>
-
-    <!-- Modal Excluir -->
-    <div class="caixadedeletar" id="modalexcluir">
-        <h1>Excluir Usuário</h1>
-        <img src="../../../public/assets/logo-excluir.png" alt="Logo">
-        <h3>Tem certeza que deseja excluir este usuário?</h3>
-        <div class="botoesmodaldelet">
-            <button class="botaoexcluir">Excluir</button>
-            <button class="botaocancelar" onclick="fecharModal('modalexcluir')">Cancelar</button>
         </div>
-    </div>
+        <?php endforeach?>
 
 
     <script src="../../../public/js/lista-usuarios.js"></script>
