@@ -9,3 +9,4 @@ use App\Core\Router;
 
     $router->get('lista-de-usuarios', 'UserController@index');
     $router->post('lista-de-usuarios/criar', 'UserController@store');
+    $router->post('lista-de-usuarios/editar', 'UserController@edit');

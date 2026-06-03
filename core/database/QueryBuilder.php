@@ -46,4 +46,15 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
+
+    //UPDATE `usuarios` SET `id`='[value-1]',`email`='[value-2]',`nome`='[value-3]',`senha`='[value-4]',`foto`='[value-5]',`data`='[value-6]',`admin`='[value-7]' WHERE 1
+    public function update($table, $id, $parameters){
+        $sql = sprintf('UPDATE %s SET %s WHERE id = %s',
+        $table, 
+        implode(', ', array_map(function($param) {
+            return $param. ' = :' .$param;
+        },  array_keys($parameters))),
+        $id
+        );
+    }
 }

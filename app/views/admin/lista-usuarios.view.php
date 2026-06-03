@@ -43,7 +43,7 @@
                         <td><?= $usuario->email ?></td>
                         <td>
                             <div class="iconestabela">
-                                <button type="button" class="btn-acao btn-visualizar" onclick="abrirModal('modalvisualizar')">
+                                <button type="button" class="btn-acao btn-visualizar" onclick="abrirModal('modalvisualizar-<?= $usuario->id ?>')">
                                     <i class="fa-regular fa-eye"></i>
                                 </button>
                                 
@@ -94,7 +94,7 @@
                 </div>
                 <div class="formbotoes">
                     <input type="submit" value="Criar">
-                    <button onclick="fecharModal('modalcriar')">Fechar</button>
+                    <button type="button" onclick="fecharModal('modalcriar')">Fechar</button>
                 </div>
             </form>
         </div>
@@ -110,42 +110,42 @@
                 <form>
                     <div class="formcampos">
                         <label for="nome">Nome:</label>
-                        <input type="text" name="name" id="name">
+                        <input type="text" name="nome" id="nome" value="<?= $usuario->nome ?>">
                         <label for="email">Email:</label>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email" value="<?= $usuario->email ?>">
                         <label for="senha">Senha:</label>
-                        <input type="password" name="senha" id="senha">
+                        <input type="password" name="senha" id="senha" value="<?= $usuario->senha ?>">
                     </div>
                     <div class="formbotoes">
                         <input type="submit" value="Editar">
-                        <button onclick="fecharModal('modaleditar')">Fechar</button>
+                        <button type="button" onclick="fecharModal('modaleditar')">Fechar</button>
                     </div>
                 </form>
             </div>
         </div>
 
         <!-- Modal Visualizar -->
-        <div class="painelcontainer" id="modalvisualizar">
+        <div class="painelcontainer" id="modalvisualizar-<?= $usuario->id ?>">
             <h1>Informações do Usuário</h1>
             <form>
                 <div class="visualizarusuario">
                     <div class="campovisualizar">
                         <label for="usuario-id">ID:</label>
-                        <input type="text" id="usuario-id" value="" readonly>
+                        <input type="text" id="usuario-id" value="<?= $usuario->id ?>" readonly>
                     </div>
                     <div class="campovisualizar">
                         <label for="usuario-nome">Nome:</label>
-                        <input type="text" id="usuario-nome" value='' readonly>
+                        <input type="text" id="usuario-nome" value="<?= $usuario->nome ?>" readonly>
                     </div>
 
                     <div class="campovisualizar">
                         <label for="usuario-email">Email:</label>
-                        <input type="email" id="usuario-email" value="" readonly>
+                        <input type="email" id="usuario-email" value="<?= $usuario->email ?>" readonly>
                     </div>
 
                     <div class="campovisualizar">
                         <label for="usuario-senha">Senha:</label>
-                        <input type="password" id="usuario-senha" value="" readonly>
+                        <input type="password" id="usuario-senha" value="<?= $usuario->senha ?>" readonly>
                     </div>
                 </div>
                 <div class="botaofecharvisualizar">
@@ -164,7 +164,7 @@
                 <button class="botaocancelar" onclick="fecharModal('modalexcluir')">Cancelar</button>
             </div>
         </div>
-        <?php endforeach?>
+        <?php endforeach ?>
 
 
     <script src="../../../public/js/lista-usuarios.js"></script>
