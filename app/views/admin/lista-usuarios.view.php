@@ -47,11 +47,11 @@
                                     <i class="fa-regular fa-eye"></i>
                                 </button>
                                 
-                                <button type="button" class="btn-acao btn-editar" onclick="abrirModal('modaleditar')">
+                                <button type="button" class="btn-acao btn-editar" onclick="abrirModal('modaleditar-<?= $usuario->id ?>')">
                                     <i class="fa-regular fa-pen-to-square"></i>
                                 </button>
                                 
-                                <button type="button" class="btn-acao btn-excluir" onclick="abrirModal('modalexcluir')">
+                                <button type="button" class="btn-acao btn-excluir" onclick="abrirModal('modalexcluir-<?= $usuario->id ?>')">
                                     <i class="fa-regular fa-trash-can"></i>
                                 </button>
                             </div>
@@ -105,20 +105,21 @@
 
         <!-- Modal Editar -->
         <div class="modal-criar-editar">
-            <div class="painel" id="modaleditar">
+            <div class="painel" id="modaleditar-<?= $usuario->id ?>">
                 <h1>Edição de Usuário</h1>
-                <form>
+                <form method="POST" action="/lista-de-usuarios/editar">
                     <div class="formcampos">
                         <label for="nome">Nome:</label>
-                        <input type="text" name="nome" id="nome" value="<?= $usuario->nome ?>">
+                        <input type="text" name="nome" id="nome">
                         <label for="email">Email:</label>
-                        <input type="email" name="email" id="email" value="<?= $usuario->email ?>">
+                        <input type="email" name="email" id="email">
                         <label for="senha">Senha:</label>
-                        <input type="password" name="senha" id="senha" value="<?= $usuario->senha ?>">
+                        <input type="password" name="senha" id="senha">
                     </div>
                     <div class="formbotoes">
+                        <input type="hidden" name="id" value="<?= $usuario->id ?>">
                         <input type="submit" value="Editar">
-                        <button type="button" onclick="fecharModal('modaleditar')">Fechar</button>
+                        <button type="button" onclick="fecharModal('modaleditar-<?= $usuario->id ?>')">Fechar</button>
                     </div>
                 </form>
             </div>
@@ -155,13 +156,16 @@
         </div>
 
         <!-- Modal Excluir -->
-        <div class="caixadedeletar" id="modalexcluir">
+        <div class="caixadedeletar" id="modalexcluir-<?= $usuario->id ?>">
             <h1>Excluir Usuário</h1>
             <img src="../../../public/assets/logo-excluir.png" alt="Logo">
             <h3>Tem certeza que deseja excluir este usuário?</h3>
             <div class="botoesmodaldelet">
-                <button class="botaoexcluir">Excluir</button>
-                <button class="botaocancelar" onclick="fecharModal('modalexcluir')">Cancelar</button>
+                <form method="POST" action="/lista-de-usuarios/deletar">
+                    <input type="hidden" name="id" value="<?= $usuario->id ?>">
+                    <button type="submit" class="botaoexcluir">Excluir</button>
+                </form>
+                <button class="botaocancelar" onclick="fecharModal('modalexcluir-<?= $usuario->id ?>')">Cancelar</button>
             </div>
         </div>
         <?php endforeach ?>

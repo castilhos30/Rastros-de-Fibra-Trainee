@@ -39,4 +39,11 @@ class UserController
         App::get('database')->update('usuarios', $id, $parameters);
         header('Location: /lista-de-usuarios');
     }
+
+    public function delete(){
+        $id = $_POST['id'];
+        App::get('database')->delete('usuarios', $id);
+        header('Location: /lista-de-usuarios');
+    }
 }
+
