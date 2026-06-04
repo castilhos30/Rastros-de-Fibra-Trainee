@@ -40,14 +40,14 @@
                         </div>
                     </div>
                     <div class="login-inputs">
-                        <form action="action_page.php" method="post">
+                        <form action="/login" method="POST">
                             <div class="login-email">
                                 <label for = "email">Informe seu email</label><br>
                                 <div id="div-email"><i class="bi bi-envelope"></i><input type="text" placeholder= "Email" name="email" required></div>
                             </div>
                             <div class="login-senha">
                                 <label for = "senha">Informe sua senha</label><br>
-                                <div id="div-senha"><i class="bi bi-lock"></i><input type="password" placeholder= "Senha" name="email" required> <i class="bi bi-eye-slash"></i></div>
+                                <div id="div-senha"><i class="bi bi-lock"></i><input type="password" placeholder= "Senha" name="senha" required> <i class="bi bi-eye-slash"></i></div>
                             </div>
                             <a class="login-hover" link href="/">Problemas no login? Entre em contato aqui.</a>
                             <div class="login-botao">
