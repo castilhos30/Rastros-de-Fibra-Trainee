@@ -91,18 +91,45 @@
                 </tbody>
             </table>
         </div>
-        <div class="final-botoes">
-            <button class="sem-mais-paginas">
-                <img src="/public/assets/white-left-arrow.svg" alt="">
-                Anterior
-            </button>
-            <button class="botao-atual">1</button>
-            <button>2</button>
-            <button>
-                Próximo
-                <img src="/public/assets/white-right-arrow.svg" alt="">
-            </button>
-        </div>
+
+        <!-- Paginação -->
+        <?php if ($totalPaginas > 1): ?>
+        <ul class="paginacao">
+        <li>
+            <a href="?page=<?= max(1, $currentPage - 1) ?>" class="<?= $currentPage <= 1 ? 'disabled' : ''?>">Anterior</a>
+        </li>
+        <?php
+            $start = max(2, $currentPage - 1);
+            $end = min($totalPaginas - 1, $currentPage + 1);
+        ?>
+        <li>
+            <a href="?page=1" class="<?= $currentpage == 1 ? 'active' : ''?>">1</a>
+        </li>
+
+        <?php if ($start > 2):?>
+            <li><span class="dots">...</span></li>
+        <?php endif; ?>
+
+        <?php for ($i = $start; $i <= $end; $i++): ?>
+        <li>
+            <a href="?page=<?= $i ?>" class="<?= $currentpage == $i ? 'active' : ''?>"><? $i ?></a>
+        </li>
+        <?php endfor; ?>
+
+        <?php if ($end < $totalPaginas - 1):?>
+            <li><span class="dots">...</span></li>
+        <?php endif; ?>
+
+        <li>
+            <a href="?page=<?= $totalPaginas ?>" class="<?= $currentpage == $totalPaginas ? 'active' : ''?>"><?= $totalPaginas ?></a>
+        </li>
+
+        <li>
+            <a href="?page=<?= min($totalPaginas, $currentPage + 1) ?>" class="<?= $currentPage >= $totalPaginas ? 'disabled' : ''?>">Próximo</a>
+        </li>       
+
+        </ul>
+        <?php endif; ?>
     </div>
 
     <!--Modal Criação-->

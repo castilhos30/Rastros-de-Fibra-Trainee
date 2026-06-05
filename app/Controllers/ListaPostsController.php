@@ -9,10 +9,28 @@ class ListaPostsController
 {
     public function index()
     {
-        $posts = App::get('database')->selectAll('posts');
+        $database = App::get('database');
+        $postsOne = $database->selectAll('posts');
 
-        return view('admin/lista-posts', compact('posts'));
+        $limit = 3;
+        $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        if ($currentPage < 1) {
+            $currentPage = 1;
+        }
+        $offset = ($currentPage - 1) * $limit;
+        $totalPosts = count($postsOne);
+        $totalPaginas = ceil($totalPosts / $limit);
+        $posts = $database->paginate('posts', $limit, $offset);
+        //var_dump($totalPosts);
+
+        return view('admin/lista-posts', [
+            'posts' => $posts,
+            'currentPage' => $currentPage,
+            'totalPaginas' => $totalPaginas
+        ]);
     }
+
+    
 
     public function store()
     {
@@ -48,4 +66,6 @@ class ListaPostsController
         App::get('database')->update('posts', $parameters, $id);
         header('Location: /lista-posts');
     }
+
+
 }
