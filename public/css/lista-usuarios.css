@@ -393,6 +393,12 @@ form {
     width: 110px;
 }
 
+.botaoexcluir:hover{
+  background-color: #b91310;
+  color: white;
+  border-color: #b91310;
+}
+
 .botaocancelar{
     background-color: #2A2D3A;
     color: #10B981;
@@ -401,4 +407,10 @@ form {
     border-radius: 8px;
     cursor: pointer;
     width: 110px;
+}
+
+
+.botaocancelar:hover{
+  background-color: #10B981;
+  color: white;
 }
