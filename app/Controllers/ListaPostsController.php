@@ -12,7 +12,7 @@ class ListaPostsController
         $database = App::get('database');
         $postsOne = $database->selectAll('posts');
 
-        $limit = 3;
+        $limit = 6;
         $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
         if ($currentPage < 1) {
             $currentPage = 1;
