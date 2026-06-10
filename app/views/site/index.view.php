@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>My Simple Page</title>
 </head>
+
 <body>
     <header>
         <h1>Welcome to My Simple Page</h1>
@@ -21,6 +23,12 @@
     </main>
     <footer>
         <p>&copy; 2023 My Simple Page</p>
+        <?php
+        $totalPaginas = 10;
+        $currentPage = $currentPage ?? 1;
+        require __DIR__ . '/../admin/pagination.view.php';
+        ?>
     </footer>
 </body>
+
 </html>
