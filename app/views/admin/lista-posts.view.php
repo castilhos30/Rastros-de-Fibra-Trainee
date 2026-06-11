@@ -62,10 +62,6 @@
                                         <i class="fa-regular fa-comment"></i>
                                         0
                                     </li>
-                                    <li>
-                                        <i class="fa-regular fa-share-from-square"></i>
-                                        0
-                                    </li>
                                 </ul>
                             </td>
                             <td>
@@ -119,9 +115,9 @@
                 </div>
             </div>
             <div class="lista-posts-botoes">
-                <button type="submit" class="lista-posts-botao criar-post">Criar post</button>
                 <button type="button" class="lista-posts-botao voltar"
                     onclick="fecharModal('modalCriar')">Fechar</button>
+                <button type="submit" class="lista-posts-botao criar-post">Criar post</button>
             </div>
         </div>
     </form>
@@ -152,19 +148,19 @@
                     <div class="lista-posts-conteudo">
                         <div class="lista-posts-titulo">
                             <h5>Título:</h5>
-                            <input type="text" class="input titulo" placeholder="<?= $post->titulo; ?>" name="titulo">
+                            <input type="text" class="input titulo" placeholder="<?= $post->titulo; ?>" name="titulo" readonly>
                         </div>
                         <div class="lista-posts-descricao">
                             <h5>Descrição:</h5>
                             <input type="text" class="input descricao" placeholder="<?= $post->descricao; ?>"
-                                name="descricao">
+                                name="descricao" readonly>
                         </div>
                     </div>
                 </div>
                 <div class="lista-posts-botoes">
-                    <button type="button" class="lista-posts-botao abrir-post">Abrir post</button>
                     <button type="button" class="lista-posts-botao voltar"
                         onclick="fecharModal('modalVisualizar<?= $post->id ?>')">Fechar</button>
+                    <button type="button" class="lista-posts-botao abrir-post">Abrir post</button>
                 </div>
             </div>
         </form>
@@ -180,17 +176,17 @@
                 <div class="lista-posts-conteudo">
                     <div class="lista-posts-titulo">
                         <h5>Título:</h5>
-                        <input type="text" class="input titulo" placeholder="<?= $post->titulo ?>" name="titulo">
+                        <input type="text" class="input titulo" placeholder="<?= $post->titulo ?>" name="titulo" value="<?= $post->titulo ?>" required>
                     </div>
                     <div class="lista-posts-descricao">
                         <h5>Descrição:</h5>
-                        <input type="text" class="input descricao" placeholder="<?= $post->descricao ?>" name="descricao">
+                        <input type="text" class="input descricao" placeholder="<?= $post->descricao ?>" name="descricao" value="<?= $post->descricao ?>" required>
                     </div>
                 </div>
                 <div class="lista-posts-botoes">
-                    <button type="submit" class="lista-posts-botao salvar">Salvar</button>
                     <button type="button" class="lista-posts-botao voltar"
                         onclick="fecharModal('modalEditar<?= $post->id ?>')">Voltar</button>
+                    <button type="submit" class="lista-posts-botao salvar">Salvar</button>
                 </div>
             </div>
         </form>
@@ -202,9 +198,9 @@
                 <img src="../../../public/assets/ratoeira.png" alt="Rato pegando um queijo de uma ratoeira">
                 <h5>Tem certeza que deseja excluir este post?</h5>
                 <div class="lista-posts-botoes">
-                    <button type="submit" class="lista-posts-botao excluir">Excluir</button>
                     <button type="button" class="lista-posts-botao voltar"
                         onclick="fecharModal('modalExcluir')">Cancelar</button>
+                    <button type="submit" class="lista-posts-botao excluir">Excluir</button>
                 </div>
             </div>
             <input type="hidden" id="modalExcluirId" name="id" value="">
