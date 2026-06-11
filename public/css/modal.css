@@ -11,9 +11,7 @@
     box-sizing: border-box;
     justify-content: center;
 }
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0); 
-}
+
 form{
     display: contents;
 }
@@ -48,6 +46,8 @@ form{
 .scroll{
     overflow-y: auto;
     width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 h3{
     flex-shrink: 0;
