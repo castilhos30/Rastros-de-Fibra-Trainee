@@ -23,7 +23,7 @@ class ListaPostsController
         $posts = $database->paginate('posts', $limit, $offset, $pesquisa);
         //var_dump($totalPosts);
 
-        return view('admin/lista-posts', [
+        return view('admin/lista-de-posts', [
             'posts' => $posts,
             'currentPage' => $currentPage,
             'totalPaginas' => $totalPaginas,
@@ -46,7 +46,7 @@ class ListaPostsController
 
         App::get('database')->insert('posts', $parameters);
 
-        header('Location: /lista-posts');
+        header('Location: /lista-de-posts');
     }
 
     public function delete()
@@ -55,7 +55,7 @@ class ListaPostsController
 
         App::get('database')->delete('posts', $id);
 
-        header('Location: /lista-posts');
+        header('Location: /lista-de-posts');
     }
     public function edit()
     {
@@ -66,7 +66,7 @@ class ListaPostsController
         ];
         $id = $_POST['id'];
         App::get('database')->update('posts', $parameters, $id);
-        header('Location: /lista-posts');
+        header('Location: /lista-de-posts');
     }
 
 

@@ -198,7 +198,7 @@
                 <img src="../../../public/assets/ratoeira.png" alt="Rato pegando um queijo de uma ratoeira">
                 <h5>Tem certeza que deseja excluir este post?</h5>
                 <div class="lista-posts-botoes">
-                    <button type="button" class="lista-posts-botao voltar"
+                    <button type="button" class="lista-posts-botao cancelar"
                         onclick="fecharModal('modalExcluir')">Cancelar</button>
                     <button type="submit" class="lista-posts-botao excluir">Excluir</button>
                 </div>

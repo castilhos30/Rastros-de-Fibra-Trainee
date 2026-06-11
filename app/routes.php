@@ -6,7 +6,7 @@ use App\Core\Router;
 
 $router->get('', 'ExampleController@index');
 
-$router->get('lista-posts', 'ListaPostsController@index');
-$router->post('lista-posts/create', 'ListaPostsController@store');
-$router->post('lista-posts/delete', 'ListaPostsController@delete');
-$router->post('lista-posts/edit', 'ListaPostsController@edit');
+$router->get('lista-de-posts', 'ListaPostsController@index');
+$router->post('lista-de-posts/create', 'ListaPostsController@store');
+$router->post('lista-de-posts/delete', 'ListaPostsController@delete');
+$router->post('lista-de-posts/edit', 'ListaPostsController@edit');

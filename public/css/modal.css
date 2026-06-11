@@ -91,15 +91,20 @@ h3{
 } */
 .lista-posts-botao{
     border-style: solid;
-    padding: 8px 32px 8px 32px;
+    padding: 9px 29px;
     border-radius: 4px;
+    border-width: 1px;
     min-width: 25%;
-    background-color: var(--verde-claro);
+    background-color: transparent;
     border-color: #10B981;
-    color: white;
+    color: #10B981;
     cursor: pointer;
 }
-.voltar{
+.lista-posts-botao:hover{
+    background-color: #10B981;
+    color: #f5f5f5;
+}
+.voltar,.cancelar{
     background-color: #2A2D3A;
     color: #10B981;
     border: 1px solid #10B981;
@@ -167,8 +172,9 @@ h5{
 }
 
 .voltar:hover, .excluir:hover{
-        background-color: transparent;
-       
+        background-color: #b91013;
+        border-color: #b91013;
+        color: #f5f5f5;
 }
 #modalExcluir{
     padding: 40px 60px 40px 60px;
