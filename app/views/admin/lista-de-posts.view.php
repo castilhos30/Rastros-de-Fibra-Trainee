@@ -98,10 +98,11 @@
     </div>
 
     <!--Modal Criação-->
-    <form method="POST" action="/lista-de-posts/create">
+    <form method="POST" action="/lista-de-posts/create" enctype="multipart/form-data">
         <div class="lista-posts-modal lista-posts-visualizar" id="modalCriar">
             <h3>Criação de Post</h3>
             <div class="lista-posts-identificacao">
+                <input type="file" name="imagem" accept="image/*" class="input imagem" id="imagem">
                 <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
             </div>
             <div class="lista-posts-conteudo">
@@ -129,7 +130,7 @@
                 <h3>Informações do Post</h3>
                 <div class="scroll">
                     <div class="lista-posts-identificacao">
-                        <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
+                        <img class="lista-posts-imagem" src="<?= $post->foto ?>" alt="Imagem do post">
                         <div class="lista-posts-informacoes">
                             <div class="lista-posts-id">
                                 <h5>ID:</h5><input type="text" class="input" name="id" placeholder="<?= $post->id; ?>"

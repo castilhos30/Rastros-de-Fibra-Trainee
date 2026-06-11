@@ -35,11 +35,16 @@ class ListaPostsController
 
     public function store()
     {
+        $temporario = $_FILES['imagem']['tmp_name'];
+        $nomeImagem = sha1(uniqid($_FILES['imagem']['name'],true)) . '.' . pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
+        $caminhoImagem = 'img/' . $nomeImagem;
+        $caminhoImagem = "public/assets/imagensPosts/" . $nomeImagem;
+        move_uploaded_file($temporario, $caminhoImagem);
         $parameters = [
             'titulo' => $_POST['titulo'],
             'descricao' => $_POST['descricao'],
             'criador' => 'Admin',
-            'foto' => 'imgnormal.jpg',
+            'foto' => $caminhoImagem,
             'data' => date('Y-m-d H:i:s'),
             'id_usuario' => 1
         ];

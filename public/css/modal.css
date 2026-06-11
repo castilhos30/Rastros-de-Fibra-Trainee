@@ -76,19 +76,7 @@ h3{
     flex-direction: row;
     justify-content: center;
     gap: 2%;
-} /* versão antiga!
-.lista-posts-botao{
-    font-weight: bold;
-    font-size: 20px;
-    color: #f5f5f5;
-    border: 3px solid #05AC4B;
-    background-color: #05AC4B;
-    border-style: none;
-    border-radius: 6px;
-    width: clamp(90px,30%,240px);
-    height: clamp(45px,5%,50px);
-    padding: 1%;
-} */
+}
 .lista-posts-botao{
     border-style: solid;
     padding: 9px 29px;
@@ -124,9 +112,7 @@ h3{
 }
 .lista-posts-imagem{
     max-width: 100%;
-    width: clamp(50px, 100%, 400px);
-    height: clamp(40px, 50%, 250px);
-    max-height: 250px;
+    aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 15px;
     flex-shrink: 0;
