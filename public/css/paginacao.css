@@ -1,0 +1,13 @@
+.paginacao-container {
+    display: flex;
+}
+
+.paginacao {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.paginacao li {
+    margin-right: 20px;
+}

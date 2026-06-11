@@ -97,7 +97,7 @@
         </div>
 
         <!-- Paginação -->
-        <?php //require 'pagination.view.php' ?>
+        <?php require 'pagination.view.php' ?>
 
     </div>
 
