@@ -22,7 +22,7 @@
             <h1>Lista de Posts</h1>
         </div>
         <div class="navbar">
-            <form class="searchbar" method="GET" action="/lista-posts">
+            <form class="searchbar" method="GET" action="/lista-de-posts">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" name="pesquisa" value="<?= htmlspecialchars($pesquisa ?? '', ENT_QUOTES, 'UTF-8') ?>"
                     placeholder="Pesquisar...">
@@ -98,7 +98,7 @@
     </div>
 
     <!--Modal Criação-->
-    <form method="POST" action="/lista-posts/create">
+    <form method="POST" action="/lista-de-posts/create">
         <div class="lista-posts-modal lista-posts-visualizar" id="modalCriar">
             <h3>Criação de Post</h3>
             <div class="lista-posts-identificacao">
@@ -166,7 +166,7 @@
         </form>
 
         <!--Modal Edição-->
-        <form method="POST" action="/lista-posts/edit">
+        <form method="POST" action="/lista-de-posts/edit">
             <div class="lista-posts-modal lista-posts-visualizar" id="modalEditar<?= $post->id ?>">
                 <h3>Edição de Post</h3>
                 <input type="hidden" name="id" value="<?= $post->id ?>">
@@ -192,7 +192,7 @@
         </form>
 
         <!--Modal Exclusão-->
-        <form method="POST" action="/lista-posts/delete">
+        <form method="POST" action="/lista-de-posts/delete">
             <div class="lista-posts-modal lista-posts-visualizar" id="modalExcluir">
                 <h3>Excluir Post</h3>
                 <img src="../../../public/assets/ratoeira.png" alt="Rato pegando um queijo de uma ratoeira">
