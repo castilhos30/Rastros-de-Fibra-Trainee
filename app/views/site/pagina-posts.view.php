@@ -55,14 +55,20 @@
         <?php foreach ($posts as $post): ?>
             <div class="card">
                 <div class="cursor-pointer usuario">
-                    <img class="posts-pfp" width="40px" height="40px" src='../../../public/assets/pfp.png'
-                        alt="foto de perfil">
+                    <?php
+                    $usuario = array_filter($usuarios, function ($u) use ($post) {
+                        return $u->id === $post->id_usuario;
+                    });
+                    $usuario = reset($usuario);
+                    ?>
+                    <img class="posts-pfp" width="40px" height="40px"
+                        src='<?= $usuario ? $usuario->foto : "../../../public/assets/pfp.png" ?>' alt="foto de perfil">
                     <p class="posts-usuario">
                         <?= $post->criador ?>
                     </p>
                 </div>
                 <div class="posts-visual"> <img class="posts-imagem" width="330px" height="266px" alt="foto do post"
-                        src="../../../public/assets/imgnormal.jpg"> </div>
+                        src="<?= $post->foto ?>"> </div>
                 <div class="posts-interacoes">
                     <i class="fa-regular fa-thumbs-up cursor-pointer"></i>
                     <i class="fa-regular fa-thumbs-down cursor-pointer"></i>

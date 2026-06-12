@@ -22,12 +22,14 @@ class PaginaPostsController
         $totalPaginas = ceil($totalPosts / $limit);
         $posts = $database->paginate('posts', $limit, $offset, $pesquisa);
         //var_dump($totalPosts);
+        $usuarios = $database->selectAll('usuarios');
 
         return view('site/pagina-posts', [
             'posts' => $posts,
             'currentPage' => $currentPage,
             'totalPaginas' => $totalPaginas,
-            'pesquisa' => $pesquisa
+            'pesquisa' => $pesquisa,
+            'usuarios' => $usuarios
         ]);
     }
 }
