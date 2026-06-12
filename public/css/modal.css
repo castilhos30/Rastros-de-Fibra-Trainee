@@ -11,9 +11,7 @@
     box-sizing: border-box;
     justify-content: center;
 }
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0); 
-}
+
 form{
     display: contents;
 }
@@ -48,6 +46,8 @@ form{
 .scroll{
     overflow-y: auto;
     width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 h3{
     flex-shrink: 0;
@@ -76,30 +76,23 @@ h3{
     flex-direction: row;
     justify-content: center;
     gap: 2%;
-} /* versão antiga!
-.lista-posts-botao{
-    font-weight: bold;
-    font-size: 20px;
-    color: #f5f5f5;
-    border: 3px solid #05AC4B;
-    background-color: #05AC4B;
-    border-style: none;
-    border-radius: 6px;
-    width: clamp(90px,30%,240px);
-    height: clamp(45px,5%,50px);
-    padding: 1%;
-} */
+}
 .lista-posts-botao{
     border-style: solid;
-    padding: 8px 32px 8px 32px;
+    padding: 9px 29px;
     border-radius: 4px;
+    border-width: 1px;
     min-width: 25%;
-    background-color: var(--verde-claro);
+    background-color: transparent;
     border-color: #10B981;
-    color: white;
+    color: #10B981;
     cursor: pointer;
 }
-.voltar{
+.lista-posts-botao:hover{
+    background-color: #10B981;
+    color: #f5f5f5;
+}
+.voltar,.cancelar{
     background-color: #2A2D3A;
     color: #10B981;
     border: 1px solid #10B981;
@@ -119,9 +112,7 @@ h3{
 }
 .lista-posts-imagem{
     max-width: 100%;
-    width: clamp(50px, 100%, 400px);
-    height: clamp(40px, 50%, 250px);
-    max-height: 250px;
+    aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 15px;
     flex-shrink: 0;
@@ -137,7 +128,7 @@ h3{
     padding: 0%;
     gap: 15px;
 } 
-.input{
+.input, .descricao{
     height: 5vh;
     padding: 10px;
     width: 100%;
@@ -145,6 +136,10 @@ h3{
     border-style: none;
     border-radius: 5px;
     color: #f5f5f5;
+}
+.descricao{
+    height: 10vh;
+    resize: none;
 }
 .lista-posts-titulo, .lista-posts-descricao, .lista-posts-autor, .lista-posts-data, .lista-posts-id{
     width: 100%;
@@ -167,8 +162,9 @@ h5{
 }
 
 .voltar:hover, .excluir:hover{
-        background-color: transparent;
-       
+        background-color: #b91013;
+        border-color: #b91013;
+        color: #f5f5f5;
 }
 #modalExcluir{
     padding: 40px 60px 40px 60px;

@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Controllers;
-use App\Controllers\ExampleController;
+use App\Controllers\ListaPostsController;
 use App\Controllers\UserController;
+use App\Controllers\PaginaPostsController;
 use App\Core\Router;
 
 $router->get('', 'ExampleController@index');
@@ -13,3 +14,8 @@ $router->get('lista-de-usuarios', 'UserController@index');
 $router->post('lista-de-usuarios/criar', 'UserController@store');
 $router->post('lista-de-usuarios/editar', 'UserController@edit');
 $router->post('lista-de-usuarios/deletar', 'UserController@delete');
+
+$router->get('lista-de-posts', 'ListaPostsController@index');
+$router->post('lista-de-posts/create', 'ListaPostsController@store');
+$router->post('lista-de-posts/delete', 'ListaPostsController@delete');
+$router->post('lista-de-posts/edit', 'ListaPostsController@edit');
