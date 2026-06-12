@@ -9,11 +9,31 @@ class UserController
 {
     public function index()
     {
-        $usuarios = App::get('database')->selectAll('usuarios');
-        return view('admin/lista-usuarios', compact('usuarios'));
+        //$usuarios = App::get('database')->selectAll('usuarios');
+        //return view('admin/lista-usuarios', compact('usuarios'));
+        $database = App::get('database');
+
+        $limit = 6;
+        $currentPage = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+        $pesquisa = isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '';
+        if ($currentPage < 1) {
+            $currentPage = 1;
+        }
+        $offset = ($currentPage - 1) * $limit;
+        $totalUsers = count($database->search('usuarios', $pesquisa));
+        $totalPaginas = ceil($totalUsers / $limit);
+        $usuarios = $database->paginate('usuarios', $limit, $offset, $pesquisa);
+
+        return view('admin/lista-usuarios', [
+            'usuarios' => $usuarios,
+            'currentPage' => $currentPage,
+            'totalPaginas' => $totalPaginas,
+            'pesquisa' => $pesquisa
+        ]);
     }
 
-    public function store(){
+    public function store()
+    {
         $parameters = [
             'nome' => $_POST['nome'],
             'email' => $_POST['email'],
@@ -28,7 +48,8 @@ class UserController
         header('Location: /lista-de-usuarios');
     }
 
-    public function edit(){
+    public function edit()
+    {
         $parameters = [
             'nome' => $_POST['nome'],
             'email' => $_POST['email'],
@@ -40,7 +61,8 @@ class UserController
         header('Location: /lista-de-usuarios');
     }
 
-    public function delete(){
+    public function delete()
+    {
         $id = $_POST['id'];
         App::get('database')->delete('usuarios', $id);
         header('Location: /lista-de-usuarios');

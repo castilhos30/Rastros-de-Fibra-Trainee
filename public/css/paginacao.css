@@ -1,0 +1,71 @@
+.pagination-container {
+    padding-bottom: 40px;
+}
+
+.paginacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    list-style-type: none;
+}
+
+.paginacao a {
+    text-decoration: none;
+}
+
+.botaoanterior {
+    background: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.botaoproximo {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.numeracaodaspag {
+    display: flex;
+    gap: 10px;
+}
+
+.numeropagina {
+    background: none;
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.numeropagina:hover {
+    background-color: #313441ad;
+}
+
+.numeropagina.active {
+    background-color: #10B981;
+    color: white;
+}
+
+i {
+    color: white;
+}
