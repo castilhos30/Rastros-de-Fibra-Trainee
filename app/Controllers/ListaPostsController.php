@@ -11,7 +11,7 @@ class ListaPostsController
     {
         $database = App::get('database');
 
-        $limit = 1;
+        $limit = 6;
         $currentPage = isset($_GET['page']) ? (int) $_GET['page'] : 1;
         $pesquisa = isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '';
         if ($currentPage < 1) {
@@ -64,7 +64,7 @@ class ListaPostsController
     }
     public function edit()
     {
-        $id= $_POST['id'];
+        $id = $_POST['id'];
         $post = App::get('database')->selectOne('posts', $id);
         $caminhoImagem = $post->foto;
 
@@ -74,7 +74,7 @@ class ListaPostsController
             $caminhoImagem = "public/assets/imagensPosts/" . $nomeImagem;
             move_uploaded_file($temporario, $caminhoImagem);
 
-            if($post && !empty($post->foto) && file_exists($post->foto)){
+            if ($post && !empty($post->foto) && file_exists($post->foto)) {
                 unlink($post->foto);
             }
         }
