@@ -19,6 +19,9 @@
             <div class="espaço-graficos">
                 <div class="espaco-graf-usuarios">
                     <i class="fa-solid fa-chart-line i-dash" style="color: #05ac4b"></i>
+                    <div class="grafico-principal">
+                        <?php include('grafico-dash.php'); ?>
+                    </div>
                 </div>
                 <div class="espaco-numeros-dash">
                     <div class="espaco-user-dash">
