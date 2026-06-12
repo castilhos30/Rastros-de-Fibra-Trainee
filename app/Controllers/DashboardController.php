@@ -10,6 +10,6 @@ class DashboardController
 
     public function index()
     {
-        return view('dashboard');
+        return view('admin/dashboard');
     }
 }
