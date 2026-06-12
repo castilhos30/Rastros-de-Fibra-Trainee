@@ -20,9 +20,9 @@ class UserController
             $currentPage = 1;
         }
         $offset = ($currentPage - 1) * $limit;
-        $totalUsers = count($database->search('usuarios', $pesquisa));
+        $totalUsers = count($database->search('usuarios', $pesquisa, 'nome'));
         $totalPaginas = ceil($totalUsers / $limit);
-        $usuarios = $database->paginate('usuarios', $limit, $offset, $pesquisa);
+        $usuarios = $database->paginate('usuarios', $limit, $offset, $pesquisa, 'nome');
 
         return view('admin/lista-usuarios', [
             'usuarios' => $usuarios,
