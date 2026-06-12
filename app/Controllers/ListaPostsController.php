@@ -11,7 +11,7 @@ class ListaPostsController
     {
         $database = App::get('database');
 
-        $limit = 6;
+        $limit = 1;
         $currentPage = isset($_GET['page']) ? (int) $_GET['page'] : 1;
         $pesquisa = isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '';
         if ($currentPage < 1) {
@@ -36,7 +36,7 @@ class ListaPostsController
     public function store()
     {
         $temporario = $_FILES['imagem']['tmp_name'];
-        $nomeImagem = sha1(uniqid($_FILES['imagem']['name'],true)) . '.' . pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
+        $nomeImagem = sha1(uniqid($_FILES['imagem']['name'], true)) . '.' . pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
         $caminhoImagem = 'img/' . $nomeImagem;
         $caminhoImagem = "public/assets/imagensPosts/" . $nomeImagem;
         move_uploaded_file($temporario, $caminhoImagem);

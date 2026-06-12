@@ -24,8 +24,7 @@
         <div class="navbar">
             <form class="searchbar" method="GET" action="/lista-de-posts">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" name="pesquisa" value="<?= htmlspecialchars($pesquisa ?? '', ENT_QUOTES, 'UTF-8') ?>"
-                    placeholder="Pesquisar...">
+                <input type="text" name="pesquisa" placeholder="Pesquisar..." value="<?= htmlspecialchars($pesquisa ?? '', ENT_QUOTES, 'UTF-8') ?>">
             </form>
             <button type="button" class="botao-atual" onclick="abrirModal('modalCriar')">Criar Publicação</button>
         </div>
@@ -149,7 +148,8 @@
                     <div class="lista-posts-conteudo">
                         <div class="lista-posts-titulo">
                             <h5>Título:</h5>
-                            <input type="text" class="input titulo" placeholder="<?= $post->titulo; ?>" name="titulo" readonly>
+                            <input type="text" class="input titulo" placeholder="<?= $post->titulo; ?>" name="titulo"
+                                readonly>
                         </div>
                         <div class="lista-posts-descricao">
                             <h5>Descrição:</h5>
@@ -177,11 +177,13 @@
                 <div class="lista-posts-conteudo">
                     <div class="lista-posts-titulo">
                         <h5>Título:</h5>
-                        <input type="text" class="input titulo" placeholder="<?= $post->titulo ?>" name="titulo" value="<?= $post->titulo ?>" required>
+                        <input type="text" class="input titulo" placeholder="<?= $post->titulo ?>" name="titulo"
+                            value="<?= $post->titulo ?>" required>
                     </div>
                     <div class="lista-posts-descricao">
                         <h5>Descrição:</h5>
-                        <input type="text" class="input descricao" placeholder="<?= $post->descricao ?>" name="descricao" value="<?= $post->descricao ?>" required>
+                        <input type="text" class="input descricao" placeholder="<?= $post->descricao ?>" name="descricao"
+                            value="<?= $post->descricao ?>" required>
                     </div>
                 </div>
                 <div class="lista-posts-botoes">
