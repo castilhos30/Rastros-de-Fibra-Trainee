@@ -103,7 +103,7 @@
             <h3>Criação de Post</h3>
             <div class="lista-posts-identificacao">
                 <input type="file" name="imagem" accept="image/*" class="input imagem" id="imagem">
-                <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
+                <img class="lista-posts-imagem" src="public\assets\imgnormal.jpg" alt="Imagem do post">
             </div>
             <div class="lista-posts-conteudo">
                 <div class="lista-posts-titulo">
@@ -167,12 +167,13 @@
         </form>
 
         <!--Modal Edição-->
-        <form method="POST" action="/lista-de-posts/edit">
+        <form method="POST" action="/lista-de-posts/edit" enctype="multipart/form-data">
             <div class="lista-posts-modal lista-posts-visualizar" id="modalEditar<?= $post->id ?>">
                 <h3>Edição de Post</h3>
                 <input type="hidden" name="id" value="<?= $post->id ?>">
                 <div class="lista-posts-identificacao">
-                    <img class="lista-posts-imagem" src="../../../public/assets/imgnormal.jpg" alt="Imagem do post">
+                    <input type="file" name="imagem" accept="image/*" class="input imagem">
+                    <img class="lista-posts-imagem" data-src-original="<?= $post->foto ?>" src="<?= $post->foto ?>" alt="Imagem do post">
                 </div>
                 <div class="lista-posts-conteudo">
                     <div class="lista-posts-titulo">
