@@ -6,4 +6,4 @@ use App\Core\Router;
 
 $router->get('', 'ExampleController@index');
 
-$router->get('pagina-posts', 'PaginaPostsController@index');
+$router->get('pagina-de-posts', 'PaginaPostsController@index');

@@ -28,7 +28,7 @@
 
 <body>
     <div class="posts-barra-pesquisa">
-        <form method="GET" action="/pagina-posts">
+        <form method="GET" action="/pagina-de-posts">
             <label for="posts-pesquisa" class="posts-placeholder"><i class="fa-brands fa-sistrix"></i> </label>
             <input type="text" name="pesquisa" class="posts-pesquisa" placeholder="Pesquisar">
         </form>

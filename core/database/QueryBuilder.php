@@ -29,14 +29,14 @@ class QueryBuilder
         }
     }
 
-    public function paginate($table, $limit, $offset, $titulo = '')
+    public function paginate($table, $limit, $offset, $pesquisa = '', $column = '')
     {
         $sql = "SELECT * FROM {$table}";
         $parameters = [];
 
-        if ($titulo !== '') {
-            $sql .= " WHERE titulo LIKE :titulo";
-            $parameters['titulo'] = '%' . $titulo . '%';
+        if ($pesquisa !== '') {
+            $sql .= " WHERE {$column} LIKE :pesquisa";
+            $parameters['pesquisa'] = '%' . $pesquisa . '%';
         }
 
         $sql .= " LIMIT :limit OFFSET :offset";
@@ -46,8 +46,8 @@ class QueryBuilder
             $stmt->bindValue(':limit', (int) $limit, PDO::PARAM_INT);
             $stmt->bindValue(':offset', (int) $offset, PDO::PARAM_INT);
 
-            if (isset($parameters['titulo'])) {
-                $stmt->bindValue(':titulo', $parameters['titulo'], PDO::PARAM_STR);
+            if (isset($parameters['pesquisa'])) {
+                $stmt->bindValue(':pesquisa', $parameters['pesquisa'], PDO::PARAM_STR);
             }
 
             $stmt->execute();
@@ -58,13 +58,13 @@ class QueryBuilder
         }
     }
 
-    public function search($table, $titulo)
+    public function search($table, $pesquisa, $column)
     {
-        $sql = "SELECT * FROM {$table} WHERE titulo LIKE :titulo";
+        $sql = "SELECT * FROM {$table} WHERE {$column} LIKE :pesquisa";
 
         try {
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindValue(':titulo', '%' . $titulo . '%', PDO::PARAM_STR);
+            $stmt->bindValue(':pesquisa', '%' . $pesquisa . '%', PDO::PARAM_STR);
             $stmt->execute();
 
             return $stmt->fetchAll(PDO::FETCH_CLASS);
@@ -72,5 +72,6 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
+
 }
 

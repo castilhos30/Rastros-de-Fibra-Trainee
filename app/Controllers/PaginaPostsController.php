@@ -18,9 +18,9 @@ class PaginaPostsController
             $currentPage = 1;
         }
         $offset = ($currentPage - 1) * $limit;
-        $totalPosts = count($database->search('posts', $pesquisa));
+        $totalPosts = count($database->search('posts', $pesquisa, 'titulo'));
         $totalPaginas = ceil($totalPosts / $limit);
-        $posts = $database->paginate('posts', $limit, $offset, $pesquisa);
+        $posts = $database->paginate('posts', $limit, $offset, $pesquisa, 'titulo');
         //var_dump($totalPosts);
         $usuarios = $database->selectAll('usuarios');
 
