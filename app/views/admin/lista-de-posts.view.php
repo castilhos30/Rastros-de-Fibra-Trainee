@@ -100,6 +100,7 @@
     <form method="POST" action="/lista-de-posts/create" enctype="multipart/form-data">
         <div class="lista-posts-modal lista-posts-visualizar" id="modalCriar">
             <h3>Criação de Post</h3>
+            <div class="scroll">
             <div class="lista-posts-identificacao">
                 <input type="file" name="imagem" accept="image/*" class="input imagem" id="imagem">
                 <img class="lista-posts-imagem" src="public\assets\imgnormal.jpg" alt="Imagem do post">
@@ -113,6 +114,7 @@
                     <h5>Descrição:</h5>
                     <input type="text" class="input descricao" placeholder="Descrição" name="descricao">
                 </div>
+            </div>
             </div>
             <div class="lista-posts-botoes">
                 <button type="button" class="lista-posts-botao voltar"
@@ -170,6 +172,7 @@
         <form method="POST" action="/lista-de-posts/edit" enctype="multipart/form-data">
             <div class="lista-posts-modal lista-posts-visualizar" id="modalEditar<?= $post->id ?>">
                 <h3>Edição de Post</h3>
+            <div class="scroll">
                 <input type="hidden" name="id" value="<?= $post->id ?>">
                 <div class="lista-posts-identificacao">
                     <input type="file" name="imagem" accept="image/*" class="input imagem">
@@ -187,6 +190,7 @@
                             value="<?= $post->descricao ?>" required>
                     </div>
                 </div>
+            </div>
                 <div class="lista-posts-botoes">
                     <button type="button" class="lista-posts-botao voltar"
                         onclick="fecharModal('modalEditar<?= $post->id ?>')">Voltar</button>
