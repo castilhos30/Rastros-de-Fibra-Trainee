@@ -102,7 +102,7 @@
             <h3>Criação de Post</h3>
             <div class="scroll">
             <div class="lista-posts-identificacao">
-                <input type="file" name="imagem" accept="image/*" class="input imagem" id="imagem">
+                <input type="file" name="imagem" accept="image/*" class="input imagem" id="imagem" required>
                 <img class="lista-posts-imagem" src="public\assets\imgnormal.jpg" alt="Imagem do post">
             </div>
             <div class="lista-posts-conteudo">
@@ -112,7 +112,7 @@
                 </div>
                 <div class="lista-posts-descricao">
                     <h5>Descrição:</h5>
-                    <input type="text" class="input descricao" placeholder="Descrição" name="descricao">
+                    <textarea class="input descricao" placeholder="Descrição" name="descricao"></textarea>
                 </div>
             </div>
             </div>
@@ -155,8 +155,8 @@
                         </div>
                         <div class="lista-posts-descricao">
                             <h5>Descrição:</h5>
-                            <input type="text" class="input descricao" placeholder="<?= $post->descricao; ?>"
-                                name="descricao" readonly>
+                            <textarea class="input descricao" placeholder="<?= $post->descricao; ?>"
+                                name="descricao" value="<?= $post->descricao ?>" readonly></textarea>
                         </div>
                     </div>
                 </div>
@@ -186,8 +186,7 @@
                     </div>
                     <div class="lista-posts-descricao">
                         <h5>Descrição:</h5>
-                        <input type="text" class="input descricao" placeholder="<?= $post->descricao ?>" name="descricao"
-                            value="<?= $post->descricao ?>" required>
+                        <textarea class="input descricao" placeholder="<?= $post->descricao ?>" name="descricao" required><?= $post->descricao ?></textarea>
                     </div>
                 </div>
             </div>

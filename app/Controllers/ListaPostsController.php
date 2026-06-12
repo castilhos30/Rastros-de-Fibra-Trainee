@@ -64,10 +64,25 @@ class ListaPostsController
     }
     public function edit()
     {
+        $id= $_POST['id'];
+        $post = App::get('database')->selectOne('posts', $id);
+        $caminhoImagem = $post->foto;
+
+        if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
+            $temporario = $_FILES['imagem']['tmp_name'];
+            $nomeImagem = sha1(uniqid($_FILES['imagem']['name'], true)) . '.' . pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
+            $caminhoImagem = "public/assets/imagensPosts/" . $nomeImagem;
+            move_uploaded_file($temporario, $caminhoImagem);
+
+            if($post && !empty($post->foto) && file_exists($post->foto)){
+                unlink($post->foto);
+            }
+        }
+
         $parameters = [
             'titulo' => $_POST['titulo'],
             'descricao' => $_POST['descricao'],
-            'foto' => 'imgnormal.jpg',
+            'foto' => $caminhoImagem,
         ];
         $id = $_POST['id'];
         App::get('database')->update('posts', $parameters, $id);
