@@ -44,3 +44,27 @@ function resetaTabela() {
     tabelaBody.innerHTML = novoTexto;
 }
 */
+
+document.addEventListener('click', function(event) {
+    if(event.target === filtro) {
+        const modais = document.querySelectorAll('.painel, .painelcontainer, .caixadedeletar');
+        
+        modais.forEach(function(modal) {
+            modal.style.display = "none";
+        });
+        
+        filtro.style.display = "none";
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        const modais = document.querySelectorAll('.painel, .painelcontainer, .caixadedeletar');
+        
+        modais.forEach(function(modal) {
+            modal.style.display = "none"; 
+        });
+        
+        filtro.style.display = "none";
+    }
+});

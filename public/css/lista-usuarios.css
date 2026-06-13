@@ -309,7 +309,7 @@ form {
 .campovisualizar {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .campovisualizar input {
@@ -336,16 +336,17 @@ form {
   background-color: #2A2D3A;
   color: #10B981;
   border-radius: 8px;
-  height: 36px;
-  width: 120px;
+  height: 40px;
+  width: 110px;
   cursor: pointer;
 
 }
 
 
 .fecharmodalvisualizar:hover {
-  background-color: #10B981;
+  background-color: #b91310;
   color: white;
+  border-color: #b91310;
 }
 
 
