@@ -12,7 +12,10 @@
 }
 
 .paginacao a {
+    display: inline-block;
     text-decoration: none;
+    text-align: center;
+    margin: auto;
 }
 
 .botaoanterior {

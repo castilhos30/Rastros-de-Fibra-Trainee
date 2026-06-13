@@ -17,6 +17,7 @@
 
 <body>
     <div class="filtro" id="filtro"></div>
+    <?php require 'sidebar.view.php' ?>
     <div class="lista-posts-base">
         <div>
             <h1>Lista de Posts</h1>
@@ -24,7 +25,8 @@
         <div class="navbar">
             <form class="searchbar" method="GET" action="/lista-de-posts">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" name="pesquisa" placeholder="Pesquisar..." value="<?= htmlspecialchars($pesquisa ?? '', ENT_QUOTES, 'UTF-8') ?>">
+                <input type="text" name="pesquisa" placeholder="Pesquisar..."
+                    value="<?= htmlspecialchars($pesquisa ?? '', ENT_QUOTES, 'UTF-8') ?>">
             </form>
             <button type="button" class="botao-atual" onclick="abrirModal('modalCriar')">Criar Publicação</button>
         </div>
@@ -101,20 +103,20 @@
         <div class="lista-posts-modal lista-posts-visualizar" id="modalCriar">
             <h3>Criação de Post</h3>
             <div class="scroll">
-            <div class="lista-posts-identificacao">
-                <input type="file" name="imagem" accept="image/*" class="input imagem" id="imagem" required>
-                <img class="lista-posts-imagem" src="public\assets\imgnormal.jpg" alt="Imagem do post">
-            </div>
-            <div class="lista-posts-conteudo">
-                <div class="lista-posts-titulo">
-                    <h5>Título:</h5>
-                    <input type="text" class="input titulo" placeholder="Título" name="titulo">
+                <div class="lista-posts-identificacao">
+                    <input type="file" name="imagem" accept="image/*" class="input imagem" id="imagem" required>
+                    <img class="lista-posts-imagem" src="public\assets\imgnormal.jpg" alt="Imagem do post">
                 </div>
-                <div class="lista-posts-descricao">
-                    <h5>Descrição:</h5>
-                    <textarea class="input descricao" placeholder="Descrição" name="descricao"></textarea>
+                <div class="lista-posts-conteudo">
+                    <div class="lista-posts-titulo">
+                        <h5>Título:</h5>
+                        <input type="text" class="input titulo" placeholder="Título" name="titulo">
+                    </div>
+                    <div class="lista-posts-descricao">
+                        <h5>Descrição:</h5>
+                        <textarea class="input descricao" placeholder="Descrição" name="descricao"></textarea>
+                    </div>
                 </div>
-            </div>
             </div>
             <div class="lista-posts-botoes">
                 <button type="button" class="lista-posts-botao voltar"
@@ -155,8 +157,8 @@
                         </div>
                         <div class="lista-posts-descricao">
                             <h5>Descrição:</h5>
-                            <textarea class="input descricao" placeholder="<?= $post->descricao; ?>"
-                                name="descricao" value="<?= $post->descricao ?>" readonly></textarea>
+                            <textarea class="input descricao" placeholder="<?= $post->descricao; ?>" name="descricao"
+                                value="<?= $post->descricao ?>" readonly></textarea>
                         </div>
                     </div>
                 </div>
@@ -172,24 +174,26 @@
         <form method="POST" action="/lista-de-posts/edit" enctype="multipart/form-data">
             <div class="lista-posts-modal lista-posts-visualizar" id="modalEditar<?= $post->id ?>">
                 <h3>Edição de Post</h3>
-            <div class="scroll">
-                <input type="hidden" name="id" value="<?= $post->id ?>">
-                <div class="lista-posts-identificacao">
-                    <input type="file" name="imagem" accept="image/*" class="input imagem">
-                    <img class="lista-posts-imagem" data-src-original="<?= $post->foto ?>" src="<?= $post->foto ?>" alt="Imagem do post">
-                </div>
-                <div class="lista-posts-conteudo">
-                    <div class="lista-posts-titulo">
-                        <h5>Título:</h5>
-                        <input type="text" class="input titulo" placeholder="<?= $post->titulo ?>" name="titulo"
-                            value="<?= $post->titulo ?>" required>
+                <div class="scroll">
+                    <input type="hidden" name="id" value="<?= $post->id ?>">
+                    <div class="lista-posts-identificacao">
+                        <input type="file" name="imagem" accept="image/*" class="input imagem">
+                        <img class="lista-posts-imagem" data-src-original="<?= $post->foto ?>" src="<?= $post->foto ?>"
+                            alt="Imagem do post">
                     </div>
-                    <div class="lista-posts-descricao">
-                        <h5>Descrição:</h5>
-                        <textarea class="input descricao" placeholder="<?= $post->descricao ?>" name="descricao" required><?= $post->descricao ?></textarea>
+                    <div class="lista-posts-conteudo">
+                        <div class="lista-posts-titulo">
+                            <h5>Título:</h5>
+                            <input type="text" class="input titulo" placeholder="<?= $post->titulo ?>" name="titulo"
+                                value="<?= $post->titulo ?>" required>
+                        </div>
+                        <div class="lista-posts-descricao">
+                            <h5>Descrição:</h5>
+                            <textarea class="input descricao" placeholder="<?= $post->descricao ?>" name="descricao"
+                                required><?= $post->descricao ?></textarea>
+                        </div>
                     </div>
                 </div>
-            </div>
                 <div class="lista-posts-botoes">
                     <button type="button" class="lista-posts-botao voltar"
                         onclick="fecharModal('modalEditar<?= $post->id ?>')">Voltar</button>

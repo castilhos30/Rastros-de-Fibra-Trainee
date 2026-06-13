@@ -13,8 +13,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
+    /*display: flex;*/
+    flex-direction: row;
     align-items: center;
     max-width: 100%;
 }

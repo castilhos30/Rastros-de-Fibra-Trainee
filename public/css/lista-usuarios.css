@@ -8,6 +8,20 @@ body {
   background-attachment: fixed;
   height: screen;
   display: flex;
+  flex-direction: row;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  gap: 24px;
+  padding: 30px 50px;
+}
+
+.container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: screen;
+  width: 100%;
+  display: flex;
   flex-direction: column;
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -71,7 +85,7 @@ body {
 .botaocriaruser {
   background-color: #10B981;
   border-radius: 10px;
-  height: fit-content;
+  height: 100%;
   color: white;
   border: none;
   width: 180px;

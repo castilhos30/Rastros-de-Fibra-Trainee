@@ -13,60 +13,62 @@
 </head>
 
 <body>
-    <div class="titulolistauser"> Lista de Usuários </div>
-    <div class="segundadiv">
-        <div class="barradepesquisa">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <form class="searchbar" method="GET" action="/lista-de-usuarios">
-                <input type="text" name="pesquisa" class="pesquisarusuario" placeholder="Pesquisar..."></input>
-            </form>
+    <?php require("sidebar.view.php"); ?>
+    <div class="container">
+        <div class="titulolistauser"> Lista de Usuários </div>
+        <div class="segundadiv">
+            <div class="barradepesquisa">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <form class="searchbar" method="GET" action="/lista-de-usuarios">
+                    <input type="text" name="pesquisa" class="pesquisarusuario" placeholder="Pesquisar..."></input>
+                </form>
+            </div>
+            <button class="botaocriaruser" onclick="abrirModal('modalcriar')">
+                <i class="fa-solid fa-plus icone-mais"></i>
+                <h3 class="criarusuario"> Criar Usuário </h3>
+            </button>
         </div>
-        <button class="botaocriaruser" onclick="abrirModal('modalcriar')">
-            <i class="fa-solid fa-plus icone-mais"></i>
-            <h3 class="criarusuario"> Criar Usuário </h3>
-        </button>
-    </div>
-    <div class="containertebela">
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Ações</th>
-
-                </tr>
-            </thead>
-            <tbody id="tabelaBody">
-                <?php foreach ($usuarios as $usuario): ?>
+        <div class="containertebela">
+            <table>
+                <thead>
                     <tr>
-                        <td><?= $usuario->id ?></td>
-                        <td><?= $usuario->nome ?></td>
-                        <td><?= $usuario->email ?></td>
-                        <td>
-                            <div class="iconestabela">
-                                <button type="button" class="btn-acao btn-visualizar"
-                                    onclick="abrirModal('modalvisualizar-<?= $usuario->id ?>')">
-                                    <i class="fa-regular fa-eye"></i>
-                                </button>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Ações</th>
 
-                                <button type="button" class="btn-acao btn-editar"
-                                    onclick="abrirModal('modaleditar-<?= $usuario->id ?>')">
-                                    <i class="fa-regular fa-pen-to-square"></i>
-                                </button>
-
-                                <button type="button" class="btn-acao btn-excluir"
-                                    onclick="abrirModal('modalexcluir-<?= $usuario->id ?>')">
-                                    <i class="fa-regular fa-trash-can"></i>
-                                </button>
-                            </div>
-                        </td>
                     </tr>
-                <?php endforeach ?>
-            </tbody>
-        </table>
-    </div>
-    <!--
+                </thead>
+                <tbody id="tabelaBody">
+                        <?php foreach ($usuarios as $usuario): ?>
+                        <tr>
+                            <td><?= $usuario->id ?></td>
+                            <td><?= $usuario->nome ?></td>
+                            <td><?= $usuario->email ?></td>
+                            <td>
+                                <div class="iconestabela">
+                                    <button type="button" class="btn-acao btn-visualizar"
+                                        onclick="abrirModal('modalvisualizar-<?= $usuario->id ?>')">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+
+                                    <button type="button" class="btn-acao btn-editar"
+                                        onclick="abrirModal('modaleditar-<?= $usuario->id ?>')">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </button>
+
+                                    <button type="button" class="btn-acao btn-excluir"
+                                        onclick="abrirModal('modalexcluir-<?= $usuario->id ?>')">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+        <!--
     <div class="paginacao">
         <button class="botaoanterior">
             <i class="fa-solid fa-chevron-left"></i> Anterior
@@ -81,7 +83,8 @@
         </button>
     </div>
                 -->
-    <?php require("pagination.view.php"); ?>
+            <?php require("pagination.view.php"); ?>
+    </div>
 
 
     <div class="filtro" id="filtro"></div>
