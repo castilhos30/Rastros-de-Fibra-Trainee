@@ -34,9 +34,23 @@ class UserController
 
     public function store()
     {
+        $emailDigitado = $_POST['email'];
+        $todosUsuarios = App::get('database')->selectAll('usuarios');
+        $emailJaExiste = false;
+
+        foreach ($todosUsuarios as $usuario) {
+            if ($usuario->email === $emailDigitado) {
+                $emailJaExiste = true;
+                break;
+            }
+        }
+        if ($emailJaExiste) {
+            header('Location: /lista-de-usuarios?erro=email');
+            exit();
+        }
         $parameters = [
             'nome' => $_POST['nome'],
-            'email' => $_POST['email'],
+            'email' => $emailDigitado,
             'senha' => $_POST['senha'],
             'foto' => 'public/assets/perfil.png',
             'data' => date('Y-m-d'),
@@ -50,14 +64,28 @@ class UserController
 
     public function edit()
     {
+        $idEditado = $_POST['id'];
+        $emailDigitado = $_POST['email'];
+        $todosUsuarios = App::get('database')->selectAll('usuarios');
+        $emailJaExiste = false;
+
+        foreach ($todosUsuarios as $usuario) {
+            if ($usuario->email === $emailDigitado && $usuario->id != $idEditado) {
+                $emailJaExiste = true;
+                break;
+            }
+        }
+        if ($emailJaExiste) {
+            header('Location: /lista-de-usuarios?erro=email');
+            exit();
+        }
         $parameters = [
             'nome' => $_POST['nome'],
-            'email' => $_POST['email'],
+            'email' => $emailDigitado,
             'senha' => $_POST['senha']
         ];
 
-        $id = $_POST['id'];
-        App::get('database')->update('usuarios', $id, $parameters);
+        App::get('database')->update('usuarios', $idEditado, $parameters);
         header('Location: /lista-de-usuarios');
     }
 

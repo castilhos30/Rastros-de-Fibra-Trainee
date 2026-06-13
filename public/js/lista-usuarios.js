@@ -68,3 +68,10 @@ document.addEventListener('keydown', function(event) {
         filtro.style.display = "none";
     }
 });
+
+const parametrosUrl = new URLSearchParams(window.location.search);
+
+if (parametrosUrl.get('erro') === 'email') {
+    alert('Erro: Este e-mail já está sendo utilizado por outro usuário.');
+    window.history.replaceState(null, null, window.location.pathname);
+}
