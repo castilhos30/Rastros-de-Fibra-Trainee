@@ -137,16 +137,16 @@
                         <img class="lista-posts-imagem" src="<?= $post->foto ?>" alt="Imagem do post">
                         <div class="lista-posts-informacoes">
                             <div class="lista-posts-id">
-                                <h5>ID:</h5><input type="text" class="input" name="id" placeholder="<?= $post->id; ?>"
+                                <h5>ID:</h5><input type="text" class="input" name="id" value="<?= $post->id; ?>"
                                     readonly>
                             </div>
                             <div class="lista-posts-autor">
                                 <h5>Autor:</h5><input type="text" class="input" name="autor"
-                                    placeholder="<?= $post->criador; ?>" readonly>
+                                    placeholder="<?= $post->criador; ?>" value="<?= $post->criador; ?>" readonly>
                             </div>
                             <div class="lista-posts-data">
                                 <h5>Criação:</h5><input type="text" class="input" name="data"
-                                    placeholder="<?= $post->data; ?>" readonly>
+                                    placeholder="<?= $post->data; ?>" value="<?= $post->data; ?>" readonly>
                             </div>
                         </div>
                     </div>
@@ -178,7 +178,7 @@
                 <div class="scroll">
                     <input type="hidden" name="id" value="<?= $post->id ?>">
                     <div class="lista-posts-identificacao">
-                        <input type="file" id="imagem<?= $post->id ?>" accept="image/*" class="input imagem">
+                        <input type="file" name="imagem" id="imagem<?= $post->id ?>" accept="image/*" class="input imagem">
                         <label for="imagem<?= $post->id ?>" class="lista-posts-label"> <img class="lista-posts-imagem" data-src-original="<?= $post->foto ?>" src="<?= $post->foto ?>"
                             alt="Imagem do post">
                         </label>

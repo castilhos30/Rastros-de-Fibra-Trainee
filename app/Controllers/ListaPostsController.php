@@ -85,7 +85,7 @@ class ListaPostsController
             'foto' => $caminhoImagem,
         ];
         $id = $_POST['id'];
-        App::get('database')->update('posts', $parameters, $id);
+        App::get('database')->update('posts', $id, $parameters);
         header('Location: /lista-de-posts');
     }
 
