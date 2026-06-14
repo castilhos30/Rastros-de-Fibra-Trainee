@@ -46,18 +46,41 @@ class LoginController
     }
     public function efetuaCadastro()
     {
-        $username = $_POST['username'];
-        $email =$_POST['email'];
-        $senha = $_POST['senha'];
+        $emailDigitado = $_POST['email'];
+        $todosUsuarios = App::get('database')->selectAll('usuarios');
+        $emailJaExiste = false;
 
-        try {
-            App::get('database')->criarUsuario($username, $email, $senha);
-            header('Location: /pagina-de-posts');
-            exit();
-        } catch (Exception $e) {
-            $_SESSION['mensagem_erro'] = 'Erro ao criar usuário: ' . $e->getMessage();
-            header('Location: /cadastro');
-            exit();
+        foreach ($todosUsuarios as $usuario) {
+            if ($usuario->email === $emailDigitado) {
+                $emailJaExiste = true;
+                break;
+            }
         }
+        if ($emailJaExiste) {
+            $_SESSION['mensagem_erro'] = 'Email já cadastrado, tente fazer login ou use outro email.';
+            header('Location: /cadastro');
+        }
+
+        $caminhoFoto = 'public/assets/icon-user.png';
+        if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
+        $temporario = $_FILES['imagem']['tmp_name'];
+        $extensao = pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
+        $nomeUnico = sha1(uniqid($_FILES['imagem']['name'], true)) . '.' . $extensao;
+        $caminhoFoto = 'public/assets/' . $nomeUnico;
+        move_uploaded_file($temporario, $caminhoFoto);
+        }
+
+        $parameters = [
+            'nome' => $_POST['username'],
+            'email' => $emailDigitado,
+            'senha' => $_POST['senha'],
+            'foto' => $caminhoFoto,
+            'data' => date('Y-m-d'),
+            'admin' => 0
+        ];
+
+        App::get('database')->insert('usuarios', $parameters);
+
+        header('Location: /lista-de-usuarios');
     }
 }

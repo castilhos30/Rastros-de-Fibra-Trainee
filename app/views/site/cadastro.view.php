@@ -24,7 +24,7 @@
     <div class="login">
         <div class="login-login">
                 <button class="home"><i class="bi bi-arrow-left"></i>Home</button>
-            <div>
+            <div class="scroll">
                 <div class="login-logo">
                     <div class="logo-login">
                         <img src="../../../public/assets/Rato-texto.png" width="252px" height="90">
@@ -45,11 +45,6 @@
                                 <label for = "email">Informe seu nome de usuário.</label><br>
                                 <div id="div-email"><i class="bi bi-person"></i><input maxlength="50" type="text" placeholder= "Nome de usuário" name="username" required></div>
                             </div>
-                        <div class="lista-posts-identificacao">
-                            <input type="file" name="imagem" accept="image/*" class="input imagem" id="imagem" required>
-                            <label for="imagem" class="lista-posts-label"> <img class='lista-posts-imagem' data-src-original="public\assets\imgnormal.jpg" src="public\assets\imgnormal.jpg" alt="Imagem do post"/>
-                            </label>
-                        </div>
                             <div class="login-email">
                                 <label for = "email">Informe seu email</label><br>
                                 <div id="div-email"><i class="bi bi-envelope"></i><input maxlength="50" type="text" placeholder= "Email" name="email" required></div>
@@ -57,6 +52,21 @@
                             <div class="login-senha">
                                 <label for = "senha">Informe sua senha</label><br>
                                 <div id="div-senha"><i class="bi bi-lock"></i><input maxlength="255" type="password" placeholder= "Senha" name="senha" required> <i class="bi bi-eye-slash"></i></div>
+                            </div>
+                            <div class="lista-posts-identificacao">
+                                <label>Selecione sua foto de perfil (opcional).</label>
+                                <input type="file" name="imagem" accept="image/*" class="input imagem" id="imagem">
+                                <label for="imagem" class="lista-posts-label"> 
+                                    <img class='lista-posts-imagem' data-src-original="public\assets\icon-user.png" src="public\assets\icon-user.png" alt="Imagem de perfil"/>
+                                </label>
+                            </div>
+                            <div class="login-mensagem-erro">
+                                <?php
+                                    if(isset($_SESSION['mensagem_erro'])) {
+                                        echo '<p>' . $_SESSION['mensagem_erro'] . '</p>';
+                                        unset($_SESSION['mensagem_erro']);
+                                    }
+                                ?>
                             </div>
                             <a class="login-hover" link href="/">Problemas no registro? Entre em contato aqui.</a>
                             <div class="login-botao">
@@ -70,5 +80,6 @@
         </div>
         <div class="visual"><img id="fundo-academia" src="../../../public/assets/fundo-academia.jpg"></div>
     </div>
+    <script src="../../../public/js/login.js"></script>
 </body>
 </html>
