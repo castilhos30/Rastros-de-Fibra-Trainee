@@ -94,7 +94,13 @@
     <div class="modal-criar-editar">
         <div class="painel" id="modalcriar">
             <h1>Criação de Usuário</h1>
-            <form method="POST" action="/lista-de-usuarios/criar">
+            <form method="POST" action="/lista-de-usuarios/criar" enctype="multipart/form-data">
+                <div class="container-foto-upload">
+                    <label for="foto-criacao" class="label-foto">
+                        <img src="/public/assets/icon-user.png" class="foto-perfil preview-usuario" alt="Foto">
+                    </label>
+                    <input type="file" name="foto" id="foto-criacao" accept="image/*" class="input-foto-oculto">
+                </div>
                 <div class="formcampos">
                     <label for="nome">Nome:</label>
                     <input type="text" name="nome" id="nome">
@@ -118,7 +124,13 @@
         <div class="modal-criar-editar">
             <div class="painel" id="modaleditar-<?= $usuario->id ?>">
                 <h1>Edição de Usuário</h1>
-                <form method="POST" action="/lista-de-usuarios/editar">
+                <form method="POST" action="/lista-de-usuarios/editar" enctype="multipart/form-data">
+                    <div class="container-foto-upload">
+                        <label for="foto-edicao-<?= $usuario->id ?>" class="label-foto">
+                            <img src="/<?= $usuario->foto ?>" class="foto-perfil preview-usuario" alt="Foto">
+                        </label>
+                        <input type="file" name="foto" id="foto-edicao-<?= $usuario->id ?>" accept="image/*" class="input-foto-oculto">
+                    </div>
                     <div class="formcampos">
                         <label for="nome">Nome:</label>
                         <input type="text" name="nome" id="nome" value="<?= $usuario->nome ?>">
@@ -141,6 +153,9 @@
             <h1>Informações do Usuário</h1>
             <form>
                 <div class="visualizarusuario">
+                    <div class="container-foto-visualizar">
+                        <img src="<?= $usuario->foto ?>" class="foto-perfil-leitura" alt="Foto do Usuário">
+                    </div>
                     <div class="campovisualizar">
                         <label for="usuario-id">ID:</label>
                         <input type="text" id="usuario-id" value="<?= $usuario->id ?>" readonly>
@@ -161,7 +176,7 @@
                     </div>
                 </div>
                 <div class="botaofecharvisualizar">
-                    <button class="fecharmodalvisualizar" onclick="fecharModal('modalvisualizar')">Fechar</button>
+                    <button type="button" class="fecharmodalvisualizar" onclick="fecharModal('modalvisualizar-<?= $usuario->id ?>')">Fechar</button>
                 </div>
             </form>
         </div>

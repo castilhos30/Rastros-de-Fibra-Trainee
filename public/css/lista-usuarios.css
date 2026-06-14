@@ -363,7 +363,19 @@ form {
   border-color: #b91310;
 }
 
+.container-foto-visualizar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
+.foto-perfil-leitura {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4a4a59; 
+}
 
 /* modal excluir */
 

@@ -48,11 +48,21 @@ class UserController
             header('Location: /lista-de-usuarios?erro=email');
             exit();
         }
+
+        $caminhoFoto = 'public/assets/icon-user.png';
+        if (isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK) {
+        $temporario = $_FILES['foto']['tmp_name'];
+        $extensao = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
+        $nomeUnico = sha1(uniqid($_FILES['foto']['name'], true)) . '.' . $extensao;
+        $caminhoFoto = 'public/assets/' . $nomeUnico;
+        move_uploaded_file($temporario, $caminhoFoto);
+        }
+
         $parameters = [
             'nome' => $_POST['nome'],
             'email' => $emailDigitado,
             'senha' => $_POST['senha'],
-            'foto' => 'public/assets/perfil.png',
+            'foto' => $caminhoFoto,
             'data' => date('Y-m-d'),
             'admin' => 0
         ];

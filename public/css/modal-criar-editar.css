@@ -94,3 +94,45 @@
     border-color: var(--vermelho);
     color: white;
 }
+
+.container-foto-upload {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.input-foto-oculto {
+    display: none;
+}
+
+.label-foto {
+    position: relative;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover; 
+    border: 3px solid #16c09b; 
+}
+
+.icone-editar-foto {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    background-color: #16c09b;
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.label-foto:hover{
+    opacity: 0.7;
+}

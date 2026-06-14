@@ -75,3 +75,18 @@ if (parametrosUrl.get('erro') === 'email') {
     alert('Erro: Este e-mail já está sendo utilizado por outro usuário.');
     window.history.replaceState(null, null, window.location.pathname);
 }
+
+document.addEventListener('change', function(event) {
+    if (event.target.type === 'file') {
+        const imagem = event.target.files[0];
+        if (imagem) {
+            const container = event.target.closest('.container-foto-upload');
+            if (container) {
+                const previewImagem = container.querySelector('.preview-usuario');
+                if (previewImagem) {
+                    previewImagem.src = URL.createObjectURL(imagem);
+                }
+            }
+        }
+    }
+});
