@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../../public/css/login.css" rel="stylesheet">
-    <title>Login</title>
+    <title>Cadastro</title>
     <!--Boostrap icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!--Fontes-->
@@ -33,25 +33,34 @@
                 <div class="login-caixa-texto">
                     <div class="login-introducao">
                         <div class="login-titulo">
-                                <h3>Cadastro</h3>
+                                <h3>Registro</h3>
                         </div>
                         <div class="login-descricao">
-                                <p> Entre em sua conta ou <a class="login-hover" href="/">registre-se</a></p>
+                                <p> Crie sua conta ou <a class="login-hover" href="/login">faça login.</a></p>
                         </div>
                     </div>
                     <div class="login-inputs">
-                        <form action="action_page.php" method="post">
+                        <form action="/cadastro" method="post" enctype="multipart/form-data">
+                            <div class="login-email">
+                                <label for = "email">Informe seu nome de usuário.</label><br>
+                                <div id="div-email"><i class="bi bi-person"></i><input maxlength="50" type="text" placeholder= "Nome de usuário" name="username" required></div>
+                            </div>
+                        <div class="lista-posts-identificacao">
+                            <input type="file" name="imagem" accept="image/*" class="input imagem" id="imagem" required>
+                            <label for="imagem" class="lista-posts-label"> <img class='lista-posts-imagem' data-src-original="public\assets\imgnormal.jpg" src="public\assets\imgnormal.jpg" alt="Imagem do post"/>
+                            </label>
+                        </div>
                             <div class="login-email">
                                 <label for = "email">Informe seu email</label><br>
-                                <div id="div-email"><i class="bi bi-envelope"></i><input type="text" placeholder= "Email" name="email" required></div>
+                                <div id="div-email"><i class="bi bi-envelope"></i><input maxlength="50" type="text" placeholder= "Email" name="email" required></div>
                             </div>
                             <div class="login-senha">
                                 <label for = "senha">Informe sua senha</label><br>
-                                <div id="div-senha"><i class="bi bi-lock"></i><input type="password" placeholder= "Senha" name="email" required> <i class="bi bi-eye-slash"></i></div>
+                                <div id="div-senha"><i class="bi bi-lock"></i><input maxlength="255" type="password" placeholder= "Senha" name="senha" required> <i class="bi bi-eye-slash"></i></div>
                             </div>
-                            <a class="login-hover" link href="/">Problemas no login? Entre em contato aqui.</a>
+                            <a class="login-hover" link href="/">Problemas no registro? Entre em contato aqui.</a>
                             <div class="login-botao">
-                                <button id="login" type="submit">Login</button>
+                                <button id="login" type="submit">Registre-se</button>
                             </div>
                             
                         </form>

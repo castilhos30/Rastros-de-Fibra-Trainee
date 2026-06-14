@@ -19,13 +19,13 @@ class LoginController
         );
         if($user != false)
         {
-            session_start();
+
             $_SESSION['id']= $user->id;
-            header('Location: /pagina-posts');
+            header('Location: /pagina-de-posts');
             exit();
         } else{
 
-            session_start();
+
             $_SESSION['mensagem_erro'] = 'Email ou senha incorretos';
             header('Location: /login');
         }
@@ -35,9 +35,29 @@ class LoginController
     }
     public function Logout()
     {
-        session_start();
         session_destroy();
         header('Location: /login');
         exit();
+    }
+
+    public function exibirCadastro()
+    {
+        return view('site/cadastro');
+    }
+    public function efetuaCadastro()
+    {
+        $username = $_POST['username'];
+        $email =$_POST['email'];
+        $senha = $_POST['senha'];
+
+        try {
+            App::get('database')->criarUsuario($username, $email, $senha);
+            header('Location: /pagina-de-posts');
+            exit();
+        } catch (Exception $e) {
+            $_SESSION['mensagem_erro'] = 'Erro ao criar usuário: ' . $e->getMessage();
+            header('Location: /cadastro');
+            exit();
+        }
     }
 }

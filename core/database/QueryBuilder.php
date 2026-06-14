@@ -163,5 +163,21 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
+    public function criarUsuario($username, $email, $senha)
+    {
+        $sql = sprintf("INSERT INTO usuarios (nome, email, senha) VALUES (:username, :email, :senha)");
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([
+                'username' => $username,
+                'email' => $email,
+                'senha' => $senha
+            ]);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 }
 

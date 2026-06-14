@@ -25,3 +25,6 @@ $router->get('login', 'LoginController@exibirLogin');
 
 $router->post('login', 'LoginController@efetuaLogin');
 $router->post('logout', 'LoginController@Logout');
+
+$router->get('cadastro', 'LoginController@exibirCadastro');
+$router->post('cadastro', 'LoginController@efetuaCadastro');

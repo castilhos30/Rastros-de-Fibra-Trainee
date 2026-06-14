@@ -36,22 +36,21 @@
                                 <h3>Cadastro</h3>
                         </div>
                         <div class="login-descricao">
-                                <p> Entre em sua conta ou <a class="login-hover" href="/">registre-se</a></p>
+                                <p> Entre em sua conta ou <a class="login-hover" href="/cadastro">registre-se</a></p>
                         </div>
                     </div>
                     <div class="login-inputs">
                         <form action="/login" method="post">
                             <div class="login-email">
                                 <label for = "email">Informe seu email</label><br>
-                                <div id="div-email"><i class="bi bi-envelope"></i><input type="text" placeholder= "Email" name="email" required></div>
+                                <div id="div-email"><i class="bi bi-envelope"></i><input maxlength="50" type="text" placeholder= "Email" name="email" required></div>
                             </div>
                             <div class="login-senha">
                                 <label for = "senha">Informe sua senha</label><br>
-                                <div id="div-senha"><i class="bi bi-lock"></i><input type="password" placeholder= "Senha" name="email" required> <i class="bi bi-eye-slash"></i></div>
+                                <div id="div-senha"><i class="bi bi-lock"></i><input maxlength="255" type="password" placeholder= "Senha" name="senha" required> <i class="bi bi-eye-slash"></i></div>
                             </div>
                             <div class="login-mensagem-erro">
                                 <?php
-                                    session_start();
                                     if(isset($_SESSION['mensagem_erro'])) {
                                         echo '<p>' . $_SESSION['mensagem_erro'] . '</p>';
                                         unset($_SESSION['mensagem_erro']);
