@@ -87,8 +87,13 @@ body{
     width: 100%;
 }
 
+.icon-texto{
+    display: flex;
+    flex-direction: row;
+} 
+
 .i-dash{
-    margin: 40px;
+    margin: 40px 10px 10px 40px;
     font-size: 35px;
 }
 
@@ -115,7 +120,7 @@ body{
     padding: 32px;
 }
 
-#dash-texts{
+.dash-texts{
     font-family: 'Montserrat';
     color: var(--color-white);
     font-size: 30px;
@@ -199,7 +204,7 @@ body{
 
 /*tablet*/
 @media(max-width: 1024px){
-    #dash-texts{
+    .dash-texts{
         font-size: 16px;
     }
 
@@ -211,6 +216,19 @@ body{
 
     .hello-user-dash{
         font-size: 24px;
+    }
+
+    .espaco-graf-usuarios{
+        overflow: hidden;
+        padding-bottom: 30px;
+        height: fit-content;
+    }
+
+    .espaço-graficos, .espaço-analise{
+        display: flex;
+        align-items: flex-start;
+        overflow: hidden;
+        height: fit-content;
     }
 
 }
@@ -241,9 +259,10 @@ body{
     .espaco-graf-usuarios{
         width: 100%;
         border-radius: 8px;
+        overflow: hidden;
     }
 
-    #dash-texts{
+    .dash-texts{
         font-size: 12px;
     }
 

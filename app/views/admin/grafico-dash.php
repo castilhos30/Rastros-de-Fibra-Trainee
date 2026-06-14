@@ -2,39 +2,71 @@
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
+      google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawStuff);
 
       function drawStuff() {
         var data = new google.visualization.arrayToDataTable([
-          ['Move', 'Percentage'],
-          ["King's pawn (e4)", 44],
-          ["Queen's pawn (d4)", 31],
-          ["Knight to King 3 (Nf3)", 12],
-          ["Queen's bishop pawn (c4)", 10],
-          ['Other', 3]
+          ['Mês', 'Curtidas'],
+          ["Jan", <?= $curtidasMes[0] ?>],
+          ["Fev", <?= $curtidasMes[1] ?> ],
+          ["Mar", <?= $curtidasMes[2] ?> ],
+          ["Abr", <?= $curtidasMes[3] ?>],
+          ["Mai", <?= $curtidasMes[4] ?>],
+          ["Jun", <?= $curtidasMes[5] ?>],
+          ["Jul", <?= $curtidasMes[6] ?>],
+          ["Ago", <?= $curtidasMes[7] ?>],
+          ["Set", <?= $curtidasMes[8] ?>],
+          ["Out", <?= $curtidasMes[9] ?>],
+          ["Nov", <?= $curtidasMes[10] ?>],
+          ["Dez", <?= $curtidasMes[11] ?>],
         ]);
 
+        var isMobile = window.innerWidth < 768;
+
         var options = {
-          width: 800,
+          height: isMobile ? 180 : 300,
           legend: { position: 'none' },
-          chart: {
-            title: 'Chess opening moves',
-            subtitle: 'popularity by percentage' },
-          axes: {
-            x: {
-              0: { side: 'top', label: 'White to move'} // Top x-axis.
-            }
+
+          backgroundColor: '#2A2D3A', 
+        
+          chartArea: {
+            backgroundColor: '#3b4250',
+            top: isMobile ? 0 : 50,
+            width: isMobile ? '95%' : '80%', 
+            height: isMobile ? '60%' : '70%',
           },
-          bar: { groupWidth: "90%" }
+
+          hAxis: {
+            textStyle: { 
+              color: '#ffffff', 
+              fontSize: isMobile ? 10 : 12 
+            },
+            slantedText: isMobile, 
+            slantedTextAngle: 45
+          },
+          vAxis: {
+            textStyle: { 
+              color: '#ffffff',
+              fontSize: isMobile ? 10 : 12 
+            },
+            gridlines: { color: '#4f5b75' }
+          },
+          
+          bar: { groupWidth: "80%" },
+          colors: ['#22ffb5'] 
         };
 
-        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      };
+        var chart = new google.visualization.ColumnChart(document.getElementById('top_x_div'));
+        chart.draw(data, options);
+
+      };  
+
+      window.addEventListener('resize', drawStuff);
+
     </script>
   </head>
   <body>
-    <div id="top_x_div" style="width: 800px; height: 600px;"></div>
+    <div id="top_x_div" style="background-color: #2d3446;"></div>
   </body>
 </html>
