@@ -92,6 +92,15 @@ body{
     flex-direction: row;
 } 
 
+.titulo-grafico{
+    color: var(--color-white);
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 25px;
+    margin: 40px 20px 20px 20px;
+}
+
+
 .i-dash{
     margin: 40px 10px 10px 40px;
     font-size: 35px;
@@ -199,7 +208,7 @@ body{
     font-family: 'Montserrat';
     font-weight: 500;
     font-size: 25px;
-    margin: 20px;
+    margin: 20px 20px 20px 20px;
 }
 
 /*tablet*/

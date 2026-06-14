@@ -23,7 +23,7 @@
                 <div class="espaco-graf-usuarios">
                     <div class="icon-texto">
                         <i class="fa-solid fa-chart-line i-dash" style="color: #05ac4b"></i>
-                        <p class="trending-dash-text">Curtidas por Mês</p>
+                        <p class="titulo-grafico">Curtidas por Mês</p>
                     </div>
                     <div class="grafico-principal">
                         <?php include('grafico-dash.php');?>
