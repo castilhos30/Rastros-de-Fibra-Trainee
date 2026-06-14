@@ -19,3 +19,9 @@ $router->get('lista-de-posts', 'ListaPostsController@index');
 $router->post('lista-de-posts/create', 'ListaPostsController@store');
 $router->post('lista-de-posts/delete', 'ListaPostsController@delete');
 $router->post('lista-de-posts/edit', 'ListaPostsController@edit');
+
+$router->get('', 'LoginController@exibirLogin');
+$router->get('login', 'LoginController@exibirLogin');
+
+$router->post('login', 'LoginController@efetuaLogin');
+$router->post('logout', 'LoginController@Logout');

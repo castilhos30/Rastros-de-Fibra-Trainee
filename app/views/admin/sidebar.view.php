@@ -48,10 +48,12 @@
     </div>
 
     <div class="logout-sidebar">
-        <button type="button" id="button-logout">
+    <form action="/logout" method="post">
+        <button type="submit" id="button-logout">
             <i class="fa-solid fa-right-from-bracket" id="icon-logout"></i>
             <span class="item-description">Logout</span>
         </button>
+    </form>
     </div>
 </aside>
 <script src="/public/js/sidebar.js"></script>
