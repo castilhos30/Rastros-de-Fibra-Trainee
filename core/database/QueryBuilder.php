@@ -28,6 +28,20 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
+        public function selectOne($table, $id)
+    {
+        $sql = sprintf('SELECT * FROM %s WHERE id = :id LIMIT 1', $table);
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute(['id'=> $id]);
+
+            return $stmt->fetch(PDO::FETCH_OBJ);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
     //INSERT INTO `usuarios`(`id`, `email`, `nome`, `senha`, `foto`, `data`, `admin`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')
     public function insert($table, $parameters)
     {
