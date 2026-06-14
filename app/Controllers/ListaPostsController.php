@@ -46,7 +46,7 @@ class ListaPostsController
             'criador' => 'Admin',
             'foto' => $caminhoImagem,
             'data' => date('Y-m-d H:i:s'),
-            'id_usuario' => 1
+            'id_usuario' => $_SESSION['id']
         ];
 
         App::get('database')->insert('posts', $parameters);

@@ -97,7 +97,7 @@
         <?php require 'pagination.view.php' ?>
 
     </div>
-
+    <script>console.log("Sessão PHP:", <?php echo json_encode($_SESSION); ?>);</script>
     <!--Modal Criação-->
     <form method="POST" action="/lista-de-posts/create" enctype="multipart/form-data">
         <div class="lista-posts-modal lista-posts-visualizar" id="modalCriar">

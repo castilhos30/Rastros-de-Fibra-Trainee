@@ -10,6 +10,9 @@ class LoginController
 
     public function efetuaLogin()
     {
+        if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
         $email =$_POST['email'];
         $senha = $_POST['senha'];
 
@@ -19,9 +22,8 @@ class LoginController
         );
         if($user != false)
         {
-
             $_SESSION['id']= $user->id;
-            header('Location: /pagina-de-posts');
+            header('Location: /lista-de-posts');
             exit();
         } else{
 
@@ -59,6 +61,7 @@ class LoginController
         if ($emailJaExiste) {
             $_SESSION['mensagem_erro'] = 'Email já cadastrado, tente fazer login ou use outro email.';
             header('Location: /cadastro');
+            exit();
         }
 
         $caminhoFoto = 'public/assets/icon-user.png';
@@ -82,5 +85,6 @@ class LoginController
         App::get('database')->insert('usuarios', $parameters);
 
         header('Location: /lista-de-usuarios');
+        exit();
     }
 }
