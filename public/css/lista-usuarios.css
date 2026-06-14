@@ -107,7 +107,6 @@ body {
 }
 
 .containertebela {
-  margin: auto;
   width: 100%;
   overflow-x: auto;
   background-color: #2A2D3A;
@@ -364,17 +363,17 @@ form {
 }
 
 .container-foto-visualizar {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .foto-perfil-leitura {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #4a4a59; 
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4a4a59;
 }
 
 /* modal excluir */
