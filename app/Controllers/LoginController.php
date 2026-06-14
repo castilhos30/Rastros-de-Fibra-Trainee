@@ -30,4 +30,14 @@ class LoginController
             header('Location: /login');
         }
     }
+    public function exibirLogin(){
+        return view('site/login');
+    }
+    public function Logout()
+    {
+        session_start();
+        session_destroy();
+        header('Location: /login');
+        exit();
+    }
 }
