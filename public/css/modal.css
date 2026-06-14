@@ -65,6 +65,16 @@ h3{
     flex-direction: column;
     gap: 15px;
 }   
+.lista-posts-identificacao input{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+.lista-posts-identificacao img{
+    position: relative;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
 .lista-posts-conteudo{
     padding-top: 2vh;
 }
@@ -110,12 +120,15 @@ h3{
     cursor: pointer;
     width: 120px;
 }
-.lista-posts-imagem{
-    max-width: 100%;
+.lista-posts-imagem, .lista-posts-label{
+    width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 15px;
     flex-shrink: 0;
+}
+.lista-posts-imagem:hover{
+    opacity: 0.7;
 }
 .lista-posts-informacoes{
     font-weight: bolder;
@@ -129,6 +142,7 @@ h3{
     gap: 15px;
 } 
 .input, .descricao{
+    font-family: 'Inter', sans-serif;
     height: 5vh;
     padding: 10px;
     width: 100%;

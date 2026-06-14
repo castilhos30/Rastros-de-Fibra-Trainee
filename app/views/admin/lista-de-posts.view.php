@@ -105,7 +105,8 @@
             <div class="scroll">
                 <div class="lista-posts-identificacao">
                     <input type="file" name="imagem" accept="image/*" class="input imagem" id="imagem" required>
-                    <img class="lista-posts-imagem" src="public\assets\imgnormal.jpg" alt="Imagem do post">
+                    <label for="imagem" class="lista-posts-label"> <img class='lista-posts-imagem' data-src-original="public\assets\imgnormal.jpg" src="public\assets\imgnormal.jpg" alt="Imagem do post"/>
+                    </label>
                 </div>
                 <div class="lista-posts-conteudo">
                     <div class="lista-posts-titulo">
@@ -177,9 +178,10 @@
                 <div class="scroll">
                     <input type="hidden" name="id" value="<?= $post->id ?>">
                     <div class="lista-posts-identificacao">
-                        <input type="file" name="imagem" accept="image/*" class="input imagem">
-                        <img class="lista-posts-imagem" data-src-original="<?= $post->foto ?>" src="<?= $post->foto ?>"
+                        <input type="file" id="imagem<?= $post->id ?>" accept="image/*" class="input imagem">
+                        <label for="imagem<?= $post->id ?>" class="lista-posts-label"> <img class="lista-posts-imagem" data-src-original="<?= $post->foto ?>" src="<?= $post->foto ?>"
                             alt="Imagem do post">
+                        </label>
                     </div>
                     <div class="lista-posts-conteudo">
                         <div class="lista-posts-titulo">
