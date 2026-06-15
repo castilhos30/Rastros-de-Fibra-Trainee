@@ -23,6 +23,8 @@ class LoginController
         if($user != false)
         {
             $_SESSION['id']= $user->id;
+            $_SESSION['nome']= $user->nome;
+            $_SESSION['foto'] = $user->foto;
             header('Location: /lista-de-posts');
             exit();
         } else{

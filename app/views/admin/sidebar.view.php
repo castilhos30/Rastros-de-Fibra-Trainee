@@ -4,11 +4,11 @@
 <aside class="sidebar" id="sidebar">
     <div class="top-sidebar">
         <div id="perfil-sidebar">
-            <img src="/public/assets/perfil.png" alt="Foto de perfil do usuário">
+            <img src="<?php echo $_SESSION['foto']; ?>" alt="Foto de perfil do usuário">
 
             <div id="texto-sidebar">
                 <h1 id="welcome-sidebar">Bem vindo(a),</h1>
-                <h2 id="welcome-user-sidebar">Usuário</h2>
+                <h2 id="welcome-user-sidebar"><?php echo $_SESSION['nome']; ?></h2>
             </div>
 
             <i class="fa-solid fa-chevron-left toggle-sidebar"></i>
@@ -20,25 +20,25 @@
             </div>
             <ul>
                 <li class="item-sidebar">
-                    <a href="#">
+                    <a href="/landingpage">
                         <i class="fa-solid fa-house"></i>
                         <span class="item-description">Página Inicial</span>
                     </a>
                 </li>
                 <li class="item-sidebar active">
-                    <a href="#">
+                    <a href="/dashboard">
                         <i class="fa-solid fa-chart-column"></i>
                         <span class="item-description">Dashboard</span>
                     </a>
                 </li>
                 <li class="item-sidebar">
-                    <a href="#">
+                    <a href="/lista-de-posts">
                         <i class="fa-solid fa-pen-to-square"></i>
                         <span class="item-description">Publicações</span>
                     </a>
                 </li>
                 <li class="item-sidebar">
-                    <a href="#">
+                    <a href="/lista-de-usuarios">
                         <i class="fa-solid fa-user-pen"></i>
                         <span class="item-description">Usuários</span>
                     </a>

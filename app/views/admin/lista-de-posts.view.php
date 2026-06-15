@@ -20,7 +20,7 @@
     <?php require 'sidebar.view.php' ?>
     <div class="lista-posts-base">
         <div>
-            <h1>Lista de Posts</h1>
+            <h1 class="titulolistauser">Lista de Posts</h1>
         </div>
         <div class="navbar">
             <form class="searchbar" method="GET" action="/lista-de-posts">
@@ -134,7 +134,7 @@
                 <h3>Informações do Post</h3>
                 <div class="scroll">
                     <div class="lista-posts-identificacao">
-                        <img class="lista-posts-imagem" src="<?= $post->foto ?>" alt="Imagem do post">
+                        <img class="lista-posts-imagem imagemVisualizar" src="<?= $post->foto ?>" alt="Imagem do post">
                         <div class="lista-posts-informacoes">
                             <div class="lista-posts-id">
                                 <h5>ID:</h5><input type="text" class="input" name="id" value="<?= $post->id; ?>"
@@ -153,13 +153,12 @@
                     <div class="lista-posts-conteudo">
                         <div class="lista-posts-titulo">
                             <h5>Título:</h5>
-                            <input type="text" class="input titulo" placeholder="<?= $post->titulo; ?>" name="titulo"
+                            <input type="text" class="input titulo" value="<?= $post->titulo; ?>" name="titulo"
                                 readonly>
                         </div>
                         <div class="lista-posts-descricao">
                             <h5>Descrição:</h5>
-                            <textarea class="input descricao" placeholder="<?= $post->descricao; ?>" name="descricao"
-                                value="<?= $post->descricao ?>" readonly></textarea>
+                            <textarea class="input descricao" placeholder="<?= $post->descricao; ?>" name="descricao" readonly><?= $post->descricao ?></textarea>
                         </div>
                     </div>
                 </div>

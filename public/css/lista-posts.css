@@ -38,12 +38,6 @@ body {
 
     width: 90%;
 }
-
-.lista-posts-base h1 {
-    font-size: 24px;
-    font-weight: 500;
-}
-
 .navbar {
     display: flex;
     flex-direction: row;
@@ -135,11 +129,16 @@ body {
 .tabelaposts td {
     padding: 40px 10px;
 }
-
+.tabelaposts li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .tabelaposts ul {
     display: flex;
     list-style-type: none;
     padding: 0;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -193,4 +192,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.titulolistauser {
+  font-family: "Archivo Black", sans-serif;
+  ;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
 }
