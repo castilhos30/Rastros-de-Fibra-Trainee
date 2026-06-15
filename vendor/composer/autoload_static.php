@@ -28,7 +28,7 @@ class ComposerStaticInit90bbf95869b4e88bf0dc5022e708a458
         'App\\Controllers\\ExampleController' => __DIR__ . '/../..' . '/app/Controllers/ExampleController.php',
         'App\\Controllers\\ListaPostsController' => __DIR__ . '/../..' . '/app/Controllers/ListaPostsController.php',
         'App\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/Controllers/LoginController.php',
-        'App\\Controllers\\PaginaIndividual' => __DIR__ . '/../..' . '/app/Controllers/PaginaIndividual.php',
+        'App\\Controllers\\PaginaIndividualController' => __DIR__ . '/../..' . '/app/Controllers/PaginaIndividualController.php',
         'App\\Controllers\\PaginaPostsController' => __DIR__ . '/../..' . '/app/Controllers/PaginaPostsController.php',
         'App\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Controllers/UserController.php',
         'App\\Core\\App' => __DIR__ . '/../..' . '/core/App.php',

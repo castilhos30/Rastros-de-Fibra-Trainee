@@ -74,26 +74,17 @@
                     Comentários
                 </h1>
 
-                <div class="escrevercomentario">
-                    <input type="text" class="inputcomentario" placeholder="Escreva um comentário..."></input>
+                <form class="escrevercomentario" method="POST" action="pagina-individual/novo-comentario">
+                    <input type="text" name="texto" class="inputcomentario"
+                        placeholder="Escreva um comentário..."></input>
                     <button class="botaoenviar">
                         <h3 class="enviarcomentario"> Enviar </h3>
                     </button>
 
-                </div>
+                    <input type="hidden" name="id_post" value="<?= $post->id ?>">
+                </form>
 
                 <div class="comentariosindividuais">
-                    <!--
-                    <div class="caixadecomentario">
-                        <div class="comentariocompleto">
-                            <div class="userinfo">
-                                <img class="userfoto" src="/public/assets/icon-user.png">
-                                <h3 class="nomeusuariocomentario">Usuário</h3>
-                            </div>
-                            <p class="textocomentario">Adorei o conteúdo, me ajudou bastante.</p>
-                        </div>
-                    </div>
--->
                     <?php foreach ($comentario_arr as $comentario): ?>
                         <div class="caixadecomentario">
                             <div class="comentariocompleto">

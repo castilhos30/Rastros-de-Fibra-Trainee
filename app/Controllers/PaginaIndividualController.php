@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Core\App;
 use Exception;
 
-class PaginaIndividual
+class PaginaIndividualController
 {
 
     public function index()
@@ -43,5 +43,17 @@ class PaginaIndividual
             'interacao' => $interacao,
             'comentario_arr' => $comentario_arr,
         ]);
+    }
+
+    public function store()
+    {
+        $parameters = [
+            'id_criador' => $_SESSION['id'],
+            'id_post' => $_POST['id_post'],
+            'texto' => $_POST['texto'],
+            'data' => date('Y-m-d H:i:s'),
+        ];
+        App::get('database')->insert('comentarios', $parameters);
+        header(sprintf("Location: /pagina-individual?post={$_POST['id_post']}"));
     }
 }
