@@ -39,7 +39,7 @@
                     </tr>
                 </thead>
                 <tbody id="tabelaBody">
-                        <?php foreach ($usuarios as $usuario): ?>
+                    <?php foreach ($usuarios as $usuario): ?>
                         <tr>
                             <td><?= $usuario->id ?></td>
                             <td><?= $usuario->nome ?></td>
@@ -63,26 +63,11 @@
                                 </div>
                             </td>
                         </tr>
-                        <?php endforeach ?>
+                    <?php endforeach ?>
                 </tbody>
             </table>
         </div>
-        <!--
-    <div class="paginacao">
-        <button class="botaoanterior">
-            <i class="fa-solid fa-chevron-left"></i> Anterior
-        </button>
-        <div class="numeracaodaspag">
-            <button class="numeropagina ativo">1</button>
-            <button class="numeropagina">2</button>
-            <button class="numeropagina">3</button>
-        </div>
-        <button class="botaoproximo">
-            Próximo <i class="fa-solid fa-chevron-right"></i>
-        </button>
-    </div>
-                -->
-            <?php require("pagination.view.php"); ?>
+        <?php require("pagination.view.php"); ?>
     </div>
 
 
@@ -128,7 +113,8 @@
                         <label for="foto-edicao-<?= $usuario->id ?>" class="label-foto">
                             <img src="/<?= $usuario->foto ?>" class="foto-perfil preview-usuario" alt="Foto">
                         </label>
-                        <input type="file" name="foto" id="foto-edicao-<?= $usuario->id ?>" accept="image/*" class="input-foto-oculto">
+                        <input type="file" name="foto" id="foto-edicao-<?= $usuario->id ?>" accept="image/*"
+                            class="input-foto-oculto">
                     </div>
                     <div class="formcampos">
                         <label for="nome">Nome:</label>
@@ -175,7 +161,8 @@
                     </div>
                 </div>
                 <div class="botaofecharvisualizar">
-                    <button type="button" class="fecharmodalvisualizar" onclick="fecharModal('modalvisualizar-<?= $usuario->id ?>')">Fechar</button>
+                    <button type="button" class="fecharmodalvisualizar"
+                        onclick="fecharModal('modalvisualizar-<?= $usuario->id ?>')">Fechar</button>
                 </div>
             </form>
         </div>

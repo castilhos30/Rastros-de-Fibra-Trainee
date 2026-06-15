@@ -97,21 +97,6 @@
             </div>
         <?php endforeach; ?>
     </div>
-    <!--
-    <div class="paginacao">
-        <button class="botaoanterior">
-            <i class="fa-solid fa-chevron-left"></i> Anterior
-        </button>
-        <div class="numeracaodaspag">
-            <button class="numeropagina ativo">1</button>
-            <button class="numeropagina">2</button>
-            <button class="numeropagina">3</button>
-        </div>
-        <button class="botaoproximo">
-            Próximo <i class="fa-solid fa-chevron-right"></i>
-        </button>
-    </div>
-        -->
     <?php include 'app/views/admin/pagination.view.php'; ?>
     <?php require 'footer.view.php' ?>
 </body>

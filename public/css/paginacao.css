@@ -47,24 +47,28 @@
     gap: 10px;
 }
 
-.numeropagina {
+.paginacao .numeropagina {
     background: none;
     border: none;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s;
-    padding: 10px;
+    padding: 0;
+    line-height: 1;
 }
 
-.numeropagina:hover {
+.paginacao .numeropagina:hover {
     background-color: #313441ad;
 }
 
-.numeropagina.active {
+.paginacao .numeropagina.active {
     background-color: #10B981;
     color: white;
 }
