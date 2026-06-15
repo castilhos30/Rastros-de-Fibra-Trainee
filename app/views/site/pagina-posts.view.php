@@ -27,6 +27,7 @@
 </head>
 
 <body>
+    <div class="conteudo-todo"></div>
     <div class="posts-barra-pesquisa">
         <form method="GET" action="/pagina-de-posts">
             <label for="posts-pesquisa" class="posts-placeholder"><i class="fa-solid fa-magnifying-glass"
@@ -62,6 +63,15 @@
                     });
                     $usuario = reset($usuario);
                     ?>
+                    <?php
+                    $interacaoDoPost = null;
+                    foreach ($interacoes as $interacao):
+                        if ($interacao->id_post === $post->id) {
+                            $interacaoDoPost = $interacao;
+                            break;
+                        }
+                    endforeach;
+                    ?>
                     <img class="posts-pfp" width="40px" height="40px"
                         src='<?= $usuario ? $usuario->foto : "../../../public/assets/pfp.png" ?>' alt="foto de perfil">
                     <p class="posts-usuario">
@@ -71,9 +81,9 @@
                 <div class="posts-visual"> <img class="posts-imagem" width="330px" height="266px" alt="foto do post"
                         src="<?= $post->foto ?>"> </div>
                 <div class="posts-interacoes">
-                    <i class="fa-regular fa-thumbs-up cursor-pointer"></i>
-                    <i class="fa-regular fa-thumbs-down cursor-pointer"></i>
-                    <i class="fa-regular fa-comment cursor-pointer"></i>
+                    <i class="fa-regular fa-thumbs-up cursor-pointer"> <?= $interacao ? $interacao->likes : 0 ?></i>
+                    <i class="fa-regular fa-thumbs-down cursor-pointer"> <?= $interacao ? $interacao->dislikes : 0 ?></i>
+                    <i class="fa-regular fa-comment cursor-pointer"> 0 </i>
                 </div>
                 <div class="posts-textos">
                     <p class="posts-titulo">

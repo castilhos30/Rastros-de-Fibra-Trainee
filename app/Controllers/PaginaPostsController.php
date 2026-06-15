@@ -23,13 +23,15 @@ class PaginaPostsController
         $posts = $database->paginate('posts', $limit, $offset, $pesquisa, 'titulo');
         //var_dump($totalPosts);
         $usuarios = $database->selectAll('usuarios');
+        $interacoes = $database->selectAll('interacoes');
 
         return view('site/pagina-posts', [
             'posts' => $posts,
             'currentPage' => $currentPage,
             'totalPaginas' => $totalPaginas,
             'pesquisa' => $pesquisa,
-            'usuarios' => $usuarios
+            'usuarios' => $usuarios,
+            'interacoes' => $interacoes
         ]);
     }
 }
