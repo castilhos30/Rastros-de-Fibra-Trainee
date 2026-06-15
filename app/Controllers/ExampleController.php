@@ -12,4 +12,4 @@ class ExampleController
     {
         return view('site/index');
     }
-}
+}   
