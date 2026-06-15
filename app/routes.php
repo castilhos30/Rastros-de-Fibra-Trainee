@@ -9,6 +9,7 @@ use App\Core\Router;
 $router->get('', 'ExampleController@index');
 
 $router->get('pagina-de-posts', 'PaginaPostsController@index');
+$router->get('pagina-individual', 'PaginaIndividual@index');
 
 $router->get('lista-de-usuarios', 'UserController@index');
 $router->post('lista-de-usuarios/criar', 'UserController@store');

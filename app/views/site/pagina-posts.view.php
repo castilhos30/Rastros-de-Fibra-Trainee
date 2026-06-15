@@ -56,7 +56,7 @@
         </div>
 -->
         <?php foreach ($posts as $post): ?>
-            <div class="card">
+            <a href="/pagina-individual?post=<?= $post->id ?>" class="card">
                 <div class="cursor-pointer usuario">
                     <?php
                     $usuario = array_filter($usuarios, function ($u) use ($post) {
@@ -82,9 +82,13 @@
                 <div class="posts-visual"> <img class="posts-imagem" width="330px" height="266px" alt="foto do post"
                         src="<?= $post->foto ?>"> </div>
                 <div class="posts-interacoes">
-                    <i class="fa-regular fa-thumbs-up cursor-pointer"> <?= $interacao ? $interacao->likes : 0 ?> </i>
-                    <i class="fa-regular fa-thumbs-down cursor-pointer"> <?= $interacao ? $interacao->dislikes : 0 ?> </i>
+                    <i class="fa-regular fa-thumbs-up cursor-pointer">
+                        <?= $interacao ? $interacao->likes : 0 ?>
+                    </i>
+                    <i class="fa-regular fa-thumbs-down cursor-pointer"> <?= $interacao ? $interacao->dislikes : 0 ?>
+                    </i>
                     <i class="fa-regular fa-comment cursor-pointer"> 0 </i>
+                    </form>
                 </div>
                 <div class="posts-textos">
                     <p class="posts-titulo">
@@ -94,7 +98,7 @@
                         <?= $post->descricao ?>
                     </p>
                 </div>
-            </div>
+            </a>
         <?php endforeach; ?>
     </div>
     <?php include 'app/views/admin/pagination.view.php'; ?>
