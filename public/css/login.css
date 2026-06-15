@@ -159,7 +159,7 @@ i{
     color: #05AC4B;
     transition: 0.3s ease-in-out;
 }
-.home{
+.home, .home a{
     float: left;
     gap: 1vh;
     font-family: 'Oswald';
@@ -170,6 +170,8 @@ i{
     border: none;
     border-radius: 4px;
     font-size: 28px;
+    text-decoration: none;
+    font-weight:normal;
 }
 .home:hover{
     transition: 0.3s;

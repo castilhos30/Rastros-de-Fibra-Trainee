@@ -23,7 +23,7 @@
 <body>
     <div class="login">
         <div class="login-login">
-                <button class="home"><a href="landingpage.view.php"><i class="bi bi-arrow-left"></i>Home</a></button>
+                <button class="home"><a href="/landingpage"><i class="bi bi-arrow-left"></i>Home</a></button>
             <div class="scroll">
                 <div class="login-logo">
                     <div class="logo-login">
