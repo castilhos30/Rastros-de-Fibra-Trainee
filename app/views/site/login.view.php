@@ -33,7 +33,7 @@
                 <div class="login-caixa-texto">
                     <div class="login-introducao">
                         <div class="login-titulo">
-                                <h3>Cadastro</h3>
+                                <h3>Login</h3>
                         </div>
                         <div class="login-descricao">
                                 <p> Entre em sua conta ou <a class="login-hover" href="/cadastro">registre-se</a></p>

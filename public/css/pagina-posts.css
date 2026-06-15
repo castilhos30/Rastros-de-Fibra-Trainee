@@ -1,5 +1,6 @@
 body {
   padding: 10px;
+  padding-top: 0;
   display: flex;
   box-sizing: border-box;
   /* evita problemas de transbordar */

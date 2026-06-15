@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0" />
 </head>
 <body>
-    <header>
+    <header class="navbar" id='navbar'>
         <div class="navbar-logo"><img src="../../../public/assets/Rato-texto.png" alt="Logo Rastro de Fibra" width="177px" height="65px"></div>
         <span class="material-symbols-outlined navbar-abrir" id="navbar-abrir" onclick="abrirMenu()">
             menu
@@ -27,6 +27,6 @@
             close
         </span>
     </header>
-    <script src="../../../public/js/index.js"></script>
+    <script src="../../../public/js/navbar.js"></script>
 </body>
 </html>

@@ -27,6 +27,7 @@
 </head>
 
 <body>
+    <?php require 'navbar.view.php' ?>
     <div class="conteudo-todo"></div>
     <div class="posts-barra-pesquisa">
         <form method="GET" action="/pagina-de-posts">
@@ -112,6 +113,7 @@
     </div>
         -->
     <?php include 'app/views/admin/pagination.view.php'; ?>
+    <?php require 'footer.view.php' ?>
 </body>
 
 </html>

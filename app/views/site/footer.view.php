@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <footer>
     <div class="cimafooter">
         <div class="redessociaisfooter">
             <h1 class="textoredessociais">Redes Sociais</h1>
@@ -58,5 +59,6 @@
             <img class="imagemlogofooter" src="/public/assets/logocodefooter.png">
         </div>
     </div>    
+    </footer>
 </body>
 </html>

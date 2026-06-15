@@ -39,3 +39,13 @@ function fecharMenu(){
     document.getElementById('navbar-abrir').style.display = '';
     document.getElementById('navbar-fechar').style.display = '';
 }
+
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 30) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
