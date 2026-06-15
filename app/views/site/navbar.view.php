@@ -19,8 +19,8 @@
             menu
         </span>
         <ul class="navbar-links" id="navbar-links">
-            <li><a class="navbar-link" href="/ladingpage">Home</a></li>
-            <li><a class="navbar-link" href="/pagina-de-posts">Posts</a></li>
+            <li><a class="navbar-link" id="navbar-home" href="/ladingpage">Home</a></li>
+            <li><a class="navbar-link" id="navbar-posts"href="/pagina-de-posts">Posts</a></li>
             <li><a class="navbar-link" href="/login">Login</a></li>
         </ul>
         <span class="material-symbols-outlined navbar-fechar" id="navbar-fechar" onclick="fecharMenu()">

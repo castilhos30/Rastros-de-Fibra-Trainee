@@ -49,3 +49,14 @@ window.addEventListener('scroll', () => {
     navbar.classList.remove('scrolled');
   }
 });
+if (document.title === "Posts") {
+  document.getElementById("navbar-posts").style.color = "#05AC4B";
+  document.getElementById("navbar-posts").style.textDecoration= "underline";
+  document.getElementById("navbar-posts").style.textDecorationThickness = "2px";
+}
+
+if (document.title === "Rastros de Fibra") {
+  document.getElementById("navbar-home").style.color = "#05AC4B";
+  document.getElementById("navbar-home").style.textDecoration= "underline";
+  document.getElementById("navbar-home").style.textDecorationThickness = "2px";
+}

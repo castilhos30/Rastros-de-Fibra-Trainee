@@ -11,7 +11,7 @@ class ListaPostsController
     {
         $database = App::get('database');
 
-        $limit = 6;
+        $limit = 5;
         $currentPage = isset($_GET['page']) ? (int) $_GET['page'] : 1;
         $pesquisa = isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '';
         if ($currentPage < 1) {
