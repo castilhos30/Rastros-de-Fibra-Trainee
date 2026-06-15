@@ -151,8 +151,13 @@ i{
     color: #c0c0c0;
     font-size: 16px;
 }
-.bi-eye-slash{
+.bi-eye-slash, .bi-eye{
     font-size: 24px;
+    cursor: pointer;
+}
+.bi-eye-slash:hover, .bi-eye:hover{
+    color: #05AC4B;
+    transition: 0.3s ease-in-out;
 }
 .home{
     float: left;
