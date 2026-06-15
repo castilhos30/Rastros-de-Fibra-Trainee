@@ -2,10 +2,10 @@
     <link rel="stylesheet" href="/public/css/paginacao.css">
     <div class="pagination-container">
         <ul class="paginacao">
-            <i class="fa-solid fa-chevron-left"></i>
             <li>
                 <a href="?pesquisa=<?= $pesquisa ?>&page=<?= max(1, $currentPage - 1) ?>"
-                    class="<?= $currentPage <= 1 ? 'disabled' : '' ?> botaoanterior">Anterior</a>
+                    class="<?= $currentPage <= 1 ? 'disabled' : '' ?> botaoanterior">
+                    < Anterior</a>
             </li>
             <li>
                 <a href="?pesquisa=<?= $pesquisa ?>&page=1"
@@ -38,9 +38,8 @@
 
             <li>
                 <a href="?pesquisa=<?= $pesquisa ?>&page=<?= min($totalPaginas, $currentPage + 1) ?>"
-                    class="<?= $currentPage >= $totalPaginas ? 'disabled' : '' ?> botaoproximo">Próximo</a>
+                    class="<?= $currentPage >= $totalPaginas ? 'disabled' : '' ?> botaoproximo">Próximo ></a>
             </li>
-            <i class="fa-solid fa-chevron-right"></i>
 
         </ul>
     </div>
