@@ -82,8 +82,8 @@
                 <div class="posts-visual"> <img class="posts-imagem" width="330px" height="266px" alt="foto do post"
                         src="<?= $post->foto ?>"> </div>
                 <div class="posts-interacoes">
-                    <i class="fa-regular fa-thumbs-up cursor-pointer"> <?= $interacao ? $interacao->likes : 0 ?></i>
-                    <i class="fa-regular fa-thumbs-down cursor-pointer"> <?= $interacao ? $interacao->dislikes : 0 ?></i>
+                    <i class="fa-regular fa-thumbs-up cursor-pointer"> <?= $interacao ? $interacao->likes : 0 ?> </i>
+                    <i class="fa-regular fa-thumbs-down cursor-pointer"> <?= $interacao ? $interacao->dislikes : 0 ?> </i>
                     <i class="fa-regular fa-comment cursor-pointer"> 0 </i>
                 </div>
                 <div class="posts-textos">
