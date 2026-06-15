@@ -37,21 +37,20 @@ class ListaPostsController
     {
         $temporario = $_FILES['imagem']['tmp_name'];
         $nomeImagem = sha1(uniqid($_FILES['imagem']['name'], true)) . '.' . pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
-        $caminhoImagem = 'img/' . $nomeImagem;
         $caminhoImagem = "public/assets/imagensPosts/" . $nomeImagem;
         move_uploaded_file($temporario, $caminhoImagem);
+        $usuario = App::get('database')->selectOne('usuarios', $_SESSION['id']);
         $parameters = [
-            'titulo' => $_POST['titulo'],
-            'descricao' => $_POST['descricao'],
-            'criador' => 'Admin',
-            'foto' => $caminhoImagem,
-            'data' => date('Y-m-d H:i:s'),
+            'titulo'     => $_POST['titulo'],
+            'descricao'  => $_POST['descricao'],
+            'criador'    => $usuario->nome,
+            'foto'       => $caminhoImagem,
+            'data'       => date('Y-m-d H:i:s'),
             'id_usuario' => $_SESSION['id']
         ];
-
         App::get('database')->insert('posts', $parameters);
-
         header('Location: /lista-de-posts');
+        exit();
     }
 
     public function delete()

@@ -23,7 +23,7 @@
 <body>
     <div class="login">
         <div class="login-login">
-                <button class="home"><i class="bi bi-arrow-left"></i>Home</button>
+                <button class="home"><a href="/landingpage"><i class="bi bi-arrow-left"></i>Home</a></button>
             <div>
                 <div class="login-logo">
                     <div class="logo-login">
@@ -47,7 +47,7 @@
                             </div>
                             <div class="login-senha">
                                 <label for = "senha">Informe sua senha</label><br>
-                                <div id="div-senha"><i class="bi bi-lock"></i><input maxlength="255" type="password" placeholder= "Senha" name="senha" required> <i class="bi bi-eye-slash"></i></div>
+                                <div id="div-senha"><i class="bi bi-lock"></i><input maxlength="255" type="password" placeholder= "Senha" id="senha" name="senha" required> <i onclick="visibilidadeSenha('senha')" class="bi bi-eye-slash" id="olho"></i></div>
                             </div>
                             <div class="login-mensagem-erro">
                                 <?php
@@ -61,7 +61,6 @@
                             <div class="login-botao">
                                 <button id="login" type="submit">Login</button>
                             </div>
-                            
                         </form>
                     </div>            
                 </div>
@@ -69,5 +68,6 @@
         </div>
         <div class="visual"><img id="fundo-academia" src="../../../public/assets/fundo-academia.jpg"></div>
     </div>
+    <script src="../../../public/js/login.js"></script>
 </body>
 </html>

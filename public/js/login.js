@@ -10,3 +10,17 @@ document.onchange = function(event) {
         }
     }
 }}
+
+function visibilidadeSenha(id) {
+    const inputSenha = document.getElementById(id);
+    if (inputSenha.type === "password") {
+        inputSenha.type = "text";
+        const olho = document.getElementById("olho");
+        olho.classList.replace("bi-eye-slash", "bi-eye");
+
+    } else {
+        inputSenha.type = "password";
+        const olho = document.getElementById("olho");
+        olho.classList.replace("bi-eye", "bi-eye-slash");
+    }
+}  
