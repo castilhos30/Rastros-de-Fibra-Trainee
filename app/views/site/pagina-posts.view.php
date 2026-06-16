@@ -65,13 +65,28 @@
                     $usuario = reset($usuario);
                     ?>
                     <?php
-                    $interacaoDoPost = null;
-                    foreach ($interacoes as $interacao):
-                        if ($interacao->id_post === $post->id) {
-                            $interacaoDoPost = $interacao;
-                            break;
+
+                    $interacaoDoPost_arr = null;
+                    $interacaoDoPost_arr = array_filter($interacoes, function ($i) use ($post) {
+                        return $i->id_post === $post->id;
+                    });
+                    $likes = 0;
+                    $dislikes = 0;
+                    $liked = false;
+                    $disliked = false;
+                    foreach ($interacaoDoPost_arr as $interacaoDoPost) {
+                        $likes += $interacaoDoPost->likes;
+                        $dislikes += $interacaoDoPost->dislikes;
+                        if ($interacaoDoPost->id_usuario === $_SESSION['id']) {
+                            if ($interacaoDoPost->dislikes > 0) {
+                                $disliked = true;
+                            }
+                            if ($interacaoDoPost->likes > 0) {
+                                $liked = true;
+                            }
                         }
-                    endforeach;
+                    }
+
                     $comentarios_arr = array_filter($comentarios, function ($c) use ($post) {
                         return $c->id_post === $post->id;
                     });
@@ -85,11 +100,11 @@
                 <div class="posts-visual"> <img class="posts-imagem" width="330px" height="266px" alt="foto do post"
                         src="<?= $post->foto ?>"> </div>
                 <div class="posts-interacoes">
-                    <i class="fa-regular fa-thumbs-up cursor-pointer">
-                        <?= $interacaoDoPost ? $interacaoDoPost->likes : 0 ?>
+                    <i class="<?= $liked ? 'fa-solid' : 'fa-regular' ?> fa-thumbs-up cursor-pointer">
+                        <?= $likes ?>
                     </i>
-                    <i class="fa-regular fa-thumbs-down cursor-pointer">
-                        <?= $interacaoDoPost ? $interacaoDoPost->dislikes : 0 ?>
+                    <i class="<?= $disliked ? 'fa-solid' : 'fa-regular' ?> fa-thumbs-down cursor-pointer">
+                        <?= $dislikes ?>
                     </i>
                     <i class="fa-regular fa-comment cursor-pointer"> <?= $comentarios_arr ? count($comentarios_arr) : 0 ?>
                     </i>

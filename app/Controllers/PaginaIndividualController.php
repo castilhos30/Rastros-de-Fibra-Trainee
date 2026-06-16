@@ -26,10 +26,26 @@ class PaginaIndividualController
         $usuario = reset($usuario);
 
         $interacoes = $database->selectAll('interacoes');
-        $interacao = array_filter($interacoes, function ($p) use ($post) {
-            return $p->id_post === $post->id;
+        $interacaoDoPost_arr = null;
+        $interacaoDoPost_arr = array_filter($interacoes, function ($i) use ($post) {
+            return $i->id_post === $post->id;
         });
-        $interacao = reset($interacao);
+        $likes = 0;
+        $dislikes = 0;
+        $liked = false;
+        $disliked = false;
+        foreach ($interacaoDoPost_arr as $interacaoDoPost) {
+            $likes += $interacaoDoPost->likes;
+            $dislikes += $interacaoDoPost->dislikes;
+            if ($interacaoDoPost->id_usuario === $_SESSION['id']) {
+                if ($interacaoDoPost->dislikes > 0) {
+                    $disliked = true;
+                }
+                if ($interacaoDoPost->likes > 0) {
+                    $liked = true;
+                }
+            }
+        }
 
         $comentarios = $database->selectAll('comentarios');
         $comentario_arr = array_filter($comentarios, function ($c) use ($post) {
@@ -40,7 +56,10 @@ class PaginaIndividualController
             'post' => $post,
             'usuarios' => $usuarios,
             'usuario' => $usuario,
-            'interacao' => $interacao,
+            'likes' => $likes,
+            'dislikes' => $dislikes,
+            'liked' => $liked,
+            'disliked' => $disliked,
             'comentario_arr' => $comentario_arr,
         ]);
     }

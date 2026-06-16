@@ -56,18 +56,12 @@
             </p>
 
             <div class="likedislike">
-                <form method="POST" action="pagina-individual/on-like">
-                    <i class="fa-regular fa-thumbs-up" onclick=""></i>
-                </form>
-                <h3> <?= $interacao ? $interacao->likes : 0 ?> </h3>
-                <i class="fa-regular fa-thumbs-down"></i>
+                <i class="<?= $liked ? 'fa-solid' : 'fa-regular' ?> fa-thumbs-up"></i>
+                <h3> <?= $likes ?> </h3>
+                <i class="<?= $disliked ? 'fa-solid' : 'fa-regular' ?> fa-thumbs-down "></i>
                 <h3>
-                    <?= $interacao ? $interacao->dislikes : 0 ?>
+                    <?= $dislikes ?>
                 </h3>
-                <div class="linkcompartilhar">
-                    <i class="fa-solid fa-share" id="botaocopiar"></i>
-                    <span id="avisoCopiado" style="display:none;">Link copiado!</span>
-                </div>
 
             </div>
 
