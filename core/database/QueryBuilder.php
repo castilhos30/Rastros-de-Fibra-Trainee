@@ -28,13 +28,13 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
-        public function selectOne($table, $id)
+    public function selectOne($table, $id)
     {
         $sql = sprintf('SELECT * FROM %s WHERE id = :id LIMIT 1', $table);
 
         try {
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute(['id'=> $id]);
+            $stmt->execute(['id' => $id]);
 
             return $stmt->fetch(PDO::FETCH_OBJ);
 
@@ -153,8 +153,9 @@ class QueryBuilder
         try {
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([
-                'email' => $email, 'senha' => $senha
-                ]);
+                'email' => $email,
+                'senha' => $senha
+            ]);
 
             $user = $stmt->fetch(PDO::FETCH_OBJ);
             return $user;

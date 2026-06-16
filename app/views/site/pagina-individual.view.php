@@ -56,13 +56,20 @@
             </p>
 
             <div class="likedislike">
-                <i class="<?= $liked ? 'fa-solid' : 'fa-regular' ?> fa-thumbs-up"></i>
+                <form method="POST" action="pagina-individual/onlike">
+                    <input type="hidden" name="id_post" value="<?= $post->id ?>">
+                    <button type="submit">
+                        <i class="<?= $liked ? 'fa-solid' : 'fa-regular' ?> fa-thumbs-up"></i>
+                    </button>
+                </form>
                 <h3> <?= $likes ?> </h3>
-                <i class="<?= $disliked ? 'fa-solid' : 'fa-regular' ?> fa-thumbs-down "></i>
-                <h3>
-                    <?= $dislikes ?>
-                </h3>
-
+                <form method="post" action="pagina-individual/ondislike">
+                    <input type="hidden" name="id_post" value="<?= $post->id ?>">
+                    <button type="submit">
+                        <i class="<?= $disliked ? 'fa-solid' : 'fa-regular' ?> fa-thumbs-down "></i>
+                    </button>
+                </form>
+                <h3><?= $dislikes ?></h3>
             </div>
 
             <div class="comentariospostindividual">
@@ -106,5 +113,6 @@
         </div>
     </div>
 </body>
+<script src="/public/js/pagina-individual.js"></script>
 
 </html>

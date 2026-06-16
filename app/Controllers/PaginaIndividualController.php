@@ -15,20 +15,19 @@ class PaginaIndividualController
 
         $posts = $database->selectAll('posts');
         $post = array_filter($posts, function ($p) use ($post_id) {
-            return $p->id === $post_id;
+            return (int) $p->id === $post_id;
         });
         $post = reset($post);
 
         $usuarios = $database->selectAll('usuarios');
         $usuario = array_filter($usuarios, function ($u) use ($post) {
-            return $u->id === $post->id_usuario;
+            return (int) $u->id === (int) $post->id_usuario;
         });
         $usuario = reset($usuario);
 
         $interacoes = $database->selectAll('interacoes');
-        $interacaoDoPost_arr = null;
         $interacaoDoPost_arr = array_filter($interacoes, function ($i) use ($post) {
-            return $i->id_post === $post->id;
+            return (int) $i->id_post === (int) $post->id;
         });
         $likes = 0;
         $dislikes = 0;
@@ -49,7 +48,7 @@ class PaginaIndividualController
 
         $comentarios = $database->selectAll('comentarios');
         $comentario_arr = array_filter($comentarios, function ($c) use ($post) {
-            return $c->id_post === $post->id;
+            return (int) $c->id_post === (int) $post->id;
         });
 
         return view('site/pagina-individual', [
@@ -75,4 +74,72 @@ class PaginaIndividualController
         App::get('database')->insert('comentarios', $parameters);
         header(sprintf("Location: /pagina-individual?post={$_POST['id_post']}"));
     }
+    public function onlike()
+    {
+        $database = App::get('database');
+        $post_id = (int) $_POST['id_post'];
+        $interacoes = $database->selectAll('interacoes');
+        $interacaoDoPost_arr = array_filter($interacoes, function ($i) use ($post_id) {
+            return (int) $i->id_post === $post_id && (int) $i->id_usuario === (int) $_SESSION['id'];
+        });
+        $interacaoDoPost = reset($interacaoDoPost_arr);
+        if ($interacaoDoPost) {
+            if ($interacaoDoPost->likes > 0) {
+                $database->update('interacoes', $interacaoDoPost->id, [
+                    'likes' => 0,
+                ]);
+            } else {
+                $database->update('interacoes', $interacaoDoPost->id, [
+                    'likes' => 1,
+                    'dislikes' => 0,
+                ], [
+                    'id' => $interacaoDoPost->id,
+                ]);
+            }
+        } else {
+            $database->insert('interacoes', [
+                'id_usuario' => $_SESSION['id'],
+                'id_post' => $post_id,
+                'likes' => 1,
+                'dislikes' => 0,
+                'tipo' => 0,
+            ]);
+        }
+        header(sprintf("Location: /pagina-individual?post=%d", $post_id));
+    }
+
+    public function ondislike()
+    {
+        $database = App::get('database');
+        $post_id = (int) $_POST['id_post'];
+        $interacoes = $database->selectAll('interacoes');
+        $interacaoDoPost_arr = array_filter($interacoes, function ($i) use ($post_id) {
+            return (int) $i->id_post === $post_id && (int) $i->id_usuario === (int) $_SESSION['id'];
+        });
+        $interacaoDoPost = reset($interacaoDoPost_arr);
+        if ($interacaoDoPost) {
+            if ($interacaoDoPost->dislikes > 0) {
+                $database->update('interacoes', $interacaoDoPost->id, [
+                    'dislikes' => 0,
+                ]);
+            } else {
+                $database->update('interacoes', $interacaoDoPost->id, [
+                    'likes' => 0,
+                    'dislikes' => 1,
+                ], [
+                    'id' => $interacaoDoPost->id,
+                ]);
+            }
+        } else {
+            $database->insert('interacoes', [
+                'id_usuario' => $_SESSION['id'],
+                'id_post' => $post_id,
+                'likes' => 0,
+                'dislikes' => 1,
+                'tipo' => 0,
+            ]);
+        }
+        header(sprintf("Location: /pagina-individual?post=%d", $post_id));
+    }
 }
+
