@@ -24,6 +24,7 @@ class PaginaPostsController
         //var_dump($totalPosts);
         $usuarios = $database->selectAll('usuarios');
         $interacoes = $database->selectAll('interacoes');
+        $comentarios = $database->selectAll('comentarios');
 
         return view('site/pagina-posts', [
             'posts' => $posts,
@@ -31,7 +32,8 @@ class PaginaPostsController
             'totalPaginas' => $totalPaginas,
             'pesquisa' => $pesquisa,
             'usuarios' => $usuarios,
-            'interacoes' => $interacoes
+            'interacoes' => $interacoes,
+            'comentarios' => $comentarios,
         ]);
     }
 }

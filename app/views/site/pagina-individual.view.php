@@ -56,7 +56,9 @@
             </p>
 
             <div class="likedislike">
-                <i class="fa-regular fa-thumbs-up"></i>
+                <form method="POST" action="pagina-individual/on-like">
+                    <i class="fa-regular fa-thumbs-up" onclick=""></i>
+                </form>
                 <h3> <?= $interacao ? $interacao->likes : 0 ?> </h3>
                 <i class="fa-regular fa-thumbs-down"></i>
                 <h3>

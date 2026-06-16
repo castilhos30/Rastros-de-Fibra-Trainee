@@ -72,6 +72,9 @@
                             break;
                         }
                     endforeach;
+                    $comentarios_arr = array_filter($comentarios, function ($c) use ($post) {
+                        return $c->id_post === $post->id;
+                    });
                     ?>
                     <img class="posts-pfp" width="40px" height="40px"
                         src='<?= $usuario ? $usuario->foto : "../../../public/assets/pfp.png" ?>' alt="foto de perfil">
@@ -83,11 +86,13 @@
                         src="<?= $post->foto ?>"> </div>
                 <div class="posts-interacoes">
                     <i class="fa-regular fa-thumbs-up cursor-pointer">
-                        <?= $interacao ? $interacao->likes : 0 ?>
+                        <?= $interacaoDoPost ? $interacaoDoPost->likes : 0 ?>
                     </i>
-                    <i class="fa-regular fa-thumbs-down cursor-pointer"> <?= $interacao ? $interacao->dislikes : 0 ?>
+                    <i class="fa-regular fa-thumbs-down cursor-pointer">
+                        <?= $interacaoDoPost ? $interacaoDoPost->dislikes : 0 ?>
                     </i>
-                    <i class="fa-regular fa-comment cursor-pointer"> 0 </i>
+                    <i class="fa-regular fa-comment cursor-pointer"> <?= $comentarios_arr ? count($comentarios_arr) : 0 ?>
+                    </i>
                     </form>
                 </div>
                 <div class="posts-textos">
