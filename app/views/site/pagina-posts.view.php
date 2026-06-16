@@ -100,15 +100,18 @@
                 <div class="posts-visual"> <img class="posts-imagem" width="330px" height="266px" alt="foto do post"
                         src="<?= $post->foto ?>"> </div>
                 <div class="posts-interacoes">
-                    <i class="<?= $liked ? 'fa-solid' : 'fa-regular' ?> fa-thumbs-up cursor-pointer">
+                    <i class="<?= $liked ? 'fa-solid' : 'fa-regular' ?> fa-thumbs-up cursor-pointer"></i>
+                    <span class="inter-span">
                         <?= $likes ?>
-                    </i>
-                    <i class="<?= $disliked ? 'fa-solid' : 'fa-regular' ?> fa-thumbs-down cursor-pointer">
+                    </span>
+                    <i class="<?= $disliked ? 'fa-solid' : 'fa-regular' ?> fa-thumbs-down cursor-pointer"></i>
+                    <span class="inter-span">
                         <?= $dislikes ?>
-                    </i>
-                    <i class="fa-regular fa-comment cursor-pointer"> <?= $comentarios_arr ? count($comentarios_arr) : 0 ?>
-                    </i>
-                    </form>
+                    </span>
+                    <i class="fa-regular fa-comment cursor-pointer"> </i>
+                    <span class="inter-span">
+                        <?= $comentarios_arr ? count($comentarios_arr) : 0 ?>
+                    </span>
                 </div>
                 <div class="posts-textos">
                     <p class="posts-titulo">

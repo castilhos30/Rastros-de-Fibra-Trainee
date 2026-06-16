@@ -147,7 +147,7 @@ input {
 }
 
 .posts-interacoes i {
-  padding-right: 10px;
+  padding-right: 0px;
 }
 
 .posts-textos {
@@ -216,4 +216,8 @@ input {
   .posts-barra-pesquisa {
     width: clamp(350px, 80%, 391px);
   }
+}
+
+.inter-span {
+  padding-right: 10px;
 }
