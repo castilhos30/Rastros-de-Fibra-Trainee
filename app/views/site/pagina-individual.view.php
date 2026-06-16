@@ -16,7 +16,9 @@
         <div class="cimapostindividual">
             <div class="botaoeautorindividual">
                 <div class="botaosetaindividual">
-                    <i class="fa-solid fa-arrow-left"></i>
+                    <a href="pagina-de-posts">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
                 </div>
 
                 <div class="autorpostindividual">
