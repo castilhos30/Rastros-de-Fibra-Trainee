@@ -44,13 +44,13 @@
                     <div class="side-title-dash">
                         <h1 class="hello-user-dash">Olá, <?= $usuario->nome ?>.</h1>
                     </div>
-                    <button class="botao-home-dash">
+                    <a href="landing-page" class="botao-home-dash">
                         <i class="fa-solid fa-house" style="color: white"></i> Home
-                    </button>
-                    <button class="botao-sair-dash">
+                    </a>
+                    <a href="logout" class="botao-sair-dash">
                         <i class="fa-solid fa-right-from-bracket" style="color: white"></i>
                         Sair
-                    </button>
+                    </a>
                 </div>
                 <div class="trending-posts-dash">
                     <h1 class="trending-dash-text">Trending</h1>
