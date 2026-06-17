@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    font-size: 16px;
 }
 body{
     color: #f5f5f5;
@@ -16,7 +17,7 @@ body{
     padding: 10px;
     gap: 10px;
     width: 90% ;
-    height: auto ;
+    height: 80vh;
     max-width: 900px;
     background-color: rgba(255, 255, 255, 0.829);
     border-radius: 8px;
@@ -27,10 +28,10 @@ body{
 }
 .login-login{
     padding-top: 2%;
-    padding-bottom: 10%;
+    padding-bottom: 2%;
     padding-left: 10px;
     padding-right: 10px;
-    gap: 5vh;
+    gap: auto;
     width: 50%;
     display: flex;
     justify-content: left;
@@ -105,6 +106,12 @@ body{
     color: #c0c0c0;
     font-family: 'Montserrat';
 }
+.scroll{
+    overflow-y: auto;
+    width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
 a{
     color: #05AC4B;
     font-weight: bold;
@@ -127,7 +134,7 @@ input{
     border-bottom-color: #c0c0c0;
     border-bottom-style: solid;
 }
-.login-senha,.login-email{
+.login-senha,.login-email,.lista-posts-identificacao{
     margin-bottom: 10% ;
 }
 #login{
@@ -144,10 +151,15 @@ i{
     color: #c0c0c0;
     font-size: 16px;
 }
-.bi-eye-slash{
+.bi-eye-slash, .bi-eye{
     font-size: 24px;
+    cursor: pointer;
 }
-.home{
+.bi-eye-slash:hover, .bi-eye:hover{
+    color: #05AC4B;
+    transition: 0.3s ease-in-out;
+}
+.home, .home a{
     float: left;
     gap: 1vh;
     font-family: 'Oswald';
@@ -158,6 +170,8 @@ i{
     border: none;
     border-radius: 4px;
     font-size: 28px;
+    text-decoration: none;
+    font-weight:normal;
 }
 .home:hover{
     transition: 0.3s;
@@ -173,6 +187,39 @@ i{
     cursor: pointer;
     transition: 0.3s;
     background-color: #B4E4C8;
+}
+.lista-posts-identificacao{
+    font-size: 40px;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    gap: 15px;
+}   
+.lista-posts-identificacao img{
+    position: relative;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    max-width: 100px;
+}
+.lista-posts-identificacao input{
+    display: none;
+}
+.lista-posts-imagem, .lista-posts-label{
+    width: 100%;    
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+}
+.lista-posts-imagem{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.lista-posts-imagem:hover{
+    opacity: 0.7;
 }
 /* Responsividade para celular */
 @media screen and (max-width:431px) {

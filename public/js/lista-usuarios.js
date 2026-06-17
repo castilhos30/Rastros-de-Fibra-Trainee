@@ -12,6 +12,7 @@ function fecharModal(idModal) {
     filtro.style.display = "none";
 }
 
+/*
 resetaTabela();
 function resetaTabela() {
     const tabelaBody = document.getElementById("tabelaBody");
@@ -42,3 +43,50 @@ function resetaTabela() {
     }
     tabelaBody.innerHTML = novoTexto;
 }
+*/
+
+document.addEventListener('click', function(event) {
+    if(event.target === filtro) {
+        const modais = document.querySelectorAll('.painel, .painelcontainer, .caixadedeletar');
+        
+        modais.forEach(function(modal) {
+            modal.style.display = "none";
+        });
+        
+        filtro.style.display = "none";
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        const modais = document.querySelectorAll('.painel, .painelcontainer, .caixadedeletar');
+        
+        modais.forEach(function(modal) {
+            modal.style.display = "none"; 
+        });
+        
+        filtro.style.display = "none";
+    }
+});
+
+const parametrosUrl = new URLSearchParams(window.location.search);
+
+if (parametrosUrl.get('erro') === 'email') {
+    alert('Erro: Este e-mail já está sendo utilizado por outro usuário.');
+    window.history.replaceState(null, null, window.location.pathname);
+}
+
+document.addEventListener('change', function(event) {
+    if (event.target.type === 'file') {
+        const imagem = event.target.files[0];
+        if (imagem) {
+            const container = event.target.closest('.container-foto-upload');
+            if (container) {
+                const previewImagem = container.querySelector('.preview-usuario');
+                if (previewImagem) {
+                    previewImagem.src = URL.createObjectURL(imagem);
+                }
+            }
+        }
+    }
+});

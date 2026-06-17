@@ -9,9 +9,12 @@
 }
 
 body {
-    background-color: var(--azul-escuro);
-    display: flex;
-    flex-direction: column;
+    background: linear-gradient(45deg, rgba(16, 185, 129, 1) 0%, rgba(22, 86, 73, 1) 20%, rgba(20, 65, 76, 1) 26%, rgba(24, 24, 49, 1) 40%, rgba(26, 29, 41, 1) 51%, rgba(26, 29, 41, 1) 57%, rgba(25, 0, 127, 1) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /*display: flex;*/
+    flex-direction: row;
     align-items: center;
     max-width: 100%;
 }
@@ -35,12 +38,6 @@ body {
 
     width: 90%;
 }
-
-.lista-posts-base h1 {
-    font-size: 24px;
-    font-weight: 500;
-}
-
 .navbar {
     display: flex;
     flex-direction: row;
@@ -132,11 +129,16 @@ body {
 .tabelaposts td {
     padding: 40px 10px;
 }
-
+.tabelaposts li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .tabelaposts ul {
     display: flex;
     list-style-type: none;
     padding: 0;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -168,8 +170,8 @@ body {
 }
 
 .filtro {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: black;
     opacity: 0.5;
     position: fixed;
@@ -190,4 +192,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.titulolistauser {
+  font-family: "Archivo Black", sans-serif;
+  ;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
 }

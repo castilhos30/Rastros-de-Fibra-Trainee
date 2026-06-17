@@ -18,6 +18,14 @@
     <main>
         <h2>About Us</h2>
         <p>This is a simple HTML page.</p>
+        <?php if (empty($posts)): ?>
+            <p>No posts available.</p>
+        <?php else: ?>
+            <?php foreach($posts as $post): ?>
+                <h3><?= $post->titulo?></h3>
+                <p><?= $post->descricao?></p>
+            <?php endforeach?>
+        <?php endif?>
     </main>
     <footer>
         <p>&copy; 2023 My Simple Page</p>

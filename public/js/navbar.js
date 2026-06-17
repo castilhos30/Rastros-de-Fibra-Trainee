@@ -39,3 +39,24 @@ function fecharMenu(){
     document.getElementById('navbar-abrir').style.display = '';
     document.getElementById('navbar-fechar').style.display = '';
 }
+
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 30) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+if (document.title === "Posts") {
+  document.getElementById("navbar-posts").style.color = "#05AC4B";
+  document.getElementById("navbar-posts").style.textDecoration= "underline";
+  document.getElementById("navbar-posts").style.textDecorationThickness = "2px";
+}
+
+if (document.title === "Rastros de Fibra") {
+  document.getElementById("navbar-home").style.color = "#05AC4B";
+  document.getElementById("navbar-home").style.textDecoration= "underline";
+  document.getElementById("navbar-home").style.textDecorationThickness = "2px";
+}
