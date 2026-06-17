@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="/public/css/dashboard.css" />
     <script src="https://kit.fontawesome.com/654def639f.js" crossorigin="anonymous"></script>
     <title>Dashboard</title>
-    <?php
-    $curtidasMes = [1, 3, 5, 7, 6, 5, 7, 8, 9, 10, 13, 14];
-    ?>
 </head>
 
 <body>

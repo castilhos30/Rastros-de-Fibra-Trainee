@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Core\App;
+use DateTime;
 use Exception;
 
 class DashboardController
@@ -45,11 +46,20 @@ class DashboardController
             $trendingPost = reset($trendingPost);
         }
 
+        $curtidasMes = [];
+        foreach ($interacoes as $interacao) {
+            $date = new DateTime($interacao->data);
+            $month = (int) $date->format('m');
+            $month--;
+            $curtidasMes[$month] = ($curtidasMes[$month] ?? 0) + $interacao->likes;
+        }
+
         return view('admin/dashboard', [
             'usuarios' => $usuarios,
             'usuario' => $usuario,
             'postagens' => $postagens,
             'trendingPost' => $trendingPost,
+            'curtidasMes' => $curtidasMes,
         ]);
     }
 }
