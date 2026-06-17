@@ -44,7 +44,7 @@
                     <div class="side-title-dash">
                         <h1 class="hello-user-dash">Olá, <?= $usuario->nome ?>.</h1>
                     </div>
-                    <a href="landing-page" class="botao-home-dash">
+                    <a href="landingpage" class="botao-home-dash">
                         <i class="fa-solid fa-house" style="color: white"></i> Home
                     </a>
                     <a href="logout" class="botao-sair-dash">
@@ -54,10 +54,31 @@
                 </div>
                 <div class="trending-posts-dash">
                     <h1 class="trending-dash-text">Trending</h1>
-
+                    <a href="/pagina-individual?post=<?= $trendingPost->id ?>" class="card">
+                        <img class="posts-imagem" width="330px" height="266px" alt="foto do post"
+                            src="<?= $trendingPost->foto ?>">
+                        <div class="posts-interacoes">
+                            <i class="fa-regular fa-thumbs-up cursor-pointer"></i>
+                            <span class="inter-span">
+                                <?= $likes ?>
+                            </span>
+                            <i class="fa-regular fa-thumbs-down cursor-pointer"></i>
+                            <span class="inter-span">
+                                <?= $dislikes ?>
+                            </span>
+                            <i class="fa-regular fa-comment cursor-pointer"> </i>
+                            <span class="inter-span">
+                                <?= $comentarios ? count($comentarios) : 0 ?>
+                            </span>
+                        </div>
+                        <div class="posts-textos">
+                            <p class="posts-titulo">
+                                <?= $trendingPost->titulo ?>
+                            </p>
+                        </div>
+                    </a>
                 </div>
             </div>
-        </div>
     </main>
 </body>
 <script src="/public/js/dashboard.js"></script>

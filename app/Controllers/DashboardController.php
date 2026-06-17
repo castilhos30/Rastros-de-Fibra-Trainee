@@ -22,6 +22,7 @@ class DashboardController
         $postagens = $database->selectAll('posts');
 
         $trendingPost = null;
+
         $interacoes = $database->selectAll('interacoes');
         $posts_x_likes = [];
         foreach ($interacoes as $interacao) {
@@ -54,12 +55,30 @@ class DashboardController
             $curtidasMes[$month] = ($curtidasMes[$month] ?? 0) + $interacao->likes;
         }
 
+        $likes = 0;
+        $dislikes = 0;
+        $interacaoDoPost_arr = array_filter($interacoes, function ($i) use ($trendingPost) {
+            return (int) $i->id_post === (int) $trendingPost->id;
+        });
+        foreach ($interacaoDoPost_arr as $interacaoDoPost) {
+            $likes += $interacaoDoPost->likes;
+            $dislikes += $interacaoDoPost->dislikes;
+        }
+
+        $comentarios = $database->selectAll('comentarios');
+        $comentario_arr = array_filter($comentarios, function ($c) use ($trendingPost) {
+            return (int) $c->id_post === (int) $trendingPost->id;
+        });
+
         return view('admin/dashboard', [
             'usuarios' => $usuarios,
             'usuario' => $usuario,
             'postagens' => $postagens,
             'trendingPost' => $trendingPost,
             'curtidasMes' => $curtidasMes,
+            'likes' => $likes,
+            'dislikes' => $dislikes,
+            'comentarios' => $comentario_arr,
         ]);
     }
 }
