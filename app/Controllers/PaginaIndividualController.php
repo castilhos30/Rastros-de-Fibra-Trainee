@@ -71,6 +71,10 @@ class PaginaIndividualController
             'texto' => $_POST['texto'],
             'data' => date('Y-m-d H:i:s'),
         ];
+        if ($parameters['texto'] === '') {
+            header(sprintf("Location: /pagina-individual?post=%d", $_POST['id_post']));
+            exit();
+        }
         App::get('database')->insert('comentarios', $parameters);
         header(sprintf("Location: /pagina-individual?post={$_POST['id_post']}"));
     }
