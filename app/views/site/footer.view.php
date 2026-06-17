@@ -58,7 +58,32 @@
             <p class="desenvolvido"> Desenvolvido por:</p>
             <img class="imagemlogofooter" src="/public/assets/logocodefooter.png">
         </div>
-    </div>    
+    </div>   
+    <div id="modal-easter-egg" class="modal-easter-egg" style="display: none;">
+        <div class="conteudo-jogo">
+            
+            <div class="divfecharrato"> <button class="fechar-jogo" onclick="fecharJogo()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="placar">
+                <h1>Projeto BBzinho</h1>
+                <h2 id="contador-reps">0 Repetições</h2>
+            </div>
+
+            <div class="ratinho-cenario">
+                <img 
+                    src="/public/assets/Rato-supino2.png" 
+                    alt="Ratinho Supinando" 
+                    class="rato-img" 
+                    id="imagem-rato-jogo"
+                    draggable="false"
+                >
+            </div>
+        </div>
+    </div>
+    <audio id="musica-easter-egg" src="/public/assets/back-to-black.mp3"></audio>
+    <script src="/public/js/footer.js"></script> 
     </footer>
 </body>
 </html>
