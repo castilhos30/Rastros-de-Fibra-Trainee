@@ -10,6 +10,7 @@ class PaginaIndividualController
 
     public function index()
     {
+        checkLogin();
         $database = App::get('database');
         $post_id = isset($_GET['post']) ? (int) $_GET['post'] : null;
 

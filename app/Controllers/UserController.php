@@ -9,6 +9,7 @@ class UserController
 {
     public function index()
     {
+        checkLogin();
         //$usuarios = App::get('database')->selectAll('usuarios');
         //return view('admin/lista-usuarios', compact('usuarios'));
         $database = App::get('database');

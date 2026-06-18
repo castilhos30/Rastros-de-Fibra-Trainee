@@ -22,3 +22,14 @@ function redirect($path)
 {
     header("Location: /{$path}");
 }
+
+function checkLogin()
+{
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    if (!isset($_SESSION['id'])) {
+        header('Location: /login');
+        exit();
+    }
+}

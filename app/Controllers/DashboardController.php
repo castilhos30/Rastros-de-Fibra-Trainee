@@ -11,6 +11,7 @@ class DashboardController
 
     public function index()
     {
+        checkLogin();
         $database = App::get('database');
 
         $usuarios = $database->selectAll('usuarios');

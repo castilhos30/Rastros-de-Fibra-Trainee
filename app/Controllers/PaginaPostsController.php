@@ -9,6 +9,7 @@ class PaginaPostsController
 {
     public function index()
     {
+        checkLogin();
         $database = App::get('database');
 
         $limit = 6;

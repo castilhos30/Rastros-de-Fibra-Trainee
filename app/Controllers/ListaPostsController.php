@@ -9,6 +9,7 @@ class ListaPostsController
 {
     public function index()
     {
+        checkLogin();
         $database = App::get('database');
 
         $limit = 5;
@@ -26,10 +27,10 @@ class ListaPostsController
         $comentarios = $database->selectAll('comentarios');
 
         $idUsuarioLogado = isset($_SESSION["id"]);
-        $postsDoUsuario_arr = array_filter($posts, function($p) use ($idUsuarioLogado) {
+        $postsDoUsuario_arr = array_filter($posts, function ($p) use ($idUsuarioLogado) {
             return (int) $idUsuarioLogado === (int) $p->id_usuario;
-        }) ;
-        if($_SESSION['admin']==1){
+        });
+        if ($_SESSION['admin'] == 1) {
             $postsDoUsuario_arr = $posts;
         }
         return view('admin/lista-de-posts', [
@@ -42,7 +43,7 @@ class ListaPostsController
             'postsDoUsuario_arr' => $postsDoUsuario_arr,
         ]);
     }
-    
+
 
 
 
