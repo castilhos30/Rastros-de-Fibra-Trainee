@@ -8,8 +8,10 @@ function abrirMenu(){
     document.querySelector('header').style.paddingBottom = 'calc(3% + 20px)'
     document.querySelector('header').style.backgroundColor = '#0C1A27';
     document.querySelector('header').style.flexDirection = 'column';  
-    document.querySelector('header').style.justifyContent = 'space-between';
+    document.querySelector('header').style.gap = '20px';
     document.querySelector('header').style.zIndex = '10';
+    document.getElementById('navbar-links').style.gap = '25px'; 
+    document.querySelector('header').style.justifyContent = 'space-around';   
     
 
     document.querySelector('img').style.width = '177px';
@@ -34,6 +36,9 @@ function fecharMenu(){
     document.querySelector('header').style.backgroundColor = '';
     document.querySelector('header').style.flexDirection = '';
     document.querySelector('header').style.justifyContent = '';
+    document.querySelector('header').style.gap = '';
+    document.getElementById('navbar-links').style.gap = '';
+    document.querySelector('header').style.justifyContent = '';  
 
     document.querySelector('img').style.width = '';
     document.querySelector('img').style.height = '';
@@ -66,3 +71,4 @@ if (document.title === "Rastros de Fibra") {
   document.getElementById("navbar-home").style.textDecoration= "underline";
   document.getElementById("navbar-home").style.textDecorationThickness = "2px";
 }
+
