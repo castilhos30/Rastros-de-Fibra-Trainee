@@ -1,12 +1,16 @@
 function abrirMenu(){
     document.querySelector('body').style.height = '100vh';
+    document.querySelector('header').style.position = 'fixed';
+    document.querySelector('body').style.overflow = 'hidden';
     document.querySelector('body').style.overflowX = 'hidden';
-    document.querySelector('header').style.height = '100%';
+    document.querySelector('header').style.height = '100vh';
     document.querySelector('header').style.padding = '3%';
     document.querySelector('header').style.paddingBottom = 'calc(3% + 20px)'
     document.querySelector('header').style.backgroundColor = '#0C1A27';
-    document.querySelector('header').style.flexDirection = 'column';
+    document.querySelector('header').style.flexDirection = 'column';  
     document.querySelector('header').style.justifyContent = 'space-between';
+    document.querySelector('header').style.zIndex = '10';
+    
 
     document.querySelector('img').style.width = '177px';
     document.querySelector('img').style.height = '65px';
@@ -21,6 +25,8 @@ function abrirMenu(){
 
 function fecharMenu(){
     document.querySelector('body').style.height = '';
+    document.querySelector('header').style.position = '';
+    document.querySelector('body').style.overflow = '';
     document.querySelector('body').style.overflowX = '';
     document.querySelector('header').style.height = '';
     document.querySelector('header').style.padding = '';
