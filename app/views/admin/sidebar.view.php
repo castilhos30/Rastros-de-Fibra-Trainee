@@ -19,25 +19,25 @@
                 <img src="/public/assets/linhadivider.png" alt="Imagem de divisão da sidebar">
             </div>
             <ul>
-                <li class="item-sidebar">
+                <li id="Home" class="item-sidebar">
                     <a href="/landingpage">
                         <i class="fa-solid fa-house"></i>
                         <span class="item-description">Página Inicial</span>
                     </a>
                 </li>
-                <li class="item-sidebar active">
+                <li id="Dashboard" class="item-sidebar">
                     <a href="/dashboard">
                         <i class="fa-solid fa-chart-column"></i>
                         <span class="item-description">Dashboard</span>
                     </a>
                 </li>
-                <li class="item-sidebar">
+                <li id="Posts" class="item-sidebar">
                     <a href="/lista-de-posts">
                         <i class="fa-solid fa-pen-to-square"></i>
                         <span class="item-description">Publicações</span>
                     </a>
                 </li>
-                <li class="item-sidebar">
+                <li id="Usuarios" class="item-sidebar">
                     <a href="/lista-de-usuarios">
                         <i class="fa-solid fa-user-pen"></i>
                         <span class="item-description">Usuários</span>
