@@ -42,15 +42,15 @@
                     <div class="login-inputs">
                         <form action="/cadastro" method="post" enctype="multipart/form-data">
                             <div class="login-email">
-                                <label for = "email">Informe seu nome de usuário.</label><br>
+                                <label for = "email">Informe seu nome de usuário.</label>
                                 <div id="div-email"><i class="bi bi-person"></i><input maxlength="50" type="text" placeholder= "Nome de usuário" name="username" required></div>
                             </div>
                             <div class="login-email">
-                                <label for = "email">Informe seu email</label><br>
+                                <label for = "email">Informe seu email</label>
                                 <div id="div-email"><i class="bi bi-envelope"></i><input maxlength="50" type="text" placeholder= "Email" name="email" required></div>
                             </div>
                             <div class="login-senha">
-                                <label for = "senha">Informe sua senha</label><br>
+                                <label for = "senha">Informe sua senha</label>
                                 <div id="div-senha"><i class="bi bi-lock"></i><input maxlength="255" type="password" placeholder= "Senha" name="senha" id="senha" required> <i onclick="visibilidadeSenha('senha')" id="olho" class="bi bi-eye-slash"></i></div>
                             </div>
                             <div class="lista-posts-identificacao">
@@ -68,7 +68,7 @@
                                     }
                                 ?>
                             </div>
-                            <a class="login-hover" link href="/">Problemas no registro? Entre em contato aqui.</a>
+                            <a class="login-hover" target="_blank" href="http://wa.link/5efqj4">Problemas no registro? Entre em contato aqui.</a>
                             <div class="login-botao">
                                 <button id="login" type="submit">Registre-se</button>
                             </div>

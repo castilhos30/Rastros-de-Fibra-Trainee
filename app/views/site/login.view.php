@@ -42,11 +42,11 @@
                     <div class="login-inputs">
                         <form action="/login" method="post">
                             <div class="login-email">
-                                <label for = "email">Informe seu email</label><br>
+                                <label for = "email">Informe seu email</label>
                                 <div id="div-email"><i class="bi bi-envelope"></i><input maxlength="50" type="text" placeholder= "Email" name="email" required></div>
                             </div>
                             <div class="login-senha">
-                                <label for = "senha">Informe sua senha</label><br>
+                                <label for = "senha">Informe sua senha</label>
                                 <div id="div-senha"><i class="bi bi-lock"></i><input maxlength="255" type="password" placeholder= "Senha" id="senha" name="senha" required> <i onclick="visibilidadeSenha('senha')" class="bi bi-eye-slash" id="olho"></i></div>
                             </div>
                             <div class="login-mensagem-erro">
@@ -57,7 +57,7 @@
                                     }
                                 ?>
                             </div>
-                            <a class="login-hover" link href="/">Problemas no login? Entre em contato aqui.</a>
+                            <a class="login-hover" target="_blank" href="http://wa.link/f9y7rs">Problemas no login? Entre em contato aqui.</a>
                             <div class="login-botao">
                                 <button id="login" type="submit">Login</button>
                             </div>
