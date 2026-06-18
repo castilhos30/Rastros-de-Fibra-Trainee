@@ -52,8 +52,8 @@
                                     </button>
 
                                     <button type="button" class="btn-acao btn-editar"
-                                        onclick="abrirModal('modaleditar-<?= $usuario->id ?>')">
-                                        <i class="fa-regular fa-pen-to-square"></i>
+                                        onclick="<?= $ehAdmin || $usuario->id == $idUsuarioLogado ? "abrirModal('modaleditar-$usuario->id')" : '' ?>">
+                                        <i class=" fa-regular fa-pen-to-square"></i>
                                     </button>
 
                                     <button type="button" class="btn-acao btn-excluir"
