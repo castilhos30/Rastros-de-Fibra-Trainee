@@ -88,6 +88,17 @@ body {
     width: 100%;
 }
 
+.grafico-principal {
+    width: 100%;
+    min-height: 300px;
+    padding: 0 24px 24px;
+}
+
+#top_x_div {
+    width: 100%;
+    min-height: 300px;
+}
+
 .icon-texto {
     display: flex;
     flex-direction: row;
@@ -341,6 +352,11 @@ body {
         width: 100%;
         border-radius: 8px;
         overflow: hidden;
+    }
+
+    .grafico-principal,
+    #top_x_div {
+        min-height: 180px;
     }
 
     .dash-texts {

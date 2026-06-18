@@ -11,6 +11,15 @@
 
 <body>
     <?php include('sidebar.view.php'); ?>
+    <?php
+    if (!isset($trendingPost) || !is_object($trendingPost)) {
+        $trendingPost = (object) [
+            'id' => null,
+            'foto' => '/public/assets/imgnormal.jpg',
+            'titulo' => 'Sem posts em destaque',
+        ];
+    }
+    ?>
     <main class="dashboard-main">
         <div class="textomain-dashboard">
             <h1 id="title-dashboard">Dashboard</h1>
@@ -54,7 +63,8 @@
                 </div>
                 <div class="trending-posts-dash">
                     <h1 class="trending-dash-text">Trending</h1>
-                    <a href="/pagina-individual?post=<?= $trendingPost->id ?>" class="card">
+                    <a href="<?= $trendingPost->id ? '/pagina-individual?post=' . $trendingPost->id : '#' ?>"
+                        class="card">
                         <img class="posts-imagem" width="330px" height="266px" alt="foto do post"
                             src="<?= $trendingPost->foto ?>">
                         <div class="posts-interacoes">
@@ -79,6 +89,7 @@
                     </a>
                 </div>
             </div>
+        </div>
     </main>
 </body>
 <script src="/public/js/dashboard.js"></script>
