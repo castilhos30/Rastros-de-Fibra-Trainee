@@ -1,7 +1,6 @@
 html,
 body {
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 body {
@@ -104,6 +103,7 @@ input {
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(20px);
   font-family: 'Oswald';
+  overflow-x: hidden;
 }
 
 .usuario {
