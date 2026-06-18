@@ -1,6 +1,12 @@
 <link rel="stylesheet" href="/public/css/sidebar.css">
 <script src="https://kit.fontawesome.com/654def639f.js" crossorigin="anonymous"></script>
 
+<button class="sidebar-mobile-toggle" type="button" aria-controls="sidebar" aria-expanded="false">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<div class="sidebar-backdrop" aria-hidden="true"></div>
+
 <aside class="sidebar" id="sidebar">
     <div class="top-sidebar">
         <div id="perfil-sidebar">
@@ -11,7 +17,9 @@
                 <h2 id="welcome-user-sidebar"><?php echo $_SESSION['nome']; ?></h2>
             </div>
 
-            <i class="fa-solid fa-chevron-left toggle-sidebar"></i>
+            <button class="toggle-sidebar" type="button" aria-label="Fechar menu lateral">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
         </div>
         <nav class="content-sidebar">
 
@@ -48,12 +56,12 @@
     </div>
 
     <div class="logout-sidebar">
-    <form action="/logout" method="post">
-        <button type="submit" id="button-logout">
-            <i class="fa-solid fa-right-from-bracket" id="icon-logout"></i>
-            <span class="item-description">Logout</span>
-        </button>
-    </form>
+        <form action="/logout" method="post">
+            <button type="submit" id="button-logout">
+                <i class="fa-solid fa-right-from-bracket" id="icon-logout"></i>
+                <span class="item-description">Logout</span>
+            </button>
+        </form>
     </div>
 </aside>
 <script src="/public/js/sidebar.js"></script>
