@@ -183,7 +183,8 @@
                 <div class="lista-posts-botoes">
                     <button type="button" class="lista-posts-botao voltar"
                         onclick="fecharModal('modalVisualizar<?= $post->id ?>')">Fechar</button>
-                    <button type="button" class="lista-posts-botao abrir-post">Abrir post</button>
+                    <a href="/pagina-individual?post=<?= $post->id ?>" class="lista-posts-botao abrir-post"
+                        target="_blank">Abrir post</a>
                 </div>
             </div>
         </form>
