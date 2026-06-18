@@ -21,26 +21,27 @@
 body {
     display: flex;
     flex-direction: row;
+    background: linear-gradient(45deg, rgba(16, 185, 129, 1) 0%, rgba(22, 86, 73, 1) 20%, rgba(20, 65, 76, 1) 26%, rgba(24, 24, 49, 1) 40%, rgba(26, 29, 41, 1) 51%, rgba(26, 29, 41, 1) 57%, rgba(25, 0, 127, 1) 100%);
+    backdrop-filter: blur(50px);
+    background-repeat: no-repeat;
 }
 
 .espaço-sidebar {
     display: flex;
     justify-content: flex-start;
     min-height: 100dvh;
-    width: 120px;
+    min-width: 120px;
     background-color: var(--color-ink-black);
 }
 
 .dashboard-main {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(45deg, rgba(16, 185, 129, 1) 0%, rgba(22, 86, 73, 1) 20%, rgba(20, 65, 76, 1) 26%, rgba(24, 24, 49, 1) 40%, rgba(26, 29, 41, 1) 51%, rgba(26, 29, 41, 1) 57%, rgba(25, 0, 127, 1) 100%);
-    backdrop-filter: blur(50px);
-    background-repeat: no-repeat;
+
     font-family: 'Montserrat';
-    padding: 24px 80px 24px 40px;
-    gap: 24px;
-    width: 100dvw;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 100%;
     min-height: 100dvh;
 }
 

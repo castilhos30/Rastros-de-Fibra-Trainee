@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="espaço-sidebar"></div>
+    <?php include('sidebar.view.php'); ?>
     <main class="dashboard-main">
         <div class="textomain-dashboard">
             <h1 id="title-dashboard">Dashboard</h1>
