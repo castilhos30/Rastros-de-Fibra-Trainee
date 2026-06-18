@@ -21,24 +21,26 @@
             </div>
         </div>
         <img class="imagemratofooter" src="/public/assets/Rato-texto.png">
+        <a href="https://www.codejr.com.br/" target="_blank">
         <div class="criadordapagina">
             <p class="desenvolvido"> Desenvolvido por:</p>
             <img class="imagemlogofooter" src="/public/assets/logocodefooter.png">
         </div>
+        </a>
     </div>
     <div class="linhafooter"></div>
     <div class="baixofooter">
         <div class="mvvfooter">
             <h1>Missão</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ea voluptatum, perspiciatis maxime ipsam, inventore, quae minus consequuntur beatae molestiae.</p>
+            <p>Dar voz à jornada da musculação e celebrar cada evolução. Inspirar e conectar praticantes através de histórias reais, mostrando que o treino vai além do físico — é uma arte diária de superação, consistência e aprendizado no chão da academia.</p>
         </div>
         <div class="mvvfooter">
             <h1>Visão</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ea voluptatum, perspiciatis maxime ipsam, inventore, quae minus consequuntur beatae molestiae.</p>
+            <p>Ser a principal comunidade e referência de conteúdo sobre o estilo de vida da musculação com propósito. Queremos ser reconhecidos como o espaço onde a paixão pelo ferro e o desenvolvimento pessoal se encontram, unindo pessoas que enxergam significado em cada repetição.</p>
         </div>
         <div class="mvvfooter">
             <h1>Valores</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ea voluptatum, perspiciatis maxime ipsam, inventore, quae minus consequuntur beatae molestiae.</p>
+            <p>Comunidade e Conexão: Acreditamos que ninguém treina sozinho. Valorizamos a troca de experiências e o apoio mútuo entre aqueles que compartilham a mesma paixão. Consistência e Disciplina: O resultado é fruto do trabalho diário. Valorizamos o processo, a rotina e o compromisso com a própria evolução. Superação Pessoal: Mais do que vencer os outros, buscamos superar nossos próprios limites. Cada repetição e cada série concluída importam.</p>
         </div>
     </div>
     <div class="linhafooterbaixo"></div>
@@ -53,11 +55,12 @@
                 <i class="fa-brands fa-linkedin"></i>
                 <i class="fa-brands fa-x-twitter"></i>               
             </div>
-        </div>
+        </div><a href="https://www.codejr.com.br/" target="_blank">
         <div class="criadordapaginacelular">
             <p class="desenvolvido"> Desenvolvido por:</p>
             <img class="imagemlogofooter" src="/public/assets/logocodefooter.png">
         </div>
+        </a>
     </div>   
     <div id="modal-easter-egg" class="modal-easter-egg" style="display: none;">
         <div class="conteudo-jogo">

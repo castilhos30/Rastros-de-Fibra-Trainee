@@ -18,7 +18,7 @@ body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  background: linear-gradient(rgba(12, 26, 39, 0.75), rgba(12, 26, 39, 0.75)), url("../assets/Posts-fundo.jpg");
+  background-image: linear-gradient(rgba(12, 26, 39, 0.75), rgba(12, 26, 39, 0.75)), url("../assets/Posts-fundo.jpg");
   /* o gradiente antes faz o overlay funcionar */
   background-repeat: no-repeat;
   background-size: cover;
