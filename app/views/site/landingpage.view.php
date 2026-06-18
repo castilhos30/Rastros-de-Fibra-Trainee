@@ -42,15 +42,31 @@
                         <!--imgs-->
                         <div class="slide first">
                             <img src="../../../public/assets/imgcarrossel1.jpg">
+                            <div class="slide-info">
+                                <h3 class="slide-title">Título Post</h3>
+                                <span class="slide-author">Por Autor do Post</span>
+                            </div>
                         </div>
                         <div class="slide">
                             <img src="../../../public/assets/imgcarrossel2.jpg">
+                            <div class="slide-info">
+                                <h3 class="slide-title">Título Post</h3>
+                                <span class="slide-author">Por Autor do Post</span>
+                            </div>
                         </div>
                         <div class="slide">
                             <img src="../../../public/assets/imgcarrossel3.jpg">
+                            <div class="slide-info">
+                                <h3 class="slide-title">Título Post</h3>
+                                <span class="slide-author">Por Autor do Post</span>
+                            </div>
                         </div>
                         <div class="slide">
                             <img src="../../../public/assets/imgcarrossel4.png">
+                            <div class="slide-info">
+                                <h3 class="slide-title">Título Post</h3>
+                                <span class="slide-author">Por Autor do Post</span>
+                            </div>
                         </div>
                         <!--fim imgs-->
                         <!--nav-->
@@ -74,7 +90,7 @@
             <div class="sobre-nos-landing">
                 <div class="textos-sobrenos-landing">
                     <h1 class="sobrenos">Sobre Nós</h1>
-                    <p class="sobrenos-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p class="sobrenos-texto">A "Rastros de Fibra" é mais do que um blog; é uma comunidade para quem entende que o treino não é apenas levantar peso. Nosso objetivo é capturar e compartilhar a paixão por cada evolução, seja na consistência da rotina diária ou na superação de um limite pessoal. Queremos dar voz a essas histórias, mostrando que cada repetição conta e que a relação entre o praticante e o ferro é cheia de significado. Junte-se a nós para celebrar a arte da musculação, revelar o que o chão da academia nos ensina e explorar as conquistas inesquecíveis que construímos a cada série concluída.</p>
                 </div>
             </div>
         </div>
