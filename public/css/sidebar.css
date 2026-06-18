@@ -26,6 +26,18 @@ body {
    font-family: Arial, sans-serif, 'Montserrat', 'Archivo Black';
 }
 
+@media (min-width: 769px) {
+   body {
+      height: 100vh;
+      overflow: hidden;
+   }
+
+   .sidebar {
+      height: calc(100vh - 30px);
+      min-height: calc(100vh - 30px);
+   }
+}
+
 body.sidebar-open {
    overflow: hidden;
 }

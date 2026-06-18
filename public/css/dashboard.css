@@ -39,6 +39,7 @@ body {
     flex-direction: column;
 
     font-family: 'Montserrat';
+    padding: 0;
     padding-left: 24px;
     padding-right: 24px;
     width: 100%;
@@ -64,6 +65,7 @@ body {
     flex-direction: row;
     gap: 32px;
     height: 100%;
+    padding-bottom: 32px;
 }
 
 .espaço-graficos {
