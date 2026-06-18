@@ -21,7 +21,11 @@
         <ul class="navbar-links" id="navbar-links">
             <li><a class="navbar-link" id="navbar-home" href="/ladingpage">Home</a></li>
             <li><a class="navbar-link" id="navbar-posts"href="/pagina-de-posts">Posts</a></li>
-            <li><a class="navbar-link" href="/login">Login</a></li>
+            <?php if($_SESSION){
+            echo "<li><a class='navbar-link' href='/dashboard'>Dashboard</a></li>";
+            } else{
+            echo "<li><a class='navbar-link' href='/login'>Login</a></li>'";
+            } ?>
         </ul>
         <span class="material-symbols-outlined navbar-fechar" id="navbar-fechar" onclick="fecharMenu()">
             close
