@@ -94,10 +94,27 @@ class UserController
             header('Location: /lista-de-usuarios?erro=email');
             exit();
         }
+
+        $usuarioAtual = App::get('database')->selectOne('usuarios', $idEditado);
+        $caminhoFoto = $usuarioAtual->foto;
+
+        if (isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK) {
+            $temporario = $_FILES['foto']['tmp_name'];
+            $extensao = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
+            $nomeUnico = sha1(uniqid($_FILES['foto']['name'], true)) . '.' . $extensao;
+            $caminhoFoto = 'public/assets/' . $nomeUnico;
+            move_uploaded_file($temporario, $caminhoFoto);
+
+            if ($usuarioAtual && !empty($usuarioAtual->foto) && file_exists($usuarioAtual->foto)) {
+                unlink($usuarioAtual->foto);
+            }
+        }
+
         $parameters = [
             'nome' => $_POST['nome'],
             'email' => $emailDigitado,
-            'senha' => $_POST['senha']
+            'senha' => $_POST['senha'],
+            'foto' => $caminhoFoto
         ];
 
         App::get('database')->update('usuarios', $idEditado, $parameters);
