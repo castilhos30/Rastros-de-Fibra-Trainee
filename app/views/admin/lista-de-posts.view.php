@@ -43,7 +43,24 @@
                     </tr>
                 </thead>
                 <tbody id="tabelapostsbody">
-                    <?php foreach ($posts as $post): ?>
+                    <?php foreach ($posts as $post):
+                        $likes_c = 0;
+                        $dislikes_c = 0;
+                        $comentarios_c = 0;
+                        $interacoes_post = array_filter($interacoes, static function ($interacao) use ($post) {
+                            return $interacao->id_post == $post->id;
+                        });
+                        foreach ($interacoes_post as $interacao) {
+                            $likes_c += $interacao->likes;
+                            $dislikes_c += $interacao->dislikes;
+                        }
+                        $comentarios_post = array_filter($comentarios, static function ($comentario) use ($post) {
+                            return $comentario->id_post == $post->id;
+                        });
+                        foreach ($comentarios_post as $comentario) {
+                            $comentarios_c += 1;
+                        }
+                        ?>
                         <tr>
                             <td> <?= $post->id ?></td>
                             <td> <?= $post->data ?></td>
@@ -53,15 +70,15 @@
                                 <ul>
                                     <li>
                                         <i class="fa-regular fa-thumbs-up"></i>
-                                        0
+                                        <?= $likes_c ?>
                                     </li>
                                     <li>
                                         <i class="fa-regular fa-thumbs-down"></i>
-                                        0
+                                        <?= $dislikes_c ?>
                                     </li>
                                     <li>
                                         <i class="fa-regular fa-comment"></i>
-                                        0
+                                        <?= $comentarios_c ?>
                                     </li>
                                 </ul>
                             </td>
@@ -105,7 +122,9 @@
             <div class="scroll">
                 <div class="lista-posts-identificacao">
                     <input type="file" name="imagem" accept="image/*" class="input imagem" id="imagem" required>
-                    <label for="imagem" class="lista-posts-label"> <img class='lista-posts-imagem' data-src-original="public\assets\imgnormal.jpg" src="public\assets\imgnormal.jpg" alt="Imagem do post"/>
+                    <label for="imagem" class="lista-posts-label"> <img class='lista-posts-imagem'
+                            data-src-original="public\assets\imgnormal.jpg" src="public\assets\imgnormal.jpg"
+                            alt="Imagem do post" />
                     </label>
                 </div>
                 <div class="lista-posts-conteudo">
@@ -137,8 +156,7 @@
                         <img class="lista-posts-imagem imagemVisualizar" src="<?= $post->foto ?>" alt="Imagem do post">
                         <div class="lista-posts-informacoes">
                             <div class="lista-posts-id">
-                                <h5>ID:</h5><input type="text" class="input" name="id" value="<?= $post->id; ?>"
-                                    readonly>
+                                <h5>ID:</h5><input type="text" class="input" name="id" value="<?= $post->id; ?>" readonly>
                             </div>
                             <div class="lista-posts-autor">
                                 <h5>Autor:</h5><input type="text" class="input" name="autor"
@@ -153,12 +171,12 @@
                     <div class="lista-posts-conteudo">
                         <div class="lista-posts-titulo">
                             <h5>Título:</h5>
-                            <input type="text" class="input titulo" value="<?= $post->titulo; ?>" name="titulo"
-                                readonly>
+                            <input type="text" class="input titulo" value="<?= $post->titulo; ?>" name="titulo" readonly>
                         </div>
                         <div class="lista-posts-descricao">
                             <h5>Descrição:</h5>
-                            <textarea class="input descricao" placeholder="<?= $post->descricao; ?>" name="descricao" readonly><?= $post->descricao ?></textarea>
+                            <textarea class="input descricao" placeholder="<?= $post->descricao; ?>" name="descricao"
+                                readonly><?= $post->descricao ?></textarea>
                         </div>
                     </div>
                 </div>
@@ -178,8 +196,8 @@
                     <input type="hidden" name="id" value="<?= $post->id ?>">
                     <div class="lista-posts-identificacao">
                         <input type="file" name="imagem" id="imagem<?= $post->id ?>" accept="image/*" class="input imagem">
-                        <label for="imagem<?= $post->id ?>" class="lista-posts-label"> <img class="lista-posts-imagem" data-src-original="<?= $post->foto ?>" src="<?= $post->foto ?>"
-                            alt="Imagem do post">
+                        <label for="imagem<?= $post->id ?>" class="lista-posts-label"> <img class="lista-posts-imagem"
+                                data-src-original="<?= $post->foto ?>" src="<?= $post->foto ?>" alt="Imagem do post">
                         </label>
                     </div>
                     <div class="lista-posts-conteudo">

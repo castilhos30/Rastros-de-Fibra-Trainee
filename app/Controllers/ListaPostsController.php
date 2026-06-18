@@ -22,12 +22,16 @@ class ListaPostsController
         $totalPaginas = ceil($totalPosts / $limit);
         $posts = $database->paginate('posts', $limit, $offset, $pesquisa, 'titulo');
         //var_dump($totalPosts);
+        $interacoes = $database->selectAll('interacoes');
+        $comentarios = $database->selectAll('comentarios');
 
         return view('admin/lista-de-posts', [
             'posts' => $posts,
             'currentPage' => $currentPage,
             'totalPaginas' => $totalPaginas,
-            'pesquisa' => $pesquisa
+            'pesquisa' => $pesquisa,
+            'interacoes' => $interacoes,
+            'comentarios' => $comentarios,
         ]);
     }
 
@@ -41,11 +45,11 @@ class ListaPostsController
         move_uploaded_file($temporario, $caminhoImagem);
         $usuario = App::get('database')->selectOne('usuarios', $_SESSION['id']);
         $parameters = [
-            'titulo'     => $_POST['titulo'],
-            'descricao'  => $_POST['descricao'],
-            'criador'    => $usuario->nome,
-            'foto'       => $caminhoImagem,
-            'data'       => date('Y-m-d H:i:s'),
+            'titulo' => $_POST['titulo'],
+            'descricao' => $_POST['descricao'],
+            'criador' => $usuario->nome,
+            'foto' => $caminhoImagem,
+            'data' => date('Y-m-d H:i:s'),
             'id_usuario' => $_SESSION['id']
         ];
         App::get('database')->insert('posts', $parameters);
