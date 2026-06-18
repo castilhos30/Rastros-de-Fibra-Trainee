@@ -44,6 +44,7 @@
                 </thead>
                 <tbody id="tabelapostsbody">
                     <?php foreach ($posts as $post):
+                        $ehEditavel = $ehAdmin || $post->id_usuario == $idUsuarioLogado;
                         $likes_c = 0;
                         $dislikes_c = 0;
                         $comentarios_c = 0;
@@ -92,14 +93,16 @@
                                     </li>
                                     <li>
                                         <button type="button" class="btn btn-editar" data-id="<?= $post->id ?>"
-                                            onclick="abrirModal('modalEditar<?= $post->id ?>')">
-                                            <i class="fa-regular fa-pen-to-square" style="color:white;"></i>
+                                            onclick="abrirModal('<?= $ehEditavel ? 'modalEditar' : '' ?><?= $post->id ?>')">
+                                            <i class="fa-regular fa-pen-to-square"
+                                                style="<?= $ehEditavel ? 'color:white' : 'color:black;' ?>"></i>
                                         </button>
                                     </li>
                                     <li>
                                         <button type="button" class="btn btn-excluir" data-id="<?= $post->id ?>"
-                                            onclick="abrirModal('modalExcluir');mudarIdModalExcluir('<?= $post->id ?>')">
-                                            <i class="fa-regular fa-trash-can" style="color:white;"></i>
+                                            onclick="abrirModal('<?= $ehEditavel ? 'modalExcluir' : '' ?>');mudarIdModalExcluir('<?= $post->id ?>')">
+                                            <i class="fa-regular fa-trash-can"
+                                                style="<?= $ehEditavel ? 'color:white' : 'color:black;' ?>"></i>
                                         </button>
                                     </li>
                                 </ul>
@@ -148,6 +151,7 @@
 
     <?php foreach ($posts as $post): ?>
         <!--Modal Visualização-->
+
         <form>
             <div class="lista-posts-modal lista-posts-visualizar" id="modalVisualizar<?= $post->id ?>">
                 <h3>Informações do Post</h3>

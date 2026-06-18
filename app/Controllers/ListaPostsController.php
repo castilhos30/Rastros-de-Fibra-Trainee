@@ -26,13 +26,9 @@ class ListaPostsController
         $interacoes = $database->selectAll('interacoes');
         $comentarios = $database->selectAll('comentarios');
 
-        $idUsuarioLogado = isset($_SESSION["id"]);
-        $postsDoUsuario_arr = array_filter($posts, function ($p) use ($idUsuarioLogado) {
-            return (int) $idUsuarioLogado === (int) $p->id_usuario;
-        });
-        if ($_SESSION['admin'] == 1) {
-            $postsDoUsuario_arr = $posts;
-        }
+        $idUsuarioLogado = $_SESSION['id'];
+        $ehAdmin = isset($_SESSION['admin']) && $_SESSION['admin'] == 1;
+
         return view('admin/lista-de-posts', [
             'posts' => $posts,
             'currentPage' => $currentPage,
@@ -40,7 +36,8 @@ class ListaPostsController
             'pesquisa' => $pesquisa,
             'interacoes' => $interacoes,
             'comentarios' => $comentarios,
-            'postsDoUsuario_arr' => $postsDoUsuario_arr,
+            'idUsuarioLogado' => $idUsuarioLogado,
+            'ehAdmin' => $ehAdmin,
         ]);
     }
 
