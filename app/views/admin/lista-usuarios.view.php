@@ -57,7 +57,7 @@
                                     </button>
 
                                     <button type="button" class="btn-acao btn-excluir"
-                                        onclick="abrirModal('modalexcluir-<?= $usuario->id ?>')">
+                                        onclick="<?= $ehAdmin || $usuario->id == $idUsuarioLogado ? "abrirModal('modalexcluir-$usuario->id')" : '' ?>">
                                         <i class="fa-regular fa-trash-can"></i>
                                     </button>
                                 </div>
