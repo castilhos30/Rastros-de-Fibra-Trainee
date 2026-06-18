@@ -40,6 +40,9 @@
                 </thead>
                 <tbody id="tabelaBody">
                     <?php foreach ($usuarios as $usuario): ?>
+                        <?php
+                        $ehEditavel = $ehAdmin || $usuario->id == $idUsuarioLogado;
+                        ?>
                         <tr>
                             <td><?= $usuario->id ?></td>
                             <td><?= $usuario->nome ?></td>
@@ -52,13 +55,15 @@
                                     </button>
 
                                     <button type="button" class="btn-acao btn-editar"
-                                        onclick="abrirModal('modaleditar-<?= $usuario->id ?>')">
-                                        <i class="fa-regular fa-pen-to-square"></i>
+                                        onclick="<?= $ehEditavel ? "abrirModal('modaleditar-$usuario->id')" : '' ?>">
+                                        <i class="fa-regular fa-pen-to-square"
+                                            style="<?= !$ehEditavel ? 'color:black' : '' ?>"></i>
                                     </button>
 
                                     <button type="button" class="btn-acao btn-excluir"
-                                        onclick="abrirModal('modalexcluir-<?= $usuario->id ?>')">
-                                        <i class="fa-regular fa-trash-can"></i>
+                                        onclick="<?= $ehEditavel ? "abrirModal('modalexcluir-$usuario->id')" : '' ?>">
+                                        <i class="fa-regular fa-trash-can"
+                                            style="<?= !$ehEditavel ? 'color:black' : '' ?>"></i>
                                     </button>
                                 </div>
                             </td>
