@@ -35,8 +35,8 @@
                 <div class="slider">
                     <div class="slides">
                         <?php $numPosts = count($posts); ?>
-                        <?php for ($i = 1; $i < $numPosts; $i++): ?>
-                            <input type="radio" name="radio-btn" id="radio<?= $j ?>">
+                        <?php for ($i = 1; $i <= $numPosts; $i++): ?>
+                            <input type="radio" name="radio-btn" id="radio<?= $i ?>">
                         
                         <?php endfor; ?>
                         
