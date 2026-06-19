@@ -5,6 +5,7 @@ use App\Controllers\ListaPostsController;
 use App\Controllers\UserController;
 use App\Controllers\PaginaPostsController;
 use App\Controllers\DashboardController;
+use App\Controllers\LandingPageController;
 use App\Core\Router;
 
 $router->get('', 'ExampleController@index');
@@ -36,3 +37,6 @@ $router->get('logout', 'LoginController@Logout');
 $router->get('cadastro', 'LoginController@exibirCadastro');
 $router->post('cadastro', 'LoginController@efetuaCadastro');
 $router->get('dashboard', 'DashboardController@index');
+
+$router->get('landingpage', 'LandingPageController@index');
+
