@@ -1,11 +1,14 @@
 let count = 1;
-document.getElementById("radio1").checked = true;
+const radioButtons = document.querySelectorAll('input[name="radio-btn"]');
+const totalSlides = radioButtons.length;
+if(totalSlides>0){
+    document.getElementById("radio1").checked = true;
 
-setInterval(function(){
-    nextImage();
-}, 3000)
+    setInterval(function(){
+        nextImage();
+    }, 3000)
 
-function nextImage(){
+    function nextImage(){
     count++;
     if(count>4){
         count = 1;
@@ -13,4 +16,6 @@ function nextImage(){
 
     document.getElementById("radio"+count).checked = true;
     
+    }
 }
+

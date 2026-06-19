@@ -34,40 +34,40 @@
             <div class="carrossel-landing">
                 <div class="slider">
                     <div class="slides">
-
-                        <input type="radio" name="radio-btn" id="radio1">
-                        <input type="radio" name="radio-btn" id="radio2">
-                        <input type="radio" name="radio-btn" id="radio3">
-                        <input type="radio" name="radio-btn" id="radio4">
-
-                        <?php $i=1; foreach ($posts as $post) : ?>
-                            
+                        <?php $numPosts = count($posts); ?>
+                        <?php for ($i = 1; $i < $numPosts; $i++): ?>
+                            <input type="radio" name="radio-btn" id="radio<?= $j ?>">
+                        
+                        <?php endfor; ?>
+                        
+                        <?php $i = 1;
+                        foreach ($posts as $post): ?>
+                        
                             <div class="slide <?= $i === 1 ? 'first' : '' ?>">
                                 <img src="<?= $post->foto ?>">
                                 <div class="slide-info">
-                                    <h3 class="slide-title">Título Post</h3>
-                                    <span class="slide-author">Por Autor do Post</span>
+                                    <h3 class="slide-title"><?= htmlspecialchars($post->titulo) ?></h3>
+                                    <span class="slide-author">Por <?= htmlspecialchars($post->criador) ?></span>
                                 </div>
                             </div>
-                            
-                            $i++;
-                            <?php endforeach; ?>
+                        
+                            <?php $i++; ?>
+                        <?php endforeach; ?>
+
                         <!--nav-->
                         <div class="navigation-auto">
-                            <div class="auto-btn1"></div>
-                            <div class="auto-btn2"></div>
-                            <div class="auto-btn3"></div>
-                            <div class="auto-btn4"></div>
+                            <?php for ($j = 1; $j <= $numPosts; $j++): ?>
+                                <div class="auto-btn<?= $j ?>"></div>
+                            <?php endfor; ?>
                         </div>
                         <!--fim nav-->
                     </div>
                     
 
                     <div class="manual-navigation">
-                        <label for="radio1" class="manual-btn"></label>
-                        <label for="radio2" class="manual-btn"></label>
-                        <label for="radio3" class="manual-btn"></label>
-                        <label for="radio4" class="manual-btn"></label>
+                        <?php for ($j = 1; $j <= $numPosts; $j++): ?>
+                            <label for="radio<?= $j ?>" class="manual-btn"></label>
+                        <?php endfor; ?>
                     </div>
                    
                 </div>
