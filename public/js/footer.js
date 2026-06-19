@@ -4,8 +4,8 @@ const imgMagroBaixo = '/public/assets/Rato-supino1-magroesqueleto-preview.png';
 const imgMedioCima  = '/public/assets/Rato-supino2-preview.png'; 
 const imgMedioBaixo = '/public/assets/Rato-supino1-preview.png';
 
-const imgForteCima  = '/public/assets/Rato-supino2-forte-preview.png'; 
-const imgForteBaixo = '/public/assets/Rato-supino1-preview.png';
+const imgForteCima  = '/public/assets/Rato-supino2-muitoforte-preview-.png'; 
+const imgForteBaixo = '/public/assets/Rato-supino1-muitoforte-preview-.png';
 
 [imgMagroCima, imgMagroBaixo, imgMedioCima, imgMedioBaixo, imgForteCima, imgForteBaixo].forEach(src => {
     const img = new Image();
