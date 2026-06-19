@@ -34,23 +34,24 @@
             <div class="carrossel-landing">
                 <div class="slider">
                     <div class="slides">
-                        <?php foreach ($posts as $post) : ?>
-                        <img src="<? $post->foto ?>">
-                        <?php endforeach; ?>
-                        
+
                         <input type="radio" name="radio-btn" id="radio1">
                         <input type="radio" name="radio-btn" id="radio2">
                         <input type="radio" name="radio-btn" id="radio3">
                         <input type="radio" name="radio-btn" id="radio4">
 
-                        <!--imgs-->
-                        
-                            <div class="slide-info">
-                                <h3 class="slide-title">Título Post</h3>
-                                <span class="slide-author">Por Autor do Post</span>
+                        <?php $i=1; foreach ($posts as $post) : ?>
+                            
+                            <div class="slide <?= $i === 1 ? 'first' : '' ?>">
+                                <img src="<?= $post->foto ?>">
+                                <div class="slide-info">
+                                    <h3 class="slide-title">Título Post</h3>
+                                    <span class="slide-author">Por Autor do Post</span>
+                                </div>
                             </div>
-                        
-                        <!--fim imgs-->
+                            
+                            $i++;
+                            <?php endforeach; ?>
                         <!--nav-->
                         <div class="navigation-auto">
                             <div class="auto-btn1"></div>
@@ -60,6 +61,7 @@
                         </div>
                         <!--fim nav-->
                     </div>
+                    
 
                     <div class="manual-navigation">
                         <label for="radio1" class="manual-btn"></label>
@@ -67,6 +69,7 @@
                         <label for="radio3" class="manual-btn"></label>
                         <label for="radio4" class="manual-btn"></label>
                     </div>
+                   
                 </div>
             </div>
             <div class="sobre-nos-landing">
