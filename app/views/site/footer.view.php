@@ -76,7 +76,7 @@
 
             <div class="ratinho-cenario">
                 <img 
-                    src="/public/assets/Rato-supino2.png" 
+                    src="/public/assets/Rato-supino2-magro-teste-preview.png" 
                     alt="Ratinho Supinando" 
                     class="rato-img" 
                     id="imagem-rato-jogo"
@@ -85,7 +85,7 @@
             </div>
         </div>
     </div>
-    <audio id="musica-easter-egg" src="/public/assets/back-to-black.mp3"></audio>
+    <audio id="musica-easter-egg" src="/public/assets/back-to-black.mp3" loop></audio>
     <script src="/public/js/footer.js"></script> 
     </footer>
 </body>

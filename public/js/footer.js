@@ -1,12 +1,18 @@
-const imgCima = '/public/assets/Rato-supino2.png'; 
-const imgBaixo = '/public/assets/Rato-supino1.png'; 
+const imgMagroCima  = '/public/assets/Rato-supino2-magro-teste-preview.png';
+const imgMagroBaixo = '/public/assets/Rato-supino1-magroesqueleto-preview.png';
+
+const imgMedioCima  = '/public/assets/Rato-supino2-preview.png'; 
+const imgMedioBaixo = '/public/assets/Rato-supino1-preview.png';
+
+const imgForteCima  = '/public/assets/Rato-supino2-forte-preview.png'; 
+const imgForteBaixo = '/public/assets/Rato-supino1-preview.png';
+
+[imgMagroCima, imgMagroBaixo, imgMedioCima, imgMedioBaixo, imgForteCima, imgForteBaixo].forEach(src => {
+    const img = new Image();
+    img.src = src;
+});
+
 const musicaFundo = document.getElementById('musica-easter-egg');
-
-const preloadCima = new Image();
-preloadCima.src = imgCima;
-
-const preloadBaixo = new Image();
-preloadBaixo.src = imgBaixo;
 
 let cliquesNaLogo = 0;
 const logoFooter = document.querySelector('.imagemratofooter'); 
@@ -20,8 +26,10 @@ if (logoFooter) {
             modalJogo.style.display = 'flex';
             cliquesNaLogo = 0; 
 
-            musicaFundo.volume = 0.5; 
-            musicaFundo.play();
+            if(musicaFundo) {
+                musicaFundo.volume = 0.1;
+                musicaFundo.play();
+            }
         }
     });
 }
@@ -31,28 +39,42 @@ const imagemRato = document.getElementById('imagem-rato-jogo');
 const placar = document.getElementById('contador-reps');
 const areaClique = document.querySelector('.ratinho-cenario');
 
+function obterImagensDoNivel() {
+    if (repeticoes >= 50) {
+        return { cima: imgForteCima, baixo: imgForteBaixo };
+    } else if (repeticoes >= 20) {
+        return { cima: imgMedioCima, baixo: imgMedioBaixo };
+    } else {
+        return { cima: imgMagroCima, baixo: imgMagroBaixo };
+    }
+}
+
 function fecharJogo() {
     modalJogo.style.display = 'none';
     repeticoes = 0;
     placar.innerText = "0 Repetições";
-    imagemRato.src = imgCima;
-
-    musicaFundo.pause();
-    musicaFundo.currentTime = 0;
+    imagemRato.src = imgMagroCima;
+    
+    if(musicaFundo) {
+        musicaFundo.pause();
+        musicaFundo.currentTime = 0;
+    }
 }
+
 areaClique.addEventListener('mousedown', function() {
-    imagemRato.src = imgBaixo;
     repeticoes++;
     placar.innerText = repeticoes + " Repetições";
+    const fotosAtuais = obterImagensDoNivel();
+    imagemRato.src = fotosAtuais.baixo; 
 });
-
 areaClique.addEventListener('mouseup', function() {
-    imagemRato.src = imgCima;
+    const fotosAtuais = obterImagensDoNivel();
+    imagemRato.src = fotosAtuais.cima; 
 });
 areaClique.addEventListener('mouseleave', function() {
-    imagemRato.src = imgCima;
+    const fotosAtuais = obterImagensDoNivel();
+    imagemRato.src = fotosAtuais.cima; 
 });
-
 modalJogo.addEventListener('click', function(event) {
     if (event.target === modalJogo) {
         fecharJogo();

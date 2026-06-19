@@ -10,8 +10,8 @@ footer{
   justify-content: center;
   margin: 0;
   width: 100%;
-  gap:20px;
-  padding-top: 15px;
+  gap:0px;
+  padding-top: 30px;
   font-family: "Archivo Black", sans-serif;
 }
 
@@ -71,7 +71,7 @@ footer{
 }
 
 .imagemratofooter{
-  width: 300px;
+  width: 250px;
   padding-right: 55px;
 }
 
@@ -131,9 +131,19 @@ footer{
     align-items: center;
 }
 
+.placar h1{
+  font-size: 35px;
+}
+
+.placar h2{
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+}
 .conteudo-jogo {
     background-color: #1a1a24; 
-    padding: 40px;
+    padding: 0px 40px 40px 40px;
+    width: 600px;
+    max-width: 90%;
     border-radius: 15px; 
     text-align: center;
     color: white;
@@ -143,8 +153,8 @@ footer{
 
 .fechar-jogo {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
     font-size: 25px;
     cursor: pointer;
     color: #16c09b;
@@ -201,7 +211,7 @@ footer{
     font-size: 18px;
   }
    .imagemlogofooter{
-    width: 90px;
+    width: 50px;
   }
   .redessociaisfootercelular{
     display: flex;
@@ -264,7 +274,7 @@ footer{
   }
 
   .imagemlogofooter{
-    width: 80px;
+    width: 70px;
   }
 
   .criadordapagina{
