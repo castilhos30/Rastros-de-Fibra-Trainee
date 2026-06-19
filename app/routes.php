@@ -31,3 +31,4 @@ $router->get('cadastro', 'LoginController@exibirCadastro');
 $router->post('cadastro', 'LoginController@efetuaCadastro');
 
 $router->get('landingpage', 'LandingPageController@index');
+

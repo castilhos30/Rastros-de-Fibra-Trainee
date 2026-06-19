@@ -34,40 +34,22 @@
             <div class="carrossel-landing">
                 <div class="slider">
                     <div class="slides">
+                        <?php foreach ($posts as $post) : ?>
+                        <img src="<? $post->foto ?>">
+                        <?php endforeach; ?>
+                        
                         <input type="radio" name="radio-btn" id="radio1">
                         <input type="radio" name="radio-btn" id="radio2">
                         <input type="radio" name="radio-btn" id="radio3">
                         <input type="radio" name="radio-btn" id="radio4">
 
                         <!--imgs-->
-                        <div class="slide first">
-                            <img src="../../../public/assets/imgcarrossel1.jpg">
+                        
                             <div class="slide-info">
                                 <h3 class="slide-title">Título Post</h3>
                                 <span class="slide-author">Por Autor do Post</span>
                             </div>
-                        </div>
-                        <div class="slide">
-                            <img src="../../../public/assets/imgcarrossel2.jpg">
-                            <div class="slide-info">
-                                <h3 class="slide-title">Título Post</h3>
-                                <span class="slide-author">Por Autor do Post</span>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <img src="../../../public/assets/imgcarrossel3.jpg">
-                            <div class="slide-info">
-                                <h3 class="slide-title">Título Post</h3>
-                                <span class="slide-author">Por Autor do Post</span>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <img src="../../../public/assets/imgcarrossel4.png">
-                            <div class="slide-info">
-                                <h3 class="slide-title">Título Post</h3>
-                                <span class="slide-author">Por Autor do Post</span>
-                            </div>
-                        </div>
+                        
                         <!--fim imgs-->
                         <!--nav-->
                         <div class="navigation-auto">
