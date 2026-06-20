@@ -6,7 +6,7 @@
 
 | **Sumário** |
 |-------------|
-| [Equipe](Rastros de Fibra) |
+| [Equipe](#Equipe) |
 | [Descrição do Projeto](#Descrição-do-Projeto) |
 | [Preparação do Ambiente (Instalações)](#Preparação-do-Ambiente) |
 | [Tutorial Git](#Tutorial-Git) |
