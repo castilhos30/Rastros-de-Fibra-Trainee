@@ -94,7 +94,7 @@
                     <img class="posts-pfp" width="40px" height="40px"
                         src='<?= $usuario ? $usuario->foto : "../../../public/assets/pfp.png" ?>' alt="foto de perfil">
                     <p class="posts-usuario">
-                        <?= $post->criador ?>
+                        <?= $usuario->nome ?>
                     </p>
                 </div>
                 <div class="posts-visual"> <img class="posts-imagem" width="330px" height="266px" alt="foto do post"

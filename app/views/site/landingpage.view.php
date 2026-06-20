@@ -42,12 +42,19 @@
 
                         <?php $i = 1;
                         foreach ($posts as $post): ?>
+                            <?php
+                            $criadorPost = array_filter($usuarios, static function ($u) use ($post) {
+                                return $u->id == $post->id_usuario;
+                            });
+                            $criadorPost = reset($criadorPost);
+                            ?>
 
                             <a class="slide <?= $i === 1 ? 'first' : '' ?>" href="pagina-individual?post=<?= $post->id ?>">
                                 <img src=" <?= $post->foto ?>">
                                 <div class="slide-info">
                                     <h3 class="slide-title"><?= htmlspecialchars($post->titulo) ?></h3>
-                                    <span class="slide-author">Por <?= htmlspecialchars($post->criador) ?></span>
+                                    <span class="slide-author">Por
+                                        <?= htmlspecialchars($criadorPost->nome ?? 'Usuário não encontrado') ?></span>
                                 </div>
                             </a>
 

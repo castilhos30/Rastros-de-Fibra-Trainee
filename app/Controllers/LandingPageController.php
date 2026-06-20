@@ -13,14 +13,16 @@ class LandingPageController
         $database = App::get('database');
         $posts = $database->selectAll('posts');
 
-        usort($posts, function($a, $b){
+        usort($posts, function ($a, $b) {
             return strtotime($b->data) <=> strtotime($a->data);
         });
 
         $postsCarrossel = array_slice($posts, 0, 4);
-        
+        $usuarios = $database->selectAll('usuarios');
+
         return view('site/landingpage', [
-            'posts' => $postsCarrossel
-        ]);     
+            'posts' => $postsCarrossel,
+            'usuarios' => $usuarios,
+        ]);
     }
-}   
+}

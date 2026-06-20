@@ -45,6 +45,11 @@
                 </thead>
                 <tbody id="tabelapostsbody">
                     <?php foreach ($posts as $post):
+                        $criadorPost = array_filter($usuarios, static function ($u) use ($post) {
+                            return $u->id == $post->id_usuario;
+                        });
+                        $criadorPost = reset($criadorPost);
+
                         $ehEditavel = $ehAdmin || $post->id_usuario == $idUsuarioLogado;
                         $likes_c = 0;
                         $dislikes_c = 0;
@@ -67,7 +72,7 @@
                             <td> <?= $post->id ?></td>
                             <td> <?= $post->data ?></td>
                             <td> <?= $post->titulo ?></td>
-                            <td> <?= $post->criador ?></td>
+                            <td> <?= $criadorPost->nome ?? 'Usuário não encontrado' ?></td>
                             <td>
                                 <ul>
                                     <li>

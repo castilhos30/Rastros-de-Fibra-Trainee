@@ -26,7 +26,7 @@
                     <?= $usuario->foto ? $usuario->foto : "/public/assets/icon-user.png" ?>
                     ">
                     <h1 class="nomeautorpostindividual">
-                        <?= $post->criador ?>
+                        <?= $usuario->nome ?? 'Usuário não encontrado' ?>
                     </h1>
                 </div>
             </div>

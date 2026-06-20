@@ -28,6 +28,7 @@ class ListaPostsController
 
         $idUsuarioLogado = $_SESSION['id'];
         $ehAdmin = isset($_SESSION['admin']) && $_SESSION['admin'] == 1;
+        $usuarios = $database->selectAll('usuarios');
 
         return view('admin/lista-de-posts', [
             'posts' => $posts,
@@ -38,6 +39,7 @@ class ListaPostsController
             'comentarios' => $comentarios,
             'idUsuarioLogado' => $idUsuarioLogado,
             'ehAdmin' => $ehAdmin,
+            'usuarios' => $usuarios,
         ]);
     }
 
