@@ -34,19 +34,16 @@
 
 Rastros de Fibra é uma plataforma desenvolvida para reunir praticantes e entusiastas da musculação em um espaço dedicado ao compartilhamento de experiências, aprendizados e conquistas dentro da academia.
 
-Mais do que um simples blog, o projeto busca construir uma comunidade que valoriza a disciplina, a evolução constante e as histórias que surgem ao longo da jornada de treinamento. Cada postagem representa um relato de superação, consistência ou descoberta, reforçando a ideia de que cada repetição e cada treino contribuem para resultados que vão além da estética.
+ Mais do que um simples blog, o projeto busca construir uma comunidade que valoriza a disciplina, a evolução constante e as histórias que surgem ao longo da jornada de treinamento. Cada postagem representa um relato de superação, consistência ou descoberta, reforçando a ideia de que cada repetição e cada treino contribuem para resultados que vão além da estética.
 
 O objetivo da plataforma é dar visibilidade às vivências de seus usuários, promovendo a troca de conhecimento, motivação e inspiração entre pessoas que compartilham a mesma paixão pelo treinamento físico. Aqui, o chão da academia se transforma em palco para histórias reais, onde esforço, dedicação e progresso são celebrados a cada série concluída.
 
 Funcionalidades
-Publicação e compartilhamento de posts relacionados à musculação;
-Interação entre membros da comunidade;
-Espaço para relatos de evolução e experiências pessoais;
-Ambiente focado em motivação, aprendizado e troca de conhecimento;
-Interface simples e acessível para leitura e criação de conteúdo.
-Objetivo do Projeto
-
-Este projeto foi desenvolvido como parte do programa de trainees de uma empresa júnior, com o propósito de aplicar conceitos de desenvolvimento web na construção de uma plataforma funcional, moderna e centrada na experiência do usuário.
+* Publicação e compartilhamento de posts relacionados à musculação;
+* Interação entre membros da comunidade;
+* Espaço para relatos de evolução e experiências pessoais;
+* Ambiente focado em motivação, aprendizado e troca de conhecimento;
+* Interface simples e acessível para leitura e criação de conteúdo.
 
 Blog / Sistema de treinamento e capacitação dos Trainees da CodeJR, na gestão 2026.1;
 ---
