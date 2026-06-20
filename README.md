@@ -1,12 +1,12 @@
 # **Trainee 2026.1**
 
-# **Nome do seu blog**
+# **Rastros de Fibra**
 
 ## **Projeto Trainee, Code Jr, 2026.1**
 
 | **Sumário** |
 |-------------|
-| [Equipe](#Equipe) |
+| [Equipe](Rastros de Fibra) |
 | [Descrição do Projeto](#Descrição-do-Projeto) |
 | [Preparação do Ambiente (Instalações)](#Preparação-do-Ambiente) |
 | [Tutorial Git](#Tutorial-Git) |
@@ -17,16 +17,16 @@
 ## Equipe
 
 #### Desenvolvedores:
-* [Trainee 1](coloque o link do github)
-* [Trainee 2](coloque o link do github)
-* [Trainee 3](coloque o link do github)
-* [Trainee 4](coloque o link do github)
+* [Sophia Sabbo](https://github.com/sosabbo)
+* [Gabriela Chapinotti](https://github.com/gbchap)
+* [Guilherme Perisse](https://github.com/GPerisse)
+* [Heitor Tetzner](https://github.com/heitortetznerpereira)
 
 #### Scrum Master:
-* [Nome do Scrum](coloque o link do github).
+* [Marcos Castilhos](https://github.com/castilhos30).
 
 #### Links Úteis:
-* [Trello do Projeto]()
+* [Trello do Projeto](https://trello.com/b/yubB6yT1/261-trello-rastros-de-fibra)
 
 ---
 
