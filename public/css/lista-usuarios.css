@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-html{
+
+html {
   width: 100vw;
   height: 100vh;
 }
+
 body {
   background: linear-gradient(45deg, rgba(16, 185, 129, 1) 0%, rgba(22, 86, 73, 1) 20%, rgba(20, 65, 76, 1) 26%, rgba(24, 24, 49, 1) 40%, rgba(26, 29, 41, 1) 51%, rgba(26, 29, 41, 1) 57%, rgba(25, 0, 127, 1) 100%);
   background-size: cover;
@@ -26,6 +28,7 @@ body {
   font-family: "Montserrat", sans-serif;
   gap: 24px;
   padding: 30px 50px;
+  box-sizing: border-box;
 }
 
 .titulolistauser {
@@ -128,18 +131,20 @@ tbody tr:hover {
 
 th {
   text-align: center;
-  padding: 10px;
+  padding: 10px 12px;
   color: white;
   font-size: 14px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 td {
   text-align: center;
-  padding: 40px;
+  padding: 24px 16px;
   color: white;
   font-size: 14px;
   font-weight: 200;
+  white-space: nowrap;
 }
 
 .iconestabela {
@@ -147,7 +152,7 @@ td {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 12px;
   font-size: 17px;
   color: #d9d9d9c9;
 }

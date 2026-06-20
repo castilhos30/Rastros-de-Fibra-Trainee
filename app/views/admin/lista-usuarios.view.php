@@ -71,6 +71,7 @@
                     <?php endforeach ?>
                 </tbody>
             </table>
+
         </div>
         <?php require("pagination.view.php"); ?>
     </div>
