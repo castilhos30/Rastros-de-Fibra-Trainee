@@ -43,7 +43,7 @@
                         <form action="/login" method="post">
                             <div class="login-email">
                                 <label for = "email">Informe seu email</label>
-                                <div id="div-email"><i class="bi bi-envelope"></i><input maxlength="50" type="text" placeholder= "Email" name="email" required></div>
+                                <div id="div-email"><i class="bi bi-envelope"></i><input maxlength="50" type="email" placeholder= "Email" name="email" required></div>
                             </div>
                             <div class="login-senha">
                                 <label for = "senha">Informe sua senha</label>
