@@ -25,7 +25,7 @@ class LoginController
             $_SESSION['nome'] = $user->nome;
             $_SESSION['foto'] = $user->foto;
             $_SESSION['admin'] = $user->admin;
-            header('Location: /pagina-de-posts');
+            header('Location: /landingpage');
             exit();
         } else {
 
