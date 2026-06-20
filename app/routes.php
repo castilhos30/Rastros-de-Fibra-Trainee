@@ -40,3 +40,4 @@ $router->get('dashboard', 'DashboardController@index');
 
 $router->get('landingpage', 'LandingPageController@index');
 
+$router->get('api', 'ApiController@index');

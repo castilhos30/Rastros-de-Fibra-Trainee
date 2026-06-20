@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --api-bg: #0f1419;
+    --api-surface: rgba(16, 22, 29, 0.9);
+    --api-surface-strong: #111821;
+    --api-border: rgba(255, 255, 255, 0.08);
+    --api-text: #f2f5f7;
+    --api-muted: #a7b3bf;
+    --api-accent: #f2b705;
+    --api-accent-2: #5dd6c3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--api-text);
+    background:
+        radial-gradient(circle at top left, rgba(242, 183, 5, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(93, 214, 195, 0.12), transparent 24%),
+        linear-gradient(180deg, #10161c 0%, #0b1015 100%);
+    min-height: 100vh;
+}
+
+.api-page {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 40px 0 72px;
+}
+
+.api-hero {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+    margin-bottom: 28px;
+}
+
+.api-hero__content,
+.api-hero__panel,
+.api-card,
+.api-empty {
+    background: var(--api-surface);
+    border: 1px solid var(--api-border);
+    border-radius: 24px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(14px);
+}
+
+.api-hero__content {
+    padding: 34px;
+}
+
+.api-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    margin-bottom: 18px;
+    border-radius: 999px;
+    background: rgba(242, 183, 5, 0.12);
+    color: var(--api-accent);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.api-hero__content h1,
+.api-section__header h2,
+.api-hero__panel h2,
+.api-empty h3 {
+    margin: 0 0 14px;
+    font-family: 'Archivo Black', sans-serif;
+    line-height: 1.05;
+}
+
+.api-hero__content h1 {
+    font-size: clamp(2.2rem, 5vw, 4.2rem);
+    max-width: 11ch;
+}
+
+.api-hero__content p,
+.api-hero__panel p,
+.api-section__header p,
+.api-empty p,
+.api-card p {
+    color: var(--api-muted);
+    line-height: 1.7;
+}
+
+.api-filters {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) auto;
+    gap: 14px;
+    margin: 0 0 22px;
+    padding: 18px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.api-filters label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.api-filters span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--api-accent);
+}
+
+.api-filters input,
+.api-filters select,
+.api-filters button {
+    min-height: 48px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(9, 13, 18, 0.92);
+    color: var(--api-text);
+    font: inherit;
+}
+
+.api-filters input,
+.api-filters select {
+    padding: 0 14px;
+}
+
+.api-filters button {
+    align-self: end;
+    padding: 0 18px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--api-accent), #ffdb6d);
+    color: #151515;
+    cursor: pointer;
+}
+
+.api-card__tags,
+.api-card__equipment {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.api-card__tags span,
+.api-card__equipment span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 0 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--api-text);
+    font-size: 0.82rem;
+}
+
+.api-hero__stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.api-hero__stats article {
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.api-hero__stats strong {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+    color: var(--api-text);
+}
+
+.api-hero__stats span,
+.api-card__footer span {
+    color: var(--api-muted);
+    font-size: 0.92rem;
+}
+
+.api-hero__panel {
+    padding: 28px;
+    background: linear-gradient(180deg, rgba(17, 24, 33, 0.96), rgba(17, 24, 33, 0.76));
+}
+
+.api-hero__panel ul {
+    margin: 18px 0 0;
+    padding-left: 20px;
+    color: var(--api-text);
+    line-height: 1.9;
+}
+
+.api-section {
+    margin-top: 20px;
+}
+
+.api-section__header {
+    margin-bottom: 18px;
+}
+
+.api-section__header h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.api-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.api-card {
+    padding: 20px;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+}
+
+.api-card__badge {
+    display: inline-flex;
+    width: fit-content;
+    margin-bottom: 14px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(93, 214, 195, 0.12);
+    color: var(--api-accent-2);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.api-card h3 {
+    margin: 0 0 12px;
+    font-size: 1.15rem;
+}
+
+.api-card p {
+    margin: 0;
+    flex: 1;
+}
+
+.api-card__footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 18px;
+    margin-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.api-empty {
+    padding: 28px;
+}
+
+@media (max-width: 1100px) {
+    .api-filters {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .api-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .api-hero {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .api-page {
+        width: min(100% - 20px, 1180px);
+        padding-top: 20px;
+    }
+
+    .api-hero__content,
+    .api-hero__panel,
+    .api-card,
+    .api-empty {
+        border-radius: 20px;
+    }
+
+    .api-hero__content {
+        padding: 24px;
+    }
+
+    .api-hero__stats,
+    .api-filters,
+    .api-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .api-filters button {
+        width: 100%;
+    }
+
+    .api-card__footer {
+        flex-direction: column;
+    }
+}
