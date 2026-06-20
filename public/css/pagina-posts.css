@@ -1,6 +1,12 @@
 html,
 body {
   max-width: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -33,6 +39,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 90px;
+  width: 100%;
 }
 
 form {
@@ -61,6 +68,7 @@ form {
   box-sizing: border-box;
   display: flex;
   width: 50%;
+  max-width: 100%;
   background-color: #F5F5F5;
   border-radius: 50px;
   justify-content: left;
@@ -96,6 +104,7 @@ input {
   flex-direction: column;
   box-sizing: border-box;
   width: clamp(350px, 23%, 525px);
+  max-width: 100%;
   gap: 11px;
   padding: 22px 8px 22px 8px;
   border-radius: 13px;
@@ -115,6 +124,7 @@ input {
   flex-direction: row;
   justify-content: left;
   align-items: center;
+  min-width: 0;
 }
 
 .posts-visual {
@@ -173,6 +183,8 @@ input {
 .posts-usuario {
   font-weight: bold;
   margin: 0px;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .posts-titulo {
@@ -213,11 +225,49 @@ input {
 }
 
 @media screen and (max-width: 431px) {
+  body {
+    padding: 8px;
+    gap: 12px;
+  }
+
+  .conteudo {
+    padding: 0;
+    gap: 16px;
+  }
+
   .posts-barra-pesquisa {
-    width: clamp(350px, 80%, 391px);
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  .posts-barra-pesquisa form {
+    width: 100%;
+  }
+
+  .posts-interacoes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 24px;
+  }
+
+  .card {
+    width: 100%;
+    min-width: 0;
   }
 }
 
 .inter-span {
   padding-right: 10px;
+}
+
+.pagination-container,
+.paginacao {
+  width: 100%;
+  max-width: 100%;
+}
+
+.paginacao {
+  flex-wrap: wrap;
+  row-gap: 8px;
 }
