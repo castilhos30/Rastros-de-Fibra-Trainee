@@ -15,47 +15,46 @@
         <?php $exerciseCards = $exerciseCards ?? []; ?>
         <?php $filters = $filters ?? []; ?>
 
+
         <section class="api-hero">
             <div class="api-hero__content">
-                <span class="api-kicker">API Ninjas</span>
-                <h1>Biblioteca pública de exercícios para estudo e consulta rápida.</h1>
+                <span class="api-kicker">Biblioteca de Exercícios</span>
+                <h1>Encontre exercícios para complementar seus treinos.</h1>
                 <p>
-                    Esta página consome a API de exercícios da API Ninjas e exibe nome, grupo muscular,
-                    nível de dificuldade, tipo e instruções resumidas. A fonte usada pelo controller é
-                    <strong><?= htmlspecialchars($apiSource ?? 'https://api.api-ninjas.com/v1/exercises') ?></strong>.
+                    Explore uma coleção de exercícios organizados por grupo muscular,
+                    dificuldade e modalidade. Utilize os filtros para encontrar opções
+                    adequadas ao seu objetivo e conhecer novas variações para seus treinos.
                 </p>
+
                 <div class="api-hero__stats">
                     <article>
-                        <strong><?= isset($exerciseCards) ? count($exerciseCards) : 0 ?></strong>
-                        <span>exercícios carregados</span>
+                        <strong>
+                            <?= isset($exerciseCards) ? count($exerciseCards) : 0 ?>
+                        </strong>
+                        <span>exercícios encontrados</span>
                     </article>
                     <article>
-                        <strong><?= htmlspecialchars($apiStatus ?? 'offline') ?></strong>
-                        <span>status da integração</span>
+                        <strong>
+                            <?= htmlspecialchars($apiStatus ?? 'indisponível') ?>
+                        </strong>
+                        <span>biblioteca</span>
                     </article>
                 </div>
             </div>
+
             <aside class="api-hero__panel">
-                <h2>Como funciona</h2>
+                <h2>Pesquise com facilidade</h2>
                 <p>
-                    O backend consulta a API Ninjas, normaliza a resposta e entrega os dados para esta view.
-                    Se a chave da API não estiver configurada, a página mostra um estado orientativo.
+                    Filtre os exercícios por nome, grupo muscular, tipo ou nível de
+                    dificuldade para encontrar rapidamente o que procura.
                 </p>
-                <ul>
-                    <li>Endpoint `/v1/exercises`</li>
-                    <li>Filtros por nome, tipo e músculo</li>
-                    <li>Renderização server-side</li>
-                </ul>
             </aside>
         </section>
-
         <section class="api-section">
             <div class="api-section__header">
-                <h2>Exercícios em destaque</h2>
-                <p>Use os filtros abaixo para consultar a base pública da API Ninjas. O campo de nome aceita palavras
-                    parciais e separa a busca por termos.</p>
+                <h2>Catálogo de Exercícios</h2>
+                <p>Use os filtros abaixo para encontrar exercícios específicos.</p>
             </div>
-
             <form class="api-filters" method="GET" action="/api">
                 <label>
                     <span>Nome ou trecho</span>
@@ -79,7 +78,8 @@
                         <option value="beginner" <?= ($filters['difficulty'] ?? '') === 'beginner' ? 'selected' : '' ?>>
                             beginner</option>
                         <option value="intermediate" <?= ($filters['difficulty'] ?? '') === 'intermediate' ? 'selected' : '' ?>>intermediate</option>
-                        <option value="expert" <?= ($filters['difficulty'] ?? '') === 'expert' ? 'selected' : '' ?>>expert
+                        <option value="expert" <?= ($filters['difficulty'] ?? '') === 'expert' ? 'selected' : '' ?>>
+                            expert
                         </option>
                     </select>
                 </label>
@@ -119,16 +119,16 @@
             <?php else: ?>
                 <div class="api-empty">
                     <?php if (!($hasApiKey ?? false)): ?>
-                        <h3>Configure sua chave da API Ninjas</h3>
+                        <h3>Biblioteca temporariamente indisponível</h3>
                         <p>
-                            Defina a variável de ambiente <strong>API_NINJAS_KEY</strong> ou
-                            <strong>API_NINJAS_API_KEY</strong> para liberar a consulta dos exercícios.
+                            Não foi possível carregar os exercícios neste momento.
+                            Tente novamente mais tarde.
                         </p>
                     <?php else: ?>
-                        <h3>Nenhum exercício foi carregado</h3>
+                        <h3>Nenhum exercício encontrado</h3>
                         <p>
-                            A API retornou uma resposta vazia para os filtros informados. Tente ajustar a
-                            busca e recarregar a página.
+                            Não encontramos exercícios com os filtros informados.
+                            Tente utilizar termos diferentes ou remover alguns filtros.
                         </p>
                     <?php endif; ?>
                 </div>
