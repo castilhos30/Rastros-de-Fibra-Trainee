@@ -48,7 +48,7 @@ Objetivo do Projeto
 
 Este projeto foi desenvolvido como parte do programa de trainees de uma empresa júnior, com o propósito de aplicar conceitos de desenvolvimento web na construção de uma plataforma funcional, moderna e centrada na experiência do usuário.
 
-* Blog / Sistema de treinamento e capacitação dos Trainees da CodeJR, na gestão 2026.1;
+Blog / Sistema de treinamento e capacitação dos Trainees da CodeJR, na gestão 2026.1;
 ---
 
 ## Preparação do Ambiente
