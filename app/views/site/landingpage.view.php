@@ -21,7 +21,9 @@
                     <h1 class="maintitulo">Sua evolução<br>começa aqui.</h1>
                     <p class="maindesc">Registre seu caminho. <br>Viva o Rastros de Fibra. </p>
                     <div class="botaolermais">
+                        <a href='/pagina-de-posts'>
                         <button class="lermais">Ler mais</button>
+                        </a>
                     </div>
                 </div>
             </div>
