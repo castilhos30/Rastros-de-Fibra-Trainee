@@ -1,0 +1,259 @@
+*{
+    box-sizing: border-box;
+    font-size: 16px;
+}
+body{
+    color: #f5f5f5;
+    margin: 0px;
+    min-height: 100vh;
+    background-color: #0D0F11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Archivo Black";
+
+}
+.login{
+    padding: 10px;
+    gap: 10px;
+    width: 90% ;
+    height: 80vh;
+    max-width: 900px;
+    background-color: rgba(255, 255, 255, 0.829);
+    border-radius: 8px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background: linear-gradient(180deg, #0C1A27, #0D0F11);
+}
+.login-login{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: auto;
+    width: 50%;
+    display: flex;
+    justify-content: left;
+    align-items: self-start;
+    height: 100%;
+    flex-direction: column;
+}
+
+.login-logo,.login-caixa-texto{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+#fundo-academia{
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+}
+.visual{
+    width: 50%;
+    height: 100%; 
+    position: relative;
+}
+.visual::after{
+    content: '';
+    /*background-color: #00ff6a; 
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+    mix-blend-mode: multiply;*/
+    pointer-events: none;
+}
+.logo-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 10px;
+}
+.login-caixa-texto{
+    gap: 30px;
+    padding: 10px;
+    justify-content: left;
+    align-items: center;
+}
+.login-introducao{
+    align-items: center;
+    justify-content: left;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.login-inputs{
+    width: 100%;
+    font-family: 'Montserrat';
+    justify-content: left;
+    align-items: center;
+}
+.login-botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    padding-top: 30px;
+}
+.login-titulo{
+    justify-content: left;
+    font-size: 24px;
+    color: #f5f5f5;
+}
+.login-descricao{
+    color: #c0c0c0;
+    font-family: 'Montserrat';
+}
+.scroll{
+    overflow-y: auto;
+    width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+a{
+    color: #05AC4B;
+    font-weight: bold;
+}
+h3{
+    margin: 0px;
+}
+input{
+    font-size: 16px;
+    background-color: rgba(127, 255, 212, 0);
+    border: none;
+    outline: none;
+    width: 85%;
+    padding-left: 3%;
+    color: #c0c0c0;
+}
+#div-email, #div-senha{
+    width: 100%;
+    border-bottom: 1px;
+    border-bottom-color: #c0c0c0;
+    border-bottom-style: solid;
+}
+.login-senha,.login-email,.lista-posts-identificacao{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10% ;
+    gap: 5px;
+}
+#login{
+    font-weight: bold;
+    font-size: 20px;
+    color: #f5f5f5;
+    background-color: #05AC4B;
+    border-style: none;
+    border-radius: 16px;
+    width: 45%;
+    height: 4vh;
+}
+i{
+    color: #c0c0c0;
+    font-size: 16px;
+}
+.bi-eye-slash, .bi-eye{
+    font-size: 24px;
+    cursor: pointer;
+}
+.bi-eye-slash:hover, .bi-eye:hover{
+    color: #05AC4B;
+    transition: 0.3s ease-in-out;
+}
+.home, .home a{
+    float: left;
+    gap: 1vh;
+    font-family: 'Oswald';
+    display: flex;
+    align-items: center;
+    background-color: #0c1a2700;
+    color:#c0c0c0;
+    border: none;
+    border-radius: 4px;
+    font-size: 28px;
+    text-decoration: none;
+    font-weight:normal;
+}
+.home:hover{
+    transition: 0.3s;
+    background-color: #1D3E5E;
+    cursor: pointer;
+}
+.login-hover:hover{
+    transition: 0.3s;
+    color: #B4E4C8;
+    cursor: pointer;
+}
+#login:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #B4E4C8;
+}
+.lista-posts-identificacao{
+    font-size: 40px;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    gap: 15px;
+}   
+.lista-posts-identificacao img{
+    position: relative;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    max-width: 100px;
+}
+.lista-posts-identificacao input{
+    display: none;
+}
+.lista-posts-imagem, .lista-posts-label{
+    width: 100%;    
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+}
+.lista-posts-imagem{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.lista-posts-imagem:hover{
+    opacity: 0.7;
+}
+/* Responsividade para celular */
+@media screen and (max-width:431px) {
+    body{
+        margin: auto;
+    }
+    .login{
+        border-radius: 0px;
+        flex-direction: column;
+        height: 100vh;
+        padding-bottom: 0;
+        padding-top: 0;
+        background: linear-gradient(180deg, #0C1A27, #0D0F11);
+        width: 100%;
+    }
+    .visual{
+        display: none !important;
+    }
+    .login-login{
+        width: 100%;
+        gap: 10vh;
+    }
+    .home{
+        width: 25%;
+        display: flex !important;
+        justify-content: left;
+    }
+    .login-botao,#login{
+        width: 100%;
+    }
+    .login-botao{
+        padding: 5%;
+    }
+}

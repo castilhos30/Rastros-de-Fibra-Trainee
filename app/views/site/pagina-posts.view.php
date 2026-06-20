@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="../../../public/css/pagina-posts.css">
+    <!--fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+
+    <!--icones-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,100,0,0&icon_names=search" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,100,0,0&icon_names=chat_bubble" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=thumb_down" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,100,0,0&icon_names=thumb_up" />
+
+</head>
+
+<body>
+    <?php require 'navbar.view.php' ?>
+    <div class="conteudo-todo"></div>
+    <div class="posts-barra-pesquisa">
+        <form method="GET" action="/pagina-de-posts">
+            <label for="posts-pesquisa" class="posts-placeholder"><i class="fa-solid fa-magnifying-glass"
+                    style="color : black"></i></label>
+            <input type="text" name="pesquisa" class="posts-pesquisa" placeholder="Pesquisar">
+        </form>
+    </div>
+    <div class="conteudo">
+        <!--
+        <div class="card">
+            <div class="cursor-pointer usuario">
+                <img class="posts-pfp" width="40px" height="40px" src='../../../public/assets/pfp.png' alt="foto de perfil">
+                <p class="posts-usuario">Usuário</p>
+            </div>
+            <div class="posts-visual"> <img class="posts-imagem" width="330px" height="266px" alt="foto do post" src="../../../public/assets/imgnormal.jpg"> </div>
+            <div class="posts-interacoes">
+                <i class="fa-regular fa-thumbs-up cursor-pointer"></i>
+                <i class="fa-regular fa-thumbs-down cursor-pointer"></i>
+                <i class="fa-regular fa-comment cursor-pointer"></i>
+            </div>
+            <div class="posts-textos">
+                <p class="posts-titulo">Titulo</p>
+                <p class="posts-corpo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+-->
+        <?php foreach ($posts as $post): ?>
+            <a href="/pagina-individual?post=<?= $post->id ?>" class="card">
+                <div class="cursor-pointer usuario">
+                    <?php
+                    $usuario = array_filter($usuarios, function ($u) use ($post) {
+                        return $u->id === $post->id_usuario;
+                    });
+                    $usuario = reset($usuario);
+                    ?>
+                    <?php
+
+                    $interacaoDoPost_arr = null;
+                    $interacaoDoPost_arr = array_filter($interacoes, function ($i) use ($post) {
+                        return $i->id_post === $post->id;
+                    });
+                    $likes = 0;
+                    $dislikes = 0;
+                    $liked = false;
+                    $disliked = false;
+                    foreach ($interacaoDoPost_arr as $interacaoDoPost) {
+                        $likes += $interacaoDoPost->likes;
+                        $dislikes += $interacaoDoPost->dislikes;
+                        if ($interacaoDoPost->id_usuario === $_SESSION['id']) {
+                            if ($interacaoDoPost->dislikes > 0) {
+                                $disliked = true;
+                            }
+                            if ($interacaoDoPost->likes > 0) {
+                                $liked = true;
+                            }
+                        }
+                    }
+
+                    $comentarios_arr = array_filter($comentarios, function ($c) use ($post) {
+                        return $c->id_post === $post->id;
+                    });
+                    ?>
+                    <img class="posts-pfp" width="40px" height="40px"
+                        src='<?= $usuario ? $usuario->foto : "../../../public/assets/pfp.png" ?>' alt="foto de perfil">
+                    <p class="posts-usuario">
+                        <?= $usuario->nome ?>
+                    </p>
+                </div>
+                <div class="posts-visual"> <img class="posts-imagem" width="330px" height="266px" alt="foto do post"
+                        src="<?= $post->foto ?>"> </div>
+                <div class="posts-interacoes">
+                    <i class="<?= $liked ? 'fa-solid' : 'fa-regular' ?> fa-thumbs-up cursor-pointer"></i>
+                    <span class="inter-span">
+                        <?= $likes ?>
+                    </span>
+                    <i class="<?= $disliked ? 'fa-solid' : 'fa-regular' ?> fa-thumbs-down cursor-pointer"></i>
+                    <span class="inter-span">
+                        <?= $dislikes ?>
+                    </span>
+                    <i class="fa-regular fa-comment cursor-pointer"> </i>
+                    <span class="inter-span">
+                        <?= $comentarios_arr ? count($comentarios_arr) : 0 ?>
+                    </span>
+                </div>
+                <div class="posts-textos">
+                    <p class="posts-titulo">
+                        <?= $post->titulo ?>
+                    </p>
+                    <p class="posts-corpo">
+                        <?= $post->descricao ?>
+                    </p>
+                </div>
+            </a>
+        <?php endforeach; ?>
+    </div>
+    <?php include 'app/views/admin/pagination.view.php'; ?>
+    <?php require 'footer.view.php' ?>
+</body>
+
+</html>

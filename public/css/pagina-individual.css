@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {
+  background-image: linear-gradient(to bottom, #0C1A27, #0D0F11);
+  color: white;
+  height: screen;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  font-family: "Montserrat", sans-serif;
+}
+
+.cardpostindividual {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to bottom, rgb(59, 59, 64, 0.2), rgb(66, 70, 74, 0.2));
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+
+}
+
+.cimapostindividual {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5% 12% 0% 9%;
+}
+
+.baixopostindividual {
+  padding: 2% 12% 5% 12%;
+}
+
+.divpraimagem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botaoeautorindividual {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.botaosetaindividual {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10%;
+}
+
+.botaosetaindividual i {
+  color: #F5F5F5;
+  font-size: 30px;
+}
+
+.autorpostindividual {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.imagemautorpostindividual {
+  width: 50px;
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+}
+
+.nomeautorpostindividual {
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.data-texto {
+
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.titulopostindividual {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 40px;
+  text-align: start;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+
+.imagempostidividual {
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+}
+
+.descricaopostindividual {
+  font-size: 24px;
+  text-align: justify;
+  font-weight: 300;
+  hyphens: auto;
+  text-align: justify;
+  text-justify: inter-character;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+}
+
+.datapostindividual {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.datapostindividual i {
+  color: #05AC4B;
+  font-size: 25px;
+}
+
+.likedislike {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.likedislike i {
+  font-size: 24px;
+
+}
+
+.likedislike h3 {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.titulocomentario {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 36px;
+}
+
+.escrevercomentario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+}
+
+.inputcomentario {
+  background-color: rgb(100, 100, 105, 0.5);
+  border-radius: 10px;
+  flex: 1;
+  padding: 16px 20px;
+  border: 1px solid #555;
+  color: white;
+  font-size: 16px;
+
+}
+
+.botaoenviar {
+  background-color: #059742;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  padding: 1px 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botaoenviar:hover {
+  background-color: #05AC4B;
+}
+
+.enviarcomentario {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.comentariosindividuais {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 15px;
+  width: screen;
+}
+
+.caixadecomentario {
+  background-color: rgb(100, 100, 105, 0.5);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.userinfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+}
+
+.comentariocompleto {
+  padding: 20px;
+}
+
+
+.userfoto {
+  width: 35px;
+  border-radius: 100%;
+}
+
+.nomeusuariocomentario {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.textocomentario {
+  font-size: 16px;
+  font-weight: 400;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.botaosetaindividual {
+  margin-right: 8%;
+}
+
+
+
+
+
+
+
+/* responsividade celular */
+
+@media((min-width: 0px) and (max-width: 425px)) {
+  .imagempostidividual {
+    width: 65vw;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .data-texto {
+    font-size: 14px;
+  }
+
+  .nomeautorpostindividual {
+    font-size: 18px;
+  }
+
+  .imagemautorpostindividual {
+    width: 30px;
+  }
+
+  .autorpostindividual {
+    gap: 5px;
+  }
+
+  .titulopostindividual {
+    font-size: 20px;
+  }
+
+  .descricaopostindividual {
+    font-size: 12px;
+    text-align: justify;
+  }
+
+  .datapostindividual {
+    gap: 5px;
+  }
+
+  .datapostindividual i {
+    font-size: 15px;
+  }
+
+  .likedislike {
+    gap: 5px;
+  }
+
+  .likedislike i {
+    font-size: 15px;
+  }
+
+  .likedislike h3 {
+    font-size: 14px;
+  }
+
+  .titulocomentario {
+    font-size: 18px;
+  }
+
+  .botaoenviar {
+    padding: 0px 10px;
+  }
+
+  .enviarcomentario {
+    font-size: 10px;
+    font-weight: 300;
+  }
+
+  .inputcomentario {
+    padding: 10px 12px;
+    font-size: 10px;
+  }
+
+  .userfoto {
+    width: 25px;
+  }
+
+  .textocomentario {
+    font-size: 12px;
+  }
+
+  .nomeusuariocomentario {
+    font-size: 14px;
+  }
+
+  .comentariocompleto {
+    padding: 2px 15px;
+  }
+
+  .botaosetaindividual i {
+    font-size: 15px;
+  }
+
+  .cimapostindividual {
+    padding: 5% 12% 0% 5%;
+  }
+}
+
+
+
+
+
+/* responsividade tablet */
+
+@media((min-width: 426px) and (max-width: 768px)) {
+  .imagempostidividual {
+    width: 65vw;
+  }
+
+  .data-texto {
+    font-size: 14px;
+  }
+
+  .nomeautorpostindividual {
+    font-size: 18px;
+  }
+
+  .imagemautorpostindividual {
+    width: 30px;
+  }
+
+  .autorpostindividual {
+    gap: 5px;
+  }
+
+  .titulopostindividual {
+    font-size: 20px;
+  }
+
+  .descricaopostindividual {
+    font-size: 12px;
+    text-align: justify;
+  }
+
+  .datapostindividual {
+    gap: 5px;
+  }
+
+  .datapostindividual i {
+    font-size: 15px;
+  }
+
+  .likedislike {
+    gap: 5px;
+  }
+
+  .likedislike i {
+    font-size: 15px;
+  }
+
+  .likedislike h3 {
+    font-size: 14px;
+  }
+
+  .titulocomentario {
+    font-size: 18px;
+  }
+
+  .botaoenviar {
+    padding: 0px 10px;
+  }
+
+  .enviarcomentario {
+    font-size: 10px;
+    font-weight: 300;
+  }
+
+  .inputcomentario {
+    padding: 10px 12px;
+    font-size: 10px;
+  }
+
+  .userfoto {
+    width: 25px;
+  }
+
+  .textocomentario {
+    font-size: 12px;
+  }
+
+  .nomeusuariocomentario {
+    font-size: 14px;
+  }
+
+  .comentariocompleto {
+    padding: 2px 15px;
+  }
+
+  .botaosetaindividual i {
+    font-size: 20px;
+  }
+
+  .cimapostindividual {
+    padding: 5% 12% 0% 7%;
+  }
+
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.likedislike i {
+  color: white;
+}
