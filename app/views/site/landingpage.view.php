@@ -26,31 +26,31 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="titulo-post-recentes">
                 <h1>Postagens Recentes</h1>
             </div>
-            
+
             <div class="carrossel-landing">
                 <div class="slider">
                     <div class="slides">
                         <?php $numPosts = count($posts); ?>
                         <?php for ($i = 1; $i <= $numPosts; $i++): ?>
                             <input type="radio" name="radio-btn" id="radio<?= $i ?>">
-                        
+
                         <?php endfor; ?>
-                        
+
                         <?php $i = 1;
                         foreach ($posts as $post): ?>
-                        
-                            <div class="slide <?= $i === 1 ? 'first' : '' ?>">
-                                <img src="<?= $post->foto ?>">
+
+                            <a class="slide <?= $i === 1 ? 'first' : '' ?>" href="pagina-individual?post=<?= $post->id ?>">
+                                <img src=" <?= $post->foto ?>">
                                 <div class="slide-info">
                                     <h3 class="slide-title"><?= htmlspecialchars($post->titulo) ?></h3>
                                     <span class="slide-author">Por <?= htmlspecialchars($post->criador) ?></span>
                                 </div>
-                            </div>
-                        
+                            </a>
+
                             <?php $i++; ?>
                         <?php endforeach; ?>
 
@@ -62,20 +62,26 @@
                         </div>
                         <!--fim nav-->
                     </div>
-                    
+
 
                     <div class="manual-navigation">
                         <?php for ($j = 1; $j <= $numPosts; $j++): ?>
                             <label for="radio<?= $j ?>" class="manual-btn"></label>
                         <?php endfor; ?>
                     </div>
-                   
+
                 </div>
             </div>
             <div class="sobre-nos-landing">
                 <div class="textos-sobrenos-landing">
                     <h1 class="sobrenos">Sobre Nós</h1>
-                    <p class="sobrenos-texto">A "Rastros de Fibra" é mais do que um blog; é uma comunidade para quem entende que o treino não é apenas levantar peso. Nosso objetivo é capturar e compartilhar a paixão por cada evolução, seja na consistência da rotina diária ou na superação de um limite pessoal. Queremos dar voz a essas histórias, mostrando que cada repetição conta e que a relação entre o praticante e o ferro é cheia de significado. Junte-se a nós para celebrar a arte da musculação, revelar o que o chão da academia nos ensina e explorar as conquistas inesquecíveis que construímos a cada série concluída.</p>
+                    <p class="sobrenos-texto">A "Rastros de Fibra" é mais do que um blog; é uma comunidade para quem
+                        entende que o treino não é apenas levantar peso. Nosso objetivo é capturar e compartilhar a
+                        paixão por cada evolução, seja na consistência da rotina diária ou na superação de um limite
+                        pessoal. Queremos dar voz a essas histórias, mostrando que cada repetição conta e que a relação
+                        entre o praticante e o ferro é cheia de significado. Junte-se a nós para celebrar a arte da
+                        musculação, revelar o que o chão da academia nos ensina e explorar as conquistas inesquecíveis
+                        que construímos a cada série concluída.</p>
                 </div>
             </div>
         </div>
