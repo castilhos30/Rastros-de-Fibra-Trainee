@@ -116,6 +116,10 @@ class UserController
             'senha' => $_POST['senha'],
             'foto' => $caminhoFoto
         ];
+        if ($idEditado == $_SESSION['id']) {
+            $_SESSION['nome'] = $_POST['nome'];
+            $_SESSION['foto'] = $caminhoFoto;
+        }
 
         App::get('database')->update('usuarios', $idEditado, $parameters);
         header('Location: /lista-de-usuarios');
