@@ -13,8 +13,7 @@
 </style>
 
 <body>
-    <header>
-    </header>
+    <?php require 'navbar.view.php' ?>
     <main>
         <div class="landingpage">
             <div class="hero">
@@ -87,6 +86,7 @@
         </div>
     </main>
     <script src="../../../public/js/landingpage.js"></script>
+    <?php require 'footer.view.php' ?>
 </body>
 
 </html>

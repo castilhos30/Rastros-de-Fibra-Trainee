@@ -30,7 +30,7 @@
             <?php if ($_SESSION) {
                 echo "<li><a class='navbar-link' href='/dashboard'>Dashboard</a></li>";
             } else {
-                echo "<li><a class='navbar-link' href='/login'>Login</a></li>'";
+                echo "<li><a class='navbar-link' href='/login'>Login</a></li>";
             } ?>
         </ul>
         <span class="material-symbols-outlined navbar-fechar" id="navbar-fechar" onclick="fecharMenu()">
