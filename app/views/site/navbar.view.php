@@ -32,6 +32,7 @@
             } else {
                 echo "<li><a class='navbar-link' href='/login'>Login</a></li>";
             } ?>
+            <li><a class="navbar-link" id="navbar-dicas" href="/api">Dicas</a></li>
         </ul>
         <span class="material-symbols-outlined navbar-fechar" id="navbar-fechar" onclick="fecharMenu()">
             close

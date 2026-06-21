@@ -83,13 +83,11 @@
             <div class="sobre-nos-landing">
                 <div class="textos-sobrenos-landing">
                     <h1 class="sobrenos">Sobre Nós</h1>
-                    <p class="sobrenos-texto">A "Rastros de Fibra" é mais do que um blog; é uma comunidade para quem
-                        entende que o treino não é apenas levantar peso. Nosso objetivo é capturar e compartilhar a
-                        paixão por cada evolução, seja na consistência da rotina diária ou na superação de um limite
-                        pessoal. Queremos dar voz a essas histórias, mostrando que cada repetição conta e que a relação
-                        entre o praticante e o ferro é cheia de significado. Junte-se a nós para celebrar a arte da
-                        musculação, revelar o que o chão da academia nos ensina e explorar as conquistas inesquecíveis
-                        que construímos a cada série concluída.</p>
+                    <p class="sobrenos-texto">A "Rastros de Fibra" é mais que um blog: 
+                        é uma comunidade para quem sabe que treinar vai além de levantar peso. 
+                        Celebramos cada evolução, da consistência diária à superação de limites. 
+                        Junte-se a nós para compartilhar histórias onde cada repetição conta e o 
+                        chão da academia nos ensina a vencer.</p>
                 </div>
             </div>
         </div>
