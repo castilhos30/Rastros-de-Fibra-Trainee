@@ -13,11 +13,10 @@ try {
 }
 
 /**
- *
- * * @param PDO $pdo Conexão com o banco de dados.
+ * @param PDO $pdo Conexão com o banco de dados.
  * @param int $quantidade Número de interações a serem geradas.
  * @param string $dataInicio Data inicial no formato 'YYYY-MM-DD'.
- * @param string 
+ * @param string $dataFim Data final no formato 'YYYY-MM-DD'.
  */
 function popularInteracoes($pdo, $quantidade, $dataInicio = '2026-01-01', $dataFim = '2026-06-20') {
     
@@ -31,6 +30,11 @@ function popularInteracoes($pdo, $quantidade, $dataInicio = '2026-01-01', $dataF
         die("Erro: É necessário ter usuários e posts cadastrados antes de popular as interações.\n");
     }
 
+    $maxInteracoesPossiveis = count($usuariosIds) * count($postsIds);
+    if ($quantidade > $maxInteracoesPossiveis) {
+        die("Erro: Você pediu {$quantidade} interações, mas com a quantidade atual de usuários e posts, o máximo de interações únicas possíveis é {$maxInteracoesPossiveis}.\n");
+    }
+
     $timestampInicio = strtotime($dataInicio);
     $timestampFim = strtotime($dataFim);
 
@@ -39,10 +43,16 @@ function popularInteracoes($pdo, $quantidade, $dataInicio = '2026-01-01', $dataF
     $stmtInsert = $pdo->prepare($sql);
 
     $inseridos = 0;
-
-    for ($i = 0; $i < $quantidade; $i++) {
+    $combinacoesUsadas = [];
+    while ($inseridos < $quantidade) {
         $idUsuario = $usuariosIds[array_rand($usuariosIds)];
         $idPost = $postsIds[array_rand($postsIds)];
+
+        $chaveCombinacao = $idUsuario . '-' . $idPost;
+
+        if (in_array($chaveCombinacao, $combinacoesUsadas)) {
+            continue;
+        }
 
         $timestampAleatorio = mt_rand($timestampInicio, $timestampFim);
         $dataAleatoria = date('Y-m-d H:i:s', $timestampAleatorio);
@@ -65,15 +75,19 @@ function popularInteracoes($pdo, $quantidade, $dataInicio = '2026-01-01', $dataF
                 ':tipo' => $tipo,
                 ':data' => $dataAleatoria
             ]);
-            $inseridos++;
+            
+            if ($stmtInsert->rowCount() > 0) {
+                $combinacoesUsadas[] = $chaveCombinacao; 
+                $inseridos++;
+            }
         } catch (PDOException $e) {
             continue;
         }
     }
 
-    echo "Sucesso! Foram geradas {$inseridos} interações espalhadas entre {$dataInicio} e {$dataFim}.\n";
+    echo "Sucesso! Foram geradas {$inseridos} interações únicas espalhadas entre {$dataInicio} e {$dataFim}.\n";
 }
 
-popularInteracoes($pdo, 200, '2026-01-01', '2026-06-20');
+popularInteracoes($pdo, 49, '2026-01-01', '2026-06-20');
 
 ?>
