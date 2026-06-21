@@ -2,15 +2,17 @@
 
 namespace App\Controllers;
 
+use Stichoza\GoogleTranslate\GoogleTranslate;
 use App\Core\App;
 use Exception;
-//testegitignore
+
 class ApiController
 {
-
     public function index()
     {
-        $filters = [
+        $tr = new GoogleTranslate('pt');
+
+        $filtersInput = [
             'name' => isset($_GET['name']) ? trim((string) $_GET['name']) : '',
             'type' => isset($_GET['type']) ? trim((string) $_GET['type']) : '',
             'muscle' => isset($_GET['muscle']) ? trim((string) $_GET['muscle']) : '',
@@ -41,69 +43,53 @@ class ApiController
             'strongman' => 'strongman'
         ];
 
-        $difficulties = [
-            'beginner' => 'iniciante',
-            'intermediate' => 'intermediário',
-            'expert' => 'avançado'
-        ];
+        $filtersApi = $filtersInput;
+
+        $typeInEnglish = array_search(strtolower($filtersInput['type']), $types);
+        if ($typeInEnglish !== false) {
+            $filtersApi['type'] = $typeInEnglish;
+        }
+
+        $muscleInEnglish = array_search(strtolower($filtersInput['muscle']), $muscles);
+        if ($muscleInEnglish !== false) {
+            $filtersApi['muscle'] = $muscleInEnglish;
+        }
+
+        if ($filtersInput['equipments'] === 'halteres') { $filtersApi['equipments'] = 'dumbbells'; }
+        if ($filtersInput['equipments'] === 'barra') { $filtersApi['equipments'] = 'bar'; }
 
 
-
-        $apiKey = $this->getApiNinjasKey();
         $apiKey = "QUqUL4ELmoVAA5FWUTGWN9WIQtQ2nKWzRvjJ4Ah9";
-        $exerciseCards = $this->fetchExercisesFromApiNinjas($filters, $apiKey);
+        
+        $exerciseCards = $this->fetchExercisesFromApiNinjas($filtersApi, $apiKey);
 
         foreach ($exerciseCards as &$exercise) {
+            $exercise['muscle'] = $muscles[strtolower($exercise['muscle'])] ?? $exercise['muscle'];
+            $exercise['type'] = $types[strtolower($exercise['type'])] ?? $exercise['type'];
+            
+            
+            $difficulties = ['beginner' => 'iniciante', 'intermediate' => 'intermediário', 'expert' => 'avançado'];
+            $exercise['difficulty'] = $difficulties[strtolower($exercise['difficulty'])] ?? $exercise['difficulty'];
 
-            $exercise['muscle'] =
-                $muscles[strtolower($exercise['muscle'])]
-                ?? $exercise['muscle'];
-
-            $exercise['type'] =
-                $types[strtolower($exercise['type'])]
-                ?? $exercise['type'];
-
-            $exercise['difficulty'] =
-                $difficulties[strtolower($exercise['difficulty'])]
-                ?? $exercise['difficulty'];
-
+            try {
+                if (!empty($exercise['name']) && $exercise['name'] !== 'Exercise') {
+                    $exercise['name'] = $tr->translate($exercise['name']);
+                }
+                if (!empty($exercise['description']) && $exercise['description'] !== 'No description available.') {
+                    $exercise['description'] = $tr->translate($exercise['description']);
+                }
+            } catch (Exception $e) {
+                
+            }
         }
 
         return view('site/api', [
             'exerciseCards' => $exerciseCards,
             'apiStatus' => $apiKey ? ($exerciseCards ? 'online' : 'empty') : 'missing-key',
             'apiSource' => 'https://api.api-ninjas.com/v1/exercises',
-            'filters' => $filters,
+            'filters' => $filtersInput,
             'hasApiKey' => $apiKey !== '',
         ]);
-    }
-
-    function traduzir($texto)
-    {
-        $dados = [
-            'q' => $texto,
-            'source' => 'en',
-            'target' => 'pt',
-            'format' => 'text',
-            'api_key' => '',
-        ];
-
-        $ch = curl_init('https://libretranslate.com/translate');
-
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($dados));
-
-        $resposta = curl_exec($ch);
-
-        if ($resposta === false) {
-            die(curl_error($ch));
-        }
-
-        curl_close($ch);
-
-        var_dump($resposta);
-        die();
     }
 
     private function fetchExercisesFromApiNinjas(array $filters, string $apiKey): array

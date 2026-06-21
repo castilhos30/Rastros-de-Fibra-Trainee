@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dicas</title>
     <link rel="stylesheet" href="../../../public/css/api.css">
-    <link rel="icon" type:"image/png" href="public/assets/89dd239f299a2c3a20e35d8f32b0dced21562e55.png">
+    <link rel="icon" type="image/png" href="public/assets/89dd239f299a2c3a20e35d8f32b0dced21562e55.png">
 </head>
 
 <body>
@@ -60,34 +60,37 @@
                 <label>
                     <span>Nome ou trecho</span>
                     <input type="text" name="name" value="<?= htmlspecialchars($filters['name'] ?? '') ?>"
-                        placeholder="bench press">
+                        placeholder="Ex: supino, agachamento...">
                 </label>
                 <label>
                     <span>Tipo</span>
                     <input type="text" name="type" value="<?= htmlspecialchars($filters['type'] ?? '') ?>"
-                        placeholder="strength">
+                        placeholder="Ex: força, cardio, alongamento...">
                 </label>
                 <label>
                     <span>Músculo</span>
                     <input type="text" name="muscle" value="<?= htmlspecialchars($filters['muscle'] ?? '') ?>"
-                        placeholder="biceps">
+                        placeholder="Ex: biceps, peito, pernas...">
                 </label>
                 <label>
                     <span>Dificuldade</span>
                     <select name="difficulty">
                         <option value="">Todas</option>
                         <option value="beginner" <?= ($filters['difficulty'] ?? '') === 'beginner' ? 'selected' : '' ?>>
-                            beginner</option>
-                        <option value="intermediate" <?= ($filters['difficulty'] ?? '') === 'intermediate' ? 'selected' : '' ?>>intermediate</option>
+                            Iniciante
+                        </option>
+                        <option value="intermediate" <?= ($filters['difficulty'] ?? '') === 'intermediate' ? 'selected' : '' ?>>
+                            Intermediário
+                        </option>
                         <option value="expert" <?= ($filters['difficulty'] ?? '') === 'expert' ? 'selected' : '' ?>>
-                            expert
+                            Avançado
                         </option>
                     </select>
                 </label>
                 <label>
                     <span>Equipamentos</span>
                     <input type="text" name="equipments" value="<?= htmlspecialchars($filters['equipments'] ?? '') ?>"
-                        placeholder="dumbbells,bench">
+                        placeholder="Ex: halteres, barra...">
                 </label>
                 <button type="submit">Buscar</button>
             </form>
