@@ -71,7 +71,7 @@
                                 public\assets\icon-user.png
                                 ">
                                 <label for="imagem" class="lista-posts-label">
-                                    <img class='lista-posts-imagem' data-src-original="public\assets\icon-user.png"
+                                    <img class='lista-posts-imagem' data-src-original="public\assets\pfp.png"
                                         src="public\assets\icon-user.png" alt="Imagem de perfil" />
                                 </label>
                             </div>
