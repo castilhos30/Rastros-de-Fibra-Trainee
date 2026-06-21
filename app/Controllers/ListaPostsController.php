@@ -61,9 +61,14 @@ class ListaPostsController
             'data' => date('Y-m-d H:i:s'),
             'id_usuario' => $_SESSION['id']
         ];
-        App::get('database')->insert('posts', $parameters);
-        header('Location: /lista-de-posts');
-        exit();
+        if (empty($parameters['titulo']) || empty($parameters['descricao'])) {
+            header('Location: /lista-de-posts?erro=postvazio');
+            exit();
+        } else {
+            App::get('database')->insert('posts', $parameters);
+            header('Location: /lista-de-posts');
+            exit();
+        }
     }
 
     public function delete()
