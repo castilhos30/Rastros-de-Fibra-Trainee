@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Core\App;
 use Exception;
-
+//testegitignore
 class ApiController
 {
 

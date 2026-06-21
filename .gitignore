@@ -1,4 +1,4 @@
-/vendor
+vendor
 
 public/assets/imagensPosts/*
 app/Controllers/ApiController.php
