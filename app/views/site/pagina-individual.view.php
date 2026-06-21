@@ -23,7 +23,7 @@
 
                 <div class="autorpostindividual">
                     <img class="imagemautorpostindividual" src="
-                    <?= $usuario->foto ? $usuario->foto : "/public/assets/icon-user.png" ?>
+                    <?= $usuario->foto ? $usuario->foto : "/public/assets/pfp.png" ?>
                     ">
                     <h1 class="nomeautorpostindividual">
                         <?= $usuario->nome ?? 'Usuário não encontrado' ?>
@@ -94,12 +94,14 @@
                         <div class="caixadecomentario">
                             <div class="comentariocompleto">
                                 <div class="userinfo">
-                                    <img class="userfoto" src="/public/assets/icon-user.png">
                                     <?php $usuario_com = array_filter($usuarios, function ($u) use ($comentario) {
                                         return $u->id === $comentario->id_criador;
                                     });
                                     $usuario_com = reset($usuario_com);
+
                                     ?>
+                                    <img class="userfoto" src=<?= $usuario_com->foto ? $usuario_com->foto : "/public/assets/pfp.png" ?>>
+
                                     <h3 class="nomeusuariocomentario">
                                         <?= $usuario_com ? $usuario_com->nome : 'NOME_USUARIO_NAO_ENCONTRADO' ?>
                                     </h3>
