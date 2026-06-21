@@ -95,7 +95,7 @@ body {
     border: 0px;
     white-space: nowrap;
     padding: 8px 24px;
-    width: 180px;
+    width: auto;
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
@@ -169,6 +169,7 @@ body {
     height: 100%;
 }
 
+
 .lista-posts-base .botao-atual {
     background-color: var(--verde-botao);
     border-radius: 10px;
@@ -225,4 +226,34 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 30px;
+}
+
+.botao-criar i{
+    display: none;
+}
+
+@media((min-width: 0px) and (max-width: 758px)){
+    .botao-criar .texto-botao{
+        padding: 0;
+        margin: 0;
+        display: none;
+    }
+
+    .botao-criar i{
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+    .botao-criar {
+
+        width: auto;
+        height: 45px;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+
+    }
 }

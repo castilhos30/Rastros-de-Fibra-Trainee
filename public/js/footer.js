@@ -61,20 +61,24 @@ function fecharJogo() {
     }
 }
 
-areaClique.addEventListener('mousedown', function() {
+function apertarRato(evento) {
+    if (evento) evento.preventDefault(); 
     repeticoes++;
     placar.innerText = repeticoes + " Repetições";
     const fotosAtuais = obterImagensDoNivel();
     imagemRato.src = fotosAtuais.baixo; 
-});
-areaClique.addEventListener('mouseup', function() {
+}
+function soltarRato(evento) {
+    if (evento) evento.preventDefault();
     const fotosAtuais = obterImagensDoNivel();
     imagemRato.src = fotosAtuais.cima; 
-});
-areaClique.addEventListener('mouseleave', function() {
-    const fotosAtuais = obterImagensDoNivel();
-    imagemRato.src = fotosAtuais.cima; 
-});
+}
+areaClique.addEventListener('mousedown', apertarRato);
+areaClique.addEventListener('mouseup', soltarRato);
+areaClique.addEventListener('mouseleave', soltarRato);
+areaClique.addEventListener('touchstart', apertarRato, { passive: false });
+areaClique.addEventListener('touchend', soltarRato);
+areaClique.addEventListener('touchcancel', soltarRato);
 modalJogo.addEventListener('click', function(event) {
     if (event.target === modalJogo) {
         fecharJogo();

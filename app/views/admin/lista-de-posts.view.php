@@ -28,8 +28,10 @@
                 <input type="text" name="pesquisa" placeholder="Pesquisar..."
                     value="<?= htmlspecialchars($pesquisa ?? '', ENT_QUOTES, 'UTF-8') ?>">
             </form>
-            <button type="button" class="botao-criar botao-atual" onclick="abrirModal('modalCriar')">Criar
-                Publicação</button>
+            <button type="button" class="botao-criar" onclick="abrirModal('modalCriar')">
+                <i class="fa-solid fa-plus maisicon" ></i>
+                <span class="texto-botao">Criar Publicação</span>
+            </button>
         </div>
         <div class="container-tabela">
             <table class="tabelaposts">
@@ -70,7 +72,7 @@
                         ?>
                         <tr>
                             <td> <?= $post->id ?></td>
-                            <td> <?= $post->data ?></td>
+                            <td> <?= date('d/m/Y', strtotime($post->data)) ?></td>
                             <td> <?= $post->titulo ?></td>
                             <td> <?= $criadorPost->nome ?? 'Usuário não encontrado' ?></td>
                             <td>
