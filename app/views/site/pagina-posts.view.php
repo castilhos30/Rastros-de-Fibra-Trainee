@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Posts</title>
     <link rel="stylesheet" href="../../../public/css/pagina-posts.css">
+    <link rel="icon" type:"image/png" href="public/assets/89dd239f299a2c3a20e35d8f32b0dced21562e55.png">
     <!--fontes-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

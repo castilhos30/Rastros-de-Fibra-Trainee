@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuarios</title>
     <link rel="stylesheet" href="/public/css/lista-usuarios.css">
+    <link rel="icon" type:"image/png" href="public/assets/89dd239f299a2c3a20e35d8f32b0dced21562e55.png">
     <link rel="stylesheet" href="/public/css/modal-criar-editar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="

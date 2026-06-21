@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rastros de Fibra</title>
-    <link rel="stylesheet" href="../../../public/css/landingpage.css">
+    <link rel="stylesheet" href="../../../public/css/landingpage.css"> 
+    <link rel="icon" type:"image/png" href="public/assets/89dd239f299a2c3a20e35d8f32b0dced21562e55.png">
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');

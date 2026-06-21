@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dicas</title>
     <link rel="stylesheet" href="../../../public/css/api.css">
+    <link rel="icon" type:"image/png" href="public/assets/89dd239f299a2c3a20e35d8f32b0dced21562e55.png">
 </head>
 
 <body>
