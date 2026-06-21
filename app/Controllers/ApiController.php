@@ -18,9 +18,56 @@ class ApiController
             'equipments' => isset($_GET['equipments']) ? trim((string) $_GET['equipments']) : '',
         ];
 
+        $muscles = [
+            'biceps' => 'bíceps',
+            'triceps' => 'tríceps',
+            'chest' => 'peito',
+            'back' => 'costas',
+            'shoulders' => 'ombros',
+            'legs' => 'pernas',
+            'quadriceps' => 'quadríceps',
+            'hamstrings' => 'posteriores da coxa',
+            'glutes' => 'glúteos',
+            'abdominals' => 'abdômen',
+            'calves' => 'panturrilhas'
+        ];
+
+        $types = [
+            'strength' => 'força',
+            'stretching' => 'alongamento',
+            'plyometrics' => 'pliometria',
+            'powerlifting' => 'powerlifting',
+            'cardio' => 'cardio',
+            'strongman' => 'strongman'
+        ];
+
+        $difficulties = [
+            'beginner' => 'iniciante',
+            'intermediate' => 'intermediário',
+            'expert' => 'avançado'
+        ];
+
+
+
         $apiKey = $this->getApiNinjasKey();
         $apiKey = "QUqUL4ELmoVAA5FWUTGWN9WIQtQ2nKWzRvjJ4Ah9";
         $exerciseCards = $this->fetchExercisesFromApiNinjas($filters, $apiKey);
+
+        foreach ($exerciseCards as &$exercise) {
+
+            $exercise['muscle'] =
+                $muscles[strtolower($exercise['muscle'])]
+                ?? $exercise['muscle'];
+
+            $exercise['type'] =
+                $types[strtolower($exercise['type'])]
+                ?? $exercise['type'];
+
+            $exercise['difficulty'] =
+                $difficulties[strtolower($exercise['difficulty'])]
+                ?? $exercise['difficulty'];
+
+        }
 
         return view('site/api', [
             'exerciseCards' => $exerciseCards,
@@ -29,6 +76,34 @@ class ApiController
             'filters' => $filters,
             'hasApiKey' => $apiKey !== '',
         ]);
+    }
+
+    function traduzir($texto)
+    {
+        $dados = [
+            'q' => $texto,
+            'source' => 'en',
+            'target' => 'pt',
+            'format' => 'text',
+            'api_key' => '',
+        ];
+
+        $ch = curl_init('https://libretranslate.com/translate');
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($dados));
+
+        $resposta = curl_exec($ch);
+
+        if ($resposta === false) {
+            die(curl_error($ch));
+        }
+
+        curl_close($ch);
+
+        var_dump($resposta);
+        die();
     }
 
     private function fetchExercisesFromApiNinjas(array $filters, string $apiKey): array

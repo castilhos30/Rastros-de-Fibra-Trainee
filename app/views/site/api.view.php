@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Api Ninjas Exercises | Rastros de Fibra</title>
+    <title>Dicas</title>
     <link rel="stylesheet" href="../../../public/css/api.css">
 </head>
 
