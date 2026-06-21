@@ -27,6 +27,7 @@
 
 #### Links Úteis:
 * [Trello do Projeto](https://trello.com/b/yubB6yT1/261-trello-rastros-de-fibra)
+* [Manual de Uso](https://canva.link/5a3ecqks11z1k0j)
 
 ---
 
