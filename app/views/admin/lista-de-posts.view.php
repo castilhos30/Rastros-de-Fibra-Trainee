@@ -29,7 +29,7 @@
                     value="<?= htmlspecialchars($pesquisa ?? '', ENT_QUOTES, 'UTF-8') ?>">
             </form>
             <button type="button" class="botao-criar" onclick="abrirModal('modalCriar')">
-                <i class="fa-solid fa-plus maisicon" ></i>
+                <i class="fa-solid fa-plus maisicon"></i>
                 <span class="texto-botao">Criar Publicação</span>
             </button>
         </div>
@@ -141,11 +141,11 @@
                 <div class="lista-posts-conteudo">
                     <div class="lista-posts-titulo">
                         <h5>Título:</h5>
-                        <input type="text" class="input titulo" placeholder="Título" name="titulo">
+                        <input type="text" class="input titulo" placeholder="Título" name="titulo" required>
                     </div>
                     <div class="lista-posts-descricao">
                         <h5>Descrição:</h5>
-                        <textarea class="input descricao" placeholder="Descrição" name="descricao"></textarea>
+                        <textarea class="input descricao" placeholder="Descrição" name="descricao" required></textarea>
                     </div>
                 </div>
             </div>

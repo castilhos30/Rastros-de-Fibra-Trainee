@@ -166,7 +166,15 @@ body {
 }
 
 .botao-criar {
+    background-color: #10B981;
+    border-radius: 10px;
     height: 100%;
+    color: white;
+    border: none;
+    width: 180px;
+    font-weight: bold;
+    cursor: pointer;
+
 }
 
 
@@ -228,27 +236,31 @@ body {
     font-size: 30px;
 }
 
-.botao-criar i{
+.botao-criar i {
     display: none;
 }
 
-@media((min-width: 0px) and (max-width: 758px)){
-    .botao-criar .texto-botao{
+@media((min-width: 0px) and (max-width: 758px)) {
+    .botao-criar .texto-botao {
         padding: 0;
         margin: 0;
         display: none;
+
     }
 
-    .botao-criar i{
+    .botao-criar i {
         display: flex;
         justify-content: center;
         padding: 0;
         margin: 0;
+        align-items: center;
     }
+
     .botao-criar {
 
         width: auto;
-        height: 45px;
+        max-height: 40px;
+        max-width: 40px;
         display: flex;
         padding: 0;
         margin: 0;
